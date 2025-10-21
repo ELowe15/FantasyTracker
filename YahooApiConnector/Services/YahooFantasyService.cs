@@ -116,7 +116,8 @@ public class YahooFantasyService
         XNamespace ns = doc.Root.GetDefaultNamespace();
 
         var results = doc.Descendants(ns + "draft_result")
-            .Select(dr => new {
+            .Select(dr => new
+            {
                 Pick = dr.Element(ns + "pick")?.Value,
                 Round = dr.Element(ns + "round")?.Value,
                 TeamKey = dr.Element(ns + "team_key")?.Value,
@@ -128,6 +129,58 @@ public class YahooFantasyService
             Console.WriteLine($"Pick {result.Pick} (Round {result.Round}) → Team {result.TeamKey}, Player {result.PlayerKey}");
         }
     }
+    
+    public async Task DumpAllTeamRostersToJsonAsync(string leagueKey, string outputPath)
+{
+    // 1. Get all teams and build teamKey → teamName/manager map
+    var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams";
+    var teamsResponse = await _client.GetAsync(teamsUrl);
+    var teamsXml = await teamsResponse.Content.ReadAsStringAsync();
+    var teamsDoc = XDocument.Parse(teamsXml);
+    XNamespace ns = teamsDoc.Root.GetDefaultNamespace();
+
+    var teams = teamsDoc.Descendants(ns + "team")
+        .Select(t => new {
+            TeamKey = t.Element(ns + "team_key")?.Value,
+            TeamName = t.Element(ns + "name")?.Value,
+            ManagerName = t.Descendants(ns + "manager").FirstOrDefault()?.Element(ns + "nickname")?.Value
+        })
+        .ToList();
+
+    var allRosters = new List<TeamRoster>();
+
+    // 2. For each team, fetch roster
+    foreach (var team in teams)
+    {
+        var rosterUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/roster";
+        var rosterResponse = await _client.GetAsync(rosterUrl);
+        var rosterXml = await rosterResponse.Content.ReadAsStringAsync();
+        var rosterDoc = XDocument.Parse(rosterXml);
+
+        var players = rosterDoc.Descendants(ns + "player")
+            .Select(p => new Player
+            {
+                PlayerKey = p.Element(ns + "player_key")?.Value,
+                FullName = p.Element(ns + "name")?.Element(ns + "full")?.Value,
+                Position = p.Element(ns + "display_position")?.Value,
+                NbaTeam = p.Element(ns + "editorial_team_abbr")?.Value
+            })
+            .ToList();
+
+        allRosters.Add(new TeamRoster
+        {
+            TeamKey = team.TeamKey,
+            TeamName = team.TeamName,
+            ManagerName = team.ManagerName,
+            Players = players
+        });
+    }
+
+    // 3. Serialize to JSON and save
+    var json = JsonSerializer.Serialize(allRosters, new JsonSerializerOptions { WriteIndented = true });
+    await File.WriteAllTextAsync(outputPath, json);
+    Console.WriteLine($"All team rosters saved to {outputPath}");
+}
 
     public async Task DumpDraftResultsToJsonAsync(string leagueKey, string outputPath)
     {

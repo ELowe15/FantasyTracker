@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("YahooApiConnector")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26945871d50883d56306ce3f7cc97b4246becfa3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0617589284c2306e7ebbfbdbe7d718b3244ef38")]
 [assembly: System.Reflection.AssemblyProductAttribute("YahooApiConnector")]
 [assembly: System.Reflection.AssemblyTitleAttribute("YahooApiConnector")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

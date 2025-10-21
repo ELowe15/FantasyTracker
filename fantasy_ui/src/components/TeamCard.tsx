@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { DraftPick } from "../models/League";  
 import { TeamGroup } from "../models/League";
 
 interface Props {
@@ -12,18 +11,18 @@ export default function TeamCard({ team }: Props) {
   const toggleOpen = () => setOpen(!open);
 
   return (
-    <div className="bg-white shadow-md rounded-xl mb-4 border border-gray-200">
+  <div className="bg-slate-800 shadow-lg rounded-xl mb-4 border border-slate-700">
       <button
         onClick={toggleOpen}
         className="w-full flex justify-between items-center p-4 text-left"
       >
         <div>
-          <h2 className="text-lg font-bold text-gray-800">{team.manager_name + "'s Team"}</h2>
+          <h2 className="text-lg font-bold text-amber-400 drop-shadow">{team.manager_name + "'s Team"}</h2>
         </div>
         <span
           className={`transform transition-transform ${
             open ? "rotate-90" : "rotate-0"
-          } text-gray-500`}
+          } text-cyan-400`}
         >
           ▶
         </span>
@@ -31,13 +30,12 @@ export default function TeamCard({ team }: Props) {
 
       {open && (
         <div className="px-4 pb-4">
-          <table className="w-full text-sm text-left border-t border-gray-100 mt-2">
+          <table className="w-full text-sm text-left border-t border-slate-700 mt-2">
             <thead>
-              <tr className="text-gray-600">
+              <tr className="text-cyan-400">
                 <th className="py-2">Player</th>
                 <th>Pos</th>
                 <th>Round</th>
-                <th>Pick</th>
                 <th>Years you can keep</th>
               </tr>
             </thead>
@@ -47,13 +45,12 @@ export default function TeamCard({ team }: Props) {
                 return (
                   <tr
                     key={pick.player_key + pick.round}
-                    className="border-t border-gray-100 hover:bg-gray-50"
+                    className="border-t border-slate-700 hover:bg-slate-700/40"
                   >
-                    <td className="py-2">{pick.player_name}</td>
-                    <td>{pick.position}</td>
-                    <td>{pick.round}</td>
-                    <td>{pick.pick}</td>
-                    <td>{keeper}</td>
+                    <td className="py-2 text-white">{pick.player_name}</td>
+                    <td className="text-gray-200">{pick.position}</td>
+                    <td className="text-gray-200">{pick.round}</td>
+                    <td className="text-amber-300">{keeper}</td>
                   </tr>
                 );
               })}
