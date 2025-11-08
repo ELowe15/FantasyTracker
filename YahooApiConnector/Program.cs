@@ -42,7 +42,7 @@ class Program
             Console.WriteLine($"REFRESH token (save this!): {refreshToken}");
         }
 
-        var leagueKey = configuration["YahooApi:LeagueKey"];
+        var leagueKey = configuration["YahooApi:LeagueKey"] ?? Environment.GetEnvironmentVariable("YAHOO_LEAGUE_KEY");
         var fantasyService = new YahooFantasyService(accessToken);
 
         await fantasyService.DumpAllTeamRostersToJsonAsync(leagueKey, "team_results.json");
