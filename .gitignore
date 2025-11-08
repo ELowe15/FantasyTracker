@@ -1,0 +1,22 @@
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore user settings
+*.user
+*.swp
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore secrets
+YahooApiConnector/appsettings.json
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore logs and temporary files
+*.log
+*.tmp

@@ -1,0 +1,40 @@
+name: Run Yahoo API Connector
+
+on:
+  workflow_dispatch:    # allows manual runs
+  schedule:
+    - cron: "0 12 * * *"  # runs every day at 12:00 UTC
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    env:
+      YAHOO_CLIENT_ID: ${{ secrets.YAHOO_CLIENT_ID }}
+      YAHOO_CLIENT_SECRET: ${{ secrets.YAHOO_CLIENT_SECRET }}
+      YAHOO_REFRESH_TOKEN: ${{ secrets.YAHOO_REFRESH_TOKEN }}
+      YAHOO_LEAGUE_KEY: ${{ secrets.YAHOO_LEAGUE_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore ./YahooApiConnector/YahooApiConnector.csproj
+
+      - name: Build project
+        run: dotnet build --configuration Release ./YahooApiConnector/YahooApiConnector.csproj
+
+      - name: Run Yahoo API Connector
+        run: dotnet run --project ./YahooApiConnector/YahooApiConnector.csproj --auto
+
+      - name: Upload output JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: team-results
+          path: YahooApiConnector/team_results.json
