@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "0 12 * * *"  # runs every day at 12:00 UTC
 
+permissions:
+  contents: write  # allow committing changes
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -18,6 +21,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # ensure full history for committing
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -33,8 +38,11 @@ jobs:
       - name: Run Yahoo API Connector
         run: dotnet run --project ./YahooApiConnector/YahooApiConnector.csproj --auto
 
-      - name: Upload output JSON
-        uses: actions/upload-artifact@v4
-        with:
-          name: team-results
-          path: YahooApiConnector/team_results.json
+      - name: Commit updated JSON to main
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          git add YahooApiConnector/team_results.json
+          git commit -m "Update team_results.json [skip ci]" || echo "No changes to commit"
+          git push origin main
