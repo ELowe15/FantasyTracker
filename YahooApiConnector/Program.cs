@@ -10,22 +10,20 @@ class Program
             .AddEnvironmentVariables()
             .Build();
 
-        var autoMode = args.Contains("--auto");
+        //var autoMode = args.Contains("--auto");
 
         var authService = new YahooAuthService(configuration);
 
         string accessToken;
 
-        if (autoMode)
-        {
-            // Use refresh token from environment
-            var refreshToken = Environment.GetEnvironmentVariable("YAHOO_REFRESH_TOKEN");
-            if (string.IsNullOrEmpty(refreshToken))
-                throw new Exception("Missing YAHOO_REFRESH_TOKEN in environment variables.");
+        // Use refresh token from environment
+        var refreshToken = configuration["YahooApi:RefreshToken"] ?? Environment.GetEnvironmentVariable("YAHOO_REFRESH_TOKEN");
+        if (string.IsNullOrEmpty(refreshToken))
+            throw new Exception("Missing YAHOO_REFRESH_TOKEN in environment variables.");
 
-            accessToken = await authService.GetAccessTokenFromRefreshTokenAsync(refreshToken);
-        }
-        else
+        accessToken = await authService.GetAccessTokenFromRefreshTokenAsync(refreshToken);
+
+        /*else
         {
             // Manual OAuth flow
             var authUrl = authService.GetAuthorizationUrl();
@@ -40,7 +38,7 @@ class Program
 
             Console.WriteLine($"Access token: {accessToken}");
             Console.WriteLine($"REFRESH token (save this!): {refreshToken}");
-        }
+        }*/
 
         var leagueKey = configuration["YahooApi:LeagueKey"] ?? Environment.GetEnvironmentVariable("YAHOO_LEAGUE_KEY");
         var fantasyService = new YahooFantasyService(accessToken);
