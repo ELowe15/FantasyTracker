@@ -1,28 +1,35 @@
 name: Run Yahoo API Connector
 
 on:
-  workflow_dispatch:    # allows manual runs
+  workflow_dispatch:
   schedule:
-    - cron: "0 12 * * *"  # runs every day at 12:00 UTC
+    - cron: "0 12 * * *"
 
 permissions:
-  contents: write  # allow committing changes
+  contents: write
 
 jobs:
   run:
     runs-on: ubuntu-latest
 
+    # Provide both the YAHOO_* names and the appsettings style names (YahooApi__*)
     env:
       YAHOO_CLIENT_ID: ${{ secrets.YAHOO_CLIENT_ID }}
       YAHOO_CLIENT_SECRET: ${{ secrets.YAHOO_CLIENT_SECRET }}
       YAHOO_REFRESH_TOKEN: ${{ secrets.YAHOO_REFRESH_TOKEN }}
       YAHOO_LEAGUE_KEY: ${{ secrets.YAHOO_LEAGUE_KEY }}
+      YahooApi__ClientId: ${{ secrets.YAHOO_CLIENT_ID }}
+      YahooApi__ClientSecret: ${{ secrets.YAHOO_CLIENT_SECRET }}
+      YahooApi__RefreshToken: ${{ secrets.YAHOO_REFRESH_TOKEN }}
+      YahooApi__LeagueKey: ${{ secrets.YAHOO_LEAGUE_KEY }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # ensure full history for committing
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+          fetch-depth: 0
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -36,13 +43,47 @@ jobs:
         run: dotnet build --configuration Release ./YahooApiConnector/YahooApiConnector.csproj
 
       - name: Run Yahoo API Connector
-        run: dotnet run --project ./YahooApiConnector/YahooApiConnector.csproj --auto
-
-      - name: Commit updated JSON to main
+        working-directory: ./YahooApiConnector
         run: |
+          set -eo pipefail
+          # run in project folder; write logs to repo root so debug step can show them
+          dotnet run --project YahooApiConnector.csproj --auto 2>&1 | tee ../yahoo-run.log
+
+      - name: Debug repo & file locations
+        run: |
+          echo "=== Current working directory ==="
+          pwd
+          echo
+          echo "=== Repo root listing ==="
+          ls -la
+          echo
+          echo "=== Project listing (YahooApiConnector) ==="
+          ls -la YahooApiConnector || true
+          echo
+          echo "=== Find team_results.json (all matches) ==="
+          find . -name team_results.json -print -ls || true
+          echo
+          echo "=== Head of expected file (if present) ==="
+          head -n 40 YahooApiConnector/team_results.json || true
+          echo
+          echo "=== Tail of app run log ==="
+          tail -n 200 yahoo-run.log || true
+
+      - name: Commit and push updated JSON
+        run: |
+          set -eo pipefail
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-
-          git add YahooApiConnector/team_results.json
-          git commit -m "Update team_results.json [skip ci]" || echo "No changes to commit"
-          git push origin main
+          echo "=== git status ==="
+          git status --porcelain
+          # Stage the expected path (keeps current behavior)
+          git add YahooApiConnector/team_results.json || true
+          echo "=== Staged files ==="
+          git diff --cached --name-only || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Update team_results.json [skip ci]"
+          echo "Pushing to main..."
+          git push origin HEAD:main
