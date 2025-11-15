@@ -29,3 +29,17 @@ export interface TeamGroup {
   manager_name: string;
   picks: DraftPick[];
 }
+
+export interface Player {
+  playerKey: string;
+  fullName: string;
+  position: string;
+  nbaTeam: string;
+  keeperYears?: number;
+}
+
+export interface TeamRoster {
+  teamKey: string;
+  managerName: string;
+  players: Player[];
+}

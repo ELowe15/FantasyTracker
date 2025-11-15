@@ -1,52 +1,66 @@
 import { useEffect, useState } from "react";
-import { fetchDraftData } from "../services/DataService";
-import { DraftPick , TeamGroup } from "../models/League";
-import TeamCard from "../components/TeamCard";
+import { TeamRoster } from "../models/League";
+import TeamRosterCard from "../components/TeamCard";
 
-
-function groupByTeam(picks: DraftPick[]): TeamGroup[] {
-  const teams: { [key: string]: TeamGroup } = {};
-  picks.forEach((pick) => {
-    if (!teams[pick.team_key]) {
-      teams[pick.team_key] = {
-        team_key: pick.team_key,
-        manager_name: pick.manager_name,
-        picks: [],
-      };
-    }
-    teams[pick.team_key].picks.push(pick);
-  });
-  // Sort picks by round or pick if needed
-  Object.values(teams).forEach(team => {
-    team.picks.sort((a, b) => a.round - b.round || a.pick - b.pick);
-  });
-  return Object.values(teams);
-}
+const DATA_URL =
+  "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/data/team_results.json";
 
 export default function TeamsPage() {
-  const [teams, setTeams] = useState<TeamGroup[] | null>(null);
+  const [teams, setTeams] = useState<TeamRoster[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchDraftData()
-      .then((picks) => setTeams(groupByTeam(picks)))
-      .catch((err) => console.error("Error loading draft data:", err));
+    fetch(DATA_URL)
+      .then((res) => {
+        if (!res.ok) throw new Error(`Failed to fetch data: ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        const mapped: TeamRoster[] = data.map((t: any) => ({
+          teamKey: t.TeamKey,
+          managerName: t.ManagerName,
+          players:
+            t.Players?.map((p: any) => ({
+              playerKey: p.PlayerKey,
+              fullName: p.FullName,
+              position: p.Position,
+              nbaTeam: p.NbaTeam,
+              keeperYears: keeperOverrides[p.PlayerKey] ?? undefined,
+            })) ?? [],
+        }));
+        setTeams(mapped);
+      })
+      .catch((err) => {
+        console.error("Error loading team results:", err);
+        setError("Failed to load team results. Try again later.");
+      });
   }, []);
 
-  if (!teams)
+  if (error) {
     return (
-      <div className="flex justify-center items-center h-screen text-gray-500">
-        Loading draft results...
+      <div className="flex justify-center items-center h-screen text-red-400">
+        {error}
       </div>
     );
+  }
+
+  if (!teams) {
+    return (
+      <div className="flex justify-center items-center h-screen text-gray-400">
+        Loading team results...
+      </div>
+    );
+  }
 
   return (
-  <div className="min-h-screen bg-slate-900">
-      <div className="max-w-2xl mx-auto p-4">
-        <h1 className="text-3xl font-bold text-center mb-6 text-white drop-shadow-lg tracking-wide">
-          Fantasy Draft Results
+    <div className="min-h-screen bg-slate-900">
+      <div className="max-w-3xl mx-auto p-6">
+        <h1 className="text-3xl font-bold text-center mb-8 text-white drop-shadow-lg tracking-wide">
+          Fantasy Team Rosters
         </h1>
+
         {teams.map((team) => (
-          <TeamCard key={team.team_key} team={team} />
+          <TeamRosterCard key={team.teamKey} team={team} />
         ))}
       </div>
     </div>
