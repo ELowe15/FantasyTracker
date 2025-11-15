@@ -5,7 +5,7 @@ interface Props {
   team: TeamGroup;
 }
 
-export default function TeamCard({ team }: Props) {
+export default function DraftTeamCard({ team }: Props) {
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => setOpen(!open);

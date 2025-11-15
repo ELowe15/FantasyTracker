@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchDraftData } from "../services/DataService";
 import { DraftPick , TeamGroup } from "../models/League";
-import TeamCard from "../components/TeamCard";
+import DraftTeamCard from "../components/DraftTeamCard";
 
 
 function groupByTeam(picks: DraftPick[]): TeamGroup[] {
@@ -46,7 +46,7 @@ export default function TeamsPage() {
           Fantasy Draft Results
         </h1>
         {teams.map((team) => (
-          <TeamCard key={team.team_key} team={team} />
+          <DraftTeamCard key={team.team_key} team={team} />
         ))}
       </div>
     </div>
