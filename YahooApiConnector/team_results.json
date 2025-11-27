@@ -4,16 +4,16 @@
     "ManagerName": "Evan",
     "Players": [
       {
-        "PlayerKey": "466.p.6044",
-        "FullName": "Jalen Brunson",
-        "Position": "PG",
-        "NbaTeam": "NYK"
-      },
-      {
         "PlayerKey": "466.p.6734",
         "FullName": "Ryan Rollins",
         "Position": "PG,SG",
         "NbaTeam": "MIL"
+      },
+      {
+        "PlayerKey": "466.p.10099",
+        "FullName": "Bilal Coulibaly",
+        "Position": "SG,SF",
+        "NbaTeam": "WAS"
       },
       {
         "PlayerKey": "466.p.5582",
@@ -34,12 +34,6 @@
         "NbaTeam": "SAC"
       },
       {
-        "PlayerKey": "466.p.10104",
-        "FullName": "Brandon Miller",
-        "Position": "SF,PF",
-        "NbaTeam": "CHA"
-      },
-      {
         "PlayerKey": "466.p.6693",
         "FullName": "Jabari Smith Jr.",
         "Position": "SF,PF,C",
@@ -58,16 +52,10 @@
         "NbaTeam": "DET"
       },
       {
-        "PlayerKey": "466.p.6015",
-        "FullName": "Jaren Jackson Jr.",
-        "Position": "PF,C",
-        "NbaTeam": "MEM"
-      },
-      {
-        "PlayerKey": "466.p.10099",
-        "FullName": "Bilal Coulibaly",
-        "Position": "SG,SF",
-        "NbaTeam": "WAS"
+        "PlayerKey": "466.p.6044",
+        "FullName": "Jalen Brunson",
+        "Position": "PG",
+        "NbaTeam": "NYK"
       },
       {
         "PlayerKey": "466.p.6698",
@@ -82,16 +70,28 @@
         "NbaTeam": "DEN"
       },
       {
-        "PlayerKey": "466.p.6167",
-        "FullName": "Darius Garland",
-        "Position": "PG",
-        "NbaTeam": "CLE"
+        "PlayerKey": "466.p.10104",
+        "FullName": "Brandon Miller",
+        "Position": "SF,PF",
+        "NbaTeam": "CHA"
+      },
+      {
+        "PlayerKey": "466.p.6015",
+        "FullName": "Jaren Jackson Jr.",
+        "Position": "PF,C",
+        "NbaTeam": "MEM"
       },
       {
         "PlayerKey": "466.p.6581",
         "FullName": "Neemias Queta",
         "Position": "PF,C",
         "NbaTeam": "BOS"
+      },
+      {
+        "PlayerKey": "466.p.6167",
+        "FullName": "Darius Garland",
+        "Position": "PG",
+        "NbaTeam": "CLE"
       }
     ]
   },
@@ -292,16 +292,16 @@
     "ManagerName": "evan",
     "Players": [
       {
-        "PlayerKey": "466.p.5161",
-        "FullName": "CJ McCollum",
-        "Position": "PG,SG",
-        "NbaTeam": "WAS"
-      },
-      {
         "PlayerKey": "466.p.5473",
         "FullName": "Devin Booker",
         "Position": "PG,SG",
         "NbaTeam": "PHX"
+      },
+      {
+        "PlayerKey": "466.p.6754",
+        "FullName": "Julian Champagnie",
+        "Position": "SG,SF",
+        "NbaTeam": "SAS"
       },
       {
         "PlayerKey": "466.p.10092",
@@ -352,10 +352,10 @@
         "NbaTeam": "BOS"
       },
       {
-        "PlayerKey": "466.p.6604",
-        "FullName": "Trendon Watford",
-        "Position": "PF,C",
-        "NbaTeam": "PHI"
+        "PlayerKey": "466.p.5161",
+        "FullName": "CJ McCollum",
+        "Position": "PG,SG",
+        "NbaTeam": "WAS"
       },
       {
         "PlayerKey": "466.p.5015",
@@ -742,16 +742,16 @@
         "NbaTeam": "NOP"
       },
       {
+        "PlayerKey": "466.p.5327",
+        "FullName": "Jusuf Nurki\u0107",
+        "Position": "C",
+        "NbaTeam": "UTA"
+      },
+      {
         "PlayerKey": "466.p.5197",
         "FullName": "Rudy Gobert",
         "Position": "C",
         "NbaTeam": "MIN"
-      },
-      {
-        "PlayerKey": "466.p.5640",
-        "FullName": "Jakob Poeltl",
-        "Position": "C",
-        "NbaTeam": "TOR"
       },
       {
         "PlayerKey": "466.p.10508",
@@ -766,12 +766,6 @@
         "NbaTeam": "GSW"
       },
       {
-        "PlayerKey": "466.p.5327",
-        "FullName": "Jusuf Nurki\u0107",
-        "Position": "C",
-        "NbaTeam": "UTA"
-      },
-      {
         "PlayerKey": "466.p.10095",
         "FullName": "Anthony Black",
         "Position": "PG,SG",
@@ -782,6 +776,12 @@
         "FullName": "Ace Bailey",
         "Position": "SG,SF",
         "NbaTeam": "UTA"
+      },
+      {
+        "PlayerKey": "466.p.5640",
+        "FullName": "Jakob Poeltl",
+        "Position": "C",
+        "NbaTeam": "TOR"
       },
       {
         "PlayerKey": "466.p.6164",
