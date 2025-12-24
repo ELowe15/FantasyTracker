@@ -16,12 +16,6 @@
         "NbaTeam": "DET"
       },
       {
-        "PlayerKey": "466.p.6734",
-        "FullName": "Ryan Rollins",
-        "Position": "PG,SG",
-        "NbaTeam": "MIL"
-      },
-      {
         "PlayerKey": "466.p.6499",
         "FullName": "Naji Marshall",
         "Position": "SF,PF",
@@ -64,22 +58,28 @@
         "NbaTeam": "CHA"
       },
       {
-        "PlayerKey": "466.p.6044",
-        "FullName": "Jalen Brunson",
-        "Position": "PG",
-        "NbaTeam": "NYK"
-      },
-      {
         "PlayerKey": "466.p.6581",
         "FullName": "Neemias Queta",
         "Position": "PF,C",
         "NbaTeam": "BOS"
       },
       {
-        "PlayerKey": "466.p.6698",
-        "FullName": "Dyson Daniels",
-        "Position": "PG,SG,SF",
-        "NbaTeam": "ATL"
+        "PlayerKey": "466.p.6734",
+        "FullName": "Ryan Rollins",
+        "Position": "PG,SG",
+        "NbaTeam": "MIL"
+      },
+      {
+        "PlayerKey": "466.p.10476",
+        "FullName": "Ryan Kalkbrenner",
+        "Position": "C",
+        "NbaTeam": "CHA"
+      },
+      {
+        "PlayerKey": "466.p.5582",
+        "FullName": "T.J. McConnell",
+        "Position": "PG",
+        "NbaTeam": "IND"
       },
       {
         "PlayerKey": "466.p.6406",
@@ -94,16 +94,16 @@
         "NbaTeam": "NOP"
       },
       {
-        "PlayerKey": "466.p.5582",
-        "FullName": "T.J. McConnell",
+        "PlayerKey": "466.p.6044",
+        "FullName": "Jalen Brunson",
         "Position": "PG",
-        "NbaTeam": "IND"
+        "NbaTeam": "NYK"
       },
       {
-        "PlayerKey": "466.p.10476",
-        "FullName": "Ryan Kalkbrenner",
-        "Position": "C",
-        "NbaTeam": "CHA"
+        "PlayerKey": "466.p.6698",
+        "FullName": "Dyson Daniels",
+        "Position": "PG,SG,SF",
+        "NbaTeam": "ATL"
       }
     ]
   },
@@ -316,10 +316,10 @@
         "NbaTeam": "WAS"
       },
       {
-        "PlayerKey": "466.p.6632",
-        "FullName": "Justin Champagnie",
+        "PlayerKey": "466.p.5905",
+        "FullName": "Royce O\u0027Neale",
         "Position": "SF,PF",
-        "NbaTeam": "WAS"
+        "NbaTeam": "PHX"
       },
       {
         "PlayerKey": "466.p.10065",
@@ -364,16 +364,16 @@
         "NbaTeam": "SAS"
       },
       {
-        "PlayerKey": "466.p.5905",
-        "FullName": "Royce O\u0027Neale",
-        "Position": "SF,PF",
-        "NbaTeam": "PHX"
-      },
-      {
         "PlayerKey": "466.p.5069",
         "FullName": "Draymond Green",
         "Position": "PF,C",
         "NbaTeam": "GSW"
+      },
+      {
+        "PlayerKey": "466.p.6433",
+        "FullName": "Tre Jones",
+        "Position": "PG,SG",
+        "NbaTeam": "CHI"
       },
       {
         "PlayerKey": "466.p.6711",
@@ -508,10 +508,10 @@
     "ManagerName": "Michael",
     "Players": [
       {
-        "PlayerKey": "466.p.10467",
-        "FullName": "Dylan Harper",
+        "PlayerKey": "466.p.5187",
+        "FullName": "Dennis Schr\u00F6der",
         "Position": "PG,SG",
-        "NbaTeam": "SAS"
+        "NbaTeam": "SAC"
       },
       {
         "PlayerKey": "466.p.6512",
@@ -524,6 +524,12 @@
         "FullName": "Reed Sheppard",
         "Position": "PG,SG",
         "NbaTeam": "HOU"
+      },
+      {
+        "PlayerKey": "466.p.10265",
+        "FullName": "Matas Buzelis",
+        "Position": "SF,PF",
+        "NbaTeam": "CHI"
       },
       {
         "PlayerKey": "466.p.10274",
@@ -550,34 +556,28 @@
         "NbaTeam": "NOP"
       },
       {
-        "PlayerKey": "466.p.10315",
-        "FullName": "Kyle Filipowski",
-        "Position": "PF,C",
-        "NbaTeam": "UTA"
-      },
-      {
         "PlayerKey": "466.p.10340",
         "FullName": "Jaylen Wells",
         "Position": "SG,SF",
         "NbaTeam": "MEM"
       },
       {
-        "PlayerKey": "466.p.6418",
-        "FullName": "Payton Pritchard",
-        "Position": "PG",
-        "NbaTeam": "BOS"
-      },
-      {
-        "PlayerKey": "466.p.10265",
-        "FullName": "Matas Buzelis",
-        "Position": "SF,PF",
-        "NbaTeam": "CHI"
-      },
-      {
         "PlayerKey": "466.p.6558",
         "FullName": "Alperen Sengun",
         "Position": "PF,C",
         "NbaTeam": "HOU"
+      },
+      {
+        "PlayerKey": "466.p.10467",
+        "FullName": "Dylan Harper",
+        "Position": "PG,SG",
+        "NbaTeam": "SAS"
+      },
+      {
+        "PlayerKey": "466.p.6418",
+        "FullName": "Payton Pritchard",
+        "Position": "PG",
+        "NbaTeam": "BOS"
       },
       {
         "PlayerKey": "466.p.6550",
@@ -868,12 +868,6 @@
         "NbaTeam": "PHI"
       },
       {
-        "PlayerKey": "466.p.5007",
-        "FullName": "Anthony Davis",
-        "Position": "PF,C",
-        "NbaTeam": "DAL"
-      },
-      {
         "PlayerKey": "466.p.5842",
         "FullName": "Derrick White",
         "Position": "PG,SG",
@@ -884,6 +878,12 @@
         "FullName": "Jimmy Butler III",
         "Position": "SG,SF,PF",
         "NbaTeam": "GSW"
+      },
+      {
+        "PlayerKey": "466.p.5007",
+        "FullName": "Anthony Davis",
+        "Position": "PF,C",
+        "NbaTeam": "DAL"
       },
       {
         "PlayerKey": "466.p.6580",
@@ -922,52 +922,10 @@
     "ManagerName": "Jack",
     "Players": [
       {
-        "PlayerKey": "466.p.10327",
-        "FullName": "Cam Spencer",
+        "PlayerKey": "466.p.6417",
+        "FullName": "Immanuel Quickley",
         "Position": "PG,SG",
-        "NbaTeam": "MEM"
-      },
-      {
-        "PlayerKey": "466.p.10440",
-        "FullName": "Jeremiah Fears",
-        "Position": "PG,SG",
-        "NbaTeam": "NOP"
-      },
-      {
-        "PlayerKey": "466.p.6218",
-        "FullName": "Kevin Porter Jr.",
-        "Position": "PG,SG",
-        "NbaTeam": "MIL"
-      },
-      {
-        "PlayerKey": "466.p.10465",
-        "FullName": "Cedric Coward",
-        "Position": "SG,SF",
-        "NbaTeam": "MEM"
-      },
-      {
-        "PlayerKey": "466.p.5858",
-        "FullName": "Dillon Brooks",
-        "Position": "SF,PF",
-        "NbaTeam": "PHX"
-      },
-      {
-        "PlayerKey": "466.p.10468",
-        "FullName": "Cooper Flagg",
-        "Position": "PG,SG,SF",
-        "NbaTeam": "DAL"
-      },
-      {
-        "PlayerKey": "466.p.5432",
-        "FullName": "Karl-Anthony Towns",
-        "Position": "PF,C",
-        "NbaTeam": "NYK"
-      },
-      {
-        "PlayerKey": "466.p.6047",
-        "FullName": "Mitchell Robinson",
-        "Position": "C",
-        "NbaTeam": "NYK"
+        "NbaTeam": "TOR"
       },
       {
         "PlayerKey": "466.p.5638",
@@ -976,28 +934,70 @@
         "NbaTeam": "DEN"
       },
       {
+        "PlayerKey": "466.p.10327",
+        "FullName": "Cam Spencer",
+        "Position": "PG,SG",
+        "NbaTeam": "MEM"
+      },
+      {
+        "PlayerKey": "466.p.6709",
+        "FullName": "Jake LaRavia",
+        "Position": "SF,PF",
+        "NbaTeam": "LAL"
+      },
+      {
+        "PlayerKey": "466.p.5432",
+        "FullName": "Karl-Anthony Towns",
+        "Position": "PF,C",
+        "NbaTeam": "NYK"
+      },
+      {
+        "PlayerKey": "466.p.10468",
+        "FullName": "Cooper Flagg",
+        "Position": "PG,SG,SF",
+        "NbaTeam": "DAL"
+      },
+      {
         "PlayerKey": "466.p.10294",
         "FullName": "Alex Sarr",
         "Position": "C",
         "NbaTeam": "WAS"
       },
       {
-        "PlayerKey": "466.p.4612",
-        "FullName": "Stephen Curry",
-        "Position": "PG",
-        "NbaTeam": "GSW"
+        "PlayerKey": "466.p.5958",
+        "FullName": "Deandre Ayton",
+        "Position": "C",
+        "NbaTeam": "LAL"
       },
       {
-        "PlayerKey": "466.p.6417",
-        "FullName": "Immanuel Quickley",
+        "PlayerKey": "466.p.5858",
+        "FullName": "Dillon Brooks",
+        "Position": "SF,PF",
+        "NbaTeam": "PHX"
+      },
+      {
+        "PlayerKey": "466.p.6218",
+        "FullName": "Kevin Porter Jr.",
         "Position": "PG,SG",
-        "NbaTeam": "TOR"
+        "NbaTeam": "MIL"
       },
       {
         "PlayerKey": "466.p.6028",
         "FullName": "Donte DiVincenzo",
         "Position": "PG,SG",
         "NbaTeam": "MIN"
+      },
+      {
+        "PlayerKey": "466.p.10440",
+        "FullName": "Jeremiah Fears",
+        "Position": "PG,SG",
+        "NbaTeam": "NOP"
+      },
+      {
+        "PlayerKey": "466.p.4612",
+        "FullName": "Stephen Curry",
+        "Position": "PG",
+        "NbaTeam": "GSW"
       },
       {
         "PlayerKey": "466.p.4840",
@@ -1012,16 +1012,16 @@
         "NbaTeam": "PHX"
       },
       {
+        "PlayerKey": "466.p.10465",
+        "FullName": "Cedric Coward",
+        "Position": "SG,SF",
+        "NbaTeam": "MEM"
+      },
+      {
         "PlayerKey": "466.p.6420",
         "FullName": "Jaden McDaniels",
         "Position": "SF,PF",
         "NbaTeam": "MIN"
-      },
-      {
-        "PlayerKey": "466.p.5958",
-        "FullName": "Deandre Ayton",
-        "Position": "C",
-        "NbaTeam": "LAL"
       }
     ]
   },
@@ -1132,10 +1132,10 @@
         "NbaTeam": "IND"
       },
       {
-        "PlayerKey": "466.p.6355",
-        "FullName": "Anthony Edwards",
-        "Position": "PG,SG",
-        "NbaTeam": "MIN"
+        "PlayerKey": "466.p.10107",
+        "FullName": "Cason Wallace",
+        "Position": "PG,SG,SF",
+        "NbaTeam": "OKC"
       },
       {
         "PlayerKey": "466.p.6751",
@@ -1174,16 +1174,10 @@
         "NbaTeam": "IND"
       },
       {
-        "PlayerKey": "466.p.10454",
-        "FullName": "VJ Edgecombe",
-        "Position": "PG,SG",
-        "NbaTeam": "PHI"
-      },
-      {
-        "PlayerKey": "466.p.6253",
-        "FullName": "Naz Reid",
-        "Position": "PF,C",
-        "NbaTeam": "MIN"
+        "PlayerKey": "466.p.6205",
+        "FullName": "Nickeil Alexander-Walker",
+        "Position": "PG,SG,SF",
+        "NbaTeam": "ATL"
       },
       {
         "PlayerKey": "466.p.10511",
@@ -1192,16 +1186,22 @@
         "NbaTeam": "DAL"
       },
       {
-        "PlayerKey": "466.p.6205",
-        "FullName": "Nickeil Alexander-Walker",
-        "Position": "PG,SG,SF",
-        "NbaTeam": "ATL"
+        "PlayerKey": "466.p.10454",
+        "FullName": "VJ Edgecombe",
+        "Position": "PG,SG",
+        "NbaTeam": "PHI"
       },
       {
-        "PlayerKey": "466.p.10107",
-        "FullName": "Cason Wallace",
-        "Position": "PG,SG,SF",
-        "NbaTeam": "OKC"
+        "PlayerKey": "466.p.6355",
+        "FullName": "Anthony Edwards",
+        "Position": "PG,SG",
+        "NbaTeam": "MIN"
+      },
+      {
+        "PlayerKey": "466.p.6253",
+        "FullName": "Naz Reid",
+        "Position": "PF,C",
+        "NbaTeam": "MIN"
       },
       {
         "PlayerKey": "466.p.6514",
