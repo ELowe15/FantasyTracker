@@ -12,32 +12,44 @@ public class BestBallService
         player.FantasyPoints = total;
     }
 
-    private void AssignBestBallLineup(List<WeeklyPlayerStats> players)
+private void AssignBestBallLineup(List<WeeklyPlayerStats> players)
+{
+    // Reset all slots
+    foreach (var p in players)
+        p.BestBallSlot = "Bench";
+
+    // Eligible players, sorted by descending fantasy points
+    var eligible = players.Where(p => p.IsEligible).OrderByDescending(p => p.FantasyPoints).ToList();
+
+    // Core positions in order
+    var corePositions = new[] { "PG", "SG", "SF", "PF", "C" };
+
+    foreach (var pos in corePositions)
     {
-        foreach (var p in players)
-            p.BestBallSlot = "Bench"; // reset
-
-        var eligible = players.Where(p => p.IsEligible).OrderByDescending(p => p.FantasyPoints).ToList();
-
-        // Fill each core position
-        foreach (var pos in new[] { "PG", "SG", "SF", "PF", "C" })
+        // Find the highest fantasy points player who can play this position and is still on bench
+        var candidate = eligible.FirstOrDefault(p =>
         {
-            var candidate = eligible.FirstOrDefault(p => p.Position == pos && p.BestBallSlot == "Bench");
-            if (candidate != null) candidate.BestBallSlot = pos;
-        }
+            var positions = p.Position.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+            return positions.Contains(pos) && p.BestBallSlot == "Bench";
+        });
 
-        // Fill UTIL
-        var utilSlots = new[] { "UTIL1", "UTIL2" };
-        int utilIndex = 0;
-        foreach (var player in eligible)
+        if (candidate != null)
+            candidate.BestBallSlot = pos;
+    }
+
+    // Fill UTIL slots with remaining highest FP players
+    var utilSlots = new[] { "UTIL1", "UTIL2" };
+    int utilIndex = 0;
+
+    foreach (var player in eligible)
+    {
+        if (player.BestBallSlot == "Bench" && utilIndex < utilSlots.Length)
         {
-            if (player.BestBallSlot == "Bench" && utilIndex < utilSlots.Length)
-            {
-                player.BestBallSlot = utilSlots[utilIndex];
-                utilIndex++;
-            }
+            player.BestBallSlot = utilSlots[utilIndex];
+            utilIndex++;
         }
     }
+}
     
 
     public void ProcessWeeklyBestBall(List<WeeklyTeamResult> teams)
