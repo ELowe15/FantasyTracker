@@ -50,6 +50,7 @@ class Program
         authService = new YahooAuthService(configuration);
 
         string accessToken;
+        
         try
         {
             accessToken = await authService.GetAccessTokenFromRefreshTokenAsync(refreshToken);
@@ -61,16 +62,54 @@ class Program
         }
 
         var fantasyService = new YahooFantasyService(accessToken);
-        var outPath = Path.Combine(basePath, "team_results.json");
+        var bestBallService = new BestBallService();
 
         try
-        {
-            await fantasyService.DumpAllTeamRostersToJsonAsync(leagueKey, outPath);
-            Console.WriteLine($"Wrote results to {outPath}");
+        {   
+            var RosterOutPath = Path.Combine(basePath, "team_results.json");
+            // 1. Dump rosters
+            await fantasyService.DumpAllTeamRostersToJsonAsync(leagueKey, RosterOutPath);
+            Console.WriteLine($"Wrote team rosters to {RosterOutPath}");
+
+            /* 2. Dump weekly stats
+            var statsOutPath = Path.Combine(basePath, "weekly_stats.json");
+            await fantasyService.DumpWeeklyStatsToJsonAsync(leagueKey, statsOutPath);
+            Console.WriteLine($"Wrote weekly stats to {statsOutPath}");*/
         }
         catch (Exception ex)
         {
-            Console.Error.WriteLine("Failed to dump team rosters: " + ex.Message);
+            Console.Error.WriteLine("Error: " + ex.Message);
+            return 5;
+        }
+
+        try
+        {
+            var snapshot = await fantasyService.GetWeeklyTeamResultsAsync(leagueKey);
+
+// Run Best Ball using the teams inside the snapshot
+bestBallService.ProcessWeeklyBestBall(snapshot.Teams);
+
+// Build filename using SEASON + WEEK
+var fileName = $"best_ball_{snapshot.Season}_week_{snapshot.Week}.json";
+var outPath = Path.Combine(basePath, fileName);
+
+// Serialize the ENTIRE snapshot (not just teams)
+var json = System.Text.Json.JsonSerializer.Serialize(
+    snapshot,
+    new System.Text.Json.JsonSerializerOptions
+    {
+        WriteIndented = true
+    });
+
+await File.WriteAllTextAsync(outPath, json);
+
+Console.WriteLine(
+    $"Best Ball weekly results saved to {outPath}");
+
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine("Error processing Best Ball: " + ex.Message);
             return 5;
         }
 

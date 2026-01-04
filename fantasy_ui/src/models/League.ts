@@ -43,3 +43,26 @@ export interface TeamRoster {
   managerName: string;
   players: Player[];
 }
+
+export interface BestBallPlayer {
+  playerKey: string;
+  fullName: string;
+  position: string;
+  fantasyPoints: number;
+  bestBallSlot?: string;
+  rawStats: {
+    points: number;
+    rebounds: number;
+    assists: number;
+    steals: number;
+    blocks: number;
+    turnovers: number;
+  };
+}
+
+export interface BestBallTeam {
+  teamKey: string;
+  managerName: string;
+  totalFantasyPoints: number;
+  players: BestBallPlayer[];
+}

@@ -28,10 +28,10 @@ export default function RulesPage() {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">Keepers</h2>
         <ul className="list-disc list-inside space-y-1">
-          <li>Number of keepers: <span className="font-semibold">2</span></li>
-          <li>Can’t keep your first round pick</li>
+          <li>Max number of keepers: <span className="font-semibold">2</span></li>
           <li>Years you can keep a keeper: <span className="font-semibold">3 years</span> (includes this year)</li>
-          <li>Can trade keepers (same rules apply; still can’t keep a first round pick)</li>
+          <li>Can’t keep your first round pick</li>
+          <li>You can choose to keep 0 or 1 keepers</li>
         </ul>
       </section>
 
@@ -39,7 +39,10 @@ export default function RulesPage() {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">Draft & Trades</h2>
         <ul className="list-disc list-inside space-y-1">
+          <li>Keepers will be your 2nd and 3rd round picks</li>
+          <li>If you only have 1 keeper it's your 2nd round pick</li>
           <li>Can trade future draft picks</li>
+          <li>Can trade keepers (still can’t keep a first round pick)</li>
         </ul>
       </section>
     </div>

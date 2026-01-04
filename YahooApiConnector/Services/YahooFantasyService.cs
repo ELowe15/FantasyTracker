@@ -14,14 +14,273 @@ public class YahooFantasyService
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
     }
 
+public async Task<Dictionary<string, string>> GetLeagueStatMapAsync(string leagueKey)
+{
+    var url = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/settings";
+    var xml = await _client.GetStringAsync(url);
+
+    var doc = XDocument.Parse(xml);
+    var ns = doc.Root.GetDefaultNamespace();
+
+    return doc.Descendants(ns + "stat")
+        .Where(s => s.Element(ns + "stat_id") != null)
+        .ToDictionary(
+            s => s.Element(ns + "name")!.Value.Trim(),
+            s => s.Element(ns + "stat_id")!.Value
+        );
+}
+
+private async Task<int> GetSeasonAsync(string leagueKey)
+{
+    var url = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/settings";
+    var xml = await _client.GetStringAsync(url);
+
+    var doc = XDocument.Parse(xml);
+    var ns = doc.Root.GetDefaultNamespace();
+
+    var seasonStr = doc.Descendants(ns + "season").FirstOrDefault()?.Value;
+
+    return int.TryParse(seasonStr, out int season)
+        ? season
+        : DateTime.Now.Year; // safe fallback
+}
+
+
+public async Task<(DateTime start, DateTime end)> GetWeekDateRangeAsync(
+    string leagueKey,
+    int week)
+{
+    var url =
+        $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/scoreboard;week={week}";
+
+    var xml = await _client.GetStringAsync(url);
+    var doc = XDocument.Parse(xml);
+    var ns = doc.Root.GetDefaultNamespace();
+
+    var startStr = doc.Descendants(ns + "week_start").FirstOrDefault()?.Value;
+    var endStr = doc.Descendants(ns + "week_end").FirstOrDefault()?.Value;
+
+    DateTime.TryParse(startStr, out DateTime start);
+    DateTime.TryParse(endStr, out DateTime end);
+
+    return (start, end);
+}
+
+
+private double ComputeFantasyPoints(Dictionary<string, double> stats)
+{
+    double points = 0;
+
+    foreach (var kv in stats)
+    {
+        switch (kv.Key)
+        {
+            case "12": points += kv.Value * 1;   break; // Points
+            case "15": points += kv.Value * 1.2; break; // Rebounds
+            case "16": points += kv.Value * 1.5; break; // Assists
+            case "17": points += kv.Value * 3;   break; // Steals
+            case "18": points += kv.Value * 3;   break; // Blocks
+            case "19": points -= kv.Value * 1;   break; // Turnovers
+        }
+    }
+
+    return points;
+}
+public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
+    string leagueKey,
+    bool DEBUG_STOP_AFTER_FIRST_TEAM = false)
+{
+    var snapshot = new WeeklyLeagueSnapshot();
+
+    // ---- Core metadata (fetched ONCE)
+    snapshot.Season = await GetSeasonAsync(leagueKey);
+    snapshot.Week = await GetCurrentWeekAsync(leagueKey);
+
+    var (weekStart, weekEnd) =
+        await GetWeekDateRangeAsync(leagueKey, snapshot.Week);
+
+    snapshot.WeekStart = weekStart;
+    snapshot.WeekEnd = weekEnd;
+
+    // ---- Teams
+    var teamsUrl =
+        $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams";
+
+    var teamsXml = await _client.GetStringAsync(teamsUrl);
+    var teamsDoc = XDocument.Parse(teamsXml);
+    XNamespace teamsNs = teamsDoc.Root.GetDefaultNamespace();
+
+    var teams = teamsDoc
+        .Descendants(teamsNs + "team")
+        .Select(t => new
+        {
+            TeamKey = t.Element(teamsNs + "team_key")?.Value,
+            ManagerName = t.Descendants(teamsNs + "manager")
+                           .FirstOrDefault()?
+                           .Element(teamsNs + "nickname")?.Value
+                           ?? "Unknown"
+        })
+        .Where(t => !string.IsNullOrEmpty(t.TeamKey))
+        .ToList();
+
+    Console.WriteLine($"Found {teams.Count} teams");
+
+    foreach (var team in teams)
+    {
+        Console.WriteLine(
+            $"\nFetching WEEK {snapshot.Week} stats for {team.ManagerName}");
+
+        var teamResult = new WeeklyTeamResult
+        {
+            TeamKey = team.TeamKey,
+            ManagerName = team.ManagerName,
+            Week = snapshot.Week,
+            Players = new List<WeeklyPlayerStats>()
+        };
+
+        var statsUrl =
+            $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/players/stats;type=week;week={snapshot.Week}";
+
+        var statsXml = await _client.GetStringAsync(statsUrl);
+        var statsDoc = XDocument.Parse(statsXml);
+        XNamespace ns = statsDoc.Root.GetDefaultNamespace();
+
+        foreach (var p in statsDoc.Descendants(ns + "player"))
+        {
+            var player = new WeeklyPlayerStats
+            {
+                PlayerKey = p.Element(ns + "player_key")?.Value,
+                FullName = p.Element(ns + "name")?.Element(ns + "full")?.Value,
+                Position = p.Element(ns + "display_position")?.Value,
+                NbaTeam = p.Element(ns + "editorial_team_abbr")?.Value,
+                RawStats = new Dictionary<string, double>()
+            };
+
+            foreach (var s in p.Descendants(ns + "stat"))
+            {
+                var statId = s.Element(ns + "stat_id")?.Value;
+                var valStr = s.Element(ns + "value")?.Value;
+
+                if (!string.IsNullOrEmpty(statId) &&
+                    double.TryParse(valStr, out double val))
+                {
+                    player.RawStats[statId] = val;
+                }
+            }
+
+            player.FantasyPoints =
+                ComputeFantasyPoints(player.RawStats);
+
+            teamResult.Players.Add(player);
+        }
+
+        snapshot.Teams.Add(teamResult);
+
+        if (DEBUG_STOP_AFTER_FIRST_TEAM)
+            break;
+    }
+
+    return snapshot;
+}
+
+
+    public async Task<int> GetCurrentWeekAsync(string leagueKey)
+    {
+        var url = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}";
+        var resp = await _client.GetAsync(url);
+        var xml = await resp.Content.ReadAsStringAsync();
+
+        var doc = XDocument.Parse(xml);
+        XNamespace ns = doc.Root.GetDefaultNamespace();
+
+        var weekStr = doc.Descendants(ns + "current_week").FirstOrDefault()?.Value;
+        
+        if (int.TryParse(weekStr, out int week))
+            return week;
+
+        // fallback if missing
+        return 1;
+    }
+
+    public async Task<List<TeamWeeklyStats>> GetWeeklyTeamStatsAsync(string leagueKey)
+    {
+        var results = new List<TeamWeeklyStats>();
+
+        // 1. Get all teams
+        var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams";
+        var teamsResponse = await _client.GetAsync(teamsUrl);
+        var teamsXml = await teamsResponse.Content.ReadAsStringAsync();
+
+        var teamsDoc = XDocument.Parse(teamsXml);
+        XNamespace ns = teamsDoc.Root.GetDefaultNamespace();
+
+        var teams = teamsDoc.Descendants(ns + "team")
+            .Select(t => new {
+                TeamKey = t.Element(ns + "team_key")?.Value,
+                ManagerName = t.Descendants(ns + "manager")
+                            .Elements(ns + "nickname")
+                            .FirstOrDefault()?.Value
+                            ?? "Unknown Manager"
+            })
+            .ToList();
+
+        // get current week
+        int currentWeek = await GetCurrentWeekAsync(leagueKey);
+
+        // 2. Fetch weekly stats for each team
+        foreach (var team in teams)
+        {
+            var statsUrl =
+                $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/stats;type=week;week={currentWeek}";
+
+            var statsResponse = await _client.GetAsync(statsUrl);
+            var statsXml = await statsResponse.Content.ReadAsStringAsync();
+            var statsDoc = XDocument.Parse(statsXml);
+
+            var statElems = statsDoc.Descendants(ns + "stat")
+                .Select(s => new {
+                    StatId = s.Element(ns + "stat_id")?.Value,
+                    Value = s.Element(ns + "value")?.Value
+                })
+                .Where(s => s.StatId != null)
+                .ToList();
+
+            var statDict = statElems.ToDictionary(
+                s => s.StatId!,
+                s => s.Value ?? "0"
+            );
+
+            results.Add(new TeamWeeklyStats
+            {
+                TeamKey = team.TeamKey,
+                ManagerName = team.ManagerName,
+                StatValues = statDict
+            });
+        }
+
+        return results;
+    }
+
+    public async Task DumpWeeklyStatsToJsonAsync(string leagueKey, string outputPath)
+    {
+        var stats = await GetWeeklyTeamStatsAsync(leagueKey);
+
+        var json = JsonSerializer.Serialize(stats, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
+
+        await File.WriteAllTextAsync(outputPath, json);
+    }
+
     public async Task<LeagueData> GetLeagueDataAsync(string leagueKey)
     {
         var url = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}";
         var response = await _client.GetAsync(url);
         var xml = await response.Content.ReadAsStringAsync();
 
-        Console.WriteLine("Raw Yahoo API Response:");
-        Console.WriteLine(xml);
+        //Console.WriteLine("Raw Yahoo API Response:");
+        //Console.WriteLine(xml);
 
         try
         {
