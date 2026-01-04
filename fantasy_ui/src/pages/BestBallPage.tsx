@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BestBallTeam } from "../models/League";
+import { BestBallTeam, BestBallPlayer } from "../models/League";
 import BestBallTeamCard from "../components/BestBallTeamCard";
 
 const DATA_URL =
@@ -18,7 +18,12 @@ export default function BestBallPage() {
 
         const data = await res.json();
 
-        const mapped: BestBallTeam[] = data.map((t: any) => {
+        // ✅ Fix: map over data.Teams, not data
+        if (!data.Teams || !Array.isArray(data.Teams)) {
+          throw new Error("Invalid JSON format: 'Teams' array not found");
+        }
+
+        const mapped: BestBallTeam[] = data.Teams.map((t: any) => {
           let displayManagerName = t.ManagerName;
           if (t.ManagerName === "evan") displayManagerName = "EFry";
           if (t.ManagerName === "Evan") displayManagerName = "ELowe";
@@ -26,24 +31,31 @@ export default function BestBallPage() {
           return {
             teamKey: t.TeamKey,
             managerName: displayManagerName,
-            totalFantasyPoints: t.TotalFantasyPoints,
+            totalFantasyPoints: t.TotalBestBallPoints,
             players:
-              t.Players?.map((p: any) => ({
-                playerKey: p.PlayerKey,
-                fullName: p.FullName,
-                position: p.Position,
-                nbaTeam: p.NbaTeam,
-                fantasyPoints: p.FantasyPoints,
-                counted: p.Counted,
-                countedPosition: p.CountedPosition,
-              })) ?? [],
-          };
+              t.Players?.map((p: any) => {
+                const rawStats = {
+                  points: p.RawStats?.["12"] ?? 0,
+                  rebounds: p.RawStats?.["15"] ?? 0,
+                  assists: p.RawStats?.["16"] ?? 0,
+                  steals: p.RawStats?.["17"] ?? 0,
+                  blocks: p.RawStats?.["18"] ?? 0,
+                  turnovers: p.RawStats?.["19"] ?? 0,
+                };
+
+                return {
+                  playerKey: p.PlayerKey,
+                  fullName: p.FullName,
+                  fantasyPoints: p.FantasyPoints,
+                  bestBallSlot: p.BestBallSlot,
+                  rawStats,
+                } as BestBallPlayer;
+              }) ?? [],
+          } as BestBallTeam;
         });
 
-        // 🔥 Sort descending by best ball points
-        mapped.sort(
-          (a, b) => b.totalFantasyPoints - a.totalFantasyPoints
-        );
+        // Sort by total best ball points descending
+        mapped.sort((a, b) => b.totalFantasyPoints - a.totalFantasyPoints);
 
         setTeams(mapped);
       } catch (err) {
@@ -79,11 +91,7 @@ export default function BestBallPage() {
         </h1>
 
         {teams.map((team, index) => (
-          <BestBallTeamCard
-            key={team.teamKey}
-            team={team}
-            rank={index + 1}
-          />
+          <BestBallTeamCard key={team.teamKey} team={team} rank={index + 1} />
         ))}
       </div>
     </div>
