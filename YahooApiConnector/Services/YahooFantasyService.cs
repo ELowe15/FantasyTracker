@@ -3,6 +3,8 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Text.Json;
+using System.Text.RegularExpressions;
+
 
 public class YahooFantasyService
 {
@@ -87,66 +89,60 @@ private double ComputeFantasyPoints(Dictionary<string, double> stats)
     return points;
 }
 
-public async Task WriteLeagueContextAsync(
-    int season,
-    int week,
-    string outputPath)
+public async Task WriteLeagueContextAsync(int season, int currentWeek, string outputDirectory)
 {
+    // Default to current directory if blank
+    if (string.IsNullOrWhiteSpace(outputDirectory))
+        outputDirectory = Directory.GetCurrentDirectory();
+
+    if (!Directory.Exists(outputDirectory))
+        Directory.CreateDirectory(outputDirectory);
+
+    var availableWeeks = GetAvailableWeeks(season, outputDirectory);
+
     var context = new LeagueContext
     {
         Season = season,
-        Week = week
+        CurrentWeek = currentWeek,
+        AvailableWeeks = availableWeeks
     };
 
-    var json = JsonSerializer.Serialize(
-        context,
-        new JsonSerializerOptions { WriteIndented = true });
+    var json = JsonSerializer.Serialize(context, new JsonSerializerOptions { WriteIndented = true });
+    var outputPath = Path.Combine(outputDirectory, "league_context.json");
 
     await File.WriteAllTextAsync(outputPath, json);
 }
 
-public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
-    string leagueKey,
-    bool DEBUG_STOP_AFTER_FIRST_TEAM = false)
+public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(string leagueKey, string outputDirectory, bool DEBUG_STOP_AFTER_FIRST_TEAM = false)
 {
-    var snapshot = new WeeklyLeagueSnapshot();
+    var snapshot = new WeeklyLeagueSnapshot
+    {
+        Season = await GetSeasonAsync(leagueKey)
+    };
 
-    // ---- Core metadata (fetched ONCE)
-    snapshot.Season = await GetSeasonAsync(leagueKey);
-
-    // Always resolve the LAST COMPLETED fantasy week
+    // Last completed fantasy week
     var effectiveDate = DateTime.UtcNow.Date.AddDays(-1);
     snapshot.Week = await GetWeekForDateAsync(leagueKey, effectiveDate);
 
-    var (weekStart, weekEnd) =
-        await GetWeekDateRangeAsync(leagueKey, snapshot.Week);
-
+    var (weekStart, weekEnd) = await GetWeekDateRangeAsync(leagueKey, snapshot.Week);
     snapshot.WeekStart = weekStart;
     snapshot.WeekEnd = weekEnd;
 
-    await WriteLeagueContextAsync(
-        snapshot.Season,
-        snapshot.Week,
-        "league_context.json"
-    );
+    // Write league context to correct folder
+    await WriteLeagueContextAsync(snapshot.Season, snapshot.Week, outputDirectory);
 
-    // ---- Teams
-    var teamsUrl =
-        $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams";
-
+    // Fetch teams
+    var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams";
     var teamsXml = await _client.GetStringAsync(teamsUrl);
     var teamsDoc = XDocument.Parse(teamsXml);
     XNamespace teamsNs = teamsDoc.Root.GetDefaultNamespace();
 
-    var teams = teamsDoc
-        .Descendants(teamsNs + "team")
+    var teams = teamsDoc.Descendants(teamsNs + "team")
         .Select(t => new
         {
             TeamKey = t.Element(teamsNs + "team_key")?.Value,
             ManagerName = t.Descendants(teamsNs + "manager")
-                           .FirstOrDefault()?
-                           .Element(teamsNs + "nickname")?.Value
-                           ?? "Unknown"
+                           .FirstOrDefault()?.Element(teamsNs + "nickname")?.Value ?? "Unknown"
         })
         .Where(t => !string.IsNullOrEmpty(t.TeamKey))
         .ToList();
@@ -155,8 +151,7 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
 
     foreach (var team in teams)
     {
-        Console.WriteLine(
-            $"\nFetching WEEK {snapshot.Week} stats for {team.ManagerName}");
+        Console.WriteLine($"\nFetching WEEK {snapshot.Week} stats for {team.ManagerName}");
 
         var teamResult = new WeeklyTeamResult
         {
@@ -166,9 +161,7 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
             Players = new List<WeeklyPlayerStats>()
         };
 
-        var statsUrl =
-            $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/players/stats;type=week;week={snapshot.Week}";
-
+        var statsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/players/stats;type=week;week={snapshot.Week}";
         var statsXml = await _client.GetStringAsync(statsUrl);
         var statsDoc = XDocument.Parse(statsXml);
         XNamespace ns = statsDoc.Root.GetDefaultNamespace();
@@ -187,18 +180,11 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
             foreach (var s in p.Descendants(ns + "stat"))
             {
                 var statId = s.Element(ns + "stat_id")?.Value;
-                var valStr = s.Element(ns + "value")?.Value;
-
-                if (!string.IsNullOrEmpty(statId) &&
-                    double.TryParse(valStr, out double val))
-                {
+                if (!string.IsNullOrEmpty(statId) && double.TryParse(s.Element(ns + "value")?.Value, out double val))
                     player.RawStats[statId] = val;
-                }
             }
 
-            player.FantasyPoints =
-                ComputeFantasyPoints(player.RawStats);
-
+            player.FantasyPoints = ComputeFantasyPoints(player.RawStats);
             teamResult.Players.Add(player);
         }
 
@@ -211,6 +197,27 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
     return snapshot;
 }
 
+private List<int> GetAvailableWeeks(int season, string directoryPath)
+{
+    if (string.IsNullOrWhiteSpace(directoryPath))
+        directoryPath = Directory.GetCurrentDirectory();
+
+    if (!Directory.Exists(directoryPath))
+        return new List<int>();
+
+    var files = Directory.GetFiles(directoryPath, $"best_ball_{season}_week_*.json", SearchOption.TopDirectoryOnly);
+
+    return files.Select(f =>
+    {
+        var match = Regex.Match(Path.GetFileName(f), $@"best_ball_{season}_week_(\d+)\.json");
+        return match.Success ? int.Parse(match.Groups[1].Value) : (int?)null;
+    })
+    .Where(w => w.HasValue)
+    .Select(w => w!.Value)
+    .Distinct()
+    .OrderBy(w => w)
+    .ToList();
+}
 
 public async Task<int> GetWeekForDateAsync(string leagueKey, DateTime date)
 {

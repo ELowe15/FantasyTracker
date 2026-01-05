@@ -84,7 +84,7 @@ class Program
 
         try
         {
-            var snapshot = await fantasyService.GetWeeklyTeamResultsAsync(leagueKey);
+            var snapshot = await fantasyService.GetWeeklyTeamResultsAsync(leagueKey, basePath);
 
 // Run Best Ball using the teams inside the snapshot
 bestBallService.ProcessWeeklyBestBall(snapshot.Teams);
