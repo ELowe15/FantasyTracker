@@ -86,6 +86,25 @@ private double ComputeFantasyPoints(Dictionary<string, double> stats)
 
     return points;
 }
+
+public async Task WriteLeagueContextAsync(
+    int season,
+    int week,
+    string outputPath)
+{
+    var context = new LeagueContext
+    {
+        Season = season,
+        Week = week
+    };
+
+    var json = JsonSerializer.Serialize(
+        context,
+        new JsonSerializerOptions { WriteIndented = true });
+
+    await File.WriteAllTextAsync(outputPath, json);
+}
+
 public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
     string leagueKey,
     bool DEBUG_STOP_AFTER_FIRST_TEAM = false)
@@ -94,13 +113,22 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
 
     // ---- Core metadata (fetched ONCE)
     snapshot.Season = await GetSeasonAsync(leagueKey);
-    snapshot.Week = await GetCurrentWeekAsync(leagueKey);
+
+    // Always resolve the LAST COMPLETED fantasy week
+    var effectiveDate = DateTime.UtcNow.Date.AddDays(-1);
+    snapshot.Week = await GetWeekForDateAsync(leagueKey, effectiveDate);
 
     var (weekStart, weekEnd) =
         await GetWeekDateRangeAsync(leagueKey, snapshot.Week);
 
     snapshot.WeekStart = weekStart;
     snapshot.WeekEnd = weekEnd;
+
+    await WriteLeagueContextAsync(
+        snapshot.Season,
+        snapshot.Week,
+        "league_context.json"
+    );
 
     // ---- Teams
     var teamsUrl =
@@ -181,6 +209,24 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
     }
 
     return snapshot;
+}
+
+
+public async Task<int> GetWeekForDateAsync(string leagueKey, DateTime date)
+{
+    int currentWeek = await GetCurrentWeekAsync(leagueKey);
+
+    // Check current and previous week only (cheap & safe)
+    for (int w = currentWeek; w >= Math.Max(1, currentWeek - 1); w--)
+    {
+        var (start, end) = await GetWeekDateRangeAsync(leagueKey, w);
+
+        if (date.Date >= start.Date && date.Date <= end.Date)
+            return w;
+    }
+
+    // Fallback: assume last completed week
+    return Math.Max(1, currentWeek - 1);
 }
 
 
