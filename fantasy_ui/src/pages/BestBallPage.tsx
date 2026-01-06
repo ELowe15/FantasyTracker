@@ -27,7 +27,7 @@ export default function BestBallPage() {
   const [availableWeeks, setAvailableWeeks] = useState<number[]>([]);
 
   // -------------------------------
-  // Load lead context (once)
+  // Load league context (once)
   // -------------------------------
   useEffect(() => {
     async function loadContextAndWeeks() {
@@ -40,7 +40,6 @@ export default function BestBallPage() {
 
         const context: BestBallContext = await res.json();
 
-        // Validate keys exist
         if (
           !context.Season ||
           !context.CurrentWeek ||
@@ -50,10 +49,9 @@ export default function BestBallPage() {
           throw new Error("Invalid best ball context format");
         }
 
-        // Map backend PascalCase to frontend camelCase state
         setSeason(context.Season);
         setAvailableWeeks(context.AvailableWeeks);
-        setWeek(context.CurrentWeek); // default to most recent week
+        setWeek(context.CurrentWeek);
       } catch (err) {
         console.error(err);
         setError("No best ball data found");
@@ -84,7 +82,6 @@ export default function BestBallPage() {
 
         const data = await res.json();
 
-        // Validate Teams array
         if (!data.Teams || !Array.isArray(data.Teams)) {
           throw new Error("Invalid JSON format: 'Teams' array not found");
         }
@@ -135,6 +132,15 @@ export default function BestBallPage() {
   }, [season, week, viewMode]);
 
   // -------------------------------
+  // Derived week navigation state
+  // -------------------------------
+  const currentWeekIndex = availableWeeks.indexOf(week ?? -1);
+  const hasPrevWeek = currentWeekIndex > 0;
+  const hasNextWeek =
+    currentWeekIndex !== -1 &&
+    currentWeekIndex < availableWeeks.length - 1;
+
+  // -------------------------------
   // UI STATES
   // -------------------------------
   if (error) {
@@ -159,18 +165,15 @@ export default function BestBallPage() {
         {/* Header */}
         <div className="flex flex-col gap-4 mb-6">
           <h1 className="text-3xl font-bold text-center text-white tracking-wide">
-            {viewMode === "WEEKLY"
-              ? `Week ${week} Best Ball Standings`
-              : "Season Best Ball Standings"}
+            {"Standings"}
           </h1>
 
-          {/* Controls */}
-          <div className="flex justify-center gap-4 flex-wrap">
-            {/* View Toggle */}
+          {/* View Toggle (always centered) */}
+          <div className="flex justify-center">
             <div className="flex rounded-lg overflow-hidden border border-slate-600">
               <button
                 onClick={() => setViewMode("WEEKLY")}
-                className={`px-4 py-1 text-sm ${
+                className={`px-5 py-1.5 text-sm ${
                   viewMode === "WEEKLY"
                     ? "bg-cyan-500 text-black"
                     : "bg-slate-800 text-gray-300"
@@ -180,7 +183,7 @@ export default function BestBallPage() {
               </button>
               <button
                 onClick={() => setViewMode("SEASON")}
-                className={`px-4 py-1 text-sm ${
+                className={`px-5 py-1.5 text-sm ${
                   viewMode === "SEASON"
                     ? "bg-cyan-500 text-black"
                     : "bg-slate-800 text-gray-300"
@@ -189,22 +192,68 @@ export default function BestBallPage() {
                 Season
               </button>
             </div>
-
-            {/* Week Selector */}
-            {viewMode === "WEEKLY" && (
-              <select
-                value={week}
-                onChange={(e) => setWeek(Number(e.target.value))}
-                className="bg-slate-800 text-white text-sm px-3 py-1 rounded border border-slate-600"
-              >
-                {availableWeeks.map((w) => (
-                  <option key={w} value={w}>
-                    Week {w}
-                  </option>
-                ))}
-              </select>
-            )}
           </div>
+
+         {viewMode === "WEEKLY" && (
+  <div className="flex justify-center items-center gap-1">
+    {/* Previous Week */}
+    <button
+      disabled={!hasPrevWeek}
+      onClick={() =>
+        hasPrevWeek &&
+        setWeek(availableWeeks[currentWeekIndex - 1])
+      }
+      className={`text-lg px-1 ${
+        hasPrevWeek
+          ? "text-white hover:text-cyan-400"
+          : "text-gray-600 cursor-not-allowed"
+      }`}
+      aria-label="Previous week"
+    >
+      &lt;
+    </button>
+
+    {/* Dropdown (smaller) */}
+    <select
+      value={week}
+      onChange={(e) => setWeek(Number(e.target.value))}
+      className="
+        bg-slate-800
+        text-white
+        text-xs
+        px-2
+        py-1
+        rounded
+        border border-slate-600
+        w-18
+        text-center
+      "
+    >
+      {availableWeeks.map((w) => (
+        <option key={w} value={w}>
+          Week {w}
+        </option>
+      ))}
+    </select>
+
+    {/* Next Week */}
+    <button
+      disabled={!hasNextWeek}
+      onClick={() =>
+        hasNextWeek &&
+        setWeek(availableWeeks[currentWeekIndex + 1])
+      }
+      className={`text-lg px-1 ${
+        hasNextWeek
+          ? "text-white hover:text-cyan-400"
+          : "text-gray-600 cursor-not-allowed"
+      }`}
+      aria-label="Next week"
+    >
+      &gt;
+    </button>
+  </div>
+)}
         </div>
 
         {/* Content */}

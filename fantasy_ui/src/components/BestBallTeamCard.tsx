@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { BestBallTeam, BestBallPlayer } from "../models/League";
+import { useState, Fragment } from "react";
 
 interface Props {
   team: BestBallTeam;
@@ -73,7 +73,7 @@ export default function BestBallTeamCard({ team, rank }: Props) {
         <div className="px-2 pb-2">
           <table className="w-full text-xs text-left border-t border-slate-700 mt-1">
             <thead>
-              <tr className="text-cyan-400 text-[10px]">
+              <tr className="text-cyan-400 text-center text-[10px]">
                 <th className="py-1">POS</th>
                 <th>FPTS</th>
                 <th>PLAYER</th>
@@ -86,40 +86,75 @@ export default function BestBallTeamCard({ team, rank }: Props) {
               </tr>
             </thead>
             <tbody>
-              {sortedPlayers.map((p: BestBallPlayer) => {
+              <tr>
+                <td colSpan={9} className="py-1">
+                  <div className="flex items-center gap-3">
+                    <div className="flex-1 border-t border-slate-700" />
+                    <span className="text-xs uppercase tracking-wider text-gray-400">
+                      Active Lineup
+                    </span>
+                    <div className="flex-1 border-t border-slate-700" />
+                  </div>
+                </td>
+              </tr>
+              {sortedPlayers.map((p: BestBallPlayer, index) => {
                 const rawSlot =
                   p.bestBallSlot?.startsWith("UTIL") ? "UTIL" : p.bestBallSlot;
                 const isBench = rawSlot === "Bench";
 
+                const prevPlayer = sortedPlayers[index - 1];
+                const prevWasBench =
+                  prevPlayer &&
+                  (prevPlayer.bestBallSlot === "Bench" ||
+                    prevPlayer.bestBallSlot === undefined);
+
+                const showBenchSeparator = isBench && !prevWasBench;
+
                 return (
-                  <tr
-                    key={p.playerKey}
-                    className={`border-t border-slate-700 ${
-                      isBench ? "bg-slate-900" : ""
-                    }`}
-                  >
-                    <td className="py-1 text-cyan-400 font-semibold">
-                      {rawSlot === "Bench" ? "BN" : rawSlot}
-                    </td>
-                    <td className="text-amber-300">
-                      {p.fantasyPoints.toFixed(1)}
-                    </td>
-                    <td className="text-white truncate max-w-[110px]">
-                      {p.fullName}
-                    </td>
-                    <td className="text-white">{p.rawStats.points}</td>
-                    <td className="text-white">{p.rawStats.rebounds}</td>
-                    <td className="text-white">{p.rawStats.assists}</td>
-                    <td className="text-white">{p.rawStats.steals}</td>
-                    <td className="text-white">{p.rawStats.blocks}</td>
-                    <td className="text-white">{p.rawStats.turnovers}</td>
-                  </tr>
+                  <Fragment key={p.playerKey}>
+                    {showBenchSeparator && (
+                      <tr>
+                        <td colSpan={9} className="py-1 bg-slate-900">
+                          <div className="flex items-center gap-3">
+                            <div className="flex-1 border-t border-slate-700" />
+                            <span className="text-xs uppercase tracking-wider text-gray-500">
+                              Bench
+                            </span>
+                            <div className="flex-1 border-t border-slate-700" />
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+
+                    <tr
+                      className={`border-t border-slate-700 text-white ${
+                        isBench ? "bg-slate-900 text-gray-400" : ""
+                      }`}
+                    >
+                      <td className="py-1 text-cyan-400 font-semibold">
+                        {isBench ? "BN" : rawSlot}
+                      </td>
+                      <td className="text-amber-300">
+                        {p.fantasyPoints.toFixed(1)}
+                      </td>
+                      <td className="text-white truncate max-w-[110px]">
+                        {p.fullName}
+                      </td>
+                      <td>{p.rawStats.points}</td>
+                      <td>{p.rawStats.rebounds}</td>
+                      <td>{p.rawStats.assists}</td>
+                      <td>{p.rawStats.steals}</td>
+                      <td>{p.rawStats.blocks}</td>
+                      <td>{p.rawStats.turnovers}</td>
+                    </tr>
+                  </Fragment>
                 );
               })}
-            </tbody>
+              </tbody>
           </table>
         </div>
       )}
     </div>
   );
 }
+
