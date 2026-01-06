@@ -2,23 +2,89 @@ import { useEffect, useState } from "react";
 import { BestBallTeam, BestBallPlayer } from "../models/League";
 import BestBallTeamCard from "../components/BestBallTeamCard";
 
-const DATA_URL =
-  "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/YahooApiConnector/best_ball_2025_week_11.json";
+// ---- CONFIG ----
+const BASE_URL =
+  "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/YahooApiConnector";
+
+type ViewMode = "WEEKLY" | "SEASON";
+
+// Match backend PascalCase keys
+type BestBallContext = {
+  Season: number;
+  CurrentWeek: number;
+  AvailableWeeks: number[];
+};
 
 export default function BestBallPage() {
   const [teams, setTeams] = useState<BestBallTeam[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
+  const [viewMode, setViewMode] = useState<ViewMode>("WEEKLY");
+
+  const [season, setSeason] = useState<number | null>(null);
+  const [week, setWeek] = useState<number | null>(null);
+  const [availableWeeks, setAvailableWeeks] = useState<number[]>([]);
+
+  // -------------------------------
+  // Load lead context (once)
+  // -------------------------------
   useEffect(() => {
-    async function loadData() {
+    async function loadContextAndWeeks() {
       try {
-        const res = await fetch(DATA_URL);
-        if (!res.ok)
-          throw new Error(`Failed to fetch best ball data: ${res.status}`);
+        const res = await fetch(`${BASE_URL}/league_context.json`);
+
+        if (!res.ok) {
+          throw new Error("Failed to load best ball context");
+        }
+
+        const context: BestBallContext = await res.json();
+
+        // Validate keys exist
+        if (
+          !context.Season ||
+          !context.CurrentWeek ||
+          !Array.isArray(context.AvailableWeeks) ||
+          context.AvailableWeeks.length === 0
+        ) {
+          throw new Error("Invalid best ball context format");
+        }
+
+        // Map backend PascalCase to frontend camelCase state
+        setSeason(context.Season);
+        setAvailableWeeks(context.AvailableWeeks);
+        setWeek(context.CurrentWeek); // default to most recent week
+      } catch (err) {
+        console.error(err);
+        setError("No best ball data found");
+      }
+    }
+
+    loadContextAndWeeks();
+  }, []);
+
+  // -------------------------------
+  // Load weekly best ball data
+  // -------------------------------
+  useEffect(() => {
+    if (viewMode !== "WEEKLY" || !season || !week) return;
+
+    async function loadWeeklyData() {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const res = await fetch(
+          `${BASE_URL}/best_ball_${season}_week_${week}.json`
+        );
+
+        if (!res.ok) {
+          throw new Error(`Failed to fetch week ${week}`);
+        }
 
         const data = await res.json();
 
-        // ✅ Fix: map over data.Teams, not data
+        // Validate Teams array
         if (!data.Teams || !Array.isArray(data.Teams)) {
           throw new Error("Invalid JSON format: 'Teams' array not found");
         }
@@ -54,19 +120,23 @@ export default function BestBallPage() {
           } as BestBallTeam;
         });
 
-        // Sort by total best ball points descending
         mapped.sort((a, b) => b.totalFantasyPoints - a.totalFantasyPoints);
-
         setTeams(mapped);
       } catch (err) {
-        console.error("Error loading best ball results:", err);
+        console.error(err);
         setError("Failed to load best ball results.");
+        setTeams(null);
+      } finally {
+        setLoading(false);
       }
     }
 
-    loadData();
-  }, []);
+    loadWeeklyData();
+  }, [season, week, viewMode]);
 
+  // -------------------------------
+  // UI STATES
+  // -------------------------------
   if (error) {
     return (
       <div className="flex justify-center items-center h-screen text-red-400">
@@ -75,7 +145,7 @@ export default function BestBallPage() {
     );
   }
 
-  if (!teams) {
+  if (loading || !teams || week === null) {
     return (
       <div className="flex justify-center items-center h-screen text-gray-400">
         Loading best ball results...
@@ -86,13 +156,71 @@ export default function BestBallPage() {
   return (
     <div className="min-h-screen bg-slate-900">
       <div className="max-w-3xl mx-auto p-4">
-        <h1 className="text-3xl font-bold text-center mb-6 text-white tracking-wide">
-          Weekly Best Ball Standings
-        </h1>
+        {/* Header */}
+        <div className="flex flex-col gap-4 mb-6">
+          <h1 className="text-3xl font-bold text-center text-white tracking-wide">
+            {viewMode === "WEEKLY"
+              ? `Week ${week} Best Ball Standings`
+              : "Season Best Ball Standings"}
+          </h1>
 
-        {teams.map((team, index) => (
-          <BestBallTeamCard key={team.teamKey} team={team} rank={index + 1} />
-        ))}
+          {/* Controls */}
+          <div className="flex justify-center gap-4 flex-wrap">
+            {/* View Toggle */}
+            <div className="flex rounded-lg overflow-hidden border border-slate-600">
+              <button
+                onClick={() => setViewMode("WEEKLY")}
+                className={`px-4 py-1 text-sm ${
+                  viewMode === "WEEKLY"
+                    ? "bg-cyan-500 text-black"
+                    : "bg-slate-800 text-gray-300"
+                }`}
+              >
+                Weekly
+              </button>
+              <button
+                onClick={() => setViewMode("SEASON")}
+                className={`px-4 py-1 text-sm ${
+                  viewMode === "SEASON"
+                    ? "bg-cyan-500 text-black"
+                    : "bg-slate-800 text-gray-300"
+                }`}
+              >
+                Season
+              </button>
+            </div>
+
+            {/* Week Selector */}
+            {viewMode === "WEEKLY" && (
+              <select
+                value={week}
+                onChange={(e) => setWeek(Number(e.target.value))}
+                className="bg-slate-800 text-white text-sm px-3 py-1 rounded border border-slate-600"
+              >
+                {availableWeeks.map((w) => (
+                  <option key={w} value={w}>
+                    Week {w}
+                  </option>
+                ))}
+              </select>
+            )}
+          </div>
+        </div>
+
+        {/* Content */}
+        {viewMode === "SEASON" ? (
+          <div className="text-center text-gray-400 mt-12">
+            Season-long best ball standings coming soon.
+          </div>
+        ) : (
+          teams.map((team, index) => (
+            <BestBallTeamCard
+              key={`${team.teamKey}-${week}`}
+              team={team}
+              rank={index + 1}
+            />
+          ))
+        )}
       </div>
     </div>
   );

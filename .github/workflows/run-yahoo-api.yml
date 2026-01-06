@@ -76,14 +76,19 @@ jobs:
           git config user.email "actions@github.com"
           echo "=== git status ==="
           git status --porcelain
-          # Stage the expected path (keeps current behavior)
-          git add YahooApiConnector/team_results.json || true
+
+          # Stage ALL JSON files in the directory
+          git add YahooApiConnector/*.json || true
+
           echo "=== Staged files ==="
           git diff --cached --name-only || true
+
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-          git commit -m "Update team_results.json [skip ci]"
+
+          git commit -m "Update Yahoo JSON files [skip ci]"
           echo "Pushing to main..."
           git push origin HEAD:main
+
