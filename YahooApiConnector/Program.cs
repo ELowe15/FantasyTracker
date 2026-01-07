@@ -86,26 +86,30 @@ class Program
         {
             var snapshot = await fantasyService.GetWeeklyTeamResultsAsync(leagueKey, basePath);
 
-// Run Best Ball using the teams inside the snapshot
-bestBallService.ProcessWeeklyBestBall(snapshot.Teams);
+            // Run Best Ball using the teams inside the snapshot
+            bestBallService.ProcessWeeklyBestBall(snapshot.Teams);
 
-// Build filename using SEASON + WEEK
-var fileName = $"best_ball_{snapshot.Season}_week_{snapshot.Week}.json";
-var outPath = Path.Combine(basePath, fileName);
+            // Build filename using SEASON + WEEK
+            var fileName = $"best_ball_{snapshot.Season}_week_{snapshot.Week}.json";
+            var outPath = Path.Combine(basePath, fileName);
 
-// Serialize the ENTIRE snapshot (not just teams)
-var json = System.Text.Json.JsonSerializer.Serialize(
-    snapshot,
-    new System.Text.Json.JsonSerializerOptions
-    {
-        WriteIndented = true
-    });
+            // Serialize the ENTIRE snapshot (not just teams)
+            var json = System.Text.Json.JsonSerializer.Serialize(
+                snapshot,
+                new System.Text.Json.JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
 
-await File.WriteAllTextAsync(outPath, json);
+            await File.WriteAllTextAsync(outPath, json);
 
-Console.WriteLine(
-    $"Best Ball weekly results saved to {outPath}");
+            Console.WriteLine(
+                $"Best Ball weekly results saved to {outPath}");
 
+            await bestBallService.RebuildSeasonBestBallAsync(snapshot.Season, basePath);
+
+            Console.WriteLine(
+                $"Season Best Ball snapshot rebuilt for season {snapshot.Season}");
         }
         catch (Exception ex)
         {
