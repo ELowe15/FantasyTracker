@@ -15,6 +15,17 @@ type BestBallContext = {
   AvailableWeeks: number[];
 };
 
+type SeasonBestBallTeam = {
+  TeamKey: string;
+  ManagerName: string;
+  WeeksPlayed: number;
+  SeasonTotalBestBallPoints: number;
+  AverageWeeklyBestBallPoints: number;
+  BestWeekScore: number;
+  WorstWeekScore: number;
+};
+
+
 export default function BestBallPage() {
   const [teams, setTeams] = useState<BestBallTeam[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -25,6 +36,8 @@ export default function BestBallPage() {
   const [season, setSeason] = useState<number | null>(null);
   const [week, setWeek] = useState<number | null>(null);
   const [availableWeeks, setAvailableWeeks] = useState<number[]>([]);
+  const [seasonTeams, setSeasonTeams] = useState<SeasonBestBallTeam[] | null>(null);
+
 
   // -------------------------------
   // Load league context (once)
@@ -60,6 +73,59 @@ export default function BestBallPage() {
 
     loadContextAndWeeks();
   }, []);
+
+  useEffect(() => {
+  if (viewMode !== "SEASON" || !season) return;
+
+  async function loadSeasonData() {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch(
+        `${BASE_URL}/season_best_ball_${season}.json`
+      );
+
+      if (!res.ok) {
+        throw new Error("Failed to load season data");
+      }
+
+      const data = await res.json();
+
+      if (!Array.isArray(data.Teams)) {
+        throw new Error("Invalid season JSON format");
+      }
+
+      const mapped = data.Teams.map((t: any) => {
+        let name = t.ManagerName;
+        if (name === "evan") name = "EFry";
+        if (name === "Evan") name = "ELowe";
+
+        return {
+          ...t,
+          ManagerName: name,
+        } as SeasonBestBallTeam;
+      });
+
+      mapped.sort(
+  (a: SeasonBestBallTeam, b: SeasonBestBallTeam) =>
+    b.SeasonTotalBestBallPoints - a.SeasonTotalBestBallPoints
+);
+
+
+      setSeasonTeams(mapped);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load season standings.");
+      setSeasonTeams(null);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  loadSeasonData();
+}, [season, viewMode]);
+
 
   // -------------------------------
   // Load weekly best ball data
@@ -257,20 +323,97 @@ export default function BestBallPage() {
         </div>
 
         {/* Content */}
-        {viewMode === "SEASON" ? (
-          <div className="text-center text-gray-400 mt-12">
-            Season-long best ball standings coming soon.
+{viewMode === "SEASON" ? (
+  <div className="flex flex-col gap-2">
+    {seasonTeams?.map((team, index) => {
+      const rank = index + 1;
+      const ordinal = toOrdinal(rank);
+
+      const rankColor =
+        rank === 1
+          ? "text-yellow-400"
+          : rank === 2
+          ? "text-gray-300"
+          : rank === 3
+          ? "text-orange-400"
+          : "text-gray-400";
+
+      const highlight =
+        rank === 1
+          ? "border-yellow-400 bg-yellow-400/10"
+          : rank === 2
+          ? "border-gray-300 bg-gray-300/10"
+          : rank === 3
+          ? "border-orange-400 bg-orange-400/10"
+          : "border-slate-700";
+
+      return (
+        <div
+          key={team.TeamKey}
+          className={`flex items-center justify-between rounded-md border px-3 py-2 ${highlight}`}
+        >
+          {/* Left side */}
+          <div className="flex items-center gap-3">
+            <span className={`text-xs w-12 ${rankColor}`}>
+              {ordinal}
+            </span>
+
+            <span className="text-white font-medium">
+              {team.ManagerName}
+            </span>
           </div>
-        ) : (
-          teams.map((team, index) => (
-            <BestBallTeamCard
-              key={`${team.teamKey}-${week}`}
-              team={team}
-              rank={index + 1}
-            />
-          ))
-        )}
+
+          {/* Stats (left-aligned column style) */}
+          <div className="flex items-center text-xs text-white text-left">
+  <span className="w-28">
+    Best:&nbsp;
+    <span className="text-orange-300">
+      {team.BestWeekScore.toFixed(1)}
+    </span>
+  </span>
+
+  <span className="w-32">
+    Worst:&nbsp;
+    <span className="text-orange-300">
+      {team.WorstWeekScore.toFixed(1)}
+    </span>
+  </span>
+
+  <span className="w-44 text-white font-semibold text-sm">
+    Total Points:&nbsp;
+    <span className="text-orange-300">
+      {team.SeasonTotalBestBallPoints.toFixed(1)}
+    </span>
+  </span>
+</div>
+        </div>
+      );
+    })}
+  </div>
+) : (
+  teams.map((team, index) => (
+    <BestBallTeamCard
+      key={`${team.teamKey}-${week}`}
+      team={team}
+      rank={index + 1}
+    />
+  ))
+)}
+
+
+
       </div>
     </div>
   );
 }
+
+function toOrdinal(n: number): string {
+  const mod10 = n % 10;
+  const mod100 = n % 100;
+
+  if (mod10 === 1 && mod100 !== 11) return `${n}st`;
+  if (mod10 === 2 && mod100 !== 12) return `${n}nd`;
+  if (mod10 === 3 && mod100 !== 13) return `${n}rd`;
+  return `${n}th`;
+}
+
