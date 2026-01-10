@@ -143,7 +143,8 @@ public class BestBallService
     if (weeklyFiles.Count == 0)
         return;
 
-    var teamWeekMap = new Dictionary<string, List<double>>();
+
+    var teamWeekMap = new Dictionary<string, List<(int Week, double Score)>>();
     var teamNameMap = new Dictionary<string, string>();
     var weeksIncluded = new HashSet<int>();
 
@@ -160,14 +161,18 @@ public class BestBallService
         foreach (var team in snapshot.Teams)
         {
             if (!teamWeekMap.ContainsKey(team.TeamKey))
-                teamWeekMap[team.TeamKey] = new List<double>();
+                teamWeekMap[team.TeamKey] = new List<(int Week, double Score)>();
+                
+            teamWeekMap[team.TeamKey].Add(
+                (snapshot.Week, team.TotalBestBallPoints)
+            );
 
-            teamWeekMap[team.TeamKey].Add(team.TotalBestBallPoints);
 
             if (!teamNameMap.ContainsKey(team.TeamKey))
                 teamNameMap[team.TeamKey] = team.ManagerName;
         }
     }
+    var latestWeek = weeksIncluded.Max();
 
     var seasonSnapshot = new SeasonBestBallSnapshot
     {
@@ -177,23 +182,37 @@ public class BestBallService
     };
 
     foreach (var kv in teamWeekMap)
+{
+    var allWeeks = kv.Value;
+
+    var completedWeeks = allWeeks
+        .Where(w => w.Week != latestWeek)
+        .Select(w => w.Score)
+        .ToList();
+
+    var allScores = allWeeks.Select(w => w.Score).ToList();
+
+    var team = new SeasonBestBallTeam
     {
-        var weekScores = kv.Value;
+        TeamKey = kv.Key,
+        ManagerName = teamNameMap[kv.Key],
 
-        var team = new SeasonBestBallTeam
-        {
-            TeamKey = kv.Key,
-            ManagerName = teamNameMap[kv.Key],
+        WeeksPlayed = allScores.Count,
+        SeasonTotalBestBallPoints = allScores.Sum(),
+        AverageWeeklyBestBallPoints = allScores.Average(),
 
-            WeeksPlayed = weekScores.Count,
-            SeasonTotalBestBallPoints = weekScores.Sum(),
-            AverageWeeklyBestBallPoints = weekScores.Average(),
-            BestWeekScore = weekScores.Max(),
-            WorstWeekScore = weekScores.Min()
-        };
+        // Only compute these if at least 1 completed week exists
+        BestWeekScore = completedWeeks.Any()
+            ? completedWeeks.Max()
+            : 0,
 
-        seasonSnapshot.Teams.Add(team);
-    }
+        WorstWeekScore = completedWeeks.Any()
+            ? completedWeeks.Min()
+            : 0
+    };
+
+    seasonSnapshot.Teams.Add(team);
+}
 
     // Sort by season total descending
     seasonSnapshot.Teams = seasonSnapshot.Teams

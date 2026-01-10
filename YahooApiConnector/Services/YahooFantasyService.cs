@@ -16,6 +16,9 @@ public class YahooFantasyService
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
     }
 
+    
+    
+
 public async Task<Dictionary<string, string>> GetLeagueStatMapAsync(string leagueKey)
 {
     var url = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/settings";
@@ -113,20 +116,21 @@ public async Task WriteLeagueContextAsync(int season, int currentWeek, string ou
     await File.WriteAllTextAsync(outputPath, json);
 }
 
-public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(string leagueKey, string outputDirectory, bool DEBUG_STOP_AFTER_FIRST_TEAM = false)
+public async Task<WeeklyLeagueSnapshot> GetDailyTeamResultsAsync(
+    string leagueKey,
+    string outputDirectory,
+    bool DEBUG_STOP_AFTER_FIRST_TEAM = false)
 {
     var snapshot = new WeeklyLeagueSnapshot
     {
         Season = await GetSeasonAsync(leagueKey)
     };
 
-    // Last completed fantasy week
+    // Yesterday's date
     var effectiveDate = DateTime.UtcNow.Date.AddDays(-1);
     snapshot.Week = await GetWeekForDateAsync(leagueKey, effectiveDate);
-
-    var (weekStart, weekEnd) = await GetWeekDateRangeAsync(leagueKey, snapshot.Week);
-    snapshot.WeekStart = weekStart;
-    snapshot.WeekEnd = weekEnd;
+    snapshot.WeekStart = effectiveDate;
+    snapshot.WeekEnd = effectiveDate;
 
     // Write league context to correct folder
     await WriteLeagueContextAsync(snapshot.Season, snapshot.Week, outputDirectory);
@@ -151,7 +155,7 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(string leagueK
 
     foreach (var team in teams)
     {
-        Console.WriteLine($"\nFetching WEEK {snapshot.Week} stats for {team.ManagerName}");
+        Console.WriteLine($"\nFetching DAILY stats for {team.ManagerName}");
 
         var teamResult = new WeeklyTeamResult
         {
@@ -161,7 +165,16 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(string leagueK
             Players = new List<WeeklyPlayerStats>()
         };
 
-        var statsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/players/stats;type=week;week={snapshot.Week}";
+        // --- Daily stats URL ---
+        // type=date ensures we get stats for a single day (yesterday)
+        var statsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/players/stats;type=date;date={effectiveDate:yyyy-MM-dd}";
+        
+        // Set Accept header for XML (prevents 406 errors)
+        _client.DefaultRequestHeaders.Accept.Clear();
+        _client.DefaultRequestHeaders.Accept.Add(
+            new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/xml")
+        );
+
         var statsXml = await _client.GetStringAsync(statsUrl);
         var statsDoc = XDocument.Parse(statsXml);
         XNamespace ns = statsDoc.Root.GetDefaultNamespace();
@@ -196,6 +209,8 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(string leagueK
 
     return snapshot;
 }
+
+
 
 private List<int> GetAvailableWeeks(int season, string directoryPath)
 {

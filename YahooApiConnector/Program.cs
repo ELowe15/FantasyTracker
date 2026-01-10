@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
+using System.Text.Json;
 
 class Program
 {
@@ -70,11 +71,6 @@ class Program
             // 1. Dump rosters
             await fantasyService.DumpAllTeamRostersToJsonAsync(leagueKey, RosterOutPath);
             Console.WriteLine($"Wrote team rosters to {RosterOutPath}");
-
-            /* 2. Dump weekly stats
-            var statsOutPath = Path.Combine(basePath, "weekly_stats.json");
-            await fantasyService.DumpWeeklyStatsToJsonAsync(leagueKey, statsOutPath);
-            Console.WriteLine($"Wrote weekly stats to {statsOutPath}");*/
         }
         catch (Exception ex)
         {
@@ -83,39 +79,89 @@ class Program
         }
 
         try
-        {
-            var snapshot = await fantasyService.GetWeeklyTeamResultsAsync(leagueKey, basePath);
+{
+    // -------------------------
+    // DAILY SNAPSHOT (Best Ball)
+    // -------------------------
+    var snapshot = await fantasyService.GetDailyTeamResultsAsync(
+        leagueKey,
+        basePath
+    );
 
-            // Run Best Ball using the teams inside the snapshot
-            bestBallService.ProcessWeeklyBestBall(snapshot.Teams);
+    // Run Best Ball
+    bestBallService.ProcessWeeklyBestBall(snapshot.Teams);
 
-            // Build filename using SEASON + WEEK
-            var fileName = $"best_ball_{snapshot.Season}_week_{snapshot.Week}.json";
-            var outPath = Path.Combine(basePath, fileName);
+    var bestBallFileName =
+        $"best_ball_{snapshot.Season}_week_{snapshot.Week}.json";
 
-            // Serialize the ENTIRE snapshot (not just teams)
-            var json = System.Text.Json.JsonSerializer.Serialize(
-                snapshot,
-                new System.Text.Json.JsonSerializerOptions
-                {
-                    WriteIndented = true
-                });
+    var bestBallOutPath =
+        Path.Combine(basePath, bestBallFileName);
 
-            await File.WriteAllTextAsync(outPath, json);
+    var bestBallJson =
+        JsonSerializer.Serialize(
+            snapshot,
+            new JsonSerializerOptions { WriteIndented = true }
+        );
 
-            Console.WriteLine(
-                $"Best Ball weekly results saved to {outPath}");
+    await File.WriteAllTextAsync(bestBallOutPath, bestBallJson);
 
-            await bestBallService.RebuildSeasonBestBallAsync(snapshot.Season, basePath);
+    Console.WriteLine(
+        $"Best Ball weekly results saved to {bestBallOutPath}"
+    );
 
-            Console.WriteLine(
-                $"Season Best Ball snapshot rebuilt for season {snapshot.Season}");
-        }
-        catch (Exception ex)
-        {
-            Console.Error.WriteLine("Error processing Best Ball: " + ex.Message);
-            return 5;
-        }
+    await bestBallService.RebuildSeasonBestBallAsync(
+        snapshot.Season,
+        basePath
+    );
+
+    Console.WriteLine(
+        $"Season Best Ball snapshot rebuilt for season {snapshot.Season}"
+    );
+
+    // -------------------------
+    // WEEKLY TEAM STATS
+    // -------------------------
+    var weeklyStats =
+        await fantasyService.GetWeeklyTeamStatsAsync(leagueKey);
+
+    var roundRobinResults =
+        RoundRobinService.RunRoundRobin(weeklyStats);
+
+    // Build WEEKLY SNAPSHOT (explicit, clean)
+    var weeklySnapshot = new WeeklyStatsSnapshot
+    {
+        Season = snapshot.Season,
+        Week = snapshot.Week,
+        Teams = weeklyStats,
+        RoundRobinResults = roundRobinResults
+    };
+
+    var weeklyStatsFileName =
+        $"round_robin_{snapshot.Season}_week_{snapshot.Week}.json";
+
+    var weeklyStatsOutPath =
+        Path.Combine(basePath, weeklyStatsFileName);
+
+    var weeklyStatsJson =
+        JsonSerializer.Serialize(
+            weeklySnapshot,
+            new JsonSerializerOptions { WriteIndented = true }
+        );
+
+    await File.WriteAllTextAsync(weeklyStatsOutPath, weeklyStatsJson);
+
+    Console.WriteLine(
+        $"Weekly stats snapshot saved to {weeklyStatsOutPath}"
+    );
+}
+catch (Exception ex)
+{
+    Console.Error.WriteLine(
+        "Error processing weekly fantasy pipeline: " + ex
+    );
+    return 5;
+}
+
 
         Console.WriteLine("Done.");
         return 0;
