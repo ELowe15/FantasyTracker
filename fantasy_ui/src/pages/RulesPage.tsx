@@ -40,7 +40,7 @@ export default function RulesPage() {
         <h2 className="text-xl font-semibold mb-2">Draft & Trades</h2>
         <ul className="list-disc list-inside space-y-1">
           <li>Keepers will be your 2nd and 3rd round picks</li>
-          <li>If you only have 1 keeper it's your 2nd round pick</li>
+          <li>If you only have 1 keeper it's your 3rd round pick</li>
           <li>Can trade future draft picks</li>
           <li>Can trade keepers (still can’t keep a first round pick)</li>
         </ul>

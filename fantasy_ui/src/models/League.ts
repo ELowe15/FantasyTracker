@@ -66,3 +66,17 @@ export interface BestBallTeam {
   totalFantasyPoints: number;
   players: BestBallPlayer[];
 }
+
+export type WeeklyTeamStats = {
+  TeamKey: string;
+  ManagerName: string;
+  MatchupRecord: string; // e.g., "7-3-1"
+  StatValues: { [statId: string]: string }; // e.g., { "PTS": "152", "REB": "97", ... }
+};
+
+export type WeeklyStatsSnapshot = {
+  Season: number;
+  Week: number;
+  Teams: WeeklyTeamStats[];
+};
+
