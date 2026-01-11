@@ -1,8 +1,8 @@
 {
   "Season": 2025,
   "Week": 12,
-  "WeekStart": "2026-01-09T00:00:00Z",
-  "WeekEnd": "2026-01-09T00:00:00Z",
+  "WeekStart": "2026-01-10T00:00:00Z",
+  "WeekEnd": "2026-01-10T00:00:00Z",
   "Teams": [
     {
       "Season": 0,
@@ -11,88 +11,90 @@
       "ManagerName": "Evan",
       "Players": [
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.5352",
           "FullName": "Nikola Joki\u0107",
           "Position": "C",
           "NbaTeam": "DEN"
         },
         {
-          "RawStats": {
-            "5": 0.643,
-            "8": 1,
-            "10": 2,
-            "12": 23,
-            "15": 7,
-            "16": 1,
-            "17": 1,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 36.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.6015",
           "FullName": "Jaren Jackson Jr.",
           "Position": "PF,C",
           "NbaTeam": "MEM"
         },
         {
-          "RawStats": {
-            "5": 0.474,
-            "8": 1,
-            "10": 5,
-            "12": 27,
-            "15": 3,
-            "16": 5,
-            "17": 0,
-            "18": 0,
-            "19": 4
-          },
-          "FantasyPoints": 34.1,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6044",
           "FullName": "Jalen Brunson",
           "Position": "PG",
           "NbaTeam": "NYK"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.769,
+            "8": 1,
+            "10": 1,
+            "12": 22,
+            "15": 0,
+            "16": 6,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "FantasyPoints": 31,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PG",
           "PlayerKey": "466.p.6167",
           "FullName": "Darius Garland",
           "Position": "PG",
           "NbaTeam": "CLE"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.273,
+            "8": 0.5,
+            "10": 0,
+            "12": 7,
+            "15": 9,
+            "16": 0,
+            "17": 0,
+            "18": 2,
+            "19": 1
+          },
+          "FantasyPoints": 22.799999999999997,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.6402",
           "FullName": "Jalen Smith",
           "Position": "PF,C",
           "NbaTeam": "CHI"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.333,
+            "8": 0.75,
+            "10": 1,
+            "12": 12,
+            "15": 9,
+            "16": 2,
+            "17": 0,
+            "18": 0,
+            "19": 1
+          },
+          "FantasyPoints": 24.799999999999997,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.6406",
           "FullName": "Aaron Nesmith",
           "Position": "SG,SF",
@@ -101,16 +103,16 @@
         {
           "RawStats": {
             "5": 0.667,
-            "8": 1,
+            "8": 0.5,
             "10": 0,
-            "12": 10,
-            "15": 6,
-            "16": 0,
-            "17": 2,
-            "18": 0,
-            "19": 0
+            "12": 9,
+            "15": 13,
+            "16": 2,
+            "17": 0,
+            "18": 2,
+            "19": 1
           },
-          "FantasyPoints": 23.2,
+          "FantasyPoints": 32.6,
           "IsEligible": true,
           "BestBallSlot": "PF",
           "PlayerKey": "466.p.6581",
@@ -119,15 +121,7 @@
           "NbaTeam": "BOS"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -137,35 +131,17 @@
           "NbaTeam": "OKC"
         },
         {
-          "RawStats": {
-            "5": 0.286,
-            "8": 0.5,
-            "10": 0,
-            "12": 13,
-            "15": 8,
-            "16": 1,
-            "17": 2,
-            "18": 3,
-            "19": 1
-          },
-          "FantasyPoints": 38.1,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6693",
           "FullName": "Jabari Smith Jr.",
           "Position": "SF,PF,C",
           "NbaTeam": "HOU"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -175,37 +151,18 @@
           "NbaTeam": "SAC"
         },
         {
-          "RawStats": {
-            "5": 0.571,
-            "8": 0.5,
-            "10": 0,
-            "12": 17,
-            "15": 11,
-            "16": 10,
-            "17": 4,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 56.2,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6698",
           "FullName": "Dyson Daniels",
           "Position": "PG,SG,SF",
           "NbaTeam": "ATL"
         },
         {
-          "RawStats": {
-            "5": 0.625,
-            "10": 3,
-            "12": 13,
-            "15": 2,
-            "16": 2,
-            "17": 2,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 22.4,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6709",
@@ -214,18 +171,8 @@
           "NbaTeam": "LAL"
         },
         {
-          "RawStats": {
-            "5": 0.154,
-            "8": 0.833,
-            "10": 1,
-            "12": 10,
-            "15": 6,
-            "16": 2,
-            "17": 0,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 18.2,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6734",
@@ -234,48 +181,38 @@
           "NbaTeam": "MIL"
         },
         {
-          "RawStats": {
-            "5": 0.333,
-            "8": 0.5,
-            "10": 1,
-            "12": 8,
-            "15": 5,
-            "16": 4,
-            "17": 1,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 24,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10099",
           "FullName": "Bilal Coulibaly",
           "Position": "SG,SF",
           "NbaTeam": "WAS"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.368,
+            "8": 1,
+            "10": 2,
+            "12": 18,
+            "15": 4,
+            "16": 4,
+            "17": 3,
+            "18": 0,
+            "19": 3
+          },
+          "FantasyPoints": 34.8,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SF",
           "PlayerKey": "466.p.10104",
           "FullName": "Brandon Miller",
           "Position": "SF,PF",
           "NbaTeam": "CHA"
         },
         {
-          "RawStats": {
-            "5": 0.429,
-            "8": 1,
-            "10": 0,
-            "12": 7,
-            "15": 2,
-            "16": 1,
-            "17": 3,
-            "18": 0,
-            "19": 0
-          },
-          "FantasyPoints": 19.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10443",
@@ -284,27 +221,17 @@
           "NbaTeam": "TOR"
         },
         {
-          "RawStats": {
-            "5": 0.462,
-            "8": 1,
-            "10": 5,
-            "12": 19,
-            "15": 3,
-            "16": 3,
-            "17": 3,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 35.1,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10445",
           "FullName": "Egor D\u00EBmin",
           "Position": "PG",
           "NbaTeam": "BKN"
         }
       ],
-      "TotalBestBallPoints": 247.6
+      "TotalBestBallPoints": 146
     },
     {
       "Season": 0,
@@ -313,18 +240,8 @@
       "ManagerName": "scott",
       "Players": [
         {
-          "RawStats": {
-            "5": 0.476,
-            "8": 0.667,
-            "10": 2,
-            "12": 26,
-            "15": 9,
-            "16": 10,
-            "17": 3,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": 57.8,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "SF",
           "PlayerKey": "466.p.3704",
@@ -333,37 +250,18 @@
           "NbaTeam": "LAL"
         },
         {
-          "RawStats": {
-            "5": 0.55,
-            "8": 1,
-            "10": 4,
-            "12": 30,
-            "15": 12,
-            "16": 4,
-            "17": 0,
-            "18": 2,
-            "19": 2
-          },
-          "FantasyPoints": 54.4,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.4244",
           "FullName": "Kevin Durant",
           "Position": "SG,SF,PF",
           "NbaTeam": "HOU"
         },
         {
-          "RawStats": {
-            "5": 0.467,
-            "10": 1,
-            "12": 15,
-            "15": 3,
-            "16": 3,
-            "17": 0,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 21.1,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5324",
@@ -373,19 +271,19 @@
         },
         {
           "RawStats": {
-            "5": 0.2,
-            "8": 0.75,
+            "5": 0.667,
+            "8": 0.625,
             "10": 0,
-            "12": 5,
+            "12": 17,
             "15": 6,
-            "16": 4,
+            "16": 1,
             "17": 1,
-            "18": 0,
+            "18": 2,
             "19": 4
           },
-          "FantasyPoints": 17.2,
+          "FantasyPoints": 30.700000000000003,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.5663",
           "FullName": "Ivica Zubac",
           "Position": "C",
@@ -403,16 +301,17 @@
         },
         {
           "RawStats": {
-            "5": 0.778,
-            "10": 2,
-            "12": 16,
-            "15": 4,
-            "16": 0,
-            "17": 0,
-            "18": 3,
-            "19": 1
+            "5": 0.643,
+            "8": 0.5,
+            "10": 5,
+            "12": 25,
+            "15": 7,
+            "16": 1,
+            "17": 4,
+            "18": 4,
+            "19": 2
           },
-          "FantasyPoints": 28.8,
+          "FantasyPoints": 56.9,
           "IsEligible": true,
           "BestBallSlot": "PF",
           "PlayerKey": "466.p.5832",
@@ -421,15 +320,7 @@
           "NbaTeam": "LAC"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -439,29 +330,30 @@
           "NbaTeam": "WAS"
         },
         {
-          "RawStats": {
-            "5": 0.462,
-            "10": 1,
-            "12": 13,
-            "15": 8,
-            "16": 2,
-            "17": 0,
-            "18": 3,
-            "19": 4
-          },
-          "FantasyPoints": 30.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6018",
           "FullName": "Wendell Carter Jr.",
           "Position": "C",
           "NbaTeam": "ORL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.6,
+            "8": 1,
+            "10": 2,
+            "12": 22,
+            "15": 4,
+            "16": 3,
+            "17": 1,
+            "18": 0,
+            "19": 3
+          },
+          "FantasyPoints": 31.299999999999997,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PG",
           "PlayerKey": "466.p.6169",
           "FullName": "Coby White",
           "Position": "PG,SG",
@@ -478,58 +370,57 @@
           "NbaTeam": "DAL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0,
+            "8": 0.5,
+            "10": 0,
+            "12": 1,
+            "15": 2,
+            "16": 1,
+            "17": 0,
+            "18": 0,
+            "19": 2
+          },
+          "FantasyPoints": 2.9000000000000004,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.6551",
           "FullName": "Davion Mitchell",
           "Position": "PG",
           "NbaTeam": "MIA"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.333,
+            "10": 0,
+            "12": 8,
+            "15": 3,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 1
+          },
+          "FantasyPoints": 10.6,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.6695",
           "FullName": "Jaden Ivey",
           "Position": "PG,SG",
           "NbaTeam": "DET"
         },
         {
-          "RawStats": {
-            "5": 0.364,
-            "8": 1,
-            "10": 2,
-            "12": 20,
-            "15": 8,
-            "16": 5,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
-          "FantasyPoints": 37.1,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6697",
           "FullName": "Shaedon Sharpe",
           "Position": "PG,SG,SF",
           "NbaTeam": "POR"
         },
         {
-          "RawStats": {
-            "5": 0.5,
-            "8": 0.5,
-            "10": 1,
-            "12": 6,
-            "15": 3,
-            "16": 2,
-            "17": 2,
-            "18": 1,
-            "19": 3
-          },
-          "FantasyPoints": 18.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6707",
@@ -538,46 +429,27 @@
           "NbaTeam": "HOU"
         },
         {
-          "RawStats": {
-            "5": 0.5,
-            "8": 0.6,
-            "10": 2,
-            "12": 23,
-            "15": 3,
-            "16": 6,
-            "17": 0,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 36.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10304",
           "FullName": "Ajay Mitchell",
           "Position": "PG,SG",
           "NbaTeam": "OKC"
         },
         {
-          "RawStats": {
-            "5": 0.444,
-            "10": 3,
-            "12": 11,
-            "15": 2,
-            "16": 2,
-            "17": 0,
-            "18": 3,
-            "19": 0
-          },
-          "FantasyPoints": 25.4,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10308",
           "FullName": "Quinten Post",
           "Position": "C",
           "NbaTeam": "GSW"
         }
       ],
-      "TotalBestBallPoints": 270.7
+      "TotalBestBallPoints": 132.4
     },
     {
       "Season": 0,
@@ -587,27 +459,37 @@
       "Players": [
         {
           "RawStats": {
-            "5": 0.6,
-            "8": 1,
+            "5": 0.615,
+            "8": 0.667,
             "10": 4,
             "12": 26,
-            "15": 5,
-            "16": 5,
-            "17": 3,
-            "18": 1,
-            "19": 2
+            "15": 8,
+            "16": 1,
+            "17": 4,
+            "18": 0,
+            "19": 3
           },
-          "FantasyPoints": 49.5,
+          "FantasyPoints": 46.1,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "SF",
           "PlayerKey": "466.p.4896",
           "FullName": "Kawhi Leonard",
           "Position": "SF,PF",
           "NbaTeam": "LAC"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.167,
+            "8": 0.5,
+            "10": 1,
+            "12": 6,
+            "15": 3,
+            "16": 1,
+            "17": 1,
+            "18": 0,
+            "19": 4
+          },
+          "FantasyPoints": 10.1,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5506",
@@ -616,122 +498,107 @@
           "NbaTeam": "MIA"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6022",
           "FullName": "Shai Gilgeous-Alexander",
           "Position": "PG",
           "NbaTeam": "OKC"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.7,
+            "8": 0.5,
+            "10": 5,
+            "12": 20,
+            "15": 2,
+            "16": 1,
+            "17": 0,
+            "18": 0,
+            "19": 3
+          },
+          "FantasyPoints": 20.9,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.6073",
           "FullName": "Duncan Robinson",
           "Position": "SG,SF",
           "NbaTeam": "DET"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.462,
+            "8": 0.8,
+            "10": 2,
+            "12": 18,
+            "15": 10,
+            "16": 1,
+            "17": 1,
+            "18": 0,
+            "19": 2
+          },
+          "FantasyPoints": 32.5,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.6217",
           "FullName": "Keldon Johnson",
           "Position": "SF,PF",
           "NbaTeam": "SAS"
         },
         {
-          "RawStats": {
-            "5": 0.556,
-            "8": 1,
-            "10": 1,
-            "12": 13,
-            "15": 6,
-            "16": 4,
-            "17": 1,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 27.2,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.6219",
           "FullName": "Nic Claxton",
           "Position": "C",
           "NbaTeam": "BKN"
         },
         {
-          "RawStats": {
-            "5": 0,
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 1,
-            "17": 2,
-            "18": 2,
-            "19": 0
-          },
-          "FantasyPoints": 13.5,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6429",
           "FullName": "V\u00EDt Krej\u010D\u00ED",
           "Position": "SG,SF",
           "NbaTeam": "ATL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.364,
+            "8": 0.625,
+            "10": 1,
+            "12": 14,
+            "15": 4,
+            "16": 3,
+            "17": 3,
+            "18": 0,
+            "19": 0
+          },
+          "FantasyPoints": 32.3,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.6499",
           "FullName": "Naji Marshall",
           "Position": "SF,PF",
           "NbaTeam": "DAL"
         },
         {
-          "RawStats": {
-            "5": 0.667,
-            "8": 0,
-            "10": 5,
-            "12": 29,
-            "15": 9,
-            "16": 6,
-            "17": 1,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 52.8,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6562",
           "FullName": "Jalen Johnson",
           "Position": "SF,PF",
           "NbaTeam": "ATL"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -741,20 +608,10 @@
           "NbaTeam": "LAL"
         },
         {
-          "RawStats": {
-            "5": 0.333,
-            "8": 1,
-            "10": 0,
-            "12": 14,
-            "15": 11,
-            "16": 7,
-            "17": 0,
-            "18": 1,
-            "19": 4
-          },
-          "FantasyPoints": 36.7,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6691",
           "FullName": "Paolo Banchero",
           "Position": "PF,C",
@@ -771,8 +628,17 @@
           "NbaTeam": "DET"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.444,
+            "10": 2,
+            "12": 10,
+            "15": 3,
+            "16": 2,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "FantasyPoints": 16.6,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6725",
@@ -781,47 +647,56 @@
           "NbaTeam": "DAL"
         },
         {
-          "RawStats": {
-            "5": 0.333,
-            "8": 1,
-            "10": 0,
-            "12": 8,
-            "15": 15,
-            "16": 6,
-            "17": 2,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 42,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10285",
           "FullName": "Donovan Clingan",
           "Position": "C",
           "NbaTeam": "POR"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.188,
+            "8": 0.4,
+            "10": 1,
+            "12": 9,
+            "15": 2,
+            "16": 5,
+            "17": 2,
+            "18": 0,
+            "19": 2
+          },
+          "FantasyPoints": 22.9,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PG",
           "PlayerKey": "466.p.10290",
           "FullName": "Stephon Castle",
           "Position": "PG,SG",
           "NbaTeam": "SAS"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.714,
+            "10": 2,
+            "12": 12,
+            "15": 0,
+            "16": 6,
+            "17": 3,
+            "18": 0,
+            "19": 0
+          },
+          "FantasyPoints": 30,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.10450",
           "FullName": "Kon Knueppel",
           "Position": "SG,SF",
           "NbaTeam": "CHA"
         }
       ],
-      "TotalBestBallPoints": 221.7
+      "TotalBestBallPoints": 184.70000000000002
     },
     {
       "Season": 0,
@@ -830,54 +705,27 @@
       "ManagerName": "evan",
       "Players": [
         {
-          "RawStats": {
-            "5": 0.429,
-            "8": 0.5,
-            "10": 0,
-            "12": 7,
-            "15": 6,
-            "16": 0,
-            "17": 1,
-            "18": 1,
-            "19": 0
-          },
-          "FantasyPoints": 20.2,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.5015",
           "FullName": "Andre Drummond",
           "Position": "C",
           "NbaTeam": "PHI"
         },
         {
-          "RawStats": {
-            "5": 0.571,
-            "10": 3,
-            "12": 11,
-            "15": 6,
-            "16": 8,
-            "17": 1,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": 30.200000000000003,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.5069",
           "FullName": "Draymond Green",
           "Position": "PF,C",
           "NbaTeam": "GSW"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -887,58 +735,58 @@
           "NbaTeam": "ATL"
         },
         {
-          "RawStats": {
-            "5": 0.435,
-            "8": 0.875,
-            "10": 4,
-            "12": 31,
-            "15": 3,
-            "16": 8,
-            "17": 1,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 47.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5473",
           "FullName": "Devin Booker",
           "Position": "PG,SG",
           "NbaTeam": "PHX"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.429,
+            "8": 0.857,
+            "10": 4,
+            "12": 28,
+            "15": 3,
+            "16": 8,
+            "17": 1,
+            "18": 0,
+            "19": 1
+          },
+          "FantasyPoints": 45.6,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PG",
           "PlayerKey": "466.p.5826",
           "FullName": "Donovan Mitchell",
           "Position": "PG,SG",
           "NbaTeam": "CLE"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.417,
+            "8": 1,
+            "10": 0,
+            "12": 13,
+            "15": 9,
+            "16": 2,
+            "17": 0,
+            "18": 0,
+            "19": 2
+          },
+          "FantasyPoints": 24.799999999999997,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.5827",
           "FullName": "Bam Adebayo",
           "Position": "PF,C",
           "NbaTeam": "MIA"
         },
         {
-          "RawStats": {
-            "5": 0.333,
-            "8": 0.778,
-            "10": 2,
-            "12": 15,
-            "15": 8,
-            "16": 3,
-            "17": 0,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 28.1,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "SF",
           "PlayerKey": "466.p.5836",
@@ -947,36 +795,18 @@
           "NbaTeam": "NYK"
         },
         {
-          "RawStats": {
-            "5": 0.667,
-            "10": 4,
-            "12": 12,
-            "15": 6,
-            "16": 1,
-            "17": 0,
-            "18": 1,
-            "19": 0
-          },
-          "FantasyPoints": 23.7,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5905",
           "FullName": "Royce O\u0027Neale",
           "Position": "SF,PF",
           "NbaTeam": "PHX"
         },
         {
-          "RawStats": {
-            "5": 0,
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 1,
-            "17": 0,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": -1.5,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6216",
@@ -995,47 +825,37 @@
           "NbaTeam": "IND"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.75,
+            "10": 1,
+            "12": 13,
+            "15": 3,
+            "16": 5,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "FantasyPoints": 24.1,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.6433",
           "FullName": "Tre Jones",
           "Position": "PG,SG",
           "NbaTeam": "CHI"
         },
         {
-          "RawStats": {
-            "5": 0.542,
-            "8": 0.667,
-            "10": 7,
-            "12": 35,
-            "15": 8,
-            "16": 4,
-            "17": 4,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 61.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6559",
           "FullName": "Trey Murphy III",
           "Position": "SG,SF,PF",
           "NbaTeam": "NOP"
         },
         {
-          "RawStats": {
-            "5": 0,
-            "10": 0,
-            "12": 0,
-            "15": 4,
-            "16": 0,
-            "17": 0,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 5.8,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6711",
@@ -1044,37 +864,37 @@
           "NbaTeam": "DEN"
         },
         {
-          "RawStats": {
-            "5": 0.563,
-            "8": 1,
-            "10": 5,
-            "12": 25,
-            "15": 2,
-            "16": 2,
-            "17": 1,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": 30.4,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10065",
           "FullName": "Toumani Camara",
           "Position": "SF,PF,C",
           "NbaTeam": "POR"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.5,
+            "8": 0.667,
+            "10": 0,
+            "12": 16,
+            "15": 7,
+            "16": 2,
+            "17": 1,
+            "18": 0,
+            "19": 3
+          },
+          "FantasyPoints": 27.4,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.10092",
           "FullName": "Jaime Jaquez Jr.",
           "Position": "SG,SF,PF",
           "NbaTeam": "MIA"
         }
       ],
-      "TotalBestBallPoints": 241.79999999999998
+      "TotalBestBallPoints": 121.9
     },
     {
       "Season": 0,
@@ -1083,45 +903,37 @@
       "ManagerName": "Joshua",
       "Players": [
         {
-          "RawStats": {
-            "5": 0.381,
-            "8": 1,
-            "10": 0,
-            "12": 18,
-            "15": 9,
-            "16": 3,
-            "17": 3,
-            "18": 2,
-            "19": 3
-          },
-          "FantasyPoints": 45.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.4725",
           "FullName": "Paul George",
           "Position": "SG,SF,PF",
           "NbaTeam": "PHI"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.545,
+            "8": 1,
+            "10": 1,
+            "12": 15,
+            "15": 12,
+            "16": 3,
+            "17": 1,
+            "18": 2,
+            "19": 2
+          },
+          "FantasyPoints": 40.9,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.4897",
           "FullName": "Nikola Vu\u010Devi\u0107",
           "Position": "C",
           "NbaTeam": "CHI"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1131,18 +943,8 @@
           "NbaTeam": "LAC"
         },
         {
-          "RawStats": {
-            "5": 0.375,
-            "8": 1,
-            "10": 2,
-            "12": 10,
-            "15": 2,
-            "16": 1,
-            "17": 0,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 12.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5194",
@@ -1151,35 +953,17 @@
           "NbaTeam": "DEN"
         },
         {
-          "RawStats": {
-            "5": 0.455,
-            "8": 0.75,
-            "10": 1,
-            "12": 14,
-            "15": 9,
-            "16": 5,
-            "17": 0,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 31.299999999999997,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5295",
           "FullName": "Aaron Gordon",
           "Position": "PF,C",
           "NbaTeam": "DEN"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1189,15 +973,7 @@
           "NbaTeam": "POR"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1208,37 +984,56 @@
         },
         {
           "RawStats": {
-            "5": 0.4,
-            "8": 0.923,
-            "10": 1,
-            "12": 25,
+            "5": 0.393,
+            "10": 5,
+            "12": 27,
             "15": 8,
             "16": 7,
             "17": 0,
             "18": 0,
-            "19": 4
+            "19": 5
           },
-          "FantasyPoints": 41.1,
+          "FantasyPoints": 42.1,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.5602",
           "FullName": "Jaylen Brown",
           "Position": "SG,SF",
           "NbaTeam": "BOS"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.267,
+            "8": 0.75,
+            "10": 0,
+            "12": 11,
+            "15": 7,
+            "16": 5,
+            "17": 1,
+            "18": 1,
+            "19": 5
+          },
+          "FantasyPoints": 27.9,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.5658",
           "FullName": "Pascal Siakam",
           "Position": "SF,PF,C",
           "NbaTeam": "IND"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.556,
+            "8": 0.75,
+            "10": 2,
+            "12": 15,
+            "15": 5,
+            "16": 4,
+            "17": 0,
+            "18": 0,
+            "19": 2
+          },
+          "FantasyPoints": 25,
           "IsEligible": true,
           "BestBallSlot": "PG",
           "PlayerKey": "466.p.6019",
@@ -1247,58 +1042,28 @@
           "NbaTeam": "CHA"
         },
         {
-          "RawStats": {
-            "5": 0.35,
-            "8": 1,
-            "10": 0,
-            "12": 18,
-            "15": 5,
-            "16": 6,
-            "17": 4,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 46,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6025",
           "FullName": "Michael Porter Jr.",
           "Position": "SF,PF",
           "NbaTeam": "BKN"
         },
         {
-          "RawStats": {
-            "5": 0.2,
-            "8": 1,
-            "10": 0,
-            "12": 10,
-            "15": 3,
-            "16": 1,
-            "17": 1,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 17.1,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6032",
           "FullName": "Grayson Allen",
           "Position": "SG,SF",
           "NbaTeam": "PHX"
         },
         {
-          "RawStats": {
-            "5": 0.8,
-            "8": 1,
-            "10": 1,
-            "12": 12,
-            "15": 3,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": 12.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6414",
@@ -1307,54 +1072,56 @@
           "NbaTeam": "DEN"
         },
         {
-          "RawStats": {
-            "5": 0.7,
-            "10": 5,
-            "12": 19,
-            "15": 5,
-            "16": 2,
-            "17": 1,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 30,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6619",
           "FullName": "Sam Hauser",
           "Position": "SF,PF",
           "NbaTeam": "BOS"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.417,
+            "10": 2,
+            "12": 12,
+            "15": 13,
+            "16": 3,
+            "17": 0,
+            "18": 1,
+            "19": 0
+          },
+          "FantasyPoints": 35.1,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SF",
           "PlayerKey": "466.p.6754",
           "FullName": "Julian Champagnie",
           "Position": "SG,SF",
           "NbaTeam": "SAS"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.471,
+            "8": 1,
+            "10": 1,
+            "12": 21,
+            "15": 6,
+            "16": 1,
+            "17": 0,
+            "18": 3,
+            "19": 0
+          },
+          "FantasyPoints": 38.7,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.10094",
           "FullName": "Victor Wembanyama",
           "Position": "PF,C",
           "NbaTeam": "SAS"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1364,7 +1131,7 @@
           "NbaTeam": "OKC"
         }
       ],
-      "TotalBestBallPoints": 210.79999999999998
+      "TotalBestBallPoints": 209.7
     },
     {
       "Season": 0,
@@ -1373,67 +1140,50 @@
       "ManagerName": "Michael",
       "Players": [
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.4622",
           "FullName": "Jrue Holiday",
           "Position": "PG,SG",
           "NbaTeam": "POR"
         },
         {
-          "RawStats": {
-            "5": 0.556,
-            "8": 1,
-            "10": 1,
-            "12": 15,
-            "15": 3,
-            "16": 3,
-            "17": 1,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 25.1,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5187",
           "FullName": "Dennis Schr\u00F6der",
           "Position": "PG,SG",
           "NbaTeam": "SAC"
         },
         {
-          "RawStats": {
-            "5": 0.5,
-            "10": 2,
-            "12": 8,
-            "15": 6,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": 12.2,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5471",
           "FullName": "Myles Turner",
           "Position": "C",
           "NbaTeam": "MIL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.833,
+            "8": 1,
+            "10": 3,
+            "12": 15,
+            "15": 7,
+            "16": 5,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "FantasyPoints": 30.9,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.6023",
           "FullName": "Miles Bridges",
           "Position": "SF,PF",
@@ -1441,18 +1191,18 @@
         },
         {
           "RawStats": {
-            "5": 0.632,
-            "10": 3,
-            "12": 27,
+            "5": 0.222,
+            "10": 0,
+            "12": 4,
             "15": 5,
-            "16": 8,
-            "17": 0,
-            "18": 1,
-            "19": 1
+            "16": 4,
+            "17": 1,
+            "18": 0,
+            "19": 0
           },
-          "FantasyPoints": 47,
+          "FantasyPoints": 19,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "PG",
           "PlayerKey": "466.p.6418",
           "FullName": "Payton Pritchard",
           "Position": "PG",
@@ -1469,15 +1219,7 @@
           "NbaTeam": "DET"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1487,15 +1229,7 @@
           "NbaTeam": "ORL"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1505,125 +1239,124 @@
           "NbaTeam": "HOU"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.167,
+            "8": 1,
+            "10": 0,
+            "12": 4,
+            "15": 1,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 1
+          },
+          "FantasyPoints": 4.2,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.6717",
           "FullName": "Nikola Jovi\u0107",
           "Position": "PF,C",
           "NbaTeam": "MIA"
         },
         {
-          "RawStats": {
-            "5": 0.474,
-            "8": 0.714,
-            "10": 2,
-            "12": 25,
-            "15": 11,
-            "16": 4,
-            "17": 3,
-            "18": 1,
-            "19": 5
-          },
-          "FantasyPoints": 51.2,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6720",
           "FullName": "Peyton Watson",
           "Position": "SF,PF",
           "NbaTeam": "DEN"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.438,
+            "10": 1,
+            "12": 15,
+            "15": 6,
+            "16": 2,
+            "17": 0,
+            "18": 2,
+            "19": 1
+          },
+          "FantasyPoints": 30.2,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SF",
           "PlayerKey": "466.p.10265",
           "FullName": "Matas Buzelis",
           "Position": "SF,PF",
           "NbaTeam": "CHI"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.5,
+            "10": 0,
+            "12": 2,
+            "15": 3,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 1
+          },
+          "FantasyPoints": 4.6,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.10274",
           "FullName": "Kel\u0027el Ware",
           "Position": "PF,C",
           "NbaTeam": "MIA"
         },
         {
-          "RawStats": {
-            "5": 0.381,
-            "10": 4,
-            "12": 20,
-            "15": 3,
-            "16": 4,
-            "17": 1,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 31.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10288",
           "FullName": "Reed Sheppard",
           "Position": "PG,SG",
           "NbaTeam": "HOU"
         },
         {
-          "RawStats": {
-            "5": 0.231,
-            "8": 0.75,
-            "10": 1,
-            "12": 10,
-            "15": 4,
-            "16": 3,
-            "17": 0,
-            "18": 0,
-            "19": 4
-          },
-          "FantasyPoints": 15.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10340",
           "FullName": "Jaylen Wells",
           "Position": "SG,SF",
           "NbaTeam": "MEM"
         },
         {
-          "RawStats": {
-            "5": 0.538,
-            "10": 0,
-            "12": 14,
-            "15": 16,
-            "16": 12,
-            "17": 0,
-            "18": 2,
-            "19": 5
-          },
-          "FantasyPoints": 52.2,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10444",
           "FullName": "Derik Queen",
           "Position": "PF,C",
           "NbaTeam": "NOP"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.286,
+            "10": 1,
+            "12": 5,
+            "15": 4,
+            "16": 1,
+            "17": 0,
+            "18": 0,
+            "19": 2
+          },
+          "FantasyPoints": 9.3,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.10467",
           "FullName": "Dylan Harper",
           "Position": "PG,SG",
           "NbaTeam": "SAS"
         }
       ],
-      "TotalBestBallPoints": 234.60000000000002
+      "TotalBestBallPoints": 98.19999999999999
     },
     {
       "Season": 0,
@@ -1632,19 +1365,10 @@
       "ManagerName": "JRock",
       "Players": [
         {
-          "RawStats": {
-            "5": 0.545,
-            "10": 1,
-            "12": 13,
-            "15": 4,
-            "16": 7,
-            "17": 0,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": 25.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.4390",
           "FullName": "Russell Westbrook",
           "Position": "PG,SG",
@@ -1652,17 +1376,17 @@
         },
         {
           "RawStats": {
-            "5": 0.769,
-            "8": 1,
-            "10": 3,
-            "12": 31,
-            "15": 4,
-            "16": 6,
-            "17": 1,
-            "18": 2,
-            "19": 6
+            "5": 0.2,
+            "8": 0.909,
+            "10": 1,
+            "12": 19,
+            "15": 7,
+            "16": 7,
+            "17": 3,
+            "18": 0,
+            "19": 5
           },
-          "FantasyPoints": 47.8,
+          "FantasyPoints": 41.9,
           "IsEligible": true,
           "BestBallSlot": "PG",
           "PlayerKey": "466.p.4563",
@@ -1671,38 +1395,18 @@
           "NbaTeam": "LAC"
         },
         {
-          "RawStats": {
-            "5": 0.526,
-            "8": 0.6,
-            "10": 1,
-            "12": 24,
-            "15": 2,
-            "16": 3,
-            "17": 3,
-            "18": 0,
-            "19": 0
-          },
-          "FantasyPoints": 39.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SF",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.4614",
           "FullName": "DeMar DeRozan",
           "Position": "SF,PF",
           "NbaTeam": "SAC"
         },
         {
-          "RawStats": {
-            "5": 1,
-            "8": 0.25,
-            "10": 0,
-            "12": 5,
-            "15": 9,
-            "16": 3,
-            "17": 0,
-            "18": 1,
-            "19": 1
-          },
-          "FantasyPoints": 22.299999999999997,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.5163",
@@ -1711,45 +1415,37 @@
           "NbaTeam": "HOU"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.625,
+            "8": 1,
+            "10": 0,
+            "12": 11,
+            "15": 6,
+            "16": 1,
+            "17": 0,
+            "18": 1,
+            "19": 1
+          },
+          "FantasyPoints": 21.7,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SF",
           "PlayerKey": "466.p.5292",
           "FullName": "Andrew Wiggins",
           "Position": "SG,SF,PF",
           "NbaTeam": "MIA"
         },
         {
-          "RawStats": {
-            "5": 0.412,
-            "8": 0.889,
-            "10": 0,
-            "12": 22,
-            "15": 9,
-            "16": 3,
-            "17": 1,
-            "18": 1,
-            "19": 4
-          },
-          "FantasyPoints": 39.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5294",
           "FullName": "Joel Embiid",
           "Position": "C",
           "NbaTeam": "PHI"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1759,15 +1455,7 @@
           "NbaTeam": "TOR"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1777,18 +1465,8 @@
           "NbaTeam": "SAC"
         },
         {
-          "RawStats": {
-            "5": 0.5,
-            "8": 1,
-            "10": 0,
-            "12": 7,
-            "15": 3,
-            "16": 2,
-            "17": 1,
-            "18": 2,
-            "19": 1
-          },
-          "FantasyPoints": 21.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5754",
@@ -1797,54 +1475,27 @@
           "NbaTeam": "OKC"
         },
         {
-          "RawStats": {
-            "5": 0.857,
-            "8": 0.538,
-            "10": 0,
-            "12": 31,
-            "15": 4,
-            "16": 3,
-            "17": 2,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 45.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6163",
           "FullName": "Zion Williamson",
           "Position": "SF,PF,C",
           "NbaTeam": "NOP"
         },
         {
-          "RawStats": {
-            "5": 0.429,
-            "10": 3,
-            "12": 15,
-            "15": 5,
-            "16": 5,
-            "17": 2,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 35.5,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6398",
           "FullName": "Onyeka Okongwu",
           "Position": "PF,C",
           "NbaTeam": "ATL"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1854,18 +1505,8 @@
           "NbaTeam": "GSW"
         },
         {
-          "RawStats": {
-            "5": 0.385,
-            "8": 1,
-            "10": 2,
-            "12": 13,
-            "15": 1,
-            "16": 1,
-            "17": 0,
-            "18": 0,
-            "19": 4
-          },
-          "FantasyPoints": 11.7,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6569",
@@ -1874,35 +1515,47 @@
           "NbaTeam": "BKN"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 1,
+            "8": 0.571,
+            "10": 0,
+            "12": 10,
+            "15": 10,
+            "16": 1,
+            "17": 0,
+            "18": 2,
+            "19": 1
+          },
+          "FantasyPoints": 28.5,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.6733",
           "FullName": "Moussa Diabat\u00E9",
           "Position": "C",
           "NbaTeam": "CHA"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.5,
+            "8": 0.5,
+            "10": 0,
+            "12": 17,
+            "15": 1,
+            "16": 9,
+            "17": 2,
+            "18": 0,
+            "19": 1
+          },
+          "FantasyPoints": 36.7,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.10282",
           "FullName": "Isaiah Collier",
           "Position": "PG,SG",
           "NbaTeam": "UTA"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1912,7 +1565,7 @@
           "NbaTeam": "MEM"
         }
       ],
-      "TotalBestBallPoints": 255.40000000000003
+      "TotalBestBallPoints": 128.8
     },
     {
       "Season": 0,
@@ -1921,30 +1574,29 @@
       "ManagerName": "kelat",
       "Players": [
         {
-          "RawStats": {
-            "5": 0.818,
-            "8": 0.75,
-            "10": 0,
-            "12": 21,
-            "15": 6,
-            "16": 5,
-            "17": 2,
-            "18": 2,
-            "19": 4
-          },
-          "FantasyPoints": 43.7,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.5185",
           "FullName": "Giannis Antetokounmpo",
           "Position": "PF,C",
           "NbaTeam": "MIL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.667,
+            "10": 0,
+            "12": 8,
+            "15": 12,
+            "16": 2,
+            "17": 1,
+            "18": 3,
+            "19": 2
+          },
+          "FantasyPoints": 35.4,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.5197",
           "FullName": "Rudy Gobert",
           "Position": "C",
@@ -1961,15 +1613,7 @@
           "NbaTeam": "UTA"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -1979,10 +1623,20 @@
           "NbaTeam": "TOR"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 1,
+            "8": 0.5,
+            "10": 0,
+            "12": 5,
+            "15": 7,
+            "16": 1,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "FantasyPoints": 14.9,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.5903",
           "FullName": "Luke Kornet",
           "Position": "C",
@@ -1990,33 +1644,25 @@
         },
         {
           "RawStats": {
-            "5": 0.545,
-            "10": 3,
-            "12": 15,
+            "5": 0.25,
+            "10": 1,
+            "12": 5,
             "15": 2,
-            "16": 5,
+            "16": 3,
             "17": 0,
             "18": 0,
-            "19": 0
+            "19": 1
           },
-          "FantasyPoints": 24.9,
+          "FantasyPoints": 10.9,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.6035",
           "FullName": "Anfernee Simons",
           "Position": "PG,SG",
           "NbaTeam": "BOS"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -2026,65 +1672,47 @@
           "NbaTeam": "MEM"
         },
         {
-          "RawStats": {
-            "5": 0.4,
-            "8": 1,
-            "10": 3,
-            "12": 19,
-            "15": 4,
-            "16": 7,
-            "17": 0,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 33.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "SF",
           "PlayerKey": "466.p.6165",
           "FullName": "RJ Barrett",
           "Position": "SG,SF,PF",
           "NbaTeam": "TOR"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.417,
+            "8": 1,
+            "10": 5,
+            "12": 17,
+            "15": 5,
+            "16": 5,
+            "17": 0,
+            "18": 0,
+            "19": 5
+          },
+          "FantasyPoints": 25.5,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PG",
           "PlayerKey": "466.p.6395",
           "FullName": "LaMelo Ball",
           "Position": "PG,SG",
           "NbaTeam": "CHA"
         },
         {
-          "RawStats": {
-            "5": 0.333,
-            "8": 1,
-            "10": 2,
-            "12": 20,
-            "15": 3,
-            "16": 6,
-            "17": 2,
-            "18": 0,
-            "19": 5
-          },
-          "FantasyPoints": 33.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6401",
           "FullName": "Deni Avdija",
           "Position": "SG,SF,PF",
           "NbaTeam": "POR"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -2094,87 +1722,57 @@
           "NbaTeam": "NOP"
         },
         {
-          "RawStats": {
-            "5": 0.583,
-            "8": 1,
-            "10": 3,
-            "12": 21,
-            "15": 3,
-            "16": 4,
-            "17": 0,
-            "18": 0,
-            "19": 4
-          },
-          "FantasyPoints": 26.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10095",
           "FullName": "Anthony Black",
           "Position": "PG,SG,SF",
           "NbaTeam": "ORL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.5,
+            "10": 0,
+            "12": 6,
+            "15": 3,
+            "16": 6,
+            "17": 2,
+            "18": 3,
+            "19": 1
+          },
+          "FantasyPoints": 32.6,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.10096",
           "FullName": "Ausar Thompson",
           "Position": "SG,SF,PF",
           "NbaTeam": "DET"
         },
         {
-          "RawStats": {
-            "5": 0.529,
-            "8": 0.75,
-            "10": 0,
-            "12": 24,
-            "15": 9,
-            "16": 3,
-            "17": 2,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": 42.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10108",
           "FullName": "Amen Thompson",
           "Position": "PG,SG,SF",
           "NbaTeam": "HOU"
         },
         {
-          "RawStats": {
-            "5": 0.667,
-            "8": 1,
-            "10": 0,
-            "12": 14,
-            "15": 4,
-            "16": 2,
-            "17": 1,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 23.8,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10115",
           "FullName": "Brandin Podziemski",
           "Position": "PG,SG",
           "NbaTeam": "GSW"
         },
         {
-          "RawStats": {
-            "5": 0.667,
-            "10": 0,
-            "12": 8,
-            "15": 7,
-            "16": 2,
-            "17": 0,
-            "18": 2,
-            "19": 2
-          },
-          "FantasyPoints": 23.4,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10496",
@@ -2183,7 +1781,7 @@
           "NbaTeam": "SAC"
         }
       ],
-      "TotalBestBallPoints": 228.2
+      "TotalBestBallPoints": 119.29999999999998
     },
     {
       "Season": 0,
@@ -2195,25 +1793,15 @@
           "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.4901",
           "FullName": "Tobias Harris",
           "Position": "PF",
           "NbaTeam": "DET"
         },
         {
-          "RawStats": {
-            "5": 0.6,
-            "8": 1,
-            "10": 0,
-            "12": 15,
-            "15": 6,
-            "16": 6,
-            "17": 0,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 29.2,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "SF",
           "PlayerKey": "466.p.4912",
@@ -2225,36 +1813,37 @@
           "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.5007",
           "FullName": "Anthony Davis",
           "Position": "PF,C",
           "NbaTeam": "DAL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.533,
+            "8": 1,
+            "10": 1,
+            "12": 20,
+            "15": 4,
+            "16": 4,
+            "17": 1,
+            "18": 0,
+            "19": 2
+          },
+          "FantasyPoints": 31.799999999999997,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.5318",
           "FullName": "Julius Randle",
           "Position": "PF,C",
           "NbaTeam": "MIN"
         },
         {
-          "RawStats": {
-            "5": 0.417,
-            "10": 1,
-            "12": 11,
-            "15": 12,
-            "16": 3,
-            "17": 0,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 27.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5482",
           "FullName": "Bobby Portis",
           "Position": "PF,C",
@@ -2262,18 +1851,18 @@
         },
         {
           "RawStats": {
-            "5": 0.667,
-            "10": 1,
-            "12": 9,
+            "5": 0.333,
+            "10": 0,
+            "12": 2,
             "15": 1,
-            "16": 5,
-            "17": 1,
+            "16": 6,
+            "17": 4,
             "18": 0,
-            "19": 1
+            "19": 2
           },
-          "FantasyPoints": 19.7,
+          "FantasyPoints": 22.2,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.5636",
           "FullName": "Kris Dunn",
           "Position": "PG,SG",
@@ -2281,17 +1870,17 @@
         },
         {
           "RawStats": {
-            "5": 0.5,
+            "5": 0.423,
             "8": 1,
-            "10": 2,
-            "12": 18,
-            "15": 3,
-            "16": 5,
-            "17": 0,
+            "10": 5,
+            "12": 29,
+            "15": 9,
+            "16": 3,
+            "17": 2,
             "18": 2,
             "19": 1
           },
-          "FantasyPoints": 34.1,
+          "FantasyPoints": 55.3,
           "IsEligible": true,
           "BestBallSlot": "PG",
           "PlayerKey": "466.p.5842",
@@ -2310,35 +1899,17 @@
           "NbaTeam": "IND"
         },
         {
-          "RawStats": {
-            "5": 0.455,
-            "8": 1,
-            "10": 3,
-            "12": 29,
-            "15": 1,
-            "16": 1,
-            "17": 3,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 39.7,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6413",
           "FullName": "Tyrese Maxey",
           "Position": "PG",
           "NbaTeam": "PHI"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -2358,18 +1929,8 @@
           "NbaTeam": "CHI"
         },
         {
-          "RawStats": {
-            "5": 0.4,
-            "8": 1,
-            "10": 1,
-            "12": 6,
-            "15": 1,
-            "16": 3,
-            "17": 1,
-            "18": 1,
-            "19": 1
-          },
-          "FantasyPoints": 16.7,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6567",
@@ -2378,15 +1939,7 @@
           "NbaTeam": "PHI"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -2396,29 +1949,30 @@
           "NbaTeam": "NOP"
         },
         {
-          "RawStats": {
-            "5": 0.467,
-            "10": 3,
-            "12": 17,
-            "15": 2,
-            "16": 2,
-            "17": 3,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 30.4,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6578",
           "FullName": "Miles McBride",
           "Position": "PG,SG",
           "NbaTeam": "NYK"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.778,
+            "8": 1,
+            "10": 3,
+            "12": 20,
+            "15": 4,
+            "16": 8,
+            "17": 4,
+            "18": 0,
+            "19": 3
+          },
+          "FantasyPoints": 45.8,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.6580",
           "FullName": "Ayo Dosunmu",
           "Position": "SG,SF",
@@ -2435,26 +1989,17 @@
           "NbaTeam": "IND"
         },
         {
-          "RawStats": {
-            "5": 0.833,
-            "10": 0,
-            "12": 10,
-            "15": 5,
-            "16": 0,
-            "17": 0,
-            "18": 2,
-            "19": 1
-          },
-          "FantasyPoints": 21,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6705",
           "FullName": "Mark Williams",
           "Position": "C",
           "NbaTeam": "PHX"
         }
       ],
-      "TotalBestBallPoints": 202.00000000000003
+      "TotalBestBallPoints": 155.1
     },
     {
       "Season": 0,
@@ -2463,20 +2008,10 @@
       "ManagerName": "Jack",
       "Players": [
         {
-          "RawStats": {
-            "5": 0.476,
-            "8": 1,
-            "10": 6,
-            "12": 27,
-            "15": 0,
-            "16": 10,
-            "17": 1,
-            "18": 2,
-            "19": 2
-          },
-          "FantasyPoints": 49,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PG",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.4612",
           "FullName": "Stephen Curry",
           "Position": "PG",
@@ -2486,42 +2021,24 @@
           "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.4840",
           "FullName": "Kyrie Irving",
           "Position": "PG",
           "NbaTeam": "DAL"
         },
         {
-          "RawStats": {
-            "5": 0.455,
-            "8": 0.6,
-            "10": 2,
-            "12": 15,
-            "15": 12,
-            "16": 5,
-            "17": 0,
-            "18": 0,
-            "19": 5
-          },
-          "FantasyPoints": 31.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.5432",
           "FullName": "Karl-Anthony Towns",
           "Position": "PF,C",
           "NbaTeam": "NYK"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -2531,114 +2048,86 @@
           "NbaTeam": "DEN"
         },
         {
-          "RawStats": {
-            "5": 0.533,
-            "8": 1,
-            "10": 5,
-            "12": 27,
-            "15": 7,
-            "16": 5,
-            "17": 0,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 40.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.5858",
           "FullName": "Dillon Brooks",
           "Position": "SF,PF",
           "NbaTeam": "PHX"
         },
         {
-          "RawStats": {
-            "5": 0.333,
-            "10": 0,
-            "12": 4,
-            "15": 5,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.5958",
           "FullName": "Deandre Ayton",
           "Position": "C",
           "NbaTeam": "LAL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.667,
+            "10": 3,
+            "12": 15,
+            "15": 3,
+            "16": 6,
+            "17": 2,
+            "18": 0,
+            "19": 4
+          },
+          "FantasyPoints": 29.6,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PG",
           "PlayerKey": "466.p.6028",
           "FullName": "Donte DiVincenzo",
           "Position": "PG,SG",
           "NbaTeam": "MIN"
         },
         {
-          "RawStats": {
-            "5": 0.5,
-            "8": 0.7,
-            "10": 1,
-            "12": 22,
-            "15": 5,
-            "16": 6,
-            "17": 4,
-            "18": 1,
-            "19": 3
-          },
-          "FantasyPoints": 49,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6218",
           "FullName": "Kevin Porter Jr.",
           "Position": "PG,SG",
           "NbaTeam": "MIL"
         },
         {
-          "RawStats": {
-            "5": 0.375,
-            "8": 0.5,
-            "10": 4,
-            "12": 17,
-            "15": 2,
-            "16": 13,
-            "17": 1,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 42.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6417",
           "FullName": "Immanuel Quickley",
           "Position": "PG,SG",
           "NbaTeam": "TOR"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.571,
+            "8": 0.8,
+            "10": 0,
+            "12": 12,
+            "15": 1,
+            "16": 1,
+            "17": 0,
+            "18": 0,
+            "19": 1
+          },
+          "FantasyPoints": 13.7,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SF",
           "PlayerKey": "466.p.6420",
           "FullName": "Jaden McDaniels",
           "Position": "SF,PF",
           "NbaTeam": "MIN"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -2648,18 +2137,8 @@
           "NbaTeam": "PHX"
         },
         {
-          "RawStats": {
-            "5": 0.455,
-            "8": 0.5,
-            "10": 0,
-            "12": 14,
-            "15": 1,
-            "16": 3,
-            "17": 0,
-            "18": 1,
-            "19": 3
-          },
-          "FantasyPoints": 19.7,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10294",
@@ -2668,18 +2147,8 @@
           "NbaTeam": "WAS"
         },
         {
-          "RawStats": {
-            "5": 0.25,
-            "8": 1,
-            "10": 1,
-            "12": 7,
-            "15": 4,
-            "16": 11,
-            "17": 1,
-            "18": 0,
-            "19": 0
-          },
-          "FantasyPoints": 31.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10327",
@@ -2688,57 +2157,47 @@
           "NbaTeam": "MEM"
         },
         {
-          "RawStats": {
-            "5": 0.6,
-            "8": 1,
-            "10": 2,
-            "12": 21,
-            "15": 5,
-            "16": 6,
-            "17": 3,
-            "18": 0,
-            "19": 6
-          },
-          "FantasyPoints": 39,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10440",
           "FullName": "Jeremiah Fears",
           "Position": "PG,SG",
           "NbaTeam": "NOP"
         },
         {
-          "RawStats": {
-            "5": 0.333,
-            "8": 0.857,
-            "10": 1,
-            "12": 13,
-            "15": 9,
-            "16": 4,
-            "17": 0,
-            "18": 0,
-            "19": 5
-          },
-          "FantasyPoints": 24.799999999999997,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10465",
           "FullName": "Cedric Coward",
           "Position": "SG,SF",
           "NbaTeam": "MEM"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.308,
+            "8": 1,
+            "10": 0,
+            "12": 11,
+            "15": 1,
+            "16": 2,
+            "17": 1,
+            "18": 1,
+            "19": 5
+          },
+          "FantasyPoints": 16.2,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.10468",
           "FullName": "Cooper Flagg",
           "Position": "PG,SG,SF",
           "NbaTeam": "DAL"
         }
       ],
-      "TotalBestBallPoints": 277.5
+      "TotalBestBallPoints": 59.5
     },
     {
       "Season": 0,
@@ -2747,37 +2206,48 @@
       "ManagerName": "Ryan",
       "Players": [
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.563,
+            "8": 1,
+            "10": 1,
+            "12": 21,
+            "15": 9,
+            "16": 6,
+            "17": 1,
+            "18": 0,
+            "19": 2
+          },
+          "FantasyPoints": 41.8,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PG",
           "PlayerKey": "466.p.5767",
           "FullName": "De\u0027Aaron Fox",
           "Position": "PG,SG",
           "NbaTeam": "SAS"
         },
         {
-          "RawStats": {
-            "5": 0.4,
-            "10": 0,
-            "12": 8,
-            "15": 2,
-            "16": 1,
-            "17": 0,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 9.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.5824",
           "FullName": "Malik Monk",
           "Position": "SG",
           "NbaTeam": "SAC"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.6,
+            "8": 0.8,
+            "10": 0,
+            "12": 16,
+            "15": 11,
+            "16": 4,
+            "17": 1,
+            "18": 1,
+            "19": 0
+          },
+          "FantasyPoints": 41.2,
           "IsEligible": true,
           "BestBallSlot": "C",
           "PlayerKey": "466.p.5835",
@@ -2786,33 +2256,17 @@
           "NbaTeam": "CLE"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SF",
           "PlayerKey": "466.p.5843",
           "FullName": "Josh Hart",
           "Position": "SG,SF,PF",
           "NbaTeam": "NYK"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -2822,49 +2276,40 @@
           "NbaTeam": "OKC"
         },
         {
-          "RawStats": {
-            "5": 0.32,
-            "8": 0.5,
-            "10": 4,
-            "12": 24,
-            "15": 9,
-            "16": 9,
-            "17": 2,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": 51.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6014",
           "FullName": "Luka Don\u010Di\u0107",
           "Position": "PG,SG",
           "NbaTeam": "LAL"
         },
         {
-          "RawStats": {
-            "5": 0.4,
-            "10": 3,
-            "12": 11,
-            "15": 8,
-            "16": 4,
-            "17": 0,
-            "18": 1,
-            "19": 1
-          },
-          "FantasyPoints": 28.6,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.6021",
           "FullName": "Mikal Bridges",
           "Position": "SG,SF,PF",
           "NbaTeam": "NYK"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.2,
+            "8": 1,
+            "10": 0,
+            "12": 4,
+            "15": 2,
+            "16": 2,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "FantasyPoints": 9.4,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.6166",
           "FullName": "De\u0027Andre Hunter",
           "Position": "SF,PF",
@@ -2891,15 +2336,7 @@
           "NbaTeam": "DET"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -2909,76 +2346,56 @@
           "NbaTeam": "TOR"
         },
         {
-          "RawStats": {
-            "5": 0.5,
-            "8": 0.8,
-            "10": 0,
-            "12": 26,
-            "15": 5,
-            "16": 10,
-            "17": 1,
-            "18": 1,
-            "19": 2
-          },
-          "FantasyPoints": 51,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6702",
           "FullName": "Jalen Williams",
           "Position": "SF,PF",
           "NbaTeam": "OKC"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.286,
+            "10": 0,
+            "12": 4,
+            "15": 2,
+            "16": 5,
+            "17": 1,
+            "18": 1,
+            "19": 5
+          },
+          "FantasyPoints": 14.899999999999999,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.10100",
           "FullName": "Keyonte George",
           "Position": "PG,SG",
           "NbaTeam": "UTA"
         },
         {
-          "RawStats": {
-            "5": 0.462,
-            "10": 3,
-            "12": 15,
-            "15": 5,
-            "16": 2,
-            "17": 1,
-            "18": 0,
-            "19": 3
-          },
-          "FantasyPoints": 24,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10272",
           "FullName": "Kyshawn George",
           "Position": "SG,SF,PF",
           "NbaTeam": "WAS"
         },
         {
-          "RawStats": {
-            "5": 0.2,
-            "8": 0.5,
-            "10": 0,
-            "12": 3,
-            "15": 9,
-            "16": 2,
-            "17": 0,
-            "18": 1,
-            "19": 0
-          },
-          "FantasyPoints": 19.799999999999997,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10289",
           "FullName": "Yves Missi",
           "Position": "C",
           "NbaTeam": "NOP"
         }
       ],
-      "TotalBestBallPoints": 184.60000000000002
+      "TotalBestBallPoints": 107.30000000000001
     },
     {
       "Season": 0,
@@ -2987,15 +2404,7 @@
       "ManagerName": "Garrett",
       "Players": [
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "SF",
@@ -3015,15 +2424,7 @@
           "NbaTeam": "UTA"
         },
         {
-          "RawStats": {
-            "10": 0,
-            "12": 0,
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "18": 0,
-            "19": 0
-          },
+          "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
@@ -3033,175 +2434,196 @@
           "NbaTeam": "DEN"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.421,
+            "8": 1,
+            "10": 1,
+            "12": 21,
+            "15": 7,
+            "16": 4,
+            "17": 1,
+            "18": 1,
+            "19": 0
+          },
+          "FantasyPoints": 41.4,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "SG",
           "PlayerKey": "466.p.6175",
           "FullName": "Tyler Herro",
           "Position": "PG,SG",
           "NbaTeam": "MIA"
         },
         {
-          "RawStats": {
-            "5": 0.429,
-            "8": 1,
-            "10": 3,
-            "12": 22,
-            "15": 8,
-            "16": 3,
-            "17": 2,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 41.1,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6205",
           "FullName": "Nickeil Alexander-Walker",
           "Position": "PG,SG,SF",
           "NbaTeam": "ATL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.333,
+            "8": 0.667,
+            "10": 0,
+            "12": 6,
+            "15": 7,
+            "16": 0,
+            "17": 0,
+            "18": 1,
+            "19": 0
+          },
+          "FantasyPoints": 17.4,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6226",
           "FullName": "Daniel Gafford",
           "Position": "C",
           "NbaTeam": "DAL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.75,
+            "8": 1,
+            "10": 5,
+            "12": 25,
+            "15": 5,
+            "16": 3,
+            "17": 0,
+            "18": 2,
+            "19": 3
+          },
+          "FantasyPoints": 38.5,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PF",
           "PlayerKey": "466.p.6253",
           "FullName": "Naz Reid",
           "Position": "PF,C",
           "NbaTeam": "MIN"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.417,
+            "8": 0.5,
+            "10": 4,
+            "12": 25,
+            "15": 5,
+            "16": 3,
+            "17": 0,
+            "18": 2,
+            "19": 1
+          },
+          "FantasyPoints": 40.5,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "466.p.6355",
           "FullName": "Anthony Edwards",
           "Position": "PG,SG",
           "NbaTeam": "MIN"
         },
         {
-          "RawStats": {
-            "5": 0.474,
-            "8": 1,
-            "10": 0,
-            "12": 23,
-            "15": 5,
-            "16": 5,
-            "17": 0,
-            "18": 0,
-            "19": 2
-          },
-          "FantasyPoints": 34.5,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6422",
           "FullName": "Desmond Bane",
           "Position": "SG,SF",
           "NbaTeam": "ORL"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.688,
+            "8": 0.5,
+            "10": 0,
+            "12": 24,
+            "15": 4,
+            "16": 3,
+            "17": 2,
+            "18": 0,
+            "19": 1
+          },
+          "FantasyPoints": 38.3,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "466.p.6514",
           "FullName": "Evan Mobley",
           "Position": "PF,C",
           "NbaTeam": "CLE"
         },
         {
-          "RawStats": {
-            "5": 0.667,
-            "8": 0.5,
-            "10": 2,
-            "12": 15,
-            "15": 7,
-            "16": 7,
-            "17": 0,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 32.9,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "PF",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6572",
           "FullName": "Santi Aldama",
           "Position": "PF,C",
           "NbaTeam": "MEM"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.444,
+            "10": 0,
+            "12": 8,
+            "15": 2,
+            "16": 2,
+            "17": 3,
+            "18": 1,
+            "19": 2
+          },
+          "FantasyPoints": 23.4,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "C",
           "PlayerKey": "466.p.6617",
           "FullName": "Jay Huff",
           "Position": "C",
           "NbaTeam": "IND"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
+          "RawStats": {
+            "5": 0.625,
+            "8": 0.833,
+            "10": 4,
+            "12": 29,
+            "15": 6,
+            "16": 9,
+            "17": 2,
+            "18": 0,
+            "19": 0
+          },
+          "FantasyPoints": 55.7,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "PG",
           "PlayerKey": "466.p.6721",
           "FullName": "Andrew Nembhard",
           "Position": "PG,SG",
           "NbaTeam": "IND"
         },
         {
-          "RawStats": {
-            "5": 0.25,
-            "10": 2,
-            "12": 6,
-            "15": 2,
-            "16": 2,
-            "17": 0,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 10.4,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.6751",
           "FullName": "Collin Gillespie",
           "Position": "PG,SG",
           "NbaTeam": "PHX"
         },
         {
-          "RawStats": {
-            "5": 0.375,
-            "10": 0,
-            "12": 6,
-            "15": 9,
-            "16": 7,
-            "17": 2,
-            "18": 0,
-            "19": 1
-          },
-          "FantasyPoints": 32.3,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "Bench",
           "PlayerKey": "466.p.10454",
           "FullName": "VJ Edgecombe",
           "Position": "PG,SG",
           "NbaTeam": "PHI"
         }
       ],
-      "TotalBestBallPoints": 151.2
+      "TotalBestBallPoints": 237.8
     }
   ]
 }
