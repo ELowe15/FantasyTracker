@@ -80,3 +80,45 @@ export type WeeklyStatsSnapshot = {
   Teams: WeeklyTeamStats[];
 };
 
+export interface TeamRecord {
+  TeamKey: string;
+  MatchupWins: number;
+  MatchupLosses: number;
+  MatchupTies?: number;
+}
+
+export interface RawRoundRobinMatchup {
+  TeamAKey: string;
+  TeamBKey: string;
+  TeamACategoryWins: number;
+  TeamBCategoryWins: number;
+}
+
+export interface RoundRobinMatchup {
+  opponentId: string;
+  opponentName: string;
+  teamScore: number;
+  opponentScore: number;
+}
+
+export interface RoundRobinTeam {
+  teamId: string;
+  managerName: string;
+  wins: number;
+  losses: number;
+  ties: number;
+  rank: number;
+  matchups: RoundRobinMatchup[];
+}
+
+
+export interface Props {
+  data: {
+    WeeklyTeamStats: WeeklyTeamStats[];
+    RoundRobinResults: {
+      TeamRecords: TeamRecord[];
+      Matchups: RawRoundRobinMatchup[];
+    };
+  };
+}
+

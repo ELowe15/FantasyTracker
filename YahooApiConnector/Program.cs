@@ -80,10 +80,8 @@ class Program
 
         try
 {
-    // -------------------------
-    // DAILY SNAPSHOT (Best Ball)
-    // -------------------------
-    var snapshot = await fantasyService.GetDailyTeamResultsAsync(
+
+    var snapshot = await fantasyService.GetWeeklyTeamResultsAsync(
         leagueKey,
         basePath
     );

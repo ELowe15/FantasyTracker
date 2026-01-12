@@ -17,7 +17,7 @@ export default function App() {
   <div className="h-full flex justify-center items-center">
     {["teams", "draft", "bestball", "roundrobin", "rules"].map((tab, i) => (
       <React.Fragment key={tab}>
-        {i > 0 && <span className="mx-1 text-gray-400 text-xs">|</span>}
+        {i > 0 && <span className="mx-1 text-gray-400 text-s">|</span>}
         <button
           className={`font-semibold text-xs px-1 ${
             activeTab === tab ? "underline" : ""

@@ -16,9 +16,6 @@ public class YahooFantasyService
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
     }
 
-    
-    
-
 public async Task<Dictionary<string, string>> GetLeagueStatMapAsync(string leagueKey)
 {
     var url = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/settings";
@@ -210,8 +207,6 @@ public async Task<WeeklyLeagueSnapshot> GetDailyTeamResultsAsync(
     return snapshot;
 }
 
-
-
 private List<int> GetAvailableWeeks(int season, string directoryPath)
 {
     if (string.IsNullOrWhiteSpace(directoryPath))
@@ -380,6 +375,90 @@ public async Task<int> GetWeekForDateAsync(string leagueKey, DateTime date)
             return null;
         }
     }
+
+    public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(string leagueKey, string outputDirectory, bool DEBUG_STOP_AFTER_FIRST_TEAM = false)
+{
+    var snapshot = new WeeklyLeagueSnapshot
+    {
+        Season = await GetSeasonAsync(leagueKey)
+    };
+
+    // Last completed fantasy week
+    var effectiveDate = DateTime.UtcNow.Date.AddDays(-1);
+    snapshot.Week = await GetWeekForDateAsync(leagueKey, effectiveDate);
+
+    var (weekStart, weekEnd) = await GetWeekDateRangeAsync(leagueKey, snapshot.Week);
+    snapshot.WeekStart = weekStart;
+    snapshot.WeekEnd = weekEnd;
+
+    // Write league context to correct folder
+    await WriteLeagueContextAsync(snapshot.Season, snapshot.Week, outputDirectory);
+
+    // Fetch teams
+    var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams";
+    var teamsXml = await _client.GetStringAsync(teamsUrl);
+    var teamsDoc = XDocument.Parse(teamsXml);
+    XNamespace teamsNs = teamsDoc.Root.GetDefaultNamespace();
+
+    var teams = teamsDoc.Descendants(teamsNs + "team")
+        .Select(t => new
+        {
+            TeamKey = t.Element(teamsNs + "team_key")?.Value,
+            ManagerName = t.Descendants(teamsNs + "manager")
+                           .FirstOrDefault()?.Element(teamsNs + "nickname")?.Value ?? "Unknown"
+        })
+        .Where(t => !string.IsNullOrEmpty(t.TeamKey))
+        .ToList();
+
+    Console.WriteLine($"Found {teams.Count} teams");
+
+    foreach (var team in teams)
+    {
+        Console.WriteLine($"\nFetching WEEK {snapshot.Week} stats for {team.ManagerName}");
+
+        var teamResult = new WeeklyTeamResult
+        {
+            TeamKey = team.TeamKey,
+            ManagerName = team.ManagerName,
+            Week = snapshot.Week,
+            Players = new List<WeeklyPlayerStats>()
+        };
+
+        var statsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/players/stats;type=week;week={snapshot.Week}";
+        var statsXml = await _client.GetStringAsync(statsUrl);
+        var statsDoc = XDocument.Parse(statsXml);
+        XNamespace ns = statsDoc.Root.GetDefaultNamespace();
+
+        foreach (var p in statsDoc.Descendants(ns + "player"))
+        {
+            var player = new WeeklyPlayerStats
+            {
+                PlayerKey = p.Element(ns + "player_key")?.Value,
+                FullName = p.Element(ns + "name")?.Element(ns + "full")?.Value,
+                Position = p.Element(ns + "display_position")?.Value,
+                NbaTeam = p.Element(ns + "editorial_team_abbr")?.Value,
+                RawStats = new Dictionary<string, double>()
+            };
+
+            foreach (var s in p.Descendants(ns + "stat"))
+            {
+                var statId = s.Element(ns + "stat_id")?.Value;
+                if (!string.IsNullOrEmpty(statId) && double.TryParse(s.Element(ns + "value")?.Value, out double val))
+                    player.RawStats[statId] = val;
+            }
+
+            player.FantasyPoints = ComputeFantasyPoints(player.RawStats);
+            teamResult.Players.Add(player);
+        }
+
+        snapshot.Teams.Add(teamResult);
+
+        if (DEBUG_STOP_AFTER_FIRST_TEAM)
+            break;
+    }
+
+    return snapshot;
+}
 
     public async Task GetLeagueTeamsAsync(string leagueKey)
     {
