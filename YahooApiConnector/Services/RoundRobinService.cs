@@ -9,8 +9,9 @@ public static class RoundRobinService
             { "STL", new CategoryRule { StatId = "17", HigherIsBetter = true } },
             { "BLK", new CategoryRule { StatId = "18", HigherIsBetter = true } },
             { "TO",  new CategoryRule { StatId = "19", HigherIsBetter = false } },
-            { "FG%", new CategoryRule { StatId = "9004003", HigherIsBetter = true } },
-            { "FT%", new CategoryRule { StatId = "9007006", HigherIsBetter = true } }
+            { "3PM", new CategoryRule { StatId = "10", HigherIsBetter = true } },
+            { "FG%", new CategoryRule { StatId = "5", HigherIsBetter = true } },
+            { "FT%", new CategoryRule { StatId = "8", HigherIsBetter = true } }
         };
 
     public static RoundRobinResult RunRoundRobin(List<TeamWeeklyStats> teams)

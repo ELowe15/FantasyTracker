@@ -288,13 +288,14 @@ public async Task<int> GetWeekForDateAsync(string leagueKey, DateTime date)
             .ToList();
 
         // get current week
-        int currentWeek = await GetCurrentWeekAsync(leagueKey);
+        var effectiveDate = DateTime.UtcNow.Date.AddDays(-1);
+        var week = await GetWeekForDateAsync(leagueKey, effectiveDate);
 
         // 2. Fetch weekly stats for each team
         foreach (var team in teams)
         {
             var statsUrl =
-                $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/stats;type=week;week={currentWeek}";
+                $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/stats;type=week;week={week}";
 
             var statsResponse = await _client.GetAsync(statsUrl);
             var statsXml = await statsResponse.Content.ReadAsStringAsync();
