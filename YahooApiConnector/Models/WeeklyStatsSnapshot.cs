@@ -28,6 +28,7 @@ public class TeamRoundRobinRecord
 public class MatchupResult
 {
     public string OpponentTeamKey { get; set; } = string.Empty;
+    public string ManagerName { get; set; } = string.Empty;
 
     public int CategoryWins { get; set; }
     public int OpponentCategoryWins { get; set; }

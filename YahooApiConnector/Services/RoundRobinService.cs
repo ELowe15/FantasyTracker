@@ -62,7 +62,8 @@ public static class RoundRobinService
 
                 var matchup = new MatchupResult
                 {
-                    OpponentTeamKey = opponent.TeamKey
+                    OpponentTeamKey = opponent.TeamKey,
+                    ManagerName = opponent.ManagerName
                 };
 
                 foreach (var (statKey, rule) in CategoryRules)
