@@ -27,7 +27,63 @@
         "MatchupTies": 1,
         "CategoryWins": 49,
         "CategoryLosses": 24,
-        "CategoryTies": 26
+        "CategoryTies": 26,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 7,
+            "Losses": 4,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 9,
+            "Losses": 2,
+            "Ties": 0
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 9,
+            "Losses": 1,
+            "Ties": 1
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 11,
+            "Losses": 0,
+            "Ties": 0
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 6,
+            "Losses": 4,
+            "Ties": 1
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 0,
+            "Losses": 10,
+            "Ties": 1
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 7,
+            "Losses": 3,
+            "Ties": 1
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -134,7 +190,63 @@
         "MatchupTies": 0,
         "CategoryWins": 13,
         "CategoryLosses": 60,
-        "CategoryTies": 26
+        "CategoryTies": 26,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 1,
+            "Losses": 10,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 1,
+            "Losses": 10,
+            "Ties": 0
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 1,
+            "Losses": 10,
+            "Ties": 0
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 1,
+            "Losses": 9,
+            "Ties": 1
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 0,
+            "Losses": 8,
+            "Ties": 3
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 8,
+            "Losses": 3,
+            "Ties": 0
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 1,
+            "Losses": 10,
+            "Ties": 0
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -241,7 +353,63 @@
         "MatchupTies": 3,
         "CategoryWins": 48,
         "CategoryLosses": 22,
-        "CategoryTies": 29
+        "CategoryTies": 29,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 11,
+            "Losses": 0,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 6,
+            "Losses": 4,
+            "Ties": 1
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 9,
+            "Losses": 1,
+            "Ties": 1
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 5,
+            "Losses": 4,
+            "Ties": 2
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 9,
+            "Losses": 1,
+            "Ties": 1
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 3,
+            "Losses": 6,
+            "Ties": 2
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 5,
+            "Losses": 6,
+            "Ties": 0
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -348,7 +516,63 @@
         "MatchupTies": 0,
         "CategoryWins": 11,
         "CategoryLosses": 63,
-        "CategoryTies": 25
+        "CategoryTies": 25,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 0,
+            "Losses": 11,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 0,
+            "Losses": 11,
+            "Ties": 0
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 0,
+            "Losses": 11,
+            "Ties": 0
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 0,
+            "Losses": 11,
+            "Ties": 0
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 0,
+            "Losses": 8,
+            "Ties": 3
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 11,
+            "Losses": 0,
+            "Ties": 0
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 0,
+            "Losses": 11,
+            "Ties": 0
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -455,7 +679,63 @@
         "MatchupTies": 0,
         "CategoryWins": 31,
         "CategoryLosses": 42,
-        "CategoryTies": 26
+        "CategoryTies": 26,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 3,
+            "Losses": 7,
+            "Ties": 1
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 6,
+            "Losses": 4,
+            "Ties": 1
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 5,
+            "Losses": 6,
+            "Ties": 0
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 4,
+            "Losses": 7,
+            "Ties": 0
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 4,
+            "Losses": 6,
+            "Ties": 1
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 2,
+            "Losses": 9,
+            "Ties": 0
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 7,
+            "Losses": 3,
+            "Ties": 1
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -562,7 +842,63 @@
         "MatchupTies": 0,
         "CategoryWins": 22,
         "CategoryLosses": 49,
-        "CategoryTies": 28
+        "CategoryTies": 28,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 2,
+            "Losses": 9,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 2,
+            "Losses": 8,
+            "Ties": 1
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 3,
+            "Losses": 7,
+            "Ties": 1
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 3,
+            "Losses": 8,
+            "Ties": 0
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 0,
+            "Losses": 8,
+            "Ties": 3
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 10,
+            "Losses": 1,
+            "Ties": 0
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 2,
+            "Losses": 8,
+            "Ties": 1
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -669,7 +1005,63 @@
         "MatchupTies": 1,
         "CategoryWins": 53,
         "CategoryLosses": 22,
-        "CategoryTies": 24
+        "CategoryTies": 24,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 10,
+            "Losses": 1,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 11,
+            "Losses": 0,
+            "Ties": 0
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 11,
+            "Losses": 0,
+            "Ties": 0
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 8,
+            "Losses": 3,
+            "Ties": 0
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 9,
+            "Losses": 1,
+            "Ties": 1
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 0,
+            "Losses": 10,
+            "Ties": 1
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 4,
+            "Losses": 7,
+            "Ties": 0
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -776,7 +1168,63 @@
         "MatchupTies": 2,
         "CategoryWins": 46,
         "CategoryLosses": 27,
-        "CategoryTies": 26
+        "CategoryTies": 26,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 6,
+            "Losses": 5,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 10,
+            "Losses": 1,
+            "Ties": 0
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 6,
+            "Losses": 5,
+            "Ties": 0
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 9,
+            "Losses": 1,
+            "Ties": 1
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 6,
+            "Losses": 4,
+            "Ties": 1
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 3,
+            "Losses": 6,
+            "Ties": 2
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 6,
+            "Losses": 5,
+            "Ties": 0
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -883,7 +1331,63 @@
         "MatchupTies": 0,
         "CategoryWins": 26,
         "CategoryLosses": 44,
-        "CategoryTies": 29
+        "CategoryTies": 29,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 3,
+            "Losses": 7,
+            "Ties": 1
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 4,
+            "Losses": 7,
+            "Ties": 0
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 3,
+            "Losses": 7,
+            "Ties": 1
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 1,
+            "Losses": 9,
+            "Ties": 1
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 0,
+            "Losses": 8,
+            "Ties": 3
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 6,
+            "Losses": 4,
+            "Ties": 1
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 9,
+            "Losses": 2,
+            "Ties": 0
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -990,7 +1494,63 @@
         "MatchupTies": 1,
         "CategoryWins": 36,
         "CategoryLosses": 38,
-        "CategoryTies": 25
+        "CategoryTies": 25,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 5,
+            "Losses": 6,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 5,
+            "Losses": 6,
+            "Ties": 0
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 2,
+            "Losses": 9,
+            "Ties": 0
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 5,
+            "Losses": 4,
+            "Ties": 2
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 8,
+            "Losses": 3,
+            "Ties": 0
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 9,
+            "Losses": 2,
+            "Ties": 0
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 2,
+            "Losses": 8,
+            "Ties": 1
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -1097,7 +1657,63 @@
         "MatchupTies": 2,
         "CategoryWins": 39,
         "CategoryLosses": 31,
-        "CategoryTies": 29
+        "CategoryTies": 29,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 8,
+            "Losses": 3,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 2,
+            "Losses": 8,
+            "Ties": 1
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 7,
+            "Losses": 3,
+            "Ties": 1
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 5,
+            "Losses": 4,
+            "Ties": 2
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 4,
+            "Losses": 6,
+            "Ties": 1
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 3,
+            "Losses": 6,
+            "Ties": 2
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 10,
+            "Losses": 1,
+            "Ties": 0
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {
@@ -1204,7 +1820,63 @@
         "MatchupTies": 0,
         "CategoryWins": 61,
         "CategoryLosses": 13,
-        "CategoryTies": 25
+        "CategoryTies": 25,
+        "CategoryRecords": {
+          "PTS": {
+            "Category": "PTS",
+            "Wins": 9,
+            "Losses": 2,
+            "Ties": 0
+          },
+          "REB": {
+            "Category": "REB",
+            "Wins": 8,
+            "Losses": 3,
+            "Ties": 0
+          },
+          "AST": {
+            "Category": "AST",
+            "Wins": 7,
+            "Losses": 3,
+            "Ties": 1
+          },
+          "STL": {
+            "Category": "STL",
+            "Wins": 9,
+            "Losses": 1,
+            "Ties": 1
+          },
+          "BLK": {
+            "Category": "BLK",
+            "Wins": 11,
+            "Losses": 0,
+            "Ties": 0
+          },
+          "TO": {
+            "Category": "TO",
+            "Wins": 6,
+            "Losses": 4,
+            "Ties": 1
+          },
+          "3PM": {
+            "Category": "3PM",
+            "Wins": 11,
+            "Losses": 0,
+            "Ties": 0
+          },
+          "FG%": {
+            "Category": "FG%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          },
+          "FT%": {
+            "Category": "FT%",
+            "Wins": 0,
+            "Losses": 0,
+            "Ties": 11
+          }
+        }
       },
       "Matchups": [
         {

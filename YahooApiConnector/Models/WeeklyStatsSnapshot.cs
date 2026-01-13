@@ -23,7 +23,21 @@ public class TeamRoundRobinRecord
     public int CategoryWins { get; set; }
     public int CategoryLosses { get; set; }
     public int CategoryTies { get; set; }
+
+    public Dictionary<string, CategoryRecord> CategoryRecords { get; set; }
+        = new();
 }
+
+public class CategoryRecord
+{
+    public string Category { get; set; } = "";
+
+    public int Wins { get; set; }
+    public int Losses { get; set; }
+    public int Ties { get; set; }
+}
+
+
 
 public class MatchupResult
 {

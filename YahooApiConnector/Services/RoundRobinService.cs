@@ -40,15 +40,29 @@ public static class RoundRobinService
 
         // Initialize results per team
         var results = teams.ToDictionary(
-            t => t.TeamKey,
-            t => new RoundRobinResult
+    t => t.TeamKey,
+    t =>
+    {
+        var record = new TeamRoundRobinRecord();
+
+        foreach (var category in CategoryRules.Keys)
+        {
+            record.CategoryRecords[category] = new CategoryRecord
             {
-                TeamKey = t.TeamKey,
-                Team = t,
-                TeamRecord = new TeamRoundRobinRecord(),
-                Matchups = new List<MatchupResult>()
-            }
-        );
+                Category = category
+            };
+        }
+
+        return new RoundRobinResult
+        {
+            TeamKey = t.TeamKey,
+            Team = t,
+            TeamRecord = record,
+            Matchups = new List<MatchupResult>()
+        };
+    }
+);
+
 
         // Each team evaluates itself vs every other team
         foreach (var team in teams)
@@ -88,28 +102,37 @@ public static class RoundRobinService
                     }
 
 
-                    if (teamVal == oppVal)
-                    {
-                        matchup.CategoryTies++;
-                        result.TeamRecord.CategoryTies++;
-                    }
-                    else
-                    {
-                        bool teamWins = rule.HigherIsBetter
-                            ? teamVal > oppVal
-                            : teamVal < oppVal;
+                    var categoryRecord = result.TeamRecord.CategoryRecords[statKey];
 
-                        if (teamWins)
-                        {
-                            matchup.CategoryWins++;
-                            result.TeamRecord.CategoryWins++;
-                        }
-                        else
-                        {
-                            matchup.OpponentCategoryWins++;
-                            result.TeamRecord.CategoryLosses++;
-                        }
-                    }
+if (teamVal == oppVal)
+{
+    matchup.CategoryTies++;
+    result.TeamRecord.CategoryTies++;
+
+    categoryRecord.Ties++;
+}
+else
+{
+    bool teamWins = rule.HigherIsBetter
+        ? teamVal > oppVal
+        : teamVal < oppVal;
+
+    if (teamWins)
+    {
+        matchup.CategoryWins++;
+        result.TeamRecord.CategoryWins++;
+
+        categoryRecord.Wins++;
+    }
+    else
+    {
+        matchup.OpponentCategoryWins++;
+        result.TeamRecord.CategoryLosses++;
+
+        categoryRecord.Losses++;
+    }
+}
+
                 }
 
                 // Determine matchup outcome
