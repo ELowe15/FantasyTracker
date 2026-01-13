@@ -130,7 +130,6 @@ class Program
     {
         Season = snapshot.Season,
         Week = snapshot.Week,
-        Teams = weeklyStats,
         RoundRobinResults = roundRobinResults
     };
 
