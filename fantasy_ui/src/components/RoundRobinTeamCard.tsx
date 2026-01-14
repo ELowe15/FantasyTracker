@@ -1,39 +1,68 @@
 import React, { useState } from "react";
-import { RoundRobinTeam, RoundRobinMatchup } from "../models/League";
+import {
+  RoundRobinResult,
+  RoundRobinMatchup,
+  TeamRoundRobinRecord,
+} from "../models/League";
+import { formatRecord, getPercentageCategory, toOrdinal } from "../util/Helpers";
 
 interface Props {
-  team: RoundRobinTeam & { formattedRecord?: string };
+  result: RoundRobinResult;
+  rank: number;
 }
 
-const RoundRobinTeamCard: React.FC<Props> = ({ team }) => {
+const RoundRobinTeamCard: React.FC<Props> = ({ result, rank }) => {
   const [expanded, setExpanded] = useState(false);
 
-  const getResult = (m: RoundRobinMatchup) => {
-    if (m.teamScore > m.opponentScore)
-      return { label: "Win", className: "text-green-400" };
-    if (m.teamScore < m.opponentScore)
-      return { label: "Loss", className: "text-red-400" };
-    return { label: "Tie", className: "text-yellow-400" };
+  const { Team, TeamRecord, Matchups } = result;
+
+  // Format W/L/T for a single matchup
+  const formatScore = (teamScore: number, opponentScore: number) => {
+    let letter = "T";
+    let color = "text-yellow-400";
+
+    if (teamScore > opponentScore) {
+      letter = "W";
+      color = "text-green-400";
+    } else if (teamScore < opponentScore) {
+      letter = "L";
+      color = "text-red-400";
+    }
+
+    return (
+      <>
+        {teamScore}–{opponentScore}{" "}
+        <span className={`font-semibold ${color}`}>{letter}</span>
+      </>
+    );
   };
 
+  // Format category totals
+  const formatCategoryRecord = (
+    wins: number,
+    losses: number,
+    ties: number
+  ) => (
+    <span className="font-medium">
+      <span >{wins}</span>-
+      <span >{losses}</span>-
+      <span >{ties}</span>
+    </span>
+  );
+
   return (
-    <div className="bg-slate-800 rounded-md text-white">
-      {/* Header (always visible / clickable) */}
+    <div className="bg-slate-800 rounded-md text-white overflow-x-auto mb-3">
+      {/* Header */}
       <button
         onClick={() => setExpanded((e) => !e)}
         className="w-full flex justify-between items-center p-3 text-left focus:outline-none"
       >
         <div className="font-semibold text-sm">
-          {team.rank}. {team.managerName}
+          {toOrdinal(rank)} {Team.ManagerName}
         </div>
 
         <div className="flex items-center gap-2 text-xs text-gray-300">
-          <span>
-            {team.formattedRecord ??
-              `${team.wins}-${team.losses}-${team.ties}`}
-          </span>
-
-          {/* Caret */}
+          {formatRecord(TeamRecord.MatchupWins, TeamRecord.MatchupLosses, TeamRecord.MatchupTies)}
           <span
             className={`transition-transform duration-200 ${
               expanded ? "rotate-180" : ""
@@ -44,52 +73,69 @@ const RoundRobinTeamCard: React.FC<Props> = ({ team }) => {
         </div>
       </button>
 
-      {/* Expandable Matchups */}
+      {/* Expandable Content */}
       {expanded && (
         <div className="px-3 pb-3 text-xs border-t border-slate-700">
-          {team.matchups.length === 0 && (
-            <div className="text-gray-400 italic pt-2">
-              No matchup data
-            </div>
-          )}
-
-          {team.matchups.length > 0 && (
-            <>
-              {/* Column Headers */}
-              <div className="flex justify-between text-[11px] text-gray-400 pt-2 pb-1">
-                <span className="w-1/2">Opponent</span>
-                <span className="w-1/4 text-center">Score</span>
-                <span className="w-1/4 text-right">Result</span>
-              </div>
-
-              {/* Rows */}
-              <div className="space-y-1">
-                {team.matchups.map((m: RoundRobinMatchup) => {
-                  const result = getResult(m);
-
-                  return (
+          {Matchups.length === 0 ? (
+            <div className="text-gray-400 italic pt-2">No matchup data</div>
+          ) : (
+            <div className="flex flex-col md:flex-row md:space-x-4">
+              {/* Left: Matchups */}
+              <div className="w-full md:w-1/2">
+                <div className="flex justify-between text-[11px] text-gray-400 pt-2 pb-1 border-b border-slate-700">
+                  <span>Opponent</span>
+                  <span className="text-right">Score</span>
+                </div>
+                <div className="space-y-1 pt-1">
+                  {Matchups.map((m: RoundRobinMatchup) => (
                     <div
-                      key={m.opponentId}
+                      key={m.OpponentTeamKey}
                       className="flex justify-between"
                     >
-                      <span className="w-1/2 truncate">
-                        {m.opponentName}
+                      <span className="truncate">
+                        {m.ManagerName}
                       </span>
-
-                      <span className="w-1/4 text-center">
-                        {m.teamScore}–{m.opponentScore}
-                      </span>
-
-                      <span
-                        className={`w-1/4 text-right font-medium ${result.className}`}
-                      >
-                        {result.label}
+                      <span className="text-right font-medium">
+                        {formatScore(
+                          m.CategoryWins,
+                          m.OpponentCategoryWins
+                        )}
                       </span>
                     </div>
-                  );
-                })}
+                  ))}
+                </div>
               </div>
-            </>
+
+              {/* Right: Category Performance */}
+              <div className="w-full md:w-1/2 mt-3 md:mt-0">
+                <div className="flex justify-between text-[11px] text-gray-400 pt-2 pb-1 border-b border-slate-700">
+                  <span>Category</span>
+                  <span className="text-right">(W-L-T)</span>
+                </div>
+                <div className="space-y-1 pt-1">
+                  {Object.values(result.TeamRecord.CategoryRecords).map((cat) => (
+                    <div key={cat.Category} className="flex justify-between">
+                        <span>{getPercentageCategory(cat.Category)}</span>
+                        <span className="text-right font-medium">
+                        <span >{cat.Wins}</span>-
+                        <span >{cat.Losses}</span>-
+                        <span >{cat.Ties}</span>
+                        </span>
+                    </div>
+                    ))}
+                </div>
+
+                {/* Total Category Record */}
+                <div className="border-t border-slate-700 mt-1 pt-1 flex justify-between font-medium text-gray-300 text-[11px]">
+                  <span>Total</span>
+                  {formatCategoryRecord(
+                    TeamRecord.CategoryWins,
+                    TeamRecord.CategoryLosses,
+                    TeamRecord.CategoryTies
+                  )}
+                </div>
+              </div>
+            </div>
           )}
         </div>
       )}

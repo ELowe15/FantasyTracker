@@ -99,8 +99,6 @@ export default function BestBallPage() {
 
       const mapped = data.Teams.map((t: any) => {
         let name = t.ManagerName;
-        if (name === "evan") name = "EFry";
-        if (name === "Evan") name = "ELowe";
 
         return {
           ...t,
@@ -155,8 +153,6 @@ export default function BestBallPage() {
 
         const mapped: BestBallTeam[] = data.Teams.map((t: any) => {
           let displayManagerName = t.ManagerName;
-          if (t.ManagerName === "evan") displayManagerName = "EFry";
-          if (t.ManagerName === "Evan") displayManagerName = "ELowe";
 
           return {
             teamKey: t.TeamKey,
@@ -165,12 +161,12 @@ export default function BestBallPage() {
             players:
               t.Players?.map((p: any) => {
                 const rawStats = {
-                  points: p.RawStats?.["12"] ?? 0,
-                  rebounds: p.RawStats?.["15"] ?? 0,
-                  assists: p.RawStats?.["16"] ?? 0,
-                  steals: p.RawStats?.["17"] ?? 0,
-                  blocks: p.RawStats?.["18"] ?? 0,
-                  turnovers: p.RawStats?.["19"] ?? 0,
+                  points: p.RawStats?.["PTS"] ?? 0,
+                  rebounds: p.RawStats?.["REB"] ?? 0,
+                  assists: p.RawStats?.["AST"] ?? 0,
+                  steals: p.RawStats?.["STL"] ?? 0,
+                  blocks: p.RawStats?.["BLK"] ?? 0,
+                  turnovers: p.RawStats?.["TO"] ?? 0,
                 };
 
                 return {

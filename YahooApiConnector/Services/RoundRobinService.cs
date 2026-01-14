@@ -10,178 +10,144 @@ public static class RoundRobinService
         { "BLK", new CategoryRule { HigherIsBetter = true } },
         { "TO",  new CategoryRule { HigherIsBetter = false } },
         { "3PM", new CategoryRule { HigherIsBetter = true } },
-
-        // Percentages — use raw data
-        {
-            "FG%",
-            new CategoryRule
-            {
-                HigherIsBetter = true,
-                MakesStatKey = "FGM",
-                AttemptsStatKey = "A"
-            }
-        },
-        {
-            "FT%",
-            new CategoryRule
-            {
-                HigherIsBetter = true,
-                MakesStatKey = "FTM",
-                AttemptsStatKey = "A"
-            }
-        }
+        { "FGM/A",  new CategoryRule { HigherIsBetter = false } }, //Save as FG%
+        { "FTM/A", new CategoryRule { HigherIsBetter = true } } //Save as FT%
     };
 
 
-    public static List<RoundRobinResult> RunRoundRobin(List<TeamWeeklyStats> teams)
-    {
-        if (teams == null || teams.Count < 2)
-            throw new ArgumentException("At least two teams are required");
+   public static List<RoundRobinResult> RunRoundRobin(List<TeamWeeklyStats> teams)
+{
+    if (teams == null || teams.Count < 2)
+        throw new ArgumentException("At least two teams are required");
 
-        // Initialize results per team
-        var results = teams.ToDictionary(
-    t => t.TeamKey,
-    t =>
-    {
-        var record = new TeamRoundRobinRecord();
-
-        foreach (var category in CategoryRules.Keys)
+    // Initialize results per team
+    var results = teams.ToDictionary(
+        t => t.TeamKey,
+        t =>
         {
-            record.CategoryRecords[category] = new CategoryRecord
+            var record = new TeamRoundRobinRecord();
+
+            foreach (var category in CategoryRules.Keys)
             {
-                Category = category
+                record.CategoryRecords[category] = new CategoryRecord
+                {
+                    Category = category
+                };
+            }
+
+            return new RoundRobinResult
+            {
+                TeamKey = t.TeamKey,
+                Team = t,
+                TeamRecord = record,
+                Matchups = new List<MatchupResult>()
             };
         }
+    );
 
-        return new RoundRobinResult
+    // Each team evaluates itself vs every other team
+    foreach (var team in teams)
+    {
+        var result = results[team.TeamKey];
+
+        foreach (var opponent in teams)
         {
-            TeamKey = t.TeamKey,
-            Team = t,
-            TeamRecord = record,
-            Matchups = new List<MatchupResult>()
-        };
-    }
-);
+            if (team.TeamKey == opponent.TeamKey)
+                continue;
 
-
-        // Each team evaluates itself vs every other team
-        foreach (var team in teams)
-        {
-            var result = results[team.TeamKey];
-
-            foreach (var opponent in teams)
+            var matchup = new MatchupResult
             {
-                if (team.TeamKey == opponent.TeamKey)
-                    continue;
+                OpponentTeamKey = opponent.TeamKey,
+                ManagerName = opponent.ManagerName
+            };
 
-                var matchup = new MatchupResult
+            foreach (var (statKey, rule) in CategoryRules)
+            {
+                double teamVal = ParseRatioStat(team, statKey);
+                double oppVal = ParseRatioStat(opponent, statKey);
+
+                // Save the calculated value back for display (high precision)
+                team.StatValues[statKey] = teamVal.ToString("F5");
+
+                var categoryRecord = result.TeamRecord.CategoryRecords[statKey];
+
+                // Determine W/L/T
+                if (teamVal == oppVal)
                 {
-                    OpponentTeamKey = opponent.TeamKey,
-                    ManagerName = opponent.ManagerName
-                };
-
-                foreach (var (statKey, rule) in CategoryRules)
-                {
-                    double teamVal;
-                    double oppVal;
-
-                    if (rule.MakesStatKey != null && rule.AttemptsStatKey != null)
-                    {
-                        var teamMakes = ParseStat(team, rule.MakesStatKey);
-                        var teamAtt   = ParseStat(team, rule.AttemptsStatKey);
-                        var oppMakes  = ParseStat(opponent, rule.MakesStatKey);
-                        var oppAtt    = ParseStat(opponent, rule.AttemptsStatKey);
-
-                        teamVal = teamAtt > 0 ? teamMakes / teamAtt : 0;
-                        oppVal  = oppAtt  > 0 ? oppMakes  / oppAtt  : 0;
-                    }
-                    else
-                    {
-                        teamVal = ParseStat(team, statKey);
-                        oppVal  = ParseStat(opponent, statKey);
-                    }
-
-
-                    var categoryRecord = result.TeamRecord.CategoryRecords[statKey];
-
-if (teamVal == oppVal)
-{
-    matchup.CategoryTies++;
-    result.TeamRecord.CategoryTies++;
-
-    categoryRecord.Ties++;
-}
-else
-{
-    bool teamWins = rule.HigherIsBetter
-        ? teamVal > oppVal
-        : teamVal < oppVal;
-
-    if (teamWins)
-    {
-        matchup.CategoryWins++;
-        result.TeamRecord.CategoryWins++;
-
-        categoryRecord.Wins++;
-    }
-    else
-    {
-        matchup.OpponentCategoryWins++;
-        result.TeamRecord.CategoryLosses++;
-
-        categoryRecord.Losses++;
-    }
-}
-
-                }
-
-                // Determine matchup outcome
-                if (matchup.CategoryWins > matchup.OpponentCategoryWins)
-                {
-                    result.TeamRecord.MatchupWins++;
-                }
-                else if (matchup.CategoryWins < matchup.OpponentCategoryWins)
-                {
-                    result.TeamRecord.MatchupLosses++;
+                    matchup.CategoryTies++;
+                    result.TeamRecord.CategoryTies++;
+                    categoryRecord.Ties++;
                 }
                 else
                 {
-                    result.TeamRecord.MatchupTies++;
+                    bool teamWins = rule.HigherIsBetter
+                        ? teamVal > oppVal
+                        : teamVal < oppVal;
+
+                    if (teamWins)
+                    {
+                        matchup.CategoryWins++;
+                        result.TeamRecord.CategoryWins++;
+                        categoryRecord.Wins++;
+                    }
+                    else
+                    {
+                        matchup.OpponentCategoryWins++;
+                        result.TeamRecord.CategoryLosses++;
+                        categoryRecord.Losses++;
+                    }
                 }
-
-                result.Matchups.Add(matchup);
             }
-        }
 
-        return results.Values.ToList();
-    }
-
-    private static double ParseStat(TeamWeeklyStats team, string statId)
-    {
-        if (team.StatValues == null ||
-            !team.StatValues.TryGetValue(statId, out var raw) ||
-            string.IsNullOrWhiteSpace(raw))
-            return 0;
-
-        raw = raw.Trim();
-
-        // Ratio stats like "152/330"
-        if (raw.Contains('/'))
-        {
-            var parts = raw.Split('/');
-            if (parts.Length == 2 &&
-                double.TryParse(parts[0], out var made) &&
-                double.TryParse(parts[1], out var att) &&
-                att != 0)
+            // Determine overall matchup outcome
+            if (matchup.CategoryWins > matchup.OpponentCategoryWins)
             {
-                return made / att;
+                result.TeamRecord.MatchupWins++;
+            }
+            else if (matchup.CategoryWins < matchup.OpponentCategoryWins)
+            {
+                result.TeamRecord.MatchupLosses++;
+            }
+            else
+            {
+                result.TeamRecord.MatchupTies++;
             }
 
-            return 0;
+            result.Matchups.Add(matchup);
+        }
+    }
+
+    return results.Values.ToList();
+}
+
+// Parse FGM/A or FTM/A ratio stats
+private static double ParseRatioStat(TeamWeeklyStats team, string statKey)
+{
+    if (team.StatValues == null ||
+        !team.StatValues.TryGetValue(statKey, out var raw) ||
+        string.IsNullOrWhiteSpace(raw))
+        return 0;
+
+    raw = raw.Trim();
+
+    if (raw.Contains('/'))
+    {
+        var parts = raw.Split('/');
+        if (parts.Length == 2 &&
+            double.TryParse(parts[0], out var made) &&
+            double.TryParse(parts[1], out var attempts) &&
+            attempts != 0)
+        {
+            return made / attempts; // high-precision division
         }
 
-        return double.TryParse(raw, out var val) ? val : 0;
+        return 0;
     }
+
+    // For normal stats like PTS, REB, etc.
+    return double.TryParse(raw, out var val) ? val : 0;
+}
+
 }
 
 public class CategoryRule

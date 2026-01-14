@@ -32,8 +32,6 @@ export default function TeamsPage() {
         const mapped: TeamRoster[] = data.map((t: any) => {
           // Manager name override based on casing
           let displayManagerName = t.ManagerName;
-          if (t.ManagerName === "evan") displayManagerName = "EFry";
-          if (t.ManagerName === "Evan") displayManagerName = "ELowe";
 
           return {
             teamKey: t.TeamKey,

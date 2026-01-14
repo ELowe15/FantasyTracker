@@ -67,58 +67,57 @@ export interface BestBallTeam {
   players: BestBallPlayer[];
 }
 
-export type WeeklyTeamStats = {
+export interface WeeklyTeamStats {
   TeamKey: string;
   ManagerName: string;
   MatchupRecord: string; // e.g., "7-3-1"
   StatValues: { [statId: string]: string }; // e.g., { "PTS": "152", "REB": "97", ... }
-};
-
-export type WeeklyStatsSnapshot = {
-  Season: number;
-  Week: number;
-  Teams: WeeklyTeamStats[];
-};
-
-export interface TeamRecord {
-  TeamKey: string;
-  MatchupWins: number;
-  MatchupLosses: number;
-  MatchupTies?: number;
 }
 
-export interface RawRoundRobinMatchup {
-  TeamAKey: string;
-  TeamBKey: string;
-  TeamACategoryWins: number;
-  TeamBCategoryWins: number;
+export interface WeeklyStatsSnapshot {
+  Season: number;
+  Week: number;
+  RoundRobinResults: RoundRobinResult[];
+}
+
+export interface TeamWeeklyStats {
+  TeamKey: string;
+  ManagerName: string;
+  StatValues: Record<string, string>; 
+  // e.g. "FGM/A": "27/55", "FG%": ".491"
+}
+
+export interface RoundRobinResult {
+  TeamKey: string;
+  Team: TeamWeeklyStats;
+  TeamRecord: TeamRoundRobinRecord;
+  Matchups: RoundRobinMatchup[];
+}
+
+export interface TeamRoundRobinRecord {
+  MatchupWins: number;
+  MatchupLosses: number;
+  MatchupTies: number;
+
+  CategoryWins: number;
+  CategoryLosses: number;
+  CategoryTies: number;
+
+  CategoryRecords: Record<string, CategoryRecord>;
+}
+
+
+export interface CategoryRecord {
+  Category: string;
+  Wins: number;
+  Losses: number;
+  Ties: number;
 }
 
 export interface RoundRobinMatchup {
-  opponentId: string;
-  opponentName: string;
-  teamScore: number;
-  opponentScore: number;
+  OpponentTeamKey: string;
+  ManagerName: string;
+  CategoryWins: number;
+  OpponentCategoryWins: number;
+  CategoryTies: number;
 }
-
-export interface RoundRobinTeam {
-  teamId: string;
-  managerName: string;
-  wins: number;
-  losses: number;
-  ties: number;
-  rank: number;
-  matchups: RoundRobinMatchup[];
-}
-
-
-export interface Props {
-  data: {
-    WeeklyTeamStats: WeeklyTeamStats[];
-    RoundRobinResults: {
-      TeamRecords: TeamRecord[];
-      Matchups: RawRoundRobinMatchup[];
-    };
-  };
-}
-

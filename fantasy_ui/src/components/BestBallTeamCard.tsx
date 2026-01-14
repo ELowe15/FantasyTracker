@@ -1,5 +1,6 @@
 import { BestBallTeam, BestBallPlayer } from "../models/League";
 import { useState, Fragment } from "react";
+import { toOrdinal } from "../util/Helpers";
 
 interface Props {
   team: BestBallTeam;
@@ -9,20 +10,6 @@ interface Props {
 // Display order for lineup
 const SLOT_ORDER = ["PG", "SG", "SF", "PF", "C", "UTIL", "UTIL", "Bench"];
 
-// Convert 1 → 1st, 2 → 2nd, etc.
-function formatOrdinal(n: number) {
-  if (n % 100 >= 11 && n % 100 <= 13) return `${n}th`;
-  switch (n % 10) {
-    case 1:
-      return `${n}st`;
-    case 2:
-      return `${n}nd`;
-    case 3:
-      return `${n}rd`;
-    default:
-      return `${n}th`;
-  }
-}
 
 export default function BestBallTeamCard({ team, rank }: Props) {
   const [open, setOpen] = useState(false);
@@ -48,7 +35,7 @@ export default function BestBallTeamCard({ team, rank }: Props) {
         <div className="flex items-center gap-2 text-sm">
           {rank && (
             <span className="text-amber-400 font-semibold">
-              {formatOrdinal(rank)}
+              {toOrdinal(rank)}
             </span>
           )}
           <span className="text-amber-300 font-medium">
