@@ -150,6 +150,15 @@ class Program
     Console.WriteLine(
         $"Weekly stats snapshot saved to {weeklyStatsOutPath}"
     );
+
+    await RoundRobinService.RebuildSeasonRoundRobinAsync(
+        snapshot.Season,
+        basePath
+    );
+
+    Console.WriteLine(
+        $"Season Round Robin snapshot rebuilt for season {snapshot.Season}"
+    );
 }
 catch (Exception ex)
 {

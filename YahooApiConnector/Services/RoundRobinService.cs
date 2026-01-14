@@ -1,3 +1,6 @@
+using System.Text.Json;
+
+
 public static class RoundRobinService
 {
     private static readonly Dictionary<string, CategoryRule> CategoryRules =
@@ -120,32 +123,137 @@ public static class RoundRobinService
     return results.Values.ToList();
 }
 
-// Parse FGM/A or FTM/A ratio stats
-private static double ParseRatioStat(TeamWeeklyStats team, string statKey)
-{
-    if (team.StatValues == null ||
-        !team.StatValues.TryGetValue(statKey, out var raw) ||
-        string.IsNullOrWhiteSpace(raw))
-        return 0;
-
-    raw = raw.Trim();
-
-    if (raw.Contains('/'))
+    // Parse FGM/A or FTM/A ratio stats
+    private static double ParseRatioStat(TeamWeeklyStats team, string statKey)
     {
-        var parts = raw.Split('/');
-        if (parts.Length == 2 &&
-            double.TryParse(parts[0], out var made) &&
-            double.TryParse(parts[1], out var attempts) &&
-            attempts != 0)
+        if (team.StatValues == null ||
+            !team.StatValues.TryGetValue(statKey, out var raw) ||
+            string.IsNullOrWhiteSpace(raw))
+            return 0;
+
+        raw = raw.Trim();
+
+        if (raw.Contains('/'))
         {
-            return made / attempts; // high-precision division
+            var parts = raw.Split('/');
+            if (parts.Length == 2 &&
+                double.TryParse(parts[0], out var made) &&
+                double.TryParse(parts[1], out var attempts) &&
+                attempts != 0)
+            {
+                return made / attempts; // high-precision division
+            }
+
+            return 0;
         }
 
-        return 0;
+        // For normal stats like PTS, REB, etc.
+        return double.TryParse(raw, out var val) ? val : 0;
     }
 
-    // For normal stats like PTS, REB, etc.
-    return double.TryParse(raw, out var val) ? val : 0;
+       public static async Task RebuildSeasonRoundRobinAsync(
+    int season,
+    string outputDirectory)
+{
+    if (string.IsNullOrWhiteSpace(outputDirectory))
+        outputDirectory = Directory.GetCurrentDirectory();
+
+    if (!Directory.Exists(outputDirectory))
+        return;
+
+    var weeklyFiles = Directory
+        .GetFiles(outputDirectory, $"round_robin_{season}_week_*.json")
+        .OrderBy(f => f)
+        .ToList();
+
+    if (weeklyFiles.Count == 0)
+        return;
+
+    var seasonResults = new Dictionary<string, RoundRobinResult>();
+    var weeksIncluded = new HashSet<int>();
+
+    foreach (var file in weeklyFiles)
+    {
+        var json = await File.ReadAllTextAsync(file);
+        var snapshot = JsonSerializer.Deserialize<WeeklyStatsSnapshot>(json);
+
+        if (snapshot?.RoundRobinResults == null)
+            continue;
+
+        weeksIncluded.Add(snapshot.Week);
+
+        foreach (var weeklyResult in snapshot.RoundRobinResults)
+        {
+            if (!seasonResults.TryGetValue(weeklyResult.TeamKey, out var seasonResult))
+            {
+                // Clone shell (no stats, no matchups)
+                seasonResult = new RoundRobinResult
+                {
+                    TeamKey = weeklyResult.TeamKey,
+                    Team = weeklyResult.Team,
+                    TeamRecord = new TeamRoundRobinRecord(),
+                    Matchups = new List<MatchupResult>()
+                };
+
+                // Initialize category records
+                foreach (var category in CategoryRules.Keys)
+                {
+                    seasonResult.TeamRecord.CategoryRecords[category] =
+                        new CategoryRecord { Category = category };
+                }
+
+                seasonResults[weeklyResult.TeamKey] = seasonResult;
+            }
+
+            var sr = seasonResult.TeamRecord;
+            var wr = weeklyResult.TeamRecord;
+
+            // ---- Aggregate matchup totals ----
+            sr.MatchupWins   += wr.MatchupWins;
+            sr.MatchupLosses += wr.MatchupLosses;
+            sr.MatchupTies   += wr.MatchupTies;
+
+            // ---- Aggregate category totals ----
+            sr.CategoryWins   += wr.CategoryWins;
+            sr.CategoryLosses += wr.CategoryLosses;
+            sr.CategoryTies   += wr.CategoryTies;
+
+            foreach (var (cat, weeklyCat) in wr.CategoryRecords)
+            {
+                var seasonCat = sr.CategoryRecords[cat];
+                seasonCat.Wins   += weeklyCat.Wins;
+                seasonCat.Losses += weeklyCat.Losses;
+                seasonCat.Ties   += weeklyCat.Ties;
+            }
+        }
+    }
+
+    var seasonSnapshot = new SeasonRoundRobinSnapshot
+    {
+        Season = season,
+        WeeksIncluded = weeksIncluded.OrderBy(w => w).ToList(),
+        LastUpdated = DateTime.UtcNow,
+        RoundRobinResults = seasonResults.Values
+            .OrderByDescending(r => r.TeamRecord.MatchupWins)
+            .ThenByDescending(r => r.TeamRecord.MatchupTies)
+            .ThenBy(r => r.TeamRecord.MatchupLosses)
+            .ToList()
+    };
+
+    var outputPath = Path.Combine(
+        outputDirectory,
+        $"season_round_robin_{season}.json"
+    );
+
+    var options = new JsonSerializerOptions
+    {
+        WriteIndented = true
+    };
+
+    await File.WriteAllTextAsync(
+        outputPath,
+        JsonSerializer.Serialize(seasonSnapshot, options)
+    );
 }
 
 }
