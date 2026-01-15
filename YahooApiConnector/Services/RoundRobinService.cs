@@ -68,10 +68,16 @@ public static class RoundRobinService
             {
                 double teamVal = ParseRatioStat(team, statKey);
                 double oppVal = ParseRatioStat(opponent, statKey);
-
-                // Save the calculated value back for display (high precision)
-                team.StatValues[statKey] = teamVal.ToString("F5");
-
+                if (statKey == "FGM/A" || statKey == "FTM/A")
+                {
+                    // Save the calculated value back for display (high precision)
+                    team.StatValues[statKey] = teamVal.ToString("F5");
+                }
+                else
+                {
+                    team.StatValues[statKey] = teamVal.ToString("F0");
+                }
+                
                 var categoryRecord = result.TeamRecord.CategoryRecords[statKey];
 
                 // Determine W/L/T
@@ -150,6 +156,7 @@ public static class RoundRobinService
         // For normal stats like PTS, REB, etc.
         return double.TryParse(raw, out var val) ? val : 0;
     }
+    
 
        public static async Task RebuildSeasonRoundRobinAsync(
     int season,
