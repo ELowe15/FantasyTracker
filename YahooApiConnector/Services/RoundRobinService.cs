@@ -159,109 +159,135 @@ public static class RoundRobinService
     
 
        public static async Task RebuildSeasonRoundRobinAsync(
-    int season,
-    string outputDirectory)
-{
-    if (string.IsNullOrWhiteSpace(outputDirectory))
-        outputDirectory = Directory.GetCurrentDirectory();
-
-    if (!Directory.Exists(outputDirectory))
-        return;
-
-    var weeklyFiles = Directory
-        .GetFiles(outputDirectory, $"round_robin_{season}_week_*.json")
-        .OrderBy(f => f)
-        .ToList();
-
-    if (weeklyFiles.Count == 0)
-        return;
-
-    var seasonResults = new Dictionary<string, RoundRobinResult>();
-    var weeksIncluded = new HashSet<int>();
-
-    foreach (var file in weeklyFiles)
-    {
-        var json = await File.ReadAllTextAsync(file);
-        var snapshot = JsonSerializer.Deserialize<WeeklyStatsSnapshot>(json);
-
-        if (snapshot?.RoundRobinResults == null)
-            continue;
-
-        weeksIncluded.Add(snapshot.Week);
-
-        foreach (var weeklyResult in snapshot.RoundRobinResults)
+            int season,
+            string outputDirectory)
         {
-            if (!seasonResults.TryGetValue(weeklyResult.TeamKey, out var seasonResult))
+            if (string.IsNullOrWhiteSpace(outputDirectory))
+                outputDirectory = Directory.GetCurrentDirectory();
+
+            if (!Directory.Exists(outputDirectory))
+                return;
+
+            var weeklyFiles = Directory
+                .GetFiles(outputDirectory, $"round_robin_{season}_week_*.json")
+                .OrderBy(f => f)
+                .ToList();
+
+            if (weeklyFiles.Count == 0)
+                return;
+
+            var seasonResults = new Dictionary<string, RoundRobinResult>();
+            var weeksIncluded = new HashSet<int>();
+
+            foreach (var file in weeklyFiles)
             {
-                // Clone shell (no stats, no matchups)
-                seasonResult = new RoundRobinResult
+                var json = await File.ReadAllTextAsync(file);
+                var snapshot = JsonSerializer.Deserialize<WeeklyStatsSnapshot>(json);
+
+                if (snapshot?.RoundRobinResults == null)
+                    continue;
+
+                weeksIncluded.Add(snapshot.Week);
+
+                foreach (var weeklyResult in snapshot.RoundRobinResults)
                 {
-                    TeamKey = weeklyResult.TeamKey,
-                    Team = weeklyResult.Team,
-                    TeamRecord = new TeamRoundRobinRecord(),
-                    Matchups = new List<MatchupResult>()
-                };
+                    if (!seasonResults.TryGetValue(weeklyResult.TeamKey, out var seasonResult))
+                    {
+                        // Clone shell (no stats, no matchups)
+                        seasonResult = new RoundRobinResult
+                        {
+                            TeamKey = weeklyResult.TeamKey,
+                            Team = weeklyResult.Team,
+                            TeamRecord = new TeamRoundRobinRecord(),
+                            Matchups = new List<MatchupResult>()
+                        };
 
-                // Initialize category records
-                foreach (var category in CategoryRules.Keys)
-                {
-                    seasonResult.TeamRecord.CategoryRecords[category] =
-                        new CategoryRecord { Category = category };
-                }
+                        // Initialize category records
+                        foreach (var category in CategoryRules.Keys)
+                        {
+                            seasonResult.TeamRecord.CategoryRecords[category] =
+                                new CategoryRecord { Category = category };
+                        }
 
-                seasonResults[weeklyResult.TeamKey] = seasonResult;
-            }
+                        seasonResults[weeklyResult.TeamKey] = seasonResult;
+                    }
 
-            var sr = seasonResult.TeamRecord;
-            var wr = weeklyResult.TeamRecord;
+                    var sr = seasonResult.TeamRecord;
+                    var wr = weeklyResult.TeamRecord;
 
-            // ---- Aggregate matchup totals ----
-            sr.MatchupWins   += wr.MatchupWins;
-            sr.MatchupLosses += wr.MatchupLosses;
-            sr.MatchupTies   += wr.MatchupTies;
+                    // ---- Aggregate matchup totals ----
+                    sr.MatchupWins   += wr.MatchupWins;
+                    sr.MatchupLosses += wr.MatchupLosses;
+                    sr.MatchupTies   += wr.MatchupTies;
 
-            // ---- Aggregate category totals ----
-            sr.CategoryWins   += wr.CategoryWins;
-            sr.CategoryLosses += wr.CategoryLosses;
-            sr.CategoryTies   += wr.CategoryTies;
+                    // ---- Aggregate category totals ----
+                    sr.CategoryWins   += wr.CategoryWins;
+                    sr.CategoryLosses += wr.CategoryLosses;
+                    sr.CategoryTies   += wr.CategoryTies;
 
-            foreach (var (cat, weeklyCat) in wr.CategoryRecords)
-            {
-                var seasonCat = sr.CategoryRecords[cat];
-                seasonCat.Wins   += weeklyCat.Wins;
-                seasonCat.Losses += weeklyCat.Losses;
-                seasonCat.Ties   += weeklyCat.Ties;
-            }
-        }
+                    foreach (var (cat, weeklyCat) in wr.CategoryRecords)
+                    {
+                        var seasonCat = sr.CategoryRecords[cat];
+                        seasonCat.Wins   += weeklyCat.Wins;
+                        seasonCat.Losses += weeklyCat.Losses;
+                        seasonCat.Ties   += weeklyCat.Ties;
+                    }
+
+                    // ---- Aggregate matchup-by-opponent ----
+foreach (var weeklyMatchup in weeklyResult.Matchups)
+{
+    var seasonMatchup = seasonResult.Matchups
+        .FirstOrDefault(m => m.OpponentTeamKey == weeklyMatchup.OpponentTeamKey);
+
+    if (seasonMatchup == null)
+    {
+        seasonMatchup = new MatchupResult
+        {
+            OpponentTeamKey = weeklyMatchup.OpponentTeamKey,
+            ManagerName = weeklyMatchup.ManagerName,
+            CategoryWins = 0,
+            OpponentCategoryWins = 0,
+            CategoryTies = 0
+        };
+
+        seasonResult.Matchups.Add(seasonMatchup);
     }
 
-    var seasonSnapshot = new SeasonRoundRobinSnapshot
-    {
-        Season = season,
-        WeeksIncluded = weeksIncluded.OrderBy(w => w).ToList(),
-        LastUpdated = DateTime.UtcNow,
-        RoundRobinResults = seasonResults.Values
-            .OrderByDescending(r => r.TeamRecord.MatchupWins)
-            .ThenByDescending(r => r.TeamRecord.MatchupTies)
-            .ThenBy(r => r.TeamRecord.MatchupLosses)
-            .ToList()
-    };
-
-    var outputPath = Path.Combine(
-        outputDirectory,
-        $"season_round_robin_{season}.json"
-    );
-
-    var options = new JsonSerializerOptions
-    {
-        WriteIndented = true
-    };
-
-    await File.WriteAllTextAsync(
-        outputPath,
-        JsonSerializer.Serialize(seasonSnapshot, options)
-    );
+    seasonMatchup.CategoryWins += weeklyMatchup.CategoryWins;
+    seasonMatchup.OpponentCategoryWins += weeklyMatchup.OpponentCategoryWins;
+    seasonMatchup.CategoryTies += weeklyMatchup.CategoryTies;
 }
+
+                }
+            }
+
+            var seasonSnapshot = new SeasonRoundRobinSnapshot
+            {
+                Season = season,
+                WeeksIncluded = weeksIncluded.OrderBy(w => w).ToList(),
+                LastUpdated = DateTime.UtcNow,
+                RoundRobinResults = seasonResults.Values
+                    .OrderByDescending(r => r.TeamRecord.MatchupWins)
+                    .ThenByDescending(r => r.TeamRecord.MatchupTies)
+                    .ThenBy(r => r.TeamRecord.MatchupLosses)
+                    .ToList()
+            };
+
+            var outputPath = Path.Combine(
+                outputDirectory,
+                $"season_round_robin_{season}.json"
+            );
+
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            await File.WriteAllTextAsync(
+                outputPath,
+                JsonSerializer.Serialize(seasonSnapshot, options)
+            );
+        }
 
 }
 

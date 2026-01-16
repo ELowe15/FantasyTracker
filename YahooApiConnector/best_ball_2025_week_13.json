@@ -681,15 +681,16 @@
         },
         {
           "RawStats": {
+            "FG%": 0,
             "3PM": 0,
             "PTS": 0,
-            "REB": 0,
+            "REB": 1,
             "AST": 0,
             "STL": 0,
             "BLK": 0,
             "TO": 0
           },
-          "FantasyPoints": 0,
+          "FantasyPoints": 1.2,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "02D3E053DAC43BFF0274EC8C724AE61E538C4373F25DBF72B1EE18CF5E01DB2D",
@@ -1046,16 +1047,16 @@
         },
         {
           "RawStats": {
-            "FG%": 0.3,
-            "3PM": 2,
-            "PTS": 8,
-            "REB": 4,
+            "FG%": 0.333,
+            "3PM": 3,
+            "PTS": 11,
+            "REB": 6,
             "AST": 4,
             "STL": 1,
             "BLK": 0,
             "TO": 1
           },
-          "FantasyPoints": 20.8,
+          "FantasyPoints": 26.2,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "1E8461A4446935ED4D4B9C78F07883BFC11E6E5EDBBA7A7441B05422C9C21A6E",
@@ -1225,7 +1226,7 @@
           },
           "FantasyPoints": 94.8,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "C",
           "PlayerKey": "4AA83BB317B73FF80CB9B54EDB939FBE7E6612A0DEAC826EC3A8BBFADC18A436",
           "FullName": "Nikola Vu\u010Devi\u0107",
           "Position": "C",
@@ -1255,7 +1256,7 @@
           },
           "FantasyPoints": 52.4,
           "IsEligible": true,
-          "BestBallSlot": "SF",
+          "BestBallSlot": "SG",
           "PlayerKey": "7E7D81D406F9077EBEBCB152FDFD38D0D2151474151453A52CD8D8A3577EAF99",
           "FullName": "Tim Hardaway Jr.",
           "Position": "SG,SF",
@@ -1275,7 +1276,7 @@
           },
           "FantasyPoints": 68.6,
           "IsEligible": true,
-          "BestBallSlot": "UTIL1",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "C58A8A39D41BB16D4AEB2E835C3820AABCB730E92C9ABB653AB960F1473569BF",
           "FullName": "Aaron Gordon",
           "Position": "PF,C",
@@ -1333,7 +1334,7 @@
           },
           "FantasyPoints": 86.6,
           "IsEligible": true,
-          "BestBallSlot": "C",
+          "BestBallSlot": "UTIL1",
           "PlayerKey": "6D7795A2FFA9685D83BB06AD6BE3994E74A79406B417ACBFC66AD2E61BB4E3AD",
           "FullName": "Pascal Siakam",
           "Position": "SF,PF,C",
@@ -1379,19 +1380,19 @@
         },
         {
           "RawStats": {
-            "FG%": 0.474,
+            "FG%": 0.409,
             "FT%": 1,
             "3PM": 6,
             "PTS": 25,
-            "REB": 4,
+            "REB": 5,
             "AST": 1,
             "STL": 2,
-            "BLK": 0,
-            "TO": 2
+            "BLK": 2,
+            "TO": 3
           },
-          "FantasyPoints": 35.3,
+          "FantasyPoints": 41.5,
           "IsEligible": true,
-          "BestBallSlot": "SG",
+          "BestBallSlot": "SF",
           "PlayerKey": "9EB0AAAD51E77B38AA579898CE7658CBBE0BBB0F9598BFD740FC340A8FEADA75",
           "FullName": "Grayson Allen",
           "Position": "SG,SF",
@@ -1494,7 +1495,7 @@
           "NbaTeam": "WAS"
         }
       ],
-      "TotalBestBallPoints": 423.59999999999997
+      "TotalBestBallPoints": 429.79999999999995
     },
     {
       "Season": 0,
@@ -1591,15 +1592,16 @@
         },
         {
           "RawStats": {
+            "FG%": 0.25,
             "3PM": 0,
-            "PTS": 0,
+            "PTS": 2,
             "REB": 0,
-            "AST": 0,
+            "AST": 1,
             "STL": 0,
             "BLK": 0,
-            "TO": 0
+            "TO": 1
           },
-          "FantasyPoints": 0,
+          "FantasyPoints": 2.5,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "234EFB94F2B1FD85634D5BEEEF949553303D33F7E374CEA5B15D3CE07D3EDBF2",
@@ -2241,13 +2243,13 @@
           "RawStats": {
             "3PM": 0,
             "PTS": 0,
-            "REB": 0,
+            "REB": 1,
             "AST": 0,
             "STL": 0,
             "BLK": 0,
             "TO": 0
           },
-          "FantasyPoints": 0,
+          "FantasyPoints": 1.2,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "8406B40E6064EA7D76AD06FF0F6624EDE068F9BDF76AEE989B68351C6AE7424B",
@@ -2345,15 +2347,16 @@
       "Players": [
         {
           "RawStats": {
+            "FG%": 0.667,
             "3PM": 0,
-            "PTS": 0,
-            "REB": 0,
+            "PTS": 4,
+            "REB": 1,
             "AST": 0,
-            "STL": 0,
+            "STL": 2,
             "BLK": 0,
             "TO": 0
           },
-          "FantasyPoints": 0,
+          "FantasyPoints": 11.2,
           "IsEligible": true,
           "BestBallSlot": "Bench",
           "PlayerKey": "EED85C34043C47829455FDC5C7B2F52338D724641FA9F66397AEBDDC5EE09D6C",
@@ -2724,7 +2727,7 @@
         },
         {
           "RawStats": {
-            "FG%": 0.458,
+            "FG%": 0.423,
             "FT%": 0.667,
             "3PM": 1,
             "PTS": 25,
@@ -2732,9 +2735,9 @@
             "AST": 0,
             "STL": 2,
             "BLK": 0,
-            "TO": 3
+            "TO": 4
           },
-          "FantasyPoints": 32.8,
+          "FantasyPoints": 31.799999999999997,
           "IsEligible": true,
           "BestBallSlot": "PF",
           "PlayerKey": "CD907D4B4CF5EF30A9CEABDC73C9C1FEB553CB4866C42C01E766507161B535A0",
@@ -2930,7 +2933,7 @@
           "NbaTeam": "DAL"
         }
       ],
-      "TotalBestBallPoints": 316.9
+      "TotalBestBallPoints": 315.9
     },
     {
       "Season": 0,
@@ -3471,7 +3474,7 @@
           },
           "FantasyPoints": 28.4,
           "IsEligible": true,
-          "BestBallSlot": "UTIL2",
+          "BestBallSlot": "Bench",
           "PlayerKey": "7DE503C20C0121CE1D96E8916D59BA4D24B03A77D59664D1475B38C2328F62EF",
           "FullName": "Andrew Nembhard",
           "Position": "PG,SG",
@@ -3479,19 +3482,19 @@
         },
         {
           "RawStats": {
-            "FG%": 0.5,
+            "FG%": 0.444,
             "FT%": 1,
             "3PM": 3,
             "PTS": 13,
             "REB": 5,
             "AST": 1,
-            "STL": 2,
+            "STL": 3,
             "BLK": 0,
             "TO": 0
           },
-          "FantasyPoints": 26.5,
+          "FantasyPoints": 29.5,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "DEBF504AFE8098B5BC849AE9BEFE00DFF0415A3F44F54EFC11C219C010E97243",
           "FullName": "Collin Gillespie",
           "Position": "PG,SG",
@@ -3518,7 +3521,7 @@
           "NbaTeam": "PHI"
         }
       ],
-      "TotalBestBallPoints": 355.79999999999995
+      "TotalBestBallPoints": 356.9
     }
   ]
 }
