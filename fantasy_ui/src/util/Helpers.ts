@@ -26,3 +26,23 @@ export function getPercentageCategory(category: string): string | null {
       return category;
   }
 }
+
+export function getRankColor(rank: number) {
+  return rank === 1
+    ? "text-yellow-400"
+    : rank === 2
+    ? "text-gray-300"
+    : rank === 3
+    ? "text-orange-400"
+    : "text-gray-400";
+}
+
+export function getRankHighlight(rank: number) {  
+  return rank === 1
+    ? "border-yellow-400 bg-yellow-400/10"
+    : rank === 2
+    ? "border-gray-300 bg-gray-300/10"
+    : rank === 3
+    ? "border-orange-400 bg-orange-400/10"
+    : "border-slate-700";
+}

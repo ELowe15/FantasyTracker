@@ -71,12 +71,12 @@ export default function RoundRobinPage() {
   }, [season, week, viewMode]);
 
     /* =========================
-     Load Weekly Data
+     Load Season Data
   ========================= */
   useEffect(() => {
-    if (!season || !week || viewMode !== "SEASON") return;
+    if (!season || viewMode !== "SEASON") return;
 
-    async function loadData() {
+    async function loadSeasonData() {
       setLoading(true);
       setError(null);
 
@@ -89,14 +89,14 @@ export default function RoundRobinPage() {
         setRoundRobinResults(data.RoundRobinResults);
         setTeams(data.RoundRobinResults.map(r => r.Team));
       } catch {
-        setError("Failed to load weekly stats");
+        setError("Failed to load season stats");
       } finally {
         setLoading(false);
       }
     }
 
-    loadData();
-  }, [season, week, viewMode]);
+    loadSeasonData();
+  }, [season, viewMode]);
 
   /* =========================
      Week Navigation State

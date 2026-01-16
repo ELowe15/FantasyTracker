@@ -4,7 +4,7 @@ import {
   RoundRobinMatchup,
   TeamRoundRobinRecord,
 } from "../models/League";
-import { formatRecord, getPercentageCategory, toOrdinal } from "../util/Helpers";
+import { formatRecord, getPercentageCategory, getRankHighlight, toOrdinal, getRankColor } from "../util/Helpers";
 
 interface Props {
   result: RoundRobinResult;
@@ -51,17 +51,21 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank }) => {
   );
 
   return (
-    <div className="bg-slate-800 rounded-md text-white overflow-x-auto mb-3">
+    <div className={`${getRankHighlight(rank)} rounded-md border text-white overflow-x-auto`}>
       {/* Header */}
       <button
         onClick={() => setExpanded((e) => !e)}
         className="w-full flex justify-between items-center p-3 text-left focus:outline-none"
       >
-        <div className="font-semibold text-sm">
-          {toOrdinal(rank)} {Team.ManagerName}
-        </div>
+        <div className="flex items-center gap-1 font-semibold text-sm min-w-0">
+  {/* Rank with special color */}
+  <span className={getRankColor(rank)}>{toOrdinal(rank)}</span>
 
-        <div className="flex items-center gap-2 text-xs text-gray-300">
+  {/* Manager name with standard color */}
+  <span className="text-white truncate">{Team.ManagerName}</span>
+</div>
+
+        <div className="flex items-center gap-2 text-xs">
           {formatRecord(TeamRecord.MatchupWins, TeamRecord.MatchupLosses, TeamRecord.MatchupTies)}
           <span
             className={`transition-transform duration-200 ${
