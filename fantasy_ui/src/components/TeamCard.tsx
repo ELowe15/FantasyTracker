@@ -11,13 +11,13 @@ export default function TeamCard({ team }: Props) {
   const toggleOpen = () => setOpen(!open);
 
   return (
-    <div className="bg-slate-800 shadow-lg rounded-xl mb-4 border border-slate-700">
+    <div className="bg-slate-800 shadow-lg rounded-xl mb-2 border border-slate-700">
       <button
         onClick={toggleOpen}
-        className="w-full flex justify-between items-center p-4 text-left"
+        className="w-full flex justify-between items-center p-2 text-left"
       >
         <div>
-          <h2 className="text-lg font-bold text-amber-400 drop-shadow">
+          <h2 className="text-md text-amber-400 drop-shadow">
             {team.managerName + "'s Team"}
           </h2>
         </div>
@@ -32,13 +32,13 @@ export default function TeamCard({ team }: Props) {
 
       {open && (
         <div className="px-4 pb-4">
-          <table className="w-full text-sm text-left border-t border-slate-700 mt-2">
+          <table className="w-full text-sm text-left border-t border-slate-700 mt-1">
             <thead>
               <tr className="text-cyan-400">
                 <th className="py-2">Player</th>
                 <th>Pos</th>
-                <th>NBA Team</th>
-                <th>Keeper Years</th>
+                <th>Team</th>
+                <th>Keep For</th>
               </tr>
             </thead>
             <tbody>
@@ -51,7 +51,7 @@ export default function TeamCard({ team }: Props) {
                   <td className="text-gray-200">{p.position}</td>
                   <td className="text-gray-200">{p.nbaTeam}</td>
                   <td className="text-amber-300">
-                    {p.keeperYears != null ? p.keeperYears : "-"}
+                    {p.keeperYears != null ? p.keeperYears +"yrs" : "-"}
                   </td>
                 </tr>
               ))}

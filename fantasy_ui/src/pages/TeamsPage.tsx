@@ -20,6 +20,7 @@ export default function TeamsPage() {
         const draftedRoundByPlayer: Record<string, number> = {};
         draftResults.forEach((d: any) => {
           draftedRoundByPlayer[d.player_key] = d.round;
+          //console.log("draft pick:", d.player_name, d.player_key, "round:", d.round);
         });
 
         // 3️⃣ Fetch team results
@@ -39,6 +40,8 @@ export default function TeamsPage() {
             players:
               t.Players?.map((p: any) => {
                 const round = draftedRoundByPlayer[p.PlayerKey];
+//console.log(p.FullName, p.PlayerKey, "round:", round);
+
                 const keeperYears = round === 1 ? 0 : 2; // ← your rule
 
                 return {

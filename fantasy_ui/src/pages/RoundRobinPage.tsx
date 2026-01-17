@@ -228,35 +228,35 @@ export default function RoundRobinPage() {
           </div>
 
           {sortedResults.length > 0 && (
-            <div className="overflow-x-auto bg-slate-800 rounded-md p-2">
-              <table className="min-w-full text-white text-xs">
-                <thead>
-                  <tr>
-                    <th className="px-2 py-1 text-left">Team</th>
-                    {Object.keys(sortedResults[0].Team.StatValues).map((stat) => (
-                      <th key={stat} className="px-2 py-1 text-left">
-                        {stat}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {sortedResults.map((team) => (
-                    <tr key={team.TeamKey}>
-                      <td className="px-2 py-1 font-medium">
-                        {team.Team.ManagerName}
-                      </td>
-                      {Object.keys(team.Team.StatValues).map((key) => (
-                        <td key={key} className="px-2 py-1">
-                          {team.Team.StatValues[key]}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
+  <div className="relative -mx-8 sm:mx-0 overflow-x-auto bg-slate-800 rounded-lg p-1 shadow-lg">
+  <table className="min-w-full text-white text-[0.75rem] sm:text-sm md:text-base table-auto ">
+    <thead className="sticky top-0 bg-slate-800 z-10">
+       <tr className="border-b border-gray-400">
+        <th className="text-center">Team</th>
+        {Object.keys(sortedResults[0].Team.StatValues)
+          .filter(stat => stat !== "FGM/A" && stat !== "FTM/A")
+          .map((stat) => (
+            <th key={stat} className="text-center">{stat}</th>
+          ))}
+      </tr>
+    </thead>
+    <tbody>
+      {sortedResults.map((team) => (
+        <tr key={team.TeamKey} className="border-b border-gray-700 odd:bg-slate-700 hover:bg-slate-600">
+          <td className="font-medium">{team.Team.ManagerName}</td>
+          {Object.keys(team.Team.StatValues)
+            .filter(stat => stat !== "FGM/A" && stat !== "FTM/A")
+            .map((key) => (
+              <td key={key} className="text-left">{team.Team.StatValues[key]}</td>
+            ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+)}
+
         </>
       ) : (
         <div className="flex flex-col gap-2 mb-6">

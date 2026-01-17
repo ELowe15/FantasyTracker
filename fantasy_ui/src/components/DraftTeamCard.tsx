@@ -11,13 +11,13 @@ export default function DraftTeamCard({ team }: Props) {
   const toggleOpen = () => setOpen(!open);
 
   return (
-  <div className="bg-slate-800 shadow-lg rounded-xl mb-4 border border-slate-700">
+  <div className="bg-slate-800 shadow-lg rounded-xl mb-2 border border-slate-700">
       <button
         onClick={toggleOpen}
-        className="w-full flex justify-between items-center p-4 text-left"
+        className="w-full flex justify-between items-center p-2 text-left"
       >
         <div>
-          <h2 className="text-lg font-bold text-amber-400 drop-shadow">{team.manager_name + "'s Team"}</h2>
+          <h2 className="text-md text-amber-400 drop-shadow">{team.manager_name + "'s Team"}</h2>
         </div>
         <span
           className={`transform transition-transform ${
@@ -36,7 +36,7 @@ export default function DraftTeamCard({ team }: Props) {
                 <th className="py-2">Player</th>
                 <th>Pos</th>
                 <th>Round</th>
-                <th>Years you can keep</th>
+                <th>Keep For</th>
               </tr>
             </thead>
             <tbody>
@@ -50,7 +50,7 @@ export default function DraftTeamCard({ team }: Props) {
                     <td className="py-2 text-white">{pick.player_name}</td>
                     <td className="text-gray-200">{pick.position}</td>
                     <td className="text-gray-200">{pick.round}</td>
-                    <td className="text-amber-300">{keeper}</td>
+                    <td className="text-amber-300">{keeper + "yrs"}</td>
                   </tr>
                 );
               })}
