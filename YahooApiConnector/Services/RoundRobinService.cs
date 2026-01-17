@@ -112,14 +112,17 @@ public static class RoundRobinService
             if (matchup.CategoryWins > matchup.OpponentCategoryWins)
             {
                 result.TeamRecord.MatchupWins++;
+                matchup.Wins++;
             }
             else if (matchup.CategoryWins < matchup.OpponentCategoryWins)
             {
                 result.TeamRecord.MatchupLosses++;
+                matchup.Losses++;
             }
             else
             {
                 result.TeamRecord.MatchupTies++;
+                matchup.Ties++;
             }
 
             result.Matchups.Add(matchup);
@@ -234,29 +237,32 @@ public static class RoundRobinService
                     }
 
                     // ---- Aggregate matchup-by-opponent ----
-foreach (var weeklyMatchup in weeklyResult.Matchups)
-{
-    var seasonMatchup = seasonResult.Matchups
-        .FirstOrDefault(m => m.OpponentTeamKey == weeklyMatchup.OpponentTeamKey);
+                    foreach (var weeklyMatchup in weeklyResult.Matchups)
+                    {
+                        var seasonMatchup = seasonResult.Matchups
+                            .FirstOrDefault(m => m.OpponentTeamKey == weeklyMatchup.OpponentTeamKey);
 
-    if (seasonMatchup == null)
-    {
-        seasonMatchup = new MatchupResult
-        {
-            OpponentTeamKey = weeklyMatchup.OpponentTeamKey,
-            ManagerName = weeklyMatchup.ManagerName,
-            CategoryWins = 0,
-            OpponentCategoryWins = 0,
-            CategoryTies = 0
-        };
+                        if (seasonMatchup == null)
+                        {
+                            seasonMatchup = new MatchupResult
+                            {
+                                OpponentTeamKey = weeklyMatchup.OpponentTeamKey,
+                                ManagerName = weeklyMatchup.ManagerName,
+                                CategoryWins = 0,
+                                OpponentCategoryWins = 0,
+                                CategoryTies = 0
+                            };
 
-        seasonResult.Matchups.Add(seasonMatchup);
-    }
+                            seasonResult.Matchups.Add(seasonMatchup);
+                        }
 
-    seasonMatchup.CategoryWins += weeklyMatchup.CategoryWins;
-    seasonMatchup.OpponentCategoryWins += weeklyMatchup.OpponentCategoryWins;
-    seasonMatchup.CategoryTies += weeklyMatchup.CategoryTies;
-}
+                        seasonMatchup.CategoryWins += weeklyMatchup.CategoryWins;
+                        seasonMatchup.OpponentCategoryWins += weeklyMatchup.OpponentCategoryWins;
+                        seasonMatchup.CategoryTies += weeklyMatchup.CategoryTies;
+                        seasonMatchup.Wins   += weeklyMatchup.Wins;
+                        seasonMatchup.Losses += weeklyMatchup.Losses;
+                        seasonMatchup.Ties   += weeklyMatchup.Ties;
+                    }
 
                 }
             }
