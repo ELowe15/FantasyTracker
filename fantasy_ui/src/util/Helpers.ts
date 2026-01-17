@@ -46,3 +46,17 @@ export function getRankHighlight(rank: number) {
     ? "border-orange-400 bg-orange-400/10"
     : "border-slate-700";
 }
+
+// utils/keeperColor.ts
+export function getKeeperColor(keeperYears: number): string {
+  switch (keeperYears) {
+    case 2:
+      return "text-green-400";
+    case 1:
+      return "text-yellow-400";
+    case 0:
+      return "text-red-400";
+    default:
+      return "text-white"; // fallback
+  }
+}

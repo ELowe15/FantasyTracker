@@ -17,9 +17,9 @@ export interface LeagueData {
 export interface DraftPick {
   round: number;
   pick: number;
-  team_key: string;
+  TeamKey: string;
   manager_name: string;
-  player_key: string;
+  PlayerKey: string;
   player_name: string;
   position: string;
 }

@@ -16,11 +16,11 @@ export default function TeamsPage() {
         // 1️⃣ Fetch draft results first
         const draftResults = await fetchDraftData();
 
-        // 2️⃣ Build lookup: { playerKey -> round }
+        // 2️⃣ Build lookup: { PlayerKey -> round }
         const draftedRoundByPlayer: Record<string, number> = {};
         draftResults.forEach((d: any) => {
-          draftedRoundByPlayer[d.player_key] = d.round;
-          //console.log("draft pick:", d.player_name, d.player_key, "round:", d.round);
+          // ⚡ Match the JSON exactly: "PlayerKey" from draftResults
+          draftedRoundByPlayer[d.PlayerKey] = d.round;
         });
 
         // 3️⃣ Fetch team results
@@ -30,19 +30,24 @@ export default function TeamsPage() {
 
         const data = await res.json();
 
+        // 4️⃣ Map teams and players
         const mapped: TeamRoster[] = data.map((t: any) => {
-          // Manager name override based on casing
-          let displayManagerName = t.ManagerName;
+          const displayManagerName = t.ManagerName;
 
           return {
             teamKey: t.TeamKey,
-            managerName: displayManagerName, // use the overridden name
+            managerName: displayManagerName,
             players:
               t.Players?.map((p: any) => {
                 const round = draftedRoundByPlayer[p.PlayerKey];
-//console.log(p.FullName, p.PlayerKey, "round:", round);
 
-                const keeperYears = round === 1 ? 0 : 2; // ← your rule
+                // ⚡ Compute keeperYears properly
+                const keeperYears =
+                  round === undefined
+                    ? 2 // default if player not found in draft
+                    : round === 1
+                    ? 0
+                    : 2;
 
                 return {
                   playerKey: p.PlayerKey,
@@ -54,7 +59,6 @@ export default function TeamsPage() {
               }) ?? [],
           };
         });
-
 
         setTeams(mapped);
       } catch (err) {
@@ -83,7 +87,7 @@ export default function TeamsPage() {
   }
 
   return (
-  <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-slate-900">
       <div className="max-w-2xl mx-auto p-4">
         <h1 className="text-3xl font-bold text-center mb-6 text-white drop-shadow-lg tracking-wide">
           Fantasy Team Rosters

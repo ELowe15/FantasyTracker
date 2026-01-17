@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TeamRoster } from "../models/League";
+import { getKeeperColor } from "../util/Helpers";
 
 interface Props {
   team: TeamRoster;
@@ -50,7 +51,7 @@ export default function TeamCard({ team }: Props) {
                   <td className="py-2 text-white">{p.fullName}</td>
                   <td className="text-gray-200">{p.position}</td>
                   <td className="text-gray-200">{p.nbaTeam}</td>
-                  <td className="text-amber-300">
+                  <td className={`${getKeeperColor(Number(p.keeperYears))}`}>
                     {p.keeperYears != null ? p.keeperYears +"yrs" : "-"}
                   </td>
                 </tr>

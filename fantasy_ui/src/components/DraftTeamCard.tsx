@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TeamGroup } from "../models/League";
+import { getKeeperColor } from "../util/Helpers";
 
 interface Props {
   team: TeamGroup;
@@ -44,13 +45,13 @@ export default function DraftTeamCard({ team }: Props) {
                 const keeper = pick.round === 1 ? "0" : "2";
                 return (
                   <tr
-                    key={pick.player_key + pick.round}
+                    key={pick.PlayerKey + pick.round}
                     className="border-t border-slate-700 hover:bg-slate-700/40"
                   >
                     <td className="py-2 text-white">{pick.player_name}</td>
                     <td className="text-gray-200">{pick.position}</td>
                     <td className="text-gray-200">{pick.round}</td>
-                    <td className="text-amber-300">{keeper + "yrs"}</td>
+                    <td className={`${getKeeperColor(Number(keeper))}`}>{keeper + "yrs"}</td>
                   </tr>
                 );
               })}
