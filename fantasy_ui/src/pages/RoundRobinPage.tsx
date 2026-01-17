@@ -222,6 +222,7 @@ export default function RoundRobinPage() {
                 key={r.TeamKey}
                 result={r}
                 rank={idx + 1}
+                viewMode={viewMode}
               />
             ))}
           </div>
@@ -264,6 +265,7 @@ export default function RoundRobinPage() {
                 key={r.TeamKey}
                 result={r}
                 rank={idx + 1}
+                viewMode={viewMode}
               />
             ))}
           </div>

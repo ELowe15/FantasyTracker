@@ -117,6 +117,9 @@ export interface CategoryRecord {
 export interface RoundRobinMatchup {
   OpponentTeamKey: string;
   ManagerName: string;
+  Wins: number;
+  Losses: number;
+  Ties: number;
   CategoryWins: number;
   OpponentCategoryWins: number;
   CategoryTies: number;

@@ -13,7 +13,7 @@ public static class RoundRobinService
         { "BLK", new CategoryRule { HigherIsBetter = true } },
         { "TO",  new CategoryRule { HigherIsBetter = false } },
         { "3PM", new CategoryRule { HigherIsBetter = true } },
-        { "FGM/A",  new CategoryRule { HigherIsBetter = false } }, //Save as FG%
+        { "FGM/A",  new CategoryRule { HigherIsBetter = true } }, //Save as FG%
         { "FTM/A", new CategoryRule { HigherIsBetter = true } } //Save as FT%
     };
 

@@ -9,9 +9,10 @@ import { formatRecord, getPercentageCategory, getRankHighlight, toOrdinal, getRa
 interface Props {
   result: RoundRobinResult;
   rank: number;
+  viewMode: "WEEKLY" | "SEASON";
 }
 
-const RoundRobinTeamCard: React.FC<Props> = ({ result, rank }) => {
+const RoundRobinTeamCard: React.FC<Props> = ({ result, rank, viewMode }) => {
   const [expanded, setExpanded] = useState(false);
 
   const { Team, TeamRecord, Matchups } = result;
@@ -69,10 +70,10 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank }) => {
           {formatRecord(TeamRecord.MatchupWins, TeamRecord.MatchupLosses, TeamRecord.MatchupTies)}
           <span
             className={`transition-transform duration-200 ${
-              expanded ? "rotate-180" : ""
+              expanded ? "rotate-90" : ""
             }`}
           >
-            ▼
+            ▶
           </span>
         </div>
       </button>
@@ -83,12 +84,15 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank }) => {
           {Matchups.length === 0 ? (
             <div className="text-gray-400 italic pt-2">No matchup data</div>
           ) : (
-            <div className="flex flex-col md:flex-row md:space-x-4">
+            <div className="flex flex-row gap-3 items-start">
+
               {/* Left: Matchups */}
               <div className="w-full md:w-1/2">
                 <div className="flex justify-between text-[11px] text-gray-400 pt-2 pb-1 border-b border-slate-700">
                   <span>Opponent</span>
-                  <span className="text-right">Score</span>
+                  <span className="text-right">
+                    {viewMode === "WEEKLY" ? "Score" : "(W-L-T)"}
+                  </span>
                 </div>
                 <div className="space-y-1 pt-1">
                   {Matchups.map((m: RoundRobinMatchup) => (
@@ -100,10 +104,17 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank }) => {
                         {m.ManagerName}
                       </span>
                       <span className="text-right font-medium">
-                        {formatScore(
-                          m.CategoryWins,
-                          m.OpponentCategoryWins
-                        )}
+                        {viewMode === "WEEKLY"
+                          ? formatScore(
+                              m.CategoryWins,
+                              m.OpponentCategoryWins
+                            )
+                          : formatCategoryRecord(
+                              m.Wins,
+                              m.Losses,
+                              m.Ties
+                            )}
+
                       </span>
                     </div>
                   ))}
@@ -111,7 +122,7 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank }) => {
               </div>
 
               {/* Right: Category Performance */}
-              <div className="w-full md:w-1/2 mt-3 md:mt-0">
+              <div className="w-full md:w-1/2 md:mt-0">
                 <div className="flex justify-between text-[11px] text-gray-400 pt-2 pb-1 border-b border-slate-700">
                   <span>Category</span>
                   <span className="text-right">(W-L-T)</span>
