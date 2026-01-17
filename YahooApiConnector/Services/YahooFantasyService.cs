@@ -332,4 +332,76 @@ public class YahooFantasyService
         await File.WriteAllTextAsync(outputPath, json);
         Console.WriteLine($"All team rosters saved to {outputPath}");
     }
+
+    public async Task DumpDraftResultsToJsonAsync(string leagueKey, string outputPath)
+    {
+        // 1. Get all teams and build teamKey → teamName map
+        var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams";
+        var teamsResponse = await _client.GetAsync(teamsUrl);
+        var teamsXml = await teamsResponse.Content.ReadAsStringAsync();
+        var teamsDoc = XDocument.Parse(teamsXml);
+        XNamespace ns = teamsDoc.Root.GetDefaultNamespace();
+
+        var teamMap = teamsDoc.Descendants(ns + "team")
+            .ToDictionary(
+                t => t.Element(ns + "team_key")?.Value,
+                t => new {
+                    ManagerName = t.Descendants(ns + "manager").FirstOrDefault()?.Element(ns + "nickname")?.Value
+                }
+            );
+
+        // 2. Get all draft results
+        var draftUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/draftresults";
+        var draftResponse = await _client.GetAsync(draftUrl);
+        var draftXml = await draftResponse.Content.ReadAsStringAsync();
+        var draftDoc = XDocument.Parse(draftXml);
+
+        var draftResults = draftDoc.Descendants(ns + "draft_result")
+            .Select(dr => new
+            {
+                round = int.Parse(dr.Element(ns + "round")?.Value ?? "0"),
+                pick = int.Parse(dr.Element(ns + "pick")?.Value ?? "0"),
+                team_key = dr.Element(ns + "team_key")?.Value,
+                player_key = dr.Element(ns + "player_key")?.Value
+            })
+            .ToList();
+
+        // 3. Optionally fetch player names and positions
+        var resultsWithNames = new List<object>();
+        foreach (var dr in draftResults)
+        {
+            string playerName = null;
+            string position = null;
+
+            // Fetch player info
+            if (!string.IsNullOrEmpty(dr.player_key))
+            {
+                var playerUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/player/{dr.player_key}";
+                var playerResponse = await _client.GetAsync(playerUrl);
+                var playerXml = await playerResponse.Content.ReadAsStringAsync();
+                var playerDoc = XDocument.Parse(playerXml);
+
+                var playerElem = playerDoc.Descendants(ns + "player").FirstOrDefault();
+                playerName = playerElem?.Element(ns + "name")?.Element(ns + "full")?.Value;
+                position = playerElem?.Element(ns + "display_position")?.Value;
+            }
+
+            resultsWithNames.Add(new
+            {
+                dr.round,
+                dr.pick,
+                TeamKey = Helpers.Hash(dr.team_key),
+                manager_name = Helpers.GetDisplayManagerName(teamMap.ContainsKey(dr.team_key) ? teamMap[dr.team_key].ManagerName : null),
+                PlayerKey = Helpers.Hash(dr.player_key),
+                player_name = playerName,
+                position
+            });
+        }
+
+        // 4. Serialize to JSON and save
+        var json = JsonSerializer.Serialize(resultsWithNames, new JsonSerializerOptions { WriteIndented = true });
+        await File.WriteAllTextAsync(outputPath, json);
+
+        Console.WriteLine($"Draft results saved to {outputPath}");
+    }
 }
