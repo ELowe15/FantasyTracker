@@ -1,6 +1,6 @@
 {
   "Season": 2025,
-  "LastUpdated": "2026-01-18T09:21:07.698945Z",
+  "LastUpdated": "2026-01-19T09:34:42.8125104Z",
   "WeeksIncluded": [
     12,
     13
@@ -10,35 +10,35 @@
       "TeamKey": "9F9743686E139D88E98877658DB981877372D01780B0E111F30CB5AC0CF9939C",
       "ManagerName": "jlevesque",
       "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1848.6,
-      "AverageWeeklyBestBallPoints": 924.3,
+      "SeasonTotalBestBallPoints": 1931.1,
+      "AverageWeeklyBestBallPoints": 965.55,
       "BestWeekScore": 1037.3,
       "WorstWeekScore": 1037.3
-    },
-    {
-      "TeamKey": "85522C60CD82DE63E67DA64330061040E873E7BDEB151C3889FFA5ADD91CC3C5",
-      "ManagerName": "Noah",
-      "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1689.6,
-      "AverageWeeklyBestBallPoints": 844.8,
-      "BestWeekScore": 974.8,
-      "WorstWeekScore": 974.8
     },
     {
       "TeamKey": "9017F765F09829BD6570A4EE1208C976D47F61108780FB0E2C2C4A9B2EB60DAF",
       "ManagerName": "Jack",
       "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1657,
-      "AverageWeeklyBestBallPoints": 828.5,
+      "SeasonTotalBestBallPoints": 1724.3000000000002,
+      "AverageWeeklyBestBallPoints": 862.1500000000001,
       "BestWeekScore": 973.4000000000001,
       "WorstWeekScore": 973.4000000000001
+    },
+    {
+      "TeamKey": "85522C60CD82DE63E67DA64330061040E873E7BDEB151C3889FFA5ADD91CC3C5",
+      "ManagerName": "Noah",
+      "WeeksPlayed": 2,
+      "SeasonTotalBestBallPoints": 1723.3,
+      "AverageWeeklyBestBallPoints": 861.65,
+      "BestWeekScore": 974.8,
+      "WorstWeekScore": 974.8
     },
     {
       "TeamKey": "C134E6AC402FAFA8739A0159EB75C80C6584A5BEA7D4A79C6837A88E11FF828B",
       "ManagerName": "kelat",
       "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1639.1,
-      "AverageWeeklyBestBallPoints": 819.55,
+      "SeasonTotalBestBallPoints": 1721.6,
+      "AverageWeeklyBestBallPoints": 860.8,
       "BestWeekScore": 1011.0999999999999,
       "WorstWeekScore": 1011.0999999999999
     },
@@ -46,10 +46,46 @@
       "TeamKey": "81DA36CAE95E4C0D12D6D9B42F39BD3512D116DB1D97F7A1E590885037BEAD12",
       "ManagerName": "Ryan",
       "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1623.8999999999996,
-      "AverageWeeklyBestBallPoints": 811.9499999999998,
+      "SeasonTotalBestBallPoints": 1714.2999999999997,
+      "AverageWeeklyBestBallPoints": 857.1499999999999,
       "BestWeekScore": 869.9999999999998,
       "WorstWeekScore": 869.9999999999998
+    },
+    {
+      "TeamKey": "4237816ED6AED7D8F428E6A6FD454170FDF1680D22BF3D80E67CC3F030492556",
+      "ManagerName": "JRock",
+      "WeeksPlayed": 2,
+      "SeasonTotalBestBallPoints": 1685.7000000000003,
+      "AverageWeeklyBestBallPoints": 842.8500000000001,
+      "BestWeekScore": 785.2000000000002,
+      "WorstWeekScore": 785.2000000000002
+    },
+    {
+      "TeamKey": "3A7B458FA59B6584D13EE3BAB38B34C2BD873636A514830CFE79184BA6561802",
+      "ManagerName": "scott",
+      "WeeksPlayed": 2,
+      "SeasonTotalBestBallPoints": 1681.9,
+      "AverageWeeklyBestBallPoints": 840.95,
+      "BestWeekScore": 860.9000000000001,
+      "WorstWeekScore": 860.9000000000001
+    },
+    {
+      "TeamKey": "90C53E50CC1C110057BE71C82157588D20D5DCE83BFC6F206F2A5FF9BEE40FB7",
+      "ManagerName": "ELowe",
+      "WeeksPlayed": 2,
+      "SeasonTotalBestBallPoints": 1679.1,
+      "AverageWeeklyBestBallPoints": 839.55,
+      "BestWeekScore": 899.2,
+      "WorstWeekScore": 899.2
+    },
+    {
+      "TeamKey": "1F159E5B4A7F937B5B88FED217C64A1F19095ED1976AB90937E2343043517FA0",
+      "ManagerName": "EFry",
+      "WeeksPlayed": 2,
+      "SeasonTotalBestBallPoints": 1662.4,
+      "AverageWeeklyBestBallPoints": 831.2,
+      "BestWeekScore": 829.8000000000001,
+      "WorstWeekScore": 829.8000000000001
     },
     {
       "TeamKey": "58E49E9F7021CA61DAC4CD1E032F99699D61472286D838A09AB2028CD37F9DF6",
@@ -61,56 +97,20 @@
       "WorstWeekScore": 955.2
     },
     {
-      "TeamKey": "1F159E5B4A7F937B5B88FED217C64A1F19095ED1976AB90937E2343043517FA0",
-      "ManagerName": "EFry",
-      "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1597.8000000000002,
-      "AverageWeeklyBestBallPoints": 798.9000000000001,
-      "BestWeekScore": 829.8000000000001,
-      "WorstWeekScore": 829.8000000000001
-    },
-    {
       "TeamKey": "90DD219AA37A91B240FD13421AB197906C48250FDACF16651B7816A64D6A487F",
       "ManagerName": "Joshua",
       "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1566.6,
-      "AverageWeeklyBestBallPoints": 783.3,
+      "SeasonTotalBestBallPoints": 1607.7999999999997,
+      "AverageWeeklyBestBallPoints": 803.8999999999999,
       "BestWeekScore": 800.0999999999999,
       "WorstWeekScore": 800.0999999999999
-    },
-    {
-      "TeamKey": "90C53E50CC1C110057BE71C82157588D20D5DCE83BFC6F206F2A5FF9BEE40FB7",
-      "ManagerName": "ELowe",
-      "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1537.8000000000002,
-      "AverageWeeklyBestBallPoints": 768.9000000000001,
-      "BestWeekScore": 899.2,
-      "WorstWeekScore": 899.2
-    },
-    {
-      "TeamKey": "4237816ED6AED7D8F428E6A6FD454170FDF1680D22BF3D80E67CC3F030492556",
-      "ManagerName": "JRock",
-      "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1505,
-      "AverageWeeklyBestBallPoints": 752.5,
-      "BestWeekScore": 785.2000000000002,
-      "WorstWeekScore": 785.2000000000002
-    },
-    {
-      "TeamKey": "3A7B458FA59B6584D13EE3BAB38B34C2BD873636A514830CFE79184BA6561802",
-      "ManagerName": "scott",
-      "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1491.5,
-      "AverageWeeklyBestBallPoints": 745.75,
-      "BestWeekScore": 860.9000000000001,
-      "WorstWeekScore": 860.9000000000001
     },
     {
       "TeamKey": "6ABF36C085FCDE755CF852AA7DE61673ADFDB7BE18A5ADA4A6F2823274DAA240",
       "ManagerName": "Michael",
       "WeeksPlayed": 2,
-      "SeasonTotalBestBallPoints": 1370.9,
-      "AverageWeeklyBestBallPoints": 685.45,
+      "SeasonTotalBestBallPoints": 1521.4,
+      "AverageWeeklyBestBallPoints": 760.7,
       "BestWeekScore": 747.2,
       "WorstWeekScore": 747.2
     }
