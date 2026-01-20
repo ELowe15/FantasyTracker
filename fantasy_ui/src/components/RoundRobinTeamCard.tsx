@@ -56,17 +56,17 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank, viewMode }) => {
       {/* Header */}
       <button
         onClick={() => setExpanded((e) => !e)}
-        className="w-full flex justify-between items-center p-3 text-left focus:outline-none"
+        className="w-full flex justify-between items-center p-2 text-left focus:outline-none"
       >
         <div className="flex items-center gap-1 font-semibold text-sm min-w-0">
-  {/* Rank with special color */}
-  <span className={getRankColor(rank)}>{toOrdinal(rank)}</span>
+        {/* Rank with special color */}
+        <span className={getRankColor(rank)}>{toOrdinal(rank)}</span>
 
-  {/* Manager name with standard color */}
-  <span className="text-white truncate">{Team.ManagerName}</span>
-</div>
+        {/* Manager name with standard color */}
+        <span className="text-white truncate">{Team.ManagerName}</span>
+      </div>
 
-        <div className="flex items-center gap-2 text-xs">
+        <div className="flex items-center gap-2 text-bold text-sm">
           {formatRecord(TeamRecord.MatchupWins, TeamRecord.MatchupLosses, TeamRecord.MatchupTies)}
           <span
             className={`transition-transform duration-200 ${

@@ -14,7 +14,7 @@
           "RawStats": {},
           "FantasyPoints": 0,
           "IsEligible": true,
-          "BestBallSlot": "Bench",
+          "BestBallSlot": "UTIL2",
           "PlayerKey": "2B747421519170894DC51F45F9332245F6438419DA1EC9254AE974322AF435E8",
           "FullName": "Nikola Joki\u0107",
           "Position": "C",
@@ -111,44 +111,14 @@
           "NbaTeam": "BOS"
         },
         {
-          "RawStats": {
-            "FG%": 0.6,
-            "FT%": 1,
-            "3PM": 1,
-            "PTS": 9,
-            "REB": 4,
-            "AST": 0,
-            "STL": 1,
-            "BLK": 0,
-            "TO": 3
-          },
-          "FantasyPoints": 13.8,
-          "IsEligible": true,
-          "BestBallSlot": "UTIL2",
-          "PlayerKey": "39B8BDEC4E1A8A9A657A3D9330272A00D7F57F246E4B0B517413B92634556A87",
-          "FullName": "Justin Champagnie",
-          "Position": "SF,PF",
-          "NbaTeam": "WAS"
-        },
-        {
-          "RawStats": {
-            "FG%": 0.5,
-            "FT%": 0.5,
-            "3PM": 0,
-            "PTS": 6,
-            "REB": 1,
-            "AST": 1,
-            "STL": 0,
-            "BLK": 0,
-            "TO": 2
-          },
-          "FantasyPoints": 6.699999999999999,
+          "RawStats": {},
+          "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
-          "PlayerKey": "134A06509A17CCCC9AED593CF705C9B2C8CDB0D3577DA85600DE6DFC2A9DFC23",
-          "FullName": "Brandon Williams",
-          "Position": "PG",
-          "NbaTeam": "DAL"
+          "PlayerKey": "4A523BE995EC9FE46ED7423CA8526F63D059B83A02C4EACF10613B60DE7B5AC0",
+          "FullName": "Sandro Mamukelashvili",
+          "Position": "PF,C",
+          "NbaTeam": "TOR"
         },
         {
           "RawStats": {
@@ -235,6 +205,16 @@
           "FantasyPoints": 0,
           "IsEligible": true,
           "BestBallSlot": "Bench",
+          "PlayerKey": "8B44133615ABFF939B1E2F3AC48541356EA854C9FDD0D8385F30AC492ECEDD5E",
+          "FullName": "Jordan Miller",
+          "Position": "SF",
+          "NbaTeam": "LAC"
+        },
+        {
+          "RawStats": {},
+          "FantasyPoints": 0,
+          "IsEligible": true,
+          "BestBallSlot": "Bench",
           "PlayerKey": "445F900B46D7E4306EA3643429A2996E9DBF74FD987C0AEF8938CB1DC0DDC64E",
           "FullName": "Brandon Miller",
           "Position": "SF,PF",
@@ -261,7 +241,7 @@
           "NbaTeam": "CHA"
         }
       ],
-      "TotalBestBallPoints": 226.1
+      "TotalBestBallPoints": 212.29999999999998
     },
     {
       "Season": 0,
@@ -2018,16 +1998,6 @@
           "NbaTeam": "BOS"
         },
         {
-          "RawStats": {},
-          "FantasyPoints": 0,
-          "IsEligible": true,
-          "BestBallSlot": "Bench",
-          "PlayerKey": "A4C2F94FDAA2D354C27C67C2142C9CA7C60987B9B05D246B5875B70AF335FF62",
-          "FullName": "Obi Toppin",
-          "Position": "PF",
-          "NbaTeam": "IND"
-        },
-        {
           "RawStats": {
             "FG%": 0.5,
             "FT%": 1,
@@ -2066,6 +2036,16 @@
           "FullName": "Josh Giddey",
           "Position": "PG,SG",
           "NbaTeam": "CHI"
+        },
+        {
+          "RawStats": {},
+          "FantasyPoints": 0,
+          "IsEligible": true,
+          "BestBallSlot": "Bench",
+          "PlayerKey": "477A18E01890FC13404453F6C49EAAA9751A1885F266E1367382BBC62CC5B919",
+          "FullName": "Moses Moody",
+          "Position": "SG,SF",
+          "NbaTeam": "GSW"
         },
         {
           "RawStats": {

@@ -1,10 +1,10 @@
 import { BestBallTeam, BestBallPlayer } from "../models/League";
 import { useState, Fragment } from "react";
-import { toOrdinal } from "../util/Helpers";
+import { getRankColor, getRankHighlight, toOrdinal } from "../util/Helpers";
 
 interface Props {
   team: BestBallTeam;
-  rank?: number;
+  rank: number;
 }
 
 // Display order for lineup
@@ -26,7 +26,7 @@ export default function BestBallTeamCard({ team, rank }: Props) {
   });
 
   return (
-    <div className="bg-slate-800 rounded-lg mb-2 border border-slate-700">
+    <div className={`${getRankHighlight(rank)} rounded-lg mb-2 border`}>
       {/* Compact Header */}
       <button
         onClick={toggleOpen}
@@ -34,11 +34,11 @@ export default function BestBallTeamCard({ team, rank }: Props) {
       >
         <div className="flex items-center gap-2 text-sm">
           {rank && (
-            <span className="text-amber-400 font-semibold">
+            <span className={`${getRankColor(rank)} font-semibold`}>
               {toOrdinal(rank)}
             </span>
           )}
-          <span className="text-amber-300 font-medium">
+          <span className="text-white font-medium">
             {team.managerName + " -"}
           </span>
           <span className="text-amber-300">

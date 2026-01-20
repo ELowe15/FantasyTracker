@@ -9,7 +9,7 @@ type Tab = "teams" | "draft" | "bestball" | "roundrobin" | "rules";
 
 export default function App() {
   const tabs: Tab[] = ["teams", "draft", "bestball", "roundrobin", "rules"];
-  const [activeTab, setActiveTab] = useState<Tab>("teams");
+  const [activeTab, setActiveTab] = useState<Tab>("bestball");
 
   // For swipe detection
   let touchStartX = 0;
@@ -79,7 +79,7 @@ export default function App() {
       <main
         className="
           pt-12
-          px-3
+          px-1
           pb-3
           sm:px-4 sm:pb-4
           md:px-6 md:pb-5
