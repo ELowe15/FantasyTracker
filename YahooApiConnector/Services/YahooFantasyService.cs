@@ -62,6 +62,12 @@ public class YahooFantasyService
 
         var availableWeeks = GetAvailableWeeks(season, outputDirectory);
 
+        if (!availableWeeks.Contains(currentWeek))
+        {
+            availableWeeks.Add(currentWeek);
+            availableWeeks.Sort();
+        }
+
         var context = new LeagueContext
         {
             Season = season,
