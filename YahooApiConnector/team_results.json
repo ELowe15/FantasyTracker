@@ -52,12 +52,6 @@
         "NbaTeam": "OKC"
       },
       {
-        "PlayerKey": "D6A72EEBDBC23F0AB00BD1EDF8B9C61A7AB06285F9447A85F96C595989266E68",
-        "FullName": "Jaren Jackson Jr.",
-        "Position": "PF,C",
-        "NbaTeam": "MEM"
-      },
-      {
         "PlayerKey": "8B44133615ABFF939B1E2F3AC48541356EA854C9FDD0D8385F30AC492ECEDD5E",
         "FullName": "Jordan Miller",
         "Position": "SF",
@@ -70,6 +64,12 @@
         "NbaTeam": "BOS"
       },
       {
+        "PlayerKey": "D6A72EEBDBC23F0AB00BD1EDF8B9C61A7AB06285F9447A85F96C595989266E68",
+        "FullName": "Jaren Jackson Jr.",
+        "Position": "PF,C",
+        "NbaTeam": "MEM"
+      },
+      {
         "PlayerKey": "838855DF605D877D71927425AFB506BE748E194CB2F96A76B87DCBEAF15FEB95",
         "FullName": "Jalen Smith",
         "Position": "PF,C",
@@ -80,12 +80,6 @@
         "FullName": "Jabari Smith Jr.",
         "Position": "SF,PF,C",
         "NbaTeam": "HOU"
-      },
-      {
-        "PlayerKey": "2B747421519170894DC51F45F9332245F6438419DA1EC9254AE974322AF435E8",
-        "FullName": "Nikola Joki\u0107",
-        "Position": "C",
-        "NbaTeam": "DEN"
       },
       {
         "PlayerKey": "88629311D66B06B723158E4D50799C9B6372BCE0845B6010BB410C3F6650F6D2",
@@ -104,6 +98,12 @@
         "FullName": "Collin Murray-Boyles",
         "Position": "PF,C",
         "NbaTeam": "TOR"
+      },
+      {
+        "PlayerKey": "2B747421519170894DC51F45F9332245F6438419DA1EC9254AE974322AF435E8",
+        "FullName": "Nikola Joki\u0107",
+        "Position": "C",
+        "NbaTeam": "DEN"
       }
     ]
   },
@@ -220,10 +220,10 @@
         "NbaTeam": "OKC"
       },
       {
-        "PlayerKey": "1CB8F553C01BBFD37C74F4B3AE53CF566571AD709502144A0EDBEBCEDA54AAC0",
-        "FullName": "Stephon Castle",
-        "Position": "PG,SG",
-        "NbaTeam": "SAS"
+        "PlayerKey": "4CA99FE6E2051D0E7634853C41AFBDC133697E38779973D7296E4E0E5DB73ABC",
+        "FullName": "Kon Knueppel",
+        "Position": "SG,SF",
+        "NbaTeam": "CHA"
       },
       {
         "PlayerKey": "5DC657BADC62EA5CF24109E3F4DD940FF2080BA11267068091D2DC848C15F9B2",
@@ -238,10 +238,10 @@
         "NbaTeam": "DET"
       },
       {
-        "PlayerKey": "4FC6B632F276D29283925B88CABD158474BD741E23D00DC34E48AC5B96D3140E",
-        "FullName": "Naji Marshall",
+        "PlayerKey": "E7223FCDFF6C4F5AC4135EDAE8AFBC7C24F38F04E95C27699F66CA9C104F600E",
+        "FullName": "Jalen Johnson",
         "Position": "SF,PF",
-        "NbaTeam": "DAL"
+        "NbaTeam": "ATL"
       },
       {
         "PlayerKey": "A7C84A3A69E857243E5CA216C38E832266DD5DE362927189F51B6C5CEBA4A1F0",
@@ -256,10 +256,28 @@
         "NbaTeam": "ORL"
       },
       {
+        "PlayerKey": "43A11293F1FA726875AD3755681EB37610F82B279935E40171ADD5FE37FC371B",
+        "FullName": "Donovan Clingan",
+        "Position": "C",
+        "NbaTeam": "POR"
+      },
+      {
         "PlayerKey": "58B734F7850CEAF0742332C5E155E91AAB768B5D2E9A833C6D3E300D49C61715",
         "FullName": "Jalen Duren",
         "Position": "C",
         "NbaTeam": "DET"
+      },
+      {
+        "PlayerKey": "1CB8F553C01BBFD37C74F4B3AE53CF566571AD709502144A0EDBEBCEDA54AAC0",
+        "FullName": "Stephon Castle",
+        "Position": "PG,SG",
+        "NbaTeam": "SAS"
+      },
+      {
+        "PlayerKey": "4FC6B632F276D29283925B88CABD158474BD741E23D00DC34E48AC5B96D3140E",
+        "FullName": "Naji Marshall",
+        "Position": "SF,PF",
+        "NbaTeam": "DAL"
       },
       {
         "PlayerKey": "CDDB4F04BFB77392A3713172B9FA5A51F5121CB20B4AF5FE828A3F643A528868",
@@ -272,24 +290,6 @@
         "FullName": "Norman Powell",
         "Position": "SG,SF",
         "NbaTeam": "MIA"
-      },
-      {
-        "PlayerKey": "4CA99FE6E2051D0E7634853C41AFBDC133697E38779973D7296E4E0E5DB73ABC",
-        "FullName": "Kon Knueppel",
-        "Position": "SG,SF",
-        "NbaTeam": "CHA"
-      },
-      {
-        "PlayerKey": "E7223FCDFF6C4F5AC4135EDAE8AFBC7C24F38F04E95C27699F66CA9C104F600E",
-        "FullName": "Jalen Johnson",
-        "Position": "SF,PF",
-        "NbaTeam": "ATL"
-      },
-      {
-        "PlayerKey": "43A11293F1FA726875AD3755681EB37610F82B279935E40171ADD5FE37FC371B",
-        "FullName": "Donovan Clingan",
-        "Position": "C",
-        "NbaTeam": "POR"
       },
       {
         "PlayerKey": "7B9F9B8BD4EF57C813984D19C95B10E45A84C3B2CDC5839AAF92C0DC05611571",
@@ -310,10 +310,10 @@
     "ManagerName": "EFry",
     "Players": [
       {
-        "PlayerKey": "59EE9DDEFA9288198BB7FE8BF9CCFE55647E3DCCCE36751E61B9D862F1D3F6E1",
-        "FullName": "Devin Booker",
+        "PlayerKey": "30EAB2E46525C0034AF12EE78961B10A55925DA6793F9304E66361AFE1E8A4D4",
+        "FullName": "Donovan Mitchell",
         "Position": "PG,SG",
-        "NbaTeam": "PHX"
+        "NbaTeam": "CLE"
       },
       {
         "PlayerKey": "C32355EC8F244F76DED556548ACAB7E3E0B1EA3A3F066890FEA72FBBF1B049B5",
@@ -328,10 +328,10 @@
         "NbaTeam": "MIA"
       },
       {
-        "PlayerKey": "4F047F1B01A8DAAC2DCF8F6E6AB29FEA39BFD059D51019F3459EF31F27C21187",
-        "FullName": "OG Anunoby",
-        "Position": "SF,PF",
-        "NbaTeam": "NYK"
+        "PlayerKey": "DC4FD72F1701F0BCE546C7692584234A7E935BC243C162217F6C70B7869948BF",
+        "FullName": "Toumani Camara",
+        "Position": "SF,PF,C",
+        "NbaTeam": "POR"
       },
       {
         "PlayerKey": "3100D3084DAD5F0817E42FFCF051F1D35D2FD355785BF2AA483CDE17D928B337",
@@ -370,22 +370,22 @@
         "NbaTeam": "NOP"
       },
       {
-        "PlayerKey": "30EAB2E46525C0034AF12EE78961B10A55925DA6793F9304E66361AFE1E8A4D4",
-        "FullName": "Donovan Mitchell",
-        "Position": "PG,SG",
-        "NbaTeam": "CLE"
+        "PlayerKey": "BAE1AB016FDA70C1A9A803E082B72B4A1A7EFC4FD2EEFD6941E86055F62B33C4",
+        "FullName": "Pelle Larsson",
+        "Position": "SG,SF",
+        "NbaTeam": "MIA"
+      },
+      {
+        "PlayerKey": "4F047F1B01A8DAAC2DCF8F6E6AB29FEA39BFD059D51019F3459EF31F27C21187",
+        "FullName": "OG Anunoby",
+        "Position": "SF,PF",
+        "NbaTeam": "NYK"
       },
       {
         "PlayerKey": "5DE5A532BFF478F4A8988D329785188994E5EB92C89B3CC294C24126C5CD28C1",
         "FullName": "Ace Bailey",
         "Position": "SG,SF",
         "NbaTeam": "UTA"
-      },
-      {
-        "PlayerKey": "DC4FD72F1701F0BCE546C7692584234A7E935BC243C162217F6C70B7869948BF",
-        "FullName": "Toumani Camara",
-        "Position": "SF,PF,C",
-        "NbaTeam": "POR"
       },
       {
         "PlayerKey": "CD436B93E101EBBD84F3E2791B90E1DD58FEE4F962EA179C5B6F7A70C622184D",
@@ -398,6 +398,12 @@
         "FullName": "Tyrese Haliburton",
         "Position": "PG,SG",
         "NbaTeam": "IND"
+      },
+      {
+        "PlayerKey": "59EE9DDEFA9288198BB7FE8BF9CCFE55647E3DCCCE36751E61B9D862F1D3F6E1",
+        "FullName": "Devin Booker",
+        "Position": "PG,SG",
+        "NbaTeam": "PHX"
       },
       {
         "PlayerKey": "8688185C4AE9DE397214CDDD03A141087C933526928A083C050A538E82FAD902",
@@ -520,10 +526,10 @@
         "NbaTeam": "SAS"
       },
       {
-        "PlayerKey": "D8C556EEEEA7EF424DFC0F5FAD991E5E42999DF33EA9BD07B734A2CA833DC843",
-        "FullName": "Dennis Schr\u00F6der",
+        "PlayerKey": "1FCF9F5C790FF4912ABB1A7858EFD8EA2B153CE3251D0F932561042F0A85A2CF",
+        "FullName": "Reed Sheppard",
         "Position": "PG,SG",
-        "NbaTeam": "SAC"
+        "NbaTeam": "HOU"
       },
       {
         "PlayerKey": "C8776A40E79697120699A5FCCF11682E5CA0A42B70B20E7746AF157168E6C612",
@@ -532,10 +538,10 @@
         "NbaTeam": "POR"
       },
       {
-        "PlayerKey": "5581FEA4F8C56321B9BD503B5BF9190635273A0EA42BDCAA27F960C0B1B8AD81",
-        "FullName": "Peyton Watson",
+        "PlayerKey": "C4A8F02BD409FFDDE29493F4366B77F88CCA376B0F8ADD0B7838A3349DA842C2",
+        "FullName": "Matas Buzelis",
         "Position": "SF,PF",
-        "NbaTeam": "DEN"
+        "NbaTeam": "CHI"
       },
       {
         "PlayerKey": "A96D980611F8987CC21625F8C4ACDA2838B39B3DB4F31472589EEBAE93CA4871",
@@ -550,16 +556,10 @@
         "NbaTeam": "NOP"
       },
       {
-        "PlayerKey": "9675D4A2494FD3337BC0C40A41B5CAE538B662A5C04E846E64C0705AF6EE2B12",
-        "FullName": "Myles Turner",
-        "Position": "C",
-        "NbaTeam": "MIL"
-      },
-      {
-        "PlayerKey": "3B75F9520A2F79928983E43EBA61EF1D60C7C5663607B78E3664AB66653B8B7B",
-        "FullName": "Kel\u0027el Ware",
+        "PlayerKey": "A3601634463A18FBC8A3B9D9317A1306A2D4EA4AC7F478F8CCA281BE70E8996F",
+        "FullName": "Alperen Sengun",
         "Position": "PF,C",
-        "NbaTeam": "MIA"
+        "NbaTeam": "HOU"
       },
       {
         "PlayerKey": "C65D4C73BE3B7A7D681B734C93AE1F58E076DDC689B4C1C598EC86944F6C1E9A",
@@ -574,28 +574,34 @@
         "NbaTeam": "DET"
       },
       {
-        "PlayerKey": "1FCF9F5C790FF4912ABB1A7858EFD8EA2B153CE3251D0F932561042F0A85A2CF",
-        "FullName": "Reed Sheppard",
+        "PlayerKey": "D8C556EEEEA7EF424DFC0F5FAD991E5E42999DF33EA9BD07B734A2CA833DC843",
+        "FullName": "Dennis Schr\u00F6der",
         "Position": "PG,SG",
-        "NbaTeam": "HOU"
+        "NbaTeam": "SAC"
       },
       {
-        "PlayerKey": "C4A8F02BD409FFDDE29493F4366B77F88CCA376B0F8ADD0B7838A3349DA842C2",
-        "FullName": "Matas Buzelis",
+        "PlayerKey": "5581FEA4F8C56321B9BD503B5BF9190635273A0EA42BDCAA27F960C0B1B8AD81",
+        "FullName": "Peyton Watson",
         "Position": "SF,PF",
-        "NbaTeam": "CHI"
+        "NbaTeam": "DEN"
       },
       {
-        "PlayerKey": "A3601634463A18FBC8A3B9D9317A1306A2D4EA4AC7F478F8CCA281BE70E8996F",
-        "FullName": "Alperen Sengun",
-        "Position": "PF,C",
-        "NbaTeam": "HOU"
+        "PlayerKey": "9675D4A2494FD3337BC0C40A41B5CAE538B662A5C04E846E64C0705AF6EE2B12",
+        "FullName": "Myles Turner",
+        "Position": "C",
+        "NbaTeam": "MIL"
       },
       {
         "PlayerKey": "17891B3C05BB9079C5468A8BCEE2F7BD5070A68A4DC132E9858F89CE215E5D34",
         "FullName": "Payton Pritchard",
         "Position": "PG",
         "NbaTeam": "BOS"
+      },
+      {
+        "PlayerKey": "3B75F9520A2F79928983E43EBA61EF1D60C7C5663607B78E3664AB66653B8B7B",
+        "FullName": "Kel\u0027el Ware",
+        "Position": "PF,C",
+        "NbaTeam": "MIA"
       }
     ]
   },
@@ -706,16 +712,16 @@
     "ManagerName": "kelat",
     "Players": [
       {
-        "PlayerKey": "1C5C5F0EE09D121CB548572073C22A25F0D8DE340B09BDFBC5CFE9A632516182",
-        "FullName": "Jamal Shead",
-        "Position": "PG",
-        "NbaTeam": "TOR"
-      },
-      {
         "PlayerKey": "8722048BA7F55290027EFAF5661A3C94CD40655C981F75EF7FA74CD4BC3AD71F",
         "FullName": "Anfernee Simons",
         "Position": "PG,SG",
         "NbaTeam": "BOS"
+      },
+      {
+        "PlayerKey": "3D670AEE70CCE57F8AF81CF70902CE753F7FC257594BC6B0059941560E8ECA2A",
+        "FullName": "Brandin Podziemski",
+        "Position": "PG,SG",
+        "NbaTeam": "GSW"
       },
       {
         "PlayerKey": "E37E9291B7FF1526101F8EA4C207B05C8FBAB4EFC2710DBA969930E2681347E8",
@@ -742,16 +748,16 @@
         "NbaTeam": "ORL"
       },
       {
-        "PlayerKey": "371FFA3790C2F12799E93FA5B2F19B0CF8F00A6554052230A558AD09D23BD183",
-        "FullName": "Giannis Antetokounmpo",
-        "Position": "PF,C",
-        "NbaTeam": "MIL"
-      },
-      {
         "PlayerKey": "5ED375DCFCBB7C4D4A9B052ABDDA0D656C9F68BA818ACBC743BDA1F5C2371845",
         "FullName": "Luke Kornet",
         "Position": "C",
         "NbaTeam": "SAS"
+      },
+      {
+        "PlayerKey": "B93594C81ADA9F86AD290DD5966AA4A28433D9B9036C7B7219905617CD3B8296",
+        "FullName": "Jusuf Nurki\u0107",
+        "Position": "C",
+        "NbaTeam": "UTA"
       },
       {
         "PlayerKey": "C929C34ADFDD4DAB37038A268EC8E5F0F261819BAC50508F221AED63E7A019C9",
@@ -766,22 +772,16 @@
         "NbaTeam": "GSW"
       },
       {
-        "PlayerKey": "3D670AEE70CCE57F8AF81CF70902CE753F7FC257594BC6B0059941560E8ECA2A",
-        "FullName": "Brandin Podziemski",
-        "Position": "PG,SG",
-        "NbaTeam": "GSW"
+        "PlayerKey": "1C5C5F0EE09D121CB548572073C22A25F0D8DE340B09BDFBC5CFE9A632516182",
+        "FullName": "Jamal Shead",
+        "Position": "PG",
+        "NbaTeam": "TOR"
       },
       {
-        "PlayerKey": "B93594C81ADA9F86AD290DD5966AA4A28433D9B9036C7B7219905617CD3B8296",
-        "FullName": "Jusuf Nurki\u0107",
-        "Position": "C",
-        "NbaTeam": "UTA"
-      },
-      {
-        "PlayerKey": "836EB3ECD457AA7475AF69D57ECC4FB81EC82D70FAC0B72FB164FCEFF3A8FE54",
-        "FullName": "Deni Avdija",
-        "Position": "SG,SF,PF",
-        "NbaTeam": "POR"
+        "PlayerKey": "1C042447C3608C73859AD8956DC20D94FA20EBF95B4EB2B2D80800F8FE402406",
+        "FullName": "Cason Wallace",
+        "Position": "PG,SG,SF",
+        "NbaTeam": "OKC"
       },
       {
         "PlayerKey": "FC5DBDD2807C36F5444B019D4B3FEB1486DAE6961AAD9D3AC1B05FC904AE209A",
@@ -790,10 +790,22 @@
         "NbaTeam": "TOR"
       },
       {
+        "PlayerKey": "371FFA3790C2F12799E93FA5B2F19B0CF8F00A6554052230A558AD09D23BD183",
+        "FullName": "Giannis Antetokounmpo",
+        "Position": "PF,C",
+        "NbaTeam": "MIL"
+      },
+      {
         "PlayerKey": "B1CC2094F8AC7D464E04918D606C002B1F5918C4D03F46DAD24A221A148BB9F7",
         "FullName": "Jakob Poeltl",
         "Position": "C",
         "NbaTeam": "TOR"
+      },
+      {
+        "PlayerKey": "836EB3ECD457AA7475AF69D57ECC4FB81EC82D70FAC0B72FB164FCEFF3A8FE54",
+        "FullName": "Deni Avdija",
+        "Position": "SG,SF,PF",
+        "NbaTeam": "POR"
       },
       {
         "PlayerKey": "85E14616B41AEA17C4BE77A5206F95FA190912DE241A141947533DA08AF9ADE9",
@@ -832,16 +844,16 @@
         "NbaTeam": "PHI"
       },
       {
-        "PlayerKey": "D2A929F2B186FC55BEBA45E4A879147C2CFBC11400935231FF25ED384E628829",
-        "FullName": "Simone Fontecchio",
-        "Position": "SF,PF",
-        "NbaTeam": "MIA"
+        "PlayerKey": "09ABA95B66394B73E008ABA0682ED0FEE5E03E92B70A0B8F506E14D21A66F571",
+        "FullName": "Julius Randle",
+        "Position": "PF,C",
+        "NbaTeam": "MIN"
       },
       {
-        "PlayerKey": "EED85C34043C47829455FDC5C7B2F52338D724641FA9F66397AEBDDC5EE09D6C",
-        "FullName": "Tobias Harris",
-        "Position": "PF",
-        "NbaTeam": "DET"
+        "PlayerKey": "758A26E2A154B9B9CCAF0090A7EA890E8D0FDD927D82B802E1A5A8321B7C03B4",
+        "FullName": "Ayo Dosunmu",
+        "Position": "SG,SF",
+        "NbaTeam": "CHI"
       },
       {
         "PlayerKey": "912C2121379133CE79B204BEA0812641B6B7291C525BC17133FD8081835D0693",
@@ -862,28 +874,28 @@
         "NbaTeam": "PHI"
       },
       {
-        "PlayerKey": "6FDCE25BB1DED09E23D24D0F2C58ADC73B8DE8313915D72EB0B844C7E46C46F3",
-        "FullName": "Miles McBride",
-        "Position": "PG,SG",
-        "NbaTeam": "NYK"
-      },
-      {
-        "PlayerKey": "758A26E2A154B9B9CCAF0090A7EA890E8D0FDD927D82B802E1A5A8321B7C03B4",
-        "FullName": "Ayo Dosunmu",
-        "Position": "SG,SF",
-        "NbaTeam": "CHI"
-      },
-      {
-        "PlayerKey": "09ABA95B66394B73E008ABA0682ED0FEE5E03E92B70A0B8F506E14D21A66F571",
-        "FullName": "Julius Randle",
-        "Position": "PF,C",
-        "NbaTeam": "MIN"
-      },
-      {
         "PlayerKey": "477A18E01890FC13404453F6C49EAAA9751A1885F266E1367382BBC62CC5B919",
         "FullName": "Moses Moody",
         "Position": "SG,SF",
         "NbaTeam": "GSW"
+      },
+      {
+        "PlayerKey": "D2A929F2B186FC55BEBA45E4A879147C2CFBC11400935231FF25ED384E628829",
+        "FullName": "Simone Fontecchio",
+        "Position": "SF,PF",
+        "NbaTeam": "MIA"
+      },
+      {
+        "PlayerKey": "EED85C34043C47829455FDC5C7B2F52338D724641FA9F66397AEBDDC5EE09D6C",
+        "FullName": "Tobias Harris",
+        "Position": "PF",
+        "NbaTeam": "DET"
+      },
+      {
+        "PlayerKey": "6FDCE25BB1DED09E23D24D0F2C58ADC73B8DE8313915D72EB0B844C7E46C46F3",
+        "FullName": "Miles McBride",
+        "Position": "PG,SG",
+        "NbaTeam": "NYK"
       },
       {
         "PlayerKey": "49B8022F89737BD6F7377DACAF064CA94882923F9D5DF810A1CD1ADD952EC84D",
@@ -922,10 +934,10 @@
         "NbaTeam": "TOR"
       },
       {
-        "PlayerKey": "B8C48A41F7A008ECBC3C7CB800E8815B4E93DBCF5AB6D73CCD7A0BCA34DA2870",
-        "FullName": "Cooper Flagg",
-        "Position": "PG,SG,SF",
-        "NbaTeam": "DAL"
+        "PlayerKey": "9E3427AC131A6D447B0E0DADE71BDABF3665552EEAF44D02715AD3FE045D41BD",
+        "FullName": "Jamal Murray",
+        "Position": "PG,SG",
+        "NbaTeam": "DEN"
       },
       {
         "PlayerKey": "270347EBA02BBB0EB6DD0F9A5ADBED54C1930B58DE8511B52B503BD583B2E305",
@@ -970,16 +982,22 @@
         "NbaTeam": "MIN"
       },
       {
-        "PlayerKey": "A247E2383DCA084845E01E929EBAD406E9435561A8E2F34F0D357532F23915B3",
-        "FullName": "Caleb Love",
-        "Position": "PG,SG",
-        "NbaTeam": "POR"
+        "PlayerKey": "B8C48A41F7A008ECBC3C7CB800E8815B4E93DBCF5AB6D73CCD7A0BCA34DA2870",
+        "FullName": "Cooper Flagg",
+        "Position": "PG,SG,SF",
+        "NbaTeam": "DAL"
       },
       {
         "PlayerKey": "49A33435E85F02E0ECB8C5C18FC6F8DCDAB9204878C6189B032D215CD0863877",
         "FullName": "Karl-Anthony Towns",
         "Position": "PF,C",
         "NbaTeam": "NYK"
+      },
+      {
+        "PlayerKey": "6968B1AE2C8482225312EA4D8E479E02EE5E062C23160BA17DB6D6241DCA3873",
+        "FullName": "Jalen Green",
+        "Position": "PG,SG",
+        "NbaTeam": "PHX"
       },
       {
         "PlayerKey": "2AC084B337C227ED1150144B84CF15F46E2F977E29E5268AD7F1D6AE247E8866",
@@ -992,18 +1010,6 @@
         "FullName": "Kevin Porter Jr.",
         "Position": "PG,SG",
         "NbaTeam": "MIL"
-      },
-      {
-        "PlayerKey": "9E3427AC131A6D447B0E0DADE71BDABF3665552EEAF44D02715AD3FE045D41BD",
-        "FullName": "Jamal Murray",
-        "Position": "PG,SG",
-        "NbaTeam": "DEN"
-      },
-      {
-        "PlayerKey": "6968B1AE2C8482225312EA4D8E479E02EE5E062C23160BA17DB6D6241DCA3873",
-        "FullName": "Jalen Green",
-        "Position": "PG,SG",
-        "NbaTeam": "PHX"
       }
     ]
   },
@@ -1126,12 +1132,6 @@
         "NbaTeam": "ORL"
       },
       {
-        "PlayerKey": "C9E1E8A0677D09A3880D660F99C10817DC3607E2C99109AF4DDCA08B6C1AF9F0",
-        "FullName": "Tristan da Silva",
-        "Position": "SF,PF",
-        "NbaTeam": "ORL"
-      },
-      {
         "PlayerKey": "32DD716772BEC97FB31D6B87A3AF9DCE1624690E41535BCF5512D73B08C2C829",
         "FullName": "Evan Mobley",
         "Position": "PF,C",
@@ -1184,6 +1184,12 @@
         "FullName": "Nickeil Alexander-Walker",
         "Position": "PG,SG,SF",
         "NbaTeam": "ATL"
+      },
+      {
+        "PlayerKey": "176220F434DC586830B3848DD59C96F34684D228DD45168E91E7444DA7374F7A",
+        "FullName": "Jock Landale",
+        "Position": "C",
+        "NbaTeam": "MEM"
       },
       {
         "PlayerKey": "1567CBA7C6C4DE8E6CC5C8B55BFFB8E5A40346123D889C39F81C07082E7FF5F4",
