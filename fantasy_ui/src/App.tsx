@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import TeamsPage from "./pages/TeamsPage";
 import DraftResultsPage from "./pages/DraftResultsPage";
 import RulesPage from "./pages/RulesPage";
@@ -11,41 +11,41 @@ export default function App() {
   const tabs: Tab[] = ["teams", "draft", "bestball", "roundrobin", "rules"];
   const [activeTab, setActiveTab] = useState<Tab>("bestball");
 
-  // For swipe detection
-  let touchStartX = 0;
-  let touchEndX = 0;
+  const touchStartX = useRef(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const currentIndex = tabs.indexOf(activeTab);
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX = e.changedTouches[0].screenX;
+    touchStartX.current = e.touches[0].screenX;
+    setIsDragging(true);
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipeGesture();
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].screenX;
+    setDragOffset(currentX - touchStartX.current);
   };
 
-  const handleSwipeGesture = () => {
-    const threshold = 50; // minimum swipe distance in px
-    if (Math.abs(touchEndX - touchStartX) < threshold) return;
+  const handleTouchEnd = () => {
+    const threshold = 80;
 
-    const currentIndex = tabs.indexOf(activeTab);
-    if (touchEndX < touchStartX) {
-      // Swipe left → go to next tab
-      if (currentIndex < tabs.length - 1) {
-        setActiveTab(tabs[currentIndex + 1]);
-      }
-    } else if (touchEndX > touchStartX) {
-      // Swipe right → go to previous tab
-      if (currentIndex > 0) {
-        setActiveTab(tabs[currentIndex - 1]);
-      }
+    if (dragOffset < -threshold && currentIndex < tabs.length - 1) {
+      setActiveTab(tabs[currentIndex + 1]);
+    } else if (dragOffset > threshold && currentIndex > 0) {
+      setActiveTab(tabs[currentIndex - 1]);
     }
+
+    setDragOffset(0);
+    setIsDragging(false);
   };
 
   return (
     <div
-      className="bg-slate-900 min-h-screen w-full"
+      className="bg-slate-900 min-h-screen w-full overflow-hidden"
       onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       {/* Fixed Top Navigation */}
@@ -75,24 +75,35 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Main content */}
-      <main
-        className="
-          pt-12
-          px-1
-          pb-3
-          sm:px-4 sm:pb-4
-          md:px-6 md:pb-5
-          max-w-6xl
-          mx-auto
-          w-full
-        "
-      >
-        {activeTab === "teams" && <TeamsPage />}
-        {activeTab === "draft" && <DraftResultsPage />}
-        {activeTab === "bestball" && <BestBallPage />}
-        {activeTab === "roundrobin" && <RoundRobinPage />}
-        {activeTab === "rules" && <RulesPage />}
+      {/* Sliding Content */}
+      <main className="pt-12 w-full">
+        <div className="overflow-hidden w-full">
+          <div
+            className="flex"
+            style={{
+              transform: `translateX(calc(-${currentIndex * 100}% + ${dragOffset}px))`,
+              transition: isDragging
+                ? "none"
+                : "transform 300ms ease-out",
+            }}
+          >
+            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+              <TeamsPage />
+            </div>
+            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+              <DraftResultsPage />
+            </div>
+            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+              <BestBallPage />
+            </div>
+            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+              <RoundRobinPage />
+            </div>
+            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+              <RulesPage />
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );

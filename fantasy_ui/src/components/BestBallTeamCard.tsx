@@ -26,11 +26,11 @@ export default function BestBallTeamCard({ team, rank }: Props) {
   });
 
   return (
-    <div className={`${getRankHighlight(rank)} rounded-lg mb-2 border`}>
+    <div className={`${getRankHighlight(rank)} mb-2 rounded-md border text-white overflow-x-auto`}>
       {/* Compact Header */}
       <button
         onClick={toggleOpen}
-        className="w-full flex justify-between items-center px-3 py-2 text-left"
+        className="w-full flex justify-between items-center p-2 text-left focus:outline-none"
       >
         <div className="flex items-center gap-2 text-sm">
           {rank && (
@@ -38,22 +38,28 @@ export default function BestBallTeamCard({ team, rank }: Props) {
               {toOrdinal(rank)}
             </span>
           )}
-          <span className="text-white font-medium">
-            {team.managerName + " -"}
-          </span>
-          <span className="text-amber-300">
-            {team.totalFantasyPoints.toFixed(1)} FPTS
+                    <span className="text-white font-medium">
+            {team.managerName}
           </span>
         </div>
+        {/* Push everything after this to the right */}
+  <div className="ml-auto flex items-center gap-1">
+    <span className="text-amber-300 text-bold text-sm">
+      {team.totalFantasyPoints.toFixed(1)}
+    </span>
+    <span className="text-xs text-slate-400">
+    FPTS
+    </span>
 
-        <span
-          className={`text-cyan-400 text-sm transform transition-transform ${
-            open ? "rotate-90" : ""
-          }`}
-        >
-          ▶
-        </span>
-      </button>
+    <span
+      className={`text-sm transform transition-transform ${
+        open ? "rotate-90" : ""
+      }`}
+    >
+      ▶
+    </span>
+      </div>
+</button>
 
       {/* Expanded Player Table */}
       {open && (

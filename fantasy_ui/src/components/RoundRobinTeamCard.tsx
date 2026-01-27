@@ -141,7 +141,7 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank, viewMode }) => {
                 </div>
 
                 {/* Total Category Record */}
-                <div className="border-t border-slate-700 mt-1 pt-1 flex justify-between font-medium text-gray-300 text-[11px]">
+                <div className="border-t border-slate-700 mt-1 pt-1 flex justify-between font-medium text-gray-300 text-sm">
                   <span>Total</span>
                   {formatCategoryRecord(
                     TeamRecord.CategoryWins,
