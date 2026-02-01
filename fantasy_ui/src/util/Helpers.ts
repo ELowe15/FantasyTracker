@@ -44,7 +44,7 @@ export function getRankHighlight(rank: number) {
     ? "border-gray-300 bg-gray-300/10"
     : rank === 3
     ? "border-orange-400 bg-orange-400/10"
-    : "border-slate-700";
+    : "border-slate-700 bg-slate-800";
 }
 
 // utils/keeperColor.ts
