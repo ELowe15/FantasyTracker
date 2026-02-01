@@ -68,51 +68,72 @@ public class BestBallService
     // SLOT-BY-SLOT BACKTRACKING (CORE FIX)
     // ============================================================
     private void BacktrackAssign(
-        int slotIndex,
-        HashSet<WeeklyPlayerStats> usedPlayers,
-        Dictionary<string, WeeklyPlayerStats> currentAssignment,
-        List<WeeklyPlayerStats> eligible,
-        ref double bestTotal,
-        ref Dictionary<string, WeeklyPlayerStats> bestAssignment)
+    int slotIndex,
+    HashSet<WeeklyPlayerStats> usedPlayers,
+    Dictionary<string, WeeklyPlayerStats> currentAssignment,
+    List<WeeklyPlayerStats> eligible,
+    ref double bestTotal,
+    ref Dictionary<string, WeeklyPlayerStats> bestAssignment)
+{
+    if (slotIndex == _slots.Length)
     {
-        if (slotIndex == _slots.Length)
+        double total = currentAssignment.Values.Sum(p => p.FantasyPoints);
+
+        if (total > bestTotal)
         {
-            double total = currentAssignment.Values.Sum(p => p.FantasyPoints);
-
-            if (total > bestTotal)
-            {
-                bestTotal = total;
-                bestAssignment = new Dictionary<string, WeeklyPlayerStats>(currentAssignment);
-            }
-            return;
+            bestTotal = total;
+            bestAssignment = new Dictionary<string, WeeklyPlayerStats>(currentAssignment);
         }
-
-        string slot = _slots[slotIndex];
-
-        foreach (var player in eligible)
-        {
-            if (usedPlayers.Contains(player))
-                continue;
-
-            if (!slot.StartsWith("UTIL") && !PlayerCanPlaySlot(player, slot))
-                continue;
-
-            usedPlayers.Add(player);
-            currentAssignment[slot] = player;
-
-            BacktrackAssign(
-                slotIndex + 1,
-                usedPlayers,
-                currentAssignment,
-                eligible,
-                ref bestTotal,
-                ref bestAssignment
-            );
-
-            usedPlayers.Remove(player);
-            currentAssignment.Remove(slot);
-        }
+        return;
     }
+
+    string slot = _slots[slotIndex];
+
+    bool anyEligibleForSlot = eligible.Any(p =>
+        !usedPlayers.Contains(p) &&
+        (slot.StartsWith("UTIL") || PlayerCanPlaySlot(p, slot))
+    );
+
+    // 🔑 CASE 1: No one can fill this slot → leave it blank
+    if (!anyEligibleForSlot)
+    {
+        BacktrackAssign(
+            slotIndex + 1,
+            usedPlayers,
+            currentAssignment,
+            eligible,
+            ref bestTotal,
+            ref bestAssignment
+        );
+        return;
+    }
+
+    // CASE 2: Try all valid players
+    foreach (var player in eligible)
+    {
+        if (usedPlayers.Contains(player))
+            continue;
+
+        if (!slot.StartsWith("UTIL") && !PlayerCanPlaySlot(player, slot))
+            continue;
+
+        usedPlayers.Add(player);
+        currentAssignment[slot] = player;
+
+        BacktrackAssign(
+            slotIndex + 1,
+            usedPlayers,
+            currentAssignment,
+            eligible,
+            ref bestTotal,
+            ref bestAssignment
+        );
+
+        usedPlayers.Remove(player);
+        currentAssignment.Remove(slot);
+    }
+}
+
 
     // ============================================================
     // POSITION CHECK
