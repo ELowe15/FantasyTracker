@@ -4,5 +4,5 @@
 
 html, body {
   height: 100%;
-  background-color: #0f172a; /* same as bg-slate-900 */
+  background-color: var(--bg-app);
 }

@@ -41,17 +41,17 @@ export default function SortableStatsTable({
   );
 
   return (
-    <div className="relative -mx-3 sm:mx-0 overflow-x-auto bg-slate-800 shadow-lg">
-      <table className="min-w-full text-white text-[0.70rem] sm:text-sm md:text-base table-auto">
-        <thead className="sticky top-0 bg-slate-800 z-10">
-          <tr className="border-b border-gray-400">
+    <div className="relative -mx-3 sm:mx-0 overflow-x-auto shadow-lg">
+      <table className="min-w-full text-[var(--text-primary)] text-[0.70rem] sm:text-sm md:text-base table-auto">
+        <thead className="sticky top-0 z-10 bg-[var(--bg-purple-dark)]">
+          <tr className="border-b border-[var(--border-primary)]">
             <th className="text-center">Team</th>
 
             {statKeys.map(stat => (
               <th
                 key={stat}
                 onClick={() => handleSort(stat)}
-                className="text-center cursor-pointer select-none"
+                className="text-center cursor-pointer select-none group"
               >
                 <span className="inline-flex items-center">
                   {stat}
@@ -66,17 +66,20 @@ export default function SortableStatsTable({
         </thead>
 
         <tbody>
-          {displayResults.map(team => (
+          {displayResults.map((team, index) => (
             <tr
               key={team.TeamKey}
-              className="border-b border-gray-700 odd:bg-slate-700 hover:bg-slate-600"
+              className={`border-b border-[var(--border-primary)]
+                ${index % 2 === 0 ? "bg-[var(--bg-purple-light)]" : "bg-[var(--bg-purple-dark)]"}
+                hover:bg-[var(--bg-hover)]
+              `}
             >
-              <td className="font-medium">
+              <td className="font-medium text-[var(--text-primary)]">
                 {team.Team.ManagerName}
               </td>
 
               {statKeys.map(key => (
-                <td key={key} className="text-left">
+                <td key={key} className="text-left text-[var(--text-primary)]">
                   {team.Team.StatValues[key]}
                 </td>
               ))}
@@ -96,21 +99,26 @@ function SortIndicator({
   direction: "asc" | "desc";
 }) {
   return (
-    <span className="inline-flex flex-col justify-center items-center w-1.5 opacity-70">
+    <span className="inline-flex flex-col justify-center items-center w-1.5 group ml-1">
       {/* Up chevron */}
       <span
-        className={`w-1 h-1 border-l border-t border-white rotate-45
-          ${!active || direction === "desc" ? "opacity-30" : "opacity-100"}
+        className={`
+          w-1 h-1 border-l border-t rotate-45
+          ${active ? "border-[var(--accent-primary)]" : "border-[var(--text-muted)]"}
+          group-hover:border-[var(--accent-primary)]
+          ${!active || direction === "desc" ? "opacity-80" : "opacity-100"}
         `}
       />
 
       {/* Down chevron */}
       <span
-        className={`w-1 h-1 border-l border-b border-white -rotate-45 mt-[-2px]
-          ${!active || direction === "asc" ? "opacity-30" : "opacity-100"}
+        className={`
+          w-1 h-1 border-l border-b -rotate-45 mt-[-2px]
+          ${active ? "border-[var(--accent-primary)]" : "border-[var(--text-muted)]"}
+          group-hover:border-[var(--accent-primary)]
+          ${!active || direction === "asc" ? "opacity-80" : "opacity-100"}
         `}
       />
     </span>
   );
 }
-

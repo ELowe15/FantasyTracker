@@ -1,6 +1,7 @@
 import { BestBallTeam, BestBallPlayer } from "../models/League";
 import { useState, Fragment } from "react";
 import { getRankColor, getRankHighlight, toOrdinal } from "../util/Helpers";
+import { ArrowToggle } from "./ArrowToggle";
 
 interface Props {
   team: BestBallTeam;
@@ -41,7 +42,7 @@ export default function BestBallTeamCard({ team, rank }: Props) {
 
   return (
     <div
-      className={`${getRankHighlight(rank)} mb-2 rounded-md border text-white overflow-x-auto`}
+      className={`${getRankHighlight(rank)} mb-2 rounded-md border text-[var(--text-primary)] overflow-x-auto`}
     >
       {/* Compact Header */}
       <button
@@ -50,40 +51,33 @@ export default function BestBallTeamCard({ team, rank }: Props) {
       >
         <div className="flex items-center gap-2 text-sm">
           {rank && (
-            <span className={`${getRankColor(rank)} font-semibold`}>
+            <span className={`${getRankColor(rank)}`}>
               {toOrdinal(rank)}
             </span>
           )}
-          <span className="text-white font-medium">
+          <span className="font-medium text-[var(--text-primary)]">
             {team.managerName}
           </span>
         </div>
 
         {/* Right-aligned stats */}
         <div className="ml-auto flex items-center gap-1">
-          <span className="text-amber-300 text-bold text-sm">
+          <span className="text-[var(--text-primary)] font-bold text-sm">
             {team.totalFantasyPoints.toFixed(1)}
           </span>
-          <span className="text-xs text-slate-400">
-            FPTS
+          <span className="text-xs font-bold text-[var(--text-secondary)]">
+            FTPS 
           </span>
-
-          <span
-            className={`text-sm transform transition-transform ${
-              open ? "rotate-90" : ""
-            }`}
-          >
-            ▶
-          </span>
+          <ArrowToggle open={open} />
         </div>
       </button>
 
       {/* Expanded Player Table */}
       {open && (
-        <div className="px-2 pb-2">
-          <table className="w-full text-xs text-left border-t border-slate-700 mt-1">
+        <div className="px-2 pb-2 ">
+          <table className="bg-[var(--bg-active)] w-full text-xs text-left border-t border-[var(--border-primary)] mt-1">
             <thead>
-              <tr className="text-cyan-400 text-center text-[10px]">
+              <tr className="text-[var(--accent-secondary)] text-center text-[10px]">
                 <th className="py-1">POS</th>
                 <th>FPTS</th>
                 <th>PLAYER</th>
@@ -100,11 +94,11 @@ export default function BestBallTeamCard({ team, rank }: Props) {
               <tr>
                 <td colSpan={9} className="py-1">
                   <div className="flex items-center gap-3">
-                    <div className="flex-1 border-t border-slate-700" />
-                    <span className="text-xs uppercase tracking-wider text-gray-400">
+                    <div className="flex-1 border-t border-[var(--border-primary)]" />
+                    <span className="text-xs uppercase tracking-wider text-[var(--text-secondary)]">
                       Active Lineup
                     </span>
-                    <div className="flex-1 border-t border-slate-700" />
+                    <div className="flex-1 border-t border-[var(--border-primary)]" />
                   </div>
                 </td>
               </tr>
@@ -113,7 +107,7 @@ export default function BestBallTeamCard({ team, rank }: Props) {
               {missingSlots.map(slot => (
                 <tr
                   key={`missing-${slot}`}
-                  className="border-t border-slate-700 bg-red-950/40 text-red-300"
+                  className="border-t border-[var(--border-primary)] bg-[var(--bg-error-light)] text-[var(--accent-error)]"
                 >
                   <td className="py-1 font-semibold">
                     {slot}
@@ -145,29 +139,29 @@ export default function BestBallTeamCard({ team, rank }: Props) {
                   <Fragment key={p.playerKey}>
                     {showBenchSeparator && (
                       <tr>
-                        <td colSpan={9} className="py-1 bg-black/20">
+                        <td colSpan={9} className="py-1 bg-[var(--bg-bench)]">
                           <div className="flex items-center gap-3">
-                            <div className="flex-1 border-t border-slate-700" />
-                            <span className="text-xs uppercase tracking-wider text-gray-500">
+                            <div className="flex-1 border-t border-[var(--border-primary)]" />
+                            <span className="text-xs uppercase tracking-wider text-[var(--text-divider)]">
                               Bench
                             </span>
-                            <div className="flex-1 border-t border-slate-700" />
+                            <div className="flex-1 border-t border-[var(--border-primary)]" />
                           </div>
                         </td>
                       </tr>
                     )}
 
                     <tr
-                      className={`border-t border-slate-700 ${
+                      className={`border-t border-[var(--border-primary)] ${
                         isBench
-                          ? "bg-black/20 text-gray-400"
-                          : "text-white"
+                          ? "bg-[var(--bg-bench)] text-[var(--text-secondary)]"
+                          : "text-[var(--text-primary)] "
                       }`}
                     >
-                      <td className="py-1 text-cyan-400 font-semibold">
+                      <td className="py-1 text-[var(--accent-secondary)] font-semibold">
                         {isBench ? "BN" : rawSlot}
                       </td>
-                      <td className="text-amber-300">
+                      <td className="text-[var(--accent-primary)]">
                         {p.fantasyPoints.toFixed(1)}
                       </td>
                       <td className="truncate max-w-[110px]">

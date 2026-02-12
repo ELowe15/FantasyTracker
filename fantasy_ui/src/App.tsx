@@ -4,6 +4,7 @@ import DraftResultsPage from "./pages/DraftResultsPage";
 import RulesPage from "./pages/RulesPage";
 import BestBallPage from "./pages/BestBallPage";
 import RoundRobinPage from "./pages/RoundRobinPage";
+import './styles/colors.css';
 
 type Tab = "teams" | "draft" | "bestball" | "roundrobin" | "rules";
 
@@ -43,37 +44,59 @@ export default function App() {
 
   return (
     <div
-      className="bg-slate-900 min-h-screen w-full overflow-hidden"
+      className="min-h-screen w-full overflow-hidden"
+      style={{ backgroundColor: "var(--bg-app)" }}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       {/* Fixed Top Navigation */}
-      <nav className="fixed top-0 left-0 w-full h-12 bg-slate-800 text-white z-50 shadow-md">
-        <div className="h-full flex justify-center items-center">
-          {tabs.map((tab, i) => (
-            <React.Fragment key={tab}>
-              {i > 0 && <span className="mx-1 text-gray-400 text-s">|</span>}
-              <button
-                className={`font-semibold text-xs px-1 ${
-                  activeTab === tab ? "underline" : ""
-                }`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab === "teams"
-                  ? "Teams"
-                  : tab === "draft"
-                  ? "Draft"
-                  : tab === "bestball"
-                  ? "Best Ball"
-                  : tab === "roundrobin"
-                  ? "Round Robin"
-                  : "Rules"}
-              </button>
-            </React.Fragment>
-          ))}
-        </div>
-      </nav>
+      <nav
+  className="fixed top-0 left-0 w-full h-12 z-50 shadow-md flex items-center px-3"
+  style={{ backgroundColor: "var(--bg-nav)", color: "var(--text-primary)" }}
+>
+  {/* Logo / Favicon on the left */}
+  <div className="flex items-center flex-shrink-0 mr-4">
+    <img
+      src="/favicon-32x32.png"       // path to your favicon or logo
+      alt=""
+      className="h-8 w-8 object-contain"
+    />
+  </div>
+
+  {/* Tabs centered */}
+  <div className="flex-grow flex justify-center items-center">
+    {tabs.map((tab, i) => (
+      <React.Fragment key={tab}>
+        {i > 0 && (
+          <span className="mx-1 text-s" style={{ color: "var(--text-divider)" }}>
+            |
+          </span>
+        )}
+        <button
+          className={`font-semibold text-xs px-1`}
+          style={{
+            color:
+              activeTab === tab ? "var(--text-active-tab)" : "var(--text-primary)",
+            textDecoration: activeTab === tab ? "underline" : "none",
+          }}
+          onClick={() => setActiveTab(tab)}
+        >
+          {tab === "teams"
+            ? "Teams"
+            : tab === "draft"
+            ? "Draft"
+            : tab === "bestball"
+            ? "Best Ball"
+            : tab === "roundrobin"
+            ? "Round Robin"
+            : "Rules"}
+        </button>
+      </React.Fragment>
+    ))}
+  </div>
+</nav>
+
 
       {/* Sliding Content */}
       <main className="pt-12 w-full">
@@ -82,24 +105,32 @@ export default function App() {
             className="flex"
             style={{
               transform: `translateX(calc(-${currentIndex * 100}% + ${dragOffset}px))`,
-              transition: isDragging
-                ? "none"
-                : "transform 300ms ease-out",
+              transition: isDragging ? "none" : "transform 300ms ease-out",
             }}
           >
-            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+            <div
+              className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5"
+            >
               <TeamsPage />
             </div>
-            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+            <div
+              className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5"
+            >
               <DraftResultsPage />
             </div>
-            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+            <div
+              className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5"
+            >
               <BestBallPage />
             </div>
-            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+            <div
+              className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5"
+            >
               <RoundRobinPage />
             </div>
-            <div className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5">
+            <div
+              className="w-full flex-shrink-0 px-1 sm:px-4 md:px-6 pb-5"
+            >
               <RulesPage />
             </div>
           </div>

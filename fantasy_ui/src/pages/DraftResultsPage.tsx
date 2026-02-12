@@ -7,7 +7,6 @@ function groupByTeam(picks: DraftPick[]): TeamGroup[] {
   const teams: { [key: string]: TeamGroup } = {};
 
   picks.forEach((pick) => {
-    // ✅ Use exact field name from JSON
     const teamKey = pick.TeamKey;
 
     if (!teams[teamKey]) {
@@ -21,7 +20,6 @@ function groupByTeam(picks: DraftPick[]): TeamGroup[] {
     teams[teamKey].picks.push(pick);
   });
 
-  // Sort each team's picks by round, then pick
   Object.values(teams).forEach((team) => {
     team.picks.sort((a, b) => a.round - b.round || a.pick - b.pick);
   });
@@ -40,19 +38,24 @@ export default function TeamsPage() {
 
   if (!teams)
     return (
-      <div className="flex justify-center items-center h-screen text-gray-500">
+      <div
+        className="flex justify-center items-center h-screen"
+        style={{ color: "var(--text-secondary)" }}
+      >
         Loading draft results...
       </div>
     );
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div style={{ backgroundColor: "var(--bg-app)", minHeight: "100vh" }}>
       <div className="max-w-2xl mx-auto p-4">
-        <h1 className="text-3xl font-bold text-center mb-6 text-white drop-shadow-lg tracking-wide">
+        <h1
+          className="text-3xl font-bold text-center mb-6 drop-shadow-lg tracking-wide"
+          style={{ color: "var(--text-primary)" }}
+        >
           Fantasy Draft Results
         </h1>
         {teams.map((team) => (
-          // ✅ unique key per team
           <DraftTeamCard key={team.team_key} team={team} />
         ))}
       </div>

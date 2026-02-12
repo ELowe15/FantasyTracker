@@ -7,6 +7,8 @@ import {
 import RoundRobinTeamCard from "../components/RoundRobinTeamCard";
 import { getPoints } from "../util/Helpers";
 import SortableStatsTable from "../components/SortableStatsTable";
+import { ViewToggle } from "../components/ViewToggle";
+import { WeekSelector } from "../components/WeekSelector";
 
 // ---- CONFIG ----
 const BASE_URL =
@@ -71,7 +73,7 @@ export default function RoundRobinPage() {
     loadData();
   }, [season, week, viewMode]);
 
-    /* =========================
+  /* =========================
      Load Season Data
   ========================= */
   useEffect(() => {
@@ -130,87 +132,28 @@ export default function RoundRobinPage() {
   /* =========================
      Render
   ========================= */
-  if (error) return <div className="text-red-400">{error}</div>;
-  if (loading) return <div className="text-gray-400">Loading…</div>;
+  if (error)
+    return <div className="text-[var(--accent-error)]">{error}</div>;
+  if (loading)
+    return <div className="text-[var(--text-secondary)]">Loading…</div>;
 
   return (
-    <div className="min-h-screen bg-slate-900 px-4 pt-3">
+    <div className="min-h-screen bg-[var(--bg-primary)] px-4 pt-3">
       {/* Header */}
       <div className="flex flex-col gap-2 mb-3">
-        <h1 className="text-2xl font-bold text-center text-white">
+        <h1 className="text-2xl font-bold text-center text-[var(--text-primary)]">
           Round Robin Standings
         </h1>
 
-        {/* View Toggle */}
-        <div className="flex justify-center">
-          <div className="flex rounded-md overflow-hidden border border-slate-600 text-[12px]">
-            <button
-              onClick={() => setViewMode("WEEKLY")}
-              className={`px-3 py-1 ${
-                viewMode === "WEEKLY"
-                  ? "bg-cyan-500 text-black"
-                  : "bg-slate-800 text-gray-300"
-              }`}
-            >
-              Weekly
-            </button>
-            <button
-              onClick={() => setViewMode("SEASON")}
-              className={`px-3 py-1 ${
-                viewMode === "SEASON"
-                  ? "bg-cyan-500 text-black"
-                  : "bg-slate-800 text-gray-300"
-              }`}
-            >
-              Season
-            </button>
-          </div>
-        </div>
+        <ViewToggle viewMode={viewMode} onChange={setViewMode} />
 
         {viewMode === "WEEKLY" && (
-          <div className="flex justify-center items-center gap-1">
-            <button
-              disabled={!hasPrevWeek}
-              onClick={() =>
-                hasPrevWeek &&
-                setWeek(availableWeeks[currentWeekIndex - 1])
-              }
-              className={`text-lg px-1 ${
-                hasPrevWeek
-                  ? "text-white hover:text-cyan-400"
-                  : "text-gray-600 cursor-not-allowed"
-              }`}
-            >
-              &lt;
-            </button>
-
-            <select
-              value={week ?? ""}
-              onChange={(e) => setWeek(Number(e.target.value))}
-              className="bg-slate-800 text-white text-xs px-2 py-1 rounded border border-slate-600 w-18 text-center"
-            >
-              {availableWeeks.map((w) => (
-                <option key={w} value={w}>
-                  Week {w}
-                </option>
-              ))}
-            </select>
-
-            <button
-              disabled={!hasNextWeek}
-              onClick={() =>
-                hasNextWeek &&
-                setWeek(availableWeeks[currentWeekIndex + 1])
-              }
-              className={`text-lg px-1 ${
-                hasNextWeek
-                  ? "text-white hover:text-cyan-400"
-                  : "text-gray-600 cursor-not-allowed"
-              }`}
-            >
-              &gt;
-            </button>
-          </div>
+          <WeekSelector
+            week={week}
+            availableWeeks={availableWeeks}
+            currentWeekIndex={currentWeekIndex}
+            setWeek={setWeek}
+          />
         )}
       </div>
 
@@ -234,15 +177,15 @@ export default function RoundRobinPage() {
         </>
       ) : (
         <div className="flex flex-col gap-2 mb-6">
-            {sortedResults.map((r, idx) => (
-              <RoundRobinTeamCard
-                key={r.TeamKey}
-                result={r}
-                rank={idx + 1}
-                viewMode={viewMode}
-              />
-            ))}
-          </div>
+          {sortedResults.map((r, idx) => (
+            <RoundRobinTeamCard
+              key={r.TeamKey}
+              result={r}
+              rank={idx + 1}
+              viewMode={viewMode}
+            />
+          ))}
+        </div>
       )}
     </div>
   );

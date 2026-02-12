@@ -5,7 +5,7 @@ export function toOrdinal(n: number): string {
   if (mod10 === 1 && mod100 !== 11) return `${n}st`;
   if (mod10 === 2 && mod100 !== 12) return `${n}nd`;
   if (mod10 === 3 && mod100 !== 13) return `${n}rd`;
-    return `${n}th`;
+  return `${n}th`;
 }
 
 export function getPoints(w: number, t: number) {
@@ -27,36 +27,36 @@ export function getPercentageCategory(category: string): string | null {
   }
 }
 
-export function getRankColor(rank: number) {
+/** Returns a text color variable class for top 3 ranks */
+export function getRankColor(rank: number = 0) {
   return rank === 1
-    ? "text-yellow-400"
+    ? "text-[var(--text-rank-1)]"
     : rank === 2
-    ? "text-gray-300"
+    ? "text-[var(--text-rank-2)]"
     : rank === 3
-    ? "text-orange-400"
-    : "text-gray-400";
+    ? "text-[var(--text-rank-3)]"
+    : "text-[var(--text-rank-default)]";
 }
 
-export function getRankHighlight(rank: number) {  
+export function getRankHighlight(rank: number = 0) {
   return rank === 1
-    ? "border-yellow-400 bg-yellow-400/10"
+    ? "border-[var(--border-rank-1)] bg-[var(--bg-rank-1)]"
     : rank === 2
-    ? "border-gray-300 bg-gray-300/10"
+    ? "border-[var(--border-rank-2)] bg-[var(--bg-rank-2)]"
     : rank === 3
-    ? "border-orange-400 bg-orange-400/10"
-    : "border-slate-700 bg-slate-800";
+    ? "border-[var(--border-rank-3)] bg-[var(--bg-rank-3)]"
+    : "border-[var(--border-primary)] bg-[var(--bg-card)]";
 }
 
-// utils/keeperColor.ts
-export function getKeeperColor(keeperYears: number): string {
+export function getKeeperColor(keeperYears: number) {
   switch (keeperYears) {
     case 2:
-      return "text-green-400";
+      return "text-[var(--accent-success)]";
     case 1:
-      return "text-yellow-400";
+      return "text-[var(--text-warning)]";
     case 0:
-      return "text-red-400";
+      return "text-[var(--accent-error)]";
     default:
-      return "text-white"; // fallback
+      return "text-[var(--text-primary)]";
   }
 }

@@ -1,0 +1,106 @@
+/* src/styles/colors.css */
+
+:root {
+  /* ----------------- Backgrounds ----------------- */
+  --bg-app: #0E0A23;      /* darkest */
+--bg-nav: #1A1340;      /* slightly lighter */
+--bg-card: rgba(65, 11, 134, 0.479);    /* card base */
+--bg-card-expanded: #2a20648f; /* subtle lift */
+  --bg-card-alt: #1C1040;     /* alternate card / bench rows */
+  --bg-highlight: rgba(255, 140, 66, 0.1); /* highlight backgrounds for rank 1 */
+--bg-rank-1: rgba(255, 221, 0, 0.15);   /* brighter gold */
+--bg-rank-2: rgba(192, 192, 210, 0.15); /* lighter silver */
+--bg-rank-3: rgba(205, 127, 50, 0.15);  /* true bronze */
+ --bg-purple-light: rgba(120, 81, 227, 0.1); /* subtle light purple */
+  --bg-purple-dark: rgba(90, 60, 180, 0.3);    /* slightly darker shade */
+
+  /* ----------------- Text ----------------- */
+  --text-primary: #E0E0E0;      /* main text */
+  --text-secondary: #B0B0B0;    /* metadata / secondary text */
+  --text-disabled: #7A7A90;     /* muted / disabled */
+  --text-active-tab: #FF8C42;   /* active tab / highlighted text */
+  --text-rank-1: #FFD700;       /* gold / 1st place */
+  --text-rank-2: #D3D3E0;       /* silver / 2nd place */
+  --text-rank-3: #FF8C42;       /* bronze / 3rd place */
+  --text-rank-default: #9CA3AF; /* default gray */
+  --text-success: #33D9B2;      /* positive stats / gains */
+  --text-error: #FF6E6E;        /* negative stats / losses */
+  --text-warning: #FFD966;      /* warnings / ties */
+  --text-accent: #A66FFF;       /* secondary accents */
+  --text-muted: #888888;        /* for bench / disabled lines */
+  --text-cyan: #22D3EE;         /* cyan stats or headings */
+  --text-amber: #FACC15;        /* amber highlights */
+
+  /* ----------------- Borders / Dividers ----------------- */
+  --border-primary: #4B5563;   /* default card / table border */
+  --border-rank-1: #FFD700;
+  --border-rank-2: #C0C0C0;
+  --border-rank-3: #FF8C42;
+  --border-divider: #7A7A90;
+
+  /* ----------------- Accents / Actions ----------------- */
+  --accent-primary: #FF8C42;    /* fantasy points, primary call-to-action */
+  --accent-secondary: #A66FFF;  /* hover effects, selected cards, secondary highlights */
+  --accent-success: #33D9B2;    /* positive points / gains */
+  --accent-error: #FF6E6E;      /* negative points / alerts */
+  --hover-bg: #341A63;           /* hover for cards, buttons, table rows */
+  --active-bg: #2B1460;          /* active tab or selected card */
+  --shadow-hover: rgba(166, 111, 255, 0.3); /* subtle glow / shadow */
+  
+   /* ----------------- Rank Elevation / Glow ----------------- */
+  --shadow-card: 0 4px 12px rgba(0,0,0,0.35);
+  --shadow-card-hover: 0 6px 16px rgba(0,0,0,0.45);
+
+  --glow-rank-1: 0 0 0 1px rgba(255,215,0,0.6), 0 6px 20px rgba(255,215,0,0.15);
+  --glow-rank-2: 0 0 0 1px rgba(192,192,210,0.4), 0 4px 12px rgba(192,192,210,0.08);
+  --glow-rank-3: 0 0 0 1px rgba(205,127,50,0.4), 0 4px 12px rgba(205,127,50,0.08);
+
+  --shine-top: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+
+  /* ----------------- Specific Utility Colors ----------------- */
+  --bg-bench: rgba(0, 0, 0, 0.4);
+  --bg-active: rgba(0, 0, 0, 0.1);
+  --bg-missing-slot: rgba(139, 0, 0, 0.25); /* missing lineup rows */
+}
+
+.card {
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: var(--shadow-card);
+  border-radius: 0.5rem;
+  background-color: var(--bg-card);
+  position: relative;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.rank-1 {
+  background: linear-gradient(to bottom, var(--bg-rank-1), var(--bg-card));
+  box-shadow: var(--glow-rank-1);
+}
+
+.rank-2 {
+  background: linear-gradient(to bottom, var(--bg-rank-2), var(--bg-card));
+  box-shadow: var(--glow-rank-2);
+}
+
+.rank-3 {
+  background: linear-gradient(to bottom, var(--bg-rank-3), var(--bg-card));
+  box-shadow: var(--glow-rank-3);
+}
+
+/* optional shine for top 1st place */
+.rank-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: var(--shine-top);
+  border-radius: inherit;
+  pointer-events: none;
+}
+

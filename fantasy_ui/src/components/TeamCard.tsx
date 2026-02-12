@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TeamRoster } from "../models/League";
 import { getKeeperColor } from "../util/Helpers";
+import { ArrowToggle } from "./ArrowToggle";
 
 interface Props {
   team: TeamRoster;
@@ -12,30 +13,36 @@ export default function TeamCard({ team }: Props) {
   const toggleOpen = () => setOpen(!open);
 
   return (
-    <div className="bg-slate-800 shadow-lg rounded-xl mb-2 border border-slate-700">
+    <div
+      className="shadow-lg rounded-md mb-2 border"
+      style={{
+        backgroundColor: "var(--bg-card)",
+        borderColor: "var(--border-primary)",
+      }}
+    >
       <button
         onClick={toggleOpen}
         className="w-full flex justify-between items-center p-2 text-left"
       >
         <div>
-          <h2 className="text-md text-amber-400 drop-shadow">
+          <h2
+            className="text-md drop-shadow"
+            style={{ color: "var(--text-primary)" }}
+          >
             {team.managerName + "'s Team"}
           </h2>
         </div>
-        <span
-          className={`transform transition-transform ${
-            open ? "rotate-90" : "rotate-0"
-          } text-cyan-400`}
-        >
-          ▶
-        </span>
+        <ArrowToggle open={open} />
       </button>
 
       {open && (
         <div className="px-4 pb-4">
-          <table className="w-full text-sm text-left border-t border-slate-700 mt-1">
+          <table
+            className="w-full text-sm text-left border-t mt-1"
+            style={{ borderColor: "var(--text-divider)" }}
+          >
             <thead>
-              <tr className="text-cyan-400">
+              <tr style={{ color: "var(--accent-secondary)" }}>
                 <th className="py-2">Player</th>
                 <th>Pos</th>
                 <th>Team</th>
@@ -46,13 +53,19 @@ export default function TeamCard({ team }: Props) {
               {team.players.map((p) => (
                 <tr
                   key={p.playerKey}
-                  className="border-t border-slate-700 hover:bg-slate-700/40"
+                  className="border-t hover:bg-opacity-40"
+                  style={{
+                    borderColor: "var(--text-divider)",
+                    backgroundColor: "var(--bg-card)",
+                  }}
                 >
-                  <td className="py-2 text-white">{p.fullName}</td>
-                  <td className="text-gray-200">{p.position}</td>
-                  <td className="text-gray-200">{p.nbaTeam}</td>
+                  <td className="py-2" style={{ color: "var(--text-primary)" }}>
+                    {p.fullName}
+                  </td>
+                  <td style={{ color: "var(--text-secondary)" }}>{p.position}</td>
+                  <td style={{ color: "var(--text-secondary)" }}>{p.nbaTeam}</td>
                   <td className={`${getKeeperColor(Number(p.keeperYears))}`}>
-                    {p.keeperYears != null ? p.keeperYears +"yrs" : "-"}
+                    {p.keeperYears != null ? p.keeperYears + "yrs" : "-"}
                   </td>
                 </tr>
               ))}

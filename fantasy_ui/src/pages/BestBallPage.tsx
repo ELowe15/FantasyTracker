@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { BestBallTeam, BestBallPlayer } from "../models/League";
 import BestBallTeamCard from "../components/BestBallTeamCard";
-import { toOrdinal } from "../util/Helpers";
+import { getRankColor, getRankHighlight, toOrdinal } from "../util/Helpers";
+import { ViewToggle } from "../components/ViewToggle";
+import { WeekSelector } from "../components/WeekSelector";
 
 // ---- CONFIG ----
 const BASE_URL =
@@ -9,7 +11,6 @@ const BASE_URL =
 
 type ViewMode = "WEEKLY" | "SEASON";
 
-// Match backend PascalCase keys
 type BestBallContext = {
   Season: number;
   CurrentWeek: number;
@@ -26,19 +27,16 @@ type SeasonBestBallTeam = {
   WorstWeekScore: number;
 };
 
-
 export default function BestBallPage() {
   const [teams, setTeams] = useState<BestBallTeam[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const [viewMode, setViewMode] = useState<ViewMode>("WEEKLY");
-
   const [season, setSeason] = useState<number | null>(null);
   const [week, setWeek] = useState<number | null>(null);
   const [availableWeeks, setAvailableWeeks] = useState<number[]>([]);
   const [seasonTeams, setSeasonTeams] = useState<SeasonBestBallTeam[] | null>(null);
-
 
   // -------------------------------
   // Load league context (once)
@@ -47,11 +45,7 @@ export default function BestBallPage() {
     async function loadContextAndWeeks() {
       try {
         const res = await fetch(`${BASE_URL}/league_context.json`);
-
-        if (!res.ok) {
-          throw new Error("Failed to load best ball context");
-        }
-
+        if (!res.ok) throw new Error("Failed to load best ball context");
         const context: BestBallContext = await res.json();
 
         if (
@@ -75,56 +69,45 @@ export default function BestBallPage() {
     loadContextAndWeeks();
   }, []);
 
+  // -------------------------------
+  // Load season data
+  // -------------------------------
   useEffect(() => {
-  if (viewMode !== "SEASON" || !season) return;
+    if (viewMode !== "SEASON" || !season) return;
 
-  async function loadSeasonData() {
-    setLoading(true);
-    setError(null);
+    async function loadSeasonData() {
+      setLoading(true);
+      setError(null);
 
-    try {
-      const res = await fetch(
-        `${BASE_URL}/season_best_ball_${season}.json`
-      );
+      try {
+        const res = await fetch(`${BASE_URL}/season_best_ball_${season}.json`);
+        if (!res.ok) throw new Error("Failed to load season data");
 
-      if (!res.ok) {
-        throw new Error("Failed to load season data");
-      }
+        const data = await res.json();
+        if (!Array.isArray(data.Teams)) throw new Error("Invalid season JSON format");
 
-      const data = await res.json();
-
-      if (!Array.isArray(data.Teams)) {
-        throw new Error("Invalid season JSON format");
-      }
-
-      const mapped = data.Teams.map((t: any) => {
-        let name = t.ManagerName;
-
-        return {
+        const mapped = data.Teams.map((t: any) => ({
           ...t,
-          ManagerName: name,
-        } as SeasonBestBallTeam;
-      });
+          ManagerName: t.ManagerName,
+        } as SeasonBestBallTeam));
 
-      mapped.sort(
-  (a: SeasonBestBallTeam, b: SeasonBestBallTeam) =>
-    b.SeasonTotalBestBallPoints - a.SeasonTotalBestBallPoints
-);
+        mapped.sort(
+          (a: SeasonBestBallTeam, b: SeasonBestBallTeam) =>
+            b.SeasonTotalBestBallPoints - a.SeasonTotalBestBallPoints
+        );
 
-
-      setSeasonTeams(mapped);
-    } catch (err) {
-      console.error(err);
-      setError("Failed to load season standings.");
-      setSeasonTeams(null);
-    } finally {
-      setLoading(false);
+        setSeasonTeams(mapped);
+      } catch (err) {
+        console.error(err);
+        setError("Failed to load season standings.");
+        setSeasonTeams(null);
+      } finally {
+        setLoading(false);
+      }
     }
-  }
 
-  loadSeasonData();
-}, [season, viewMode]);
-
+    loadSeasonData();
+  }, [season, viewMode]);
 
   // -------------------------------
   // Load weekly best ball data
@@ -137,48 +120,32 @@ export default function BestBallPage() {
       setError(null);
 
       try {
-        const res = await fetch(
-          `${BASE_URL}/best_ball_${season}_week_${week}.json`
-        );
-
-        if (!res.ok) {
-          throw new Error(`Failed to fetch week ${week}`);
-        }
+        const res = await fetch(`${BASE_URL}/best_ball_${season}_week_${week}.json`);
+        if (!res.ok) throw new Error(`Failed to fetch week ${week}`);
 
         const data = await res.json();
+        if (!data.Teams || !Array.isArray(data.Teams)) throw new Error("Invalid JSON format");
 
-        if (!data.Teams || !Array.isArray(data.Teams)) {
-          throw new Error("Invalid JSON format: 'Teams' array not found");
-        }
-
-        const mapped: BestBallTeam[] = data.Teams.map((t: any) => {
-          let displayManagerName = t.ManagerName;
-
-          return {
-            teamKey: t.TeamKey,
-            managerName: displayManagerName,
-            totalFantasyPoints: t.TotalBestBallPoints,
-            players:
-              t.Players?.map((p: any) => {
-                const rawStats = {
-                  points: p.RawStats?.["PTS"] ?? 0,
-                  rebounds: p.RawStats?.["REB"] ?? 0,
-                  assists: p.RawStats?.["AST"] ?? 0,
-                  steals: p.RawStats?.["STL"] ?? 0,
-                  blocks: p.RawStats?.["BLK"] ?? 0,
-                  turnovers: p.RawStats?.["TO"] ?? 0,
-                };
-
-                return {
-                  playerKey: p.PlayerKey,
-                  fullName: p.FullName,
-                  fantasyPoints: p.FantasyPoints,
-                  bestBallSlot: p.BestBallSlot,
-                  rawStats,
-                } as BestBallPlayer;
-              }) ?? [],
-          } as BestBallTeam;
-        });
+        const mapped: BestBallTeam[] = data.Teams.map((t: any) => ({
+          teamKey: t.TeamKey,
+          managerName: t.ManagerName,
+          totalFantasyPoints: t.TotalBestBallPoints,
+          players:
+            t.Players?.map((p: any) => ({
+              playerKey: p.PlayerKey,
+              fullName: p.FullName,
+              fantasyPoints: p.FantasyPoints,
+              bestBallSlot: p.BestBallSlot,
+              rawStats: {
+                points: p.RawStats?.["PTS"] ?? 0,
+                rebounds: p.RawStats?.["REB"] ?? 0,
+                assists: p.RawStats?.["AST"] ?? 0,
+                steals: p.RawStats?.["STL"] ?? 0,
+                blocks: p.RawStats?.["BLK"] ?? 0,
+                turnovers: p.RawStats?.["TO"] ?? 0,
+              },
+            } as BestBallPlayer)) ?? [],
+        }));
 
         mapped.sort((a, b) => b.totalFantasyPoints - a.totalFantasyPoints);
         setTeams(mapped);
@@ -199,16 +166,17 @@ export default function BestBallPage() {
   // -------------------------------
   const currentWeekIndex = availableWeeks.indexOf(week ?? -1);
   const hasPrevWeek = currentWeekIndex > 0;
-  const hasNextWeek =
-    currentWeekIndex !== -1 &&
-    currentWeekIndex < availableWeeks.length - 1;
+  const hasNextWeek = currentWeekIndex !== -1 && currentWeekIndex < availableWeeks.length - 1;
 
   // -------------------------------
   // UI STATES
   // -------------------------------
   if (error) {
     return (
-      <div className="flex justify-center items-center h-screen text-red-400">
+      <div
+        className="flex justify-center items-center h-screen"
+        style={{ color: "var(--accent-error)" }}
+      >
         {error}
       </div>
     );
@@ -216,183 +184,96 @@ export default function BestBallPage() {
 
   if (loading || !teams || week === null) {
     return (
-      <div className="flex justify-center items-center h-screen text-gray-400">
+      <div
+        className="flex justify-center items-center h-screen"
+        style={{ color: "var(--text-secondary)" }}
+      >
         Loading best ball results...
       </div>
     );
   }
 
-   return (
-    <div className="min-h-screen bg-slate-900">
+  return (
+    <div style={{ backgroundColor: "var(--bg-app)", minHeight: "100vh" }}>
       <div className="max-w-3xl mx-auto px-4 pt-3 pb-4">
         {/* Header */}
         <div className="flex flex-col gap-2 mb-3">
-          <h1 className="text-2xl font-bold text-center text-white">
+          <h1
+            className="text-2xl font-bold text-center"
+            style={{ color: "var(--text-primary)" }}
+          >
             Best Ball Standings
           </h1>
 
-          {/* View Toggle */}
-          <div className="flex justify-center">
-            <div className="flex rounded-md overflow-hidden border border-slate-600 text-[12px]">
-              <button
-                onClick={() => setViewMode("WEEKLY")}
-                className={`px-3 py-1 ${
-                  viewMode === "WEEKLY"
-                    ? "bg-cyan-500 text-black"
-                    : "bg-slate-800 text-gray-300"
-                }`}
-              >
-                Weekly
-              </button>
-              <button
-                onClick={() => setViewMode("SEASON")}
-                className={`px-3 py-1 ${
-                  viewMode === "SEASON"
-                    ? "bg-cyan-500 text-black"
-                    : "bg-slate-800 text-gray-300"
-                }`}
-              >
-                Season
-              </button>
-            </div>
-          </div>
+        <ViewToggle viewMode={viewMode} onChange={setViewMode} />
 
-         {viewMode === "WEEKLY" && (
-  <div className="flex justify-center items-center gap-1">
-    {/* Previous Week */}
-    <button
-      disabled={!hasPrevWeek}
-      onClick={() =>
-        hasPrevWeek &&
-        setWeek(availableWeeks[currentWeekIndex - 1])
-      }
-      className={`text-lg px-1 ${
-        hasPrevWeek
-          ? "text-white hover:text-cyan-400"
-          : "text-gray-600 cursor-not-allowed"
-      }`}
-      aria-label="Previous week"
-    >
-      &lt;
-    </button>
-
-    {/* Dropdown (smaller) */}
-    <select
-      value={week}
-      onChange={(e) => setWeek(Number(e.target.value))}
-      className="
-        bg-slate-800
-        text-white
-        text-xs
-        px-2
-        py-1
-        rounded
-        border border-slate-600
-        w-18
-        text-center
-      "
-    >
-      {availableWeeks.map((w) => (
-        <option key={w} value={w}>
-          Week {w}
-        </option>
-      ))}
-    </select>
-
-    {/* Next Week */}
-    <button
-      disabled={!hasNextWeek}
-      onClick={() =>
-        hasNextWeek &&
-        setWeek(availableWeeks[currentWeekIndex + 1])
-      }
-      className={`text-lg px-1 ${
-        hasNextWeek
-          ? "text-white hover:text-cyan-400"
-          : "text-gray-600 cursor-not-allowed"
-      }`}
-      aria-label="Next week"
-    >
-      &gt;
-    </button>
-  </div>
-)}
+        {viewMode === "WEEKLY" && (
+          <WeekSelector
+            week={week}
+            availableWeeks={availableWeeks}
+            currentWeekIndex={currentWeekIndex}
+            setWeek={setWeek}
+          />
+        )}
         </div>
 
         {/* Content */}
-{/* Content */}
         {viewMode === "SEASON" ? (
           <div className="flex flex-col gap-1">
             {seasonTeams?.map((team, index) => {
               const rank = index + 1;
               const ordinal = toOrdinal(rank);
-
-              const rankColor =
-                rank === 1
-                  ? "text-yellow-400"
-                  : rank === 2
-                  ? "text-gray-300"
-                  : rank === 3
-                  ? "text-orange-400"
-                  : "text-gray-400";
-
-              const highlight =
-                rank === 1
-                  ? "border-yellow-400 bg-yellow-400/10"
-                  : rank === 2
-                  ? "border-gray-300 bg-gray-300/10"
-                  : rank === 3
-                  ? "border-orange-400 bg-orange-400/10"
-                  : "border-slate-700";
+              const rankColor = getRankColor(rank);
+              const highlight = getRankHighlight(rank);
 
               return (
                 <div
-  key={team.TeamKey}
-  className={`flex items-center justify-between rounded-md border px-2 py-1 ${highlight}`}
->
-  {/* LEFT: Rank + Manager */}
-  <div className="flex items-center min-w-0">
-    <span className={`text-[15px] w-8 ${rankColor}`}>
-      {ordinal}
-    </span>
+                  key={team.TeamKey}
+                  className={`flex items-center justify-between rounded-md border px-2 py-1 ${highlight}`}
+                >
+                  {/* LEFT: Rank + Manager */}
+                  <div className="flex items-center min-w-0">
+                    <span
+                      className={`text-[15px] w-8 ${rankColor}`}
+                    >
+                      {ordinal}
+                    </span>
+                    <span
+                      className="text-[15px] font-medium truncate"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      {team.ManagerName}
+                    </span>
+                  </div>
 
-    <span className="text-[15px] font-medium text-white truncate">
-      {team.ManagerName}
-    </span>
-  </div>
-
-  {/* RIGHT: Stats (2 rows) */}
-  <div className="flex flex-col text-[10px] leading-tight text-white text-right whitespace-nowrap">
-    {/* Row 1: Total */}
-    <div className="font-bold tracking-tight text-[12px]">
-      Total Points:{" "}
-      <span className="text-orange-300">
-        {team.SeasonTotalBestBallPoints.toFixed(1)}
-      </span>{" "}
-      <span className="text-gray-400">FTPS</span>
-    </div>
-
-    {/* Row 2: Best / Worst */}
-    <div className="flex justify-end gap-2 text-gray-300 mt-1.5">
-      <span>
-        Best Wk:{" "}
-        <span className="text-orange-300">
-          {team.BestWeekScore.toFixed(1)}
-        </span>
-      </span>
-
-      <span className="text-gray-500">|</span>
-
-      <span>
-        Worst Wk:{" "}
-        <span className="text-orange-300">
-          {team.WorstWeekScore.toFixed(1)}
-        </span>
-      </span>
-    </div>
-  </div>
-</div>
-
+                  {/* RIGHT: Stats */}
+                  <div
+                    className="flex flex-col text-[10px] leading-tight text-right whitespace-nowrap"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    <div className="font-bold tracking-tight text-[12px]">
+                      Total Points:{" "}
+                      <span style={{ color: "var(--accent-primary)" }}>
+                        {team.SeasonTotalBestBallPoints.toFixed(1)}
+                      </span>
+                    </div>
+                    <div className="flex justify-end gap-2 mt-1.5" style={{ color: "var(--text-secondary)" }}>
+                      <span>
+                        Best Wk:{" "}
+                        <span style={{ color: "var(--accent-primary)" }}>
+                          {team.BestWeekScore.toFixed(1)}
+                        </span>
+                      </span>
+                      <span style={{ color: "var(--text-divider)" }}>|</span>
+                      <span>
+                        Worst Wk:{" "}
+                        <span style={{ color: "var(--accent-primary)" }}>
+                          {team.WorstWeekScore.toFixed(1)}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               );
             })}
           </div>
