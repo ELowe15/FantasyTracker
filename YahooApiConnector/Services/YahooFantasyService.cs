@@ -317,7 +317,7 @@ private async Task<Dictionary<string, List<WeeklyPlayerStats>>> GetDailyLeagueRe
     // -----------------------
     // 1. Fetch all teams
     // -----------------------
-var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams/players";
+    var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams";
     var teamsXml = await _client.GetStringAsync(teamsUrl);
     var teamsDoc = XDocument.Parse(teamsXml);
     ns = teamsDoc.Root.GetDefaultNamespace();
@@ -326,20 +326,37 @@ var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKe
         .Select(t => new
         {
             TeamKey = t.Element(ns + "team_key")?.Value,
-            Roster = t.Descendants(ns + "player")
-                      .Select(p => p.Element(ns + "player_key")?.Value)
-                      .Where(k => !string.IsNullOrEmpty(k))
-                      .ToList()
+            ManagerName = t.Descendants(ns + "manager").FirstOrDefault()?.Element(ns + "nickname")?.Value ?? "Unknown"
         })
         .ToList();
 
     // -----------------------
-    // 2. Collect all unique player keys across all teams
+    // 2. Fetch each team roster for the specific date
     // -----------------------
-    var allPlayerKeys = teams.SelectMany(t => t.Roster).Distinct().ToList();
+    var teamRosters = new List<(string TeamKey, List<string> PlayerKeys)>();
+    foreach (var team in teams)
+    {
+        var rosterUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/roster;date={date:yyyy-MM-dd}";
+        var rosterXml = await _client.GetStringAsync(rosterUrl);
+        var rosterDoc = XDocument.Parse(rosterXml);
+        ns = rosterDoc.Root.GetDefaultNamespace();
+
+        var playerKeys = rosterDoc.Descendants(ns + "player")
+            .Select(p => p.Element(ns + "player_key")?.Value)
+            .Where(k => !string.IsNullOrEmpty(k))
+            .ToList();
+
+        teamRosters.Add((team.TeamKey, playerKeys));
+    }
 
     // -----------------------
-    // 3. Fetch stats in batches
+    // 3. Collect all unique player keys across all teams
+    // -----------------------
+    var allPlayerKeys = teamRosters.SelectMany(t => t.PlayerKeys).Distinct().ToList();
+    Console.WriteLine($"[DEBUG] Total unique players to fetch: {allPlayerKeys.Count}");
+
+    // -----------------------
+    // 4. Fetch stats in batches
     // -----------------------
     const int batchSize = 25; // adjust if needed
     var dailyStats = new Dictionary<string, WeeklyPlayerStats>();
@@ -374,9 +391,7 @@ var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKe
             statDict = Helpers.FilterToBestBallStats(statDict);
 
             if (statDict.Count == 0)
-            {
                 continue;
-            }
 
             dailyStats[playerKey] = new WeeklyPlayerStats
             {
@@ -387,7 +402,6 @@ var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKe
                 RawStats = statDict,
                 FantasyPoints = Helpers.ComputeFantasyPoints(statDict)
             };
-
         }
 
         if (DEBUG_STOP_AFTER_FIRST_TEAM)
@@ -395,21 +409,18 @@ var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKe
     }
 
     // -----------------------
-    // 4. Map stats to teams
+    // 5. Map stats to teams
     // -----------------------
-    foreach (var team in teams)
+    foreach (var team in teamRosters)
     {
         var teamHashedKey = Helpers.Hash(team.TeamKey);
         var teamPlayerStats = new List<WeeklyPlayerStats>();
 
-        foreach (var playerKey in team.Roster)
+        foreach (var playerKey in team.PlayerKeys)
         {
             if (dailyStats.TryGetValue(playerKey, out var stats))
             {
                 teamPlayerStats.Add(stats);
-            }
-            else
-            {
             }
         }
 
@@ -466,8 +477,6 @@ private void MergeDailyIntoWeekly(
     }
 }
 
-
-
 public async Task<List<WeeklyPlayerStats>> GetFirstTeamAllPlayerStatsForDateAsync(
     string leagueKey,
     DateTime date)
@@ -487,8 +496,6 @@ public async Task<List<WeeklyPlayerStats>> GetFirstTeamAllPlayerStatsForDateAsyn
 
     var teams = teamsDoc.Descendants(ns + "team").ToList();
 
-Console.WriteLine($"Found {teams.Count} teams");
-
 if (teams.Count < 2)
 {
     Console.WriteLine("Second team not found.");
@@ -501,9 +508,6 @@ var managerName = secondTeam
     .Descendants(ns + "manager")
     .FirstOrDefault()?
     .Element(ns + "nickname")?.Value ?? "Unknown";
-
-Console.WriteLine($"Fetching players for manager: {managerName}");
-
 
     var playerKeys = secondTeam
         .Descendants(ns + "player")
