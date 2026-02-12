@@ -47,6 +47,19 @@ public static class Helpers
         return points;
     }
 
+    // List of standard Best Ball stat keys you want to keep
+    private static readonly HashSet<string> BestBallStats = new()
+    {
+        "PTS", "REB", "AST", "STL", "BLK", "TO"
+    };
+
+    public static Dictionary<string, double> FilterToBestBallStats(Dictionary<string, double> rawStats)
+    {
+        return rawStats
+            .Where(kv => BestBallStats.Contains(kv.Key))
+            .ToDictionary(kv => kv.Key, kv => kv.Value);
+    }
+
     public static string GetStatDisplayName(string statId)
     {
         if (string.IsNullOrWhiteSpace(statId))

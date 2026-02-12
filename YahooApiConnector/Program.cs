@@ -64,6 +64,7 @@ class Program
 
         var fantasyService = new YahooFantasyService(accessToken);
         var bestBallService = new BestBallService();
+        //await fantasyService.GetFirstTeamAllPlayerStatsForDateAsync(leagueKey, DateTime.UtcNow.Date.AddDays(-1));
 
         try
         {   

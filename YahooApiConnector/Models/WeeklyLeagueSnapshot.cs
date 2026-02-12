@@ -6,4 +6,6 @@ public class WeeklyLeagueSnapshot
     public DateTime WeekEnd { get; set; }
 
     public List<WeeklyTeamResult> Teams { get; set; } = new();
+    public HashSet<DateTime> ProcessedDates { get; set; } = new();
+
 }
