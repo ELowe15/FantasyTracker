@@ -6,12 +6,55 @@ using System.Text.RegularExpressions;
 public class YahooFantasyService
 {
     private readonly HttpClient _client;
+    private readonly string _playerImagesPath = "";
+    private Dictionary<string, string> _playerImages;
 
-    public YahooFantasyService(string accessToken)
+    public YahooFantasyService(string accessToken, string playerImagesPath)
     {
         _client = new HttpClient();
         _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+        _playerImagesPath = playerImagesPath;
     }
+
+    private async Task LoadPlayerImagesAsync()
+{
+
+    if (_playerImages != null)
+        return;
+
+    if (File.Exists(_playerImagesPath))
+    {
+        var json = await File.ReadAllTextAsync(_playerImagesPath);
+        _playerImages = JsonSerializer.Deserialize<Dictionary<string, string>>(json)
+                        ?? new Dictionary<string, string>();
+    }
+    else
+    {
+        _playerImages = new Dictionary<string, string>();
+    }
+}
+
+private async Task SavePlayerImagesAsync()
+{
+    var json = JsonSerializer.Serialize(
+        _playerImages,
+        new JsonSerializerOptions { WriteIndented = true });
+
+    await File.WriteAllTextAsync(_playerImagesPath, json);
+}
+
+private bool TryAddPlayerImage(string hashedKey, string imageUrl)
+{
+    if (_playerImages.ContainsKey(hashedKey))
+        return false;
+
+    if (string.IsNullOrEmpty(imageUrl))
+        return false;
+
+    _playerImages[hashedKey] = imageUrl;
+    return true;
+}
+
 
 
 
@@ -580,6 +623,8 @@ var managerName = secondTeam
             .ToList();
 
         var allRosters = new List<TeamRoster>();
+        await LoadPlayerImagesAsync();
+        bool imagesModified = false;
 
         // 2. For each team, fetch roster
         foreach (var team in teams)
@@ -590,14 +635,25 @@ var managerName = secondTeam
             var rosterDoc = XDocument.Parse(rosterXml);
 
             var players = rosterDoc.Descendants(ns + "player")
-                .Select(p => new Player
-                {
-                    PlayerKey = Helpers.Hash(p.Element(ns + "player_key")?.Value),
-                    FullName = p.Element(ns + "name")?.Element(ns + "full")?.Value,
-                    Position = p.Element(ns + "display_position")?.Value,
-                    NbaTeam = p.Element(ns + "editorial_team_abbr")?.Value
-                })
-                .ToList();
+    .Select(p =>
+    {
+        var rawPlayerKey = p.Element(ns + "player_key")?.Value;
+        var hashedKey = Helpers.Hash(rawPlayerKey);
+        var imageUrl = p.Element(ns + "image_url")?.Value;
+
+        if (TryAddPlayerImage(hashedKey, imageUrl))
+            imagesModified = true;
+
+        return new Player
+        {
+            PlayerKey = hashedKey,
+            FullName = p.Element(ns + "name")?.Element(ns + "full")?.Value,
+            Position = p.Element(ns + "display_position")?.Value,
+            NbaTeam = p.Element(ns + "editorial_team_abbr")?.Value
+        };
+    })
+    .ToList();
+
 
             allRosters.Add(new TeamRoster
             {
@@ -606,6 +662,10 @@ var managerName = secondTeam
                 Players = players
             });
         }
+
+        if (imagesModified)
+    await SavePlayerImagesAsync();
+
 
         // 3. Serialize to JSON and save
         var json = JsonSerializer.Serialize(allRosters, new JsonSerializerOptions { WriteIndented = true });
@@ -621,6 +681,10 @@ var managerName = secondTeam
         var teamsXml = await teamsResponse.Content.ReadAsStringAsync();
         var teamsDoc = XDocument.Parse(teamsXml);
         XNamespace ns = teamsDoc.Root.GetDefaultNamespace();
+
+        await LoadPlayerImagesAsync();
+bool imagesModified = false;
+
 
         var teamMap = teamsDoc.Descendants(ns + "team")
             .ToDictionary(
@@ -664,6 +728,12 @@ var managerName = secondTeam
                 var playerElem = playerDoc.Descendants(ns + "player").FirstOrDefault();
                 playerName = playerElem?.Element(ns + "name")?.Element(ns + "full")?.Value;
                 position = playerElem?.Element(ns + "display_position")?.Value;
+                var imageUrl = playerElem?.Element(ns + "image_url")?.Value;
+var hashedPlayerKey = Helpers.Hash(dr.player_key);
+
+if (TryAddPlayerImage(hashedPlayerKey, imageUrl))
+    imagesModified = true;
+
             }
 
             resultsWithNames.Add(new
@@ -681,6 +751,9 @@ var managerName = secondTeam
         // 4. Serialize to JSON and save
         var json = JsonSerializer.Serialize(resultsWithNames, new JsonSerializerOptions { WriteIndented = true });
         await File.WriteAllTextAsync(outputPath, json);
+        if (imagesModified)
+    await SavePlayerImagesAsync();
+
 
         Console.WriteLine($"Draft results saved to {outputPath}");
     }

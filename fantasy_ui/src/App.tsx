@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import TeamsPage from "./pages/TeamsPage";
 import DraftResultsPage from "./pages/DraftResultsPage";
 import RulesPage from "./pages/RulesPage";
 import BestBallPage from "./pages/BestBallPage";
 import RoundRobinPage from "./pages/RoundRobinPage";
 import './styles/colors.css';
+import { loadPlayerImages } from "./services/playerImageService";
 
 type Tab = "teams" | "draft" | "bestball" | "roundrobin" | "rules";
 
@@ -22,6 +23,10 @@ export default function App() {
     touchStartX.current = e.touches[0].screenX;
     setIsDragging(true);
   };
+
+  useEffect(() => {
+    loadPlayerImages();
+  }, []);
 
   const handleTouchMove = (e: React.TouchEvent) => {
     if (!isDragging) return;

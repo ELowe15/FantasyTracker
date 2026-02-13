@@ -61,8 +61,8 @@ class Program
             Console.Error.WriteLine("Failed to obtain access token: " + ex.Message);
             return 4;
         }
-
-        var fantasyService = new YahooFantasyService(accessToken);
+        var ImageOutPath = Path.Combine(basePath, "player_images.json");
+        var fantasyService = new YahooFantasyService(accessToken, ImageOutPath);
         var bestBallService = new BestBallService();
         //await fantasyService.GetFirstTeamAllPlayerStatsForDateAsync(leagueKey, DateTime.UtcNow.Date.AddDays(-1));
 

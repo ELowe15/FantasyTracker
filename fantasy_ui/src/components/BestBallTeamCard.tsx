@@ -77,8 +77,8 @@ export default function BestBallTeamCard({ team, rank }: Props) {
         <div className="">
           <table className="bg-[var(--bg-active)] w-full text-xs text-left border-t border-[var(--border-primary)]">
             <thead>
-              <tr className="text-[var(--accent-secondary)] text-center text-[10px] m-2">
-                <th className="py-1">POS</th>
+              <tr className="text-[var(--accent-secondary)] text-center text-[10px]">
+                <th className="py-1 pl-2">POS</th>
                 <th>FPTS</th>
                 <th>PLAYER</th>
                 <th>PTS</th>
@@ -158,7 +158,7 @@ export default function BestBallTeamCard({ team, rank }: Props) {
                           : "text-[var(--text-primary)] "
                       }`}
                     >
-                      <td className="py-1 px-2 text-[var(--accent-secondary)] font-semibold">
+                      <td className="py-1 pl-2 text-[var(--accent-secondary)] font-semibold">
                         {isBench ? "BN" : rawSlot}
                       </td>
                       <td className="text-[var(--accent-primary)]">

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { TeamGroup } from "../models/League";
 import { getKeeperColor } from "../util/Helpers";
 import { ArrowToggle } from "./ArrowToggle";
+import { getPlayerImage } from "../services/playerImageService";
 
 interface Props {
   team: TeamGroup;
@@ -63,9 +64,21 @@ export default function DraftTeamCard({ team }: Props) {
         : "var(--bg-row-alt)",
                     }}
                   >
-                    <td className="py-1 px-2" style={{ color: "var(--text-primary)" }}>
-                      {pick.player_name}
-                    </td>
+                    <td
+  className="px-2 flex items-center gap-2"
+  style={{ color: "var(--text-primary)" }}
+>
+  <img
+    src={getPlayerImage(pick.PlayerKey) || process.env.PUBLIC_URL + "/default-player.png"}
+    alt={pick.player_name}
+    className="w-6 h-6 rounded-full object-cover my-1"
+    onError={(e) =>
+      (e.currentTarget.src = process.env.PUBLIC_URL + "/default-player.png")
+    }
+  />
+  {pick.player_name}
+</td>
+
                     <td style={{ color: "var(--text-secondary)" }}>{pick.round}</td>
                     <td className={`${getKeeperColor(Number(keeper))}`}>
                       {keeper + "yrs"}
