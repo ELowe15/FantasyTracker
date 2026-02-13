@@ -105,7 +105,6 @@ function SortIndicator({
         className={`
           w-1 h-1 border-l border-t rotate-45
           ${active ? "border-[var(--accent-primary)]" : "border-[var(--text-muted)]"}
-          group-hover:border-[var(--accent-primary)]
           ${!active || direction === "desc" ? "border-[var(--text-muted)]" : "opacity-100"}
         `}
       />
@@ -115,7 +114,6 @@ function SortIndicator({
         className={`
           w-1 h-1 border-l border-b -rotate-45 mt-[-2px]
           ${active ? "border-[var(--accent-primary)]" : "border-[var(--text-muted)]"}
-          group-hover:border-[var(--accent-primary)]
           ${!active || direction === "asc" ? "border-[var(--text-muted)]" : "opacity-100"}
         `}
       />

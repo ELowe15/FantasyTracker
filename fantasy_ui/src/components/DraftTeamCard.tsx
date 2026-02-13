@@ -71,7 +71,7 @@ export default function DraftTeamCard({ team }: Props) {
   <img
     src={getPlayerImage(pick.PlayerKey) || process.env.PUBLIC_URL + "/default-player.png"}
     alt={pick.player_name}
-    className="w-6 h-6 rounded-full object-cover my-1"
+    className="w-6 h-8 full object-cover"
     onError={(e) =>
       (e.currentTarget.src = process.env.PUBLIC_URL + "/default-player.png")
     }

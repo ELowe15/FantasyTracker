@@ -33,7 +33,7 @@ export const WeekSelector: React.FC<WeekSelectorProps> = ({
       <select
         value={week ?? ""}
         onChange={(e) => setWeek(Number(e.target.value))}
-        className="bg-[var(--bg-secondary)] text-[var(--text-primary)] text-xs px-2 py-1 rounded border border-[var(--border-primary)] w-18 text-center"
+        className="bg-[var(--accent-primary)] text-[var(--text-primary)] text-xs px-2 py-1 rounded border border-[var(--border-primary)] w-18 text-center"
       >
         {availableWeeks.map((w) => (
           <option key={w} value={w}>

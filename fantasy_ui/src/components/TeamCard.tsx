@@ -70,7 +70,7 @@ export default function TeamCard({ team }: Props) {
   <img
     src={getPlayerImage(p.playerKey) || process.env.PUBLIC_URL + "/default-player.png"}
     alt={p.fullName}
-    className="w-6 h-6 rounded-full object-cover my-1"
+    className="w-6 h-6 full object-cover my-1"
     onError={(e) =>
       (e.currentTarget.src = process.env.PUBLIC_URL +"/default-player.png")
     }
