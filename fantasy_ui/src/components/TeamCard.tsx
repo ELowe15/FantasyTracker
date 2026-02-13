@@ -22,31 +22,31 @@ export default function TeamCard({ team }: Props) {
     >
       <button
         onClick={toggleOpen}
-        className="w-full flex justify-between items-center p-2 text-left"
+        className="w-full flex justify-between items-center text-left"
       >
         <div>
           <h2
-            className="text-md drop-shadow"
+            className="text-md drop-shadow m-2"
             style={{ color: "var(--text-primary)" }}
           >
             {team.managerName + "'s Team"}
           </h2>
         </div>
-        <ArrowToggle open={open} />
+        <ArrowToggle open={open} className="m-2"/>
       </button>
 
       {open && (
-        <div className="px-4 pb-4">
+        <div className="">
           <table
-            className="w-full text-sm text-left border-t mt-1"
+            className="w-full text-sm text-left border-t"
             style={{ borderColor: "var(--text-divider)" }}
           >
             <thead>
               <tr style={{ color: "var(--accent-secondary)" }}>
-                <th className="py-2">Player</th>
+                <th className="py-2 px-2">Player</th>
                 <th>Pos</th>
                 <th>Team</th>
-                <th>Keep For</th>
+                <th>Can Keep</th>
               </tr>
             </thead>
             <tbody>
@@ -59,7 +59,7 @@ export default function TeamCard({ team }: Props) {
                     backgroundColor: "var(--bg-card)",
                   }}
                 >
-                  <td className="py-2" style={{ color: "var(--text-primary)" }}>
+                  <td className="px-2" style={{ color: "var(--text-primary)" }}>
                     {p.fullName}
                   </td>
                   <td style={{ color: "var(--text-secondary)" }}>{p.position}</td>

@@ -52,32 +52,37 @@ export default function App() {
     >
       {/* Fixed Top Navigation */}
       <nav
-  className="fixed top-0 left-0 w-full h-12 z-50 shadow-md flex items-center px-3"
+  className="fixed top-0 left-0 w-full h-12 z-50 shadow-md flex items-center justify-center px-3"
   style={{ backgroundColor: "var(--bg-nav)", color: "var(--text-primary)" }}
 >
-  {/* Logo / Favicon on the left */}
-  <div className="flex items-center flex-shrink-0 mr-4">
+  {/* <div className="absolute left-3 flex items-center h-full">
     <img
-      src="/favicon-32x32.png"       // path to your favicon or logo
-      alt=""
-      className="h-8 w-8 object-contain"
+  src={process.env.PUBLIC_URL + "/favicon-32x32.png"}
+      alt="Logo"
+      className="object-contain"
     />
-  </div>
+  </div>Logo on the left */}
+  
 
   {/* Tabs centered */}
-  <div className="flex-grow flex justify-center items-center">
+  <div className="flex space-x-2">
     {tabs.map((tab, i) => (
       <React.Fragment key={tab}>
         {i > 0 && (
-          <span className="mx-1 text-s" style={{ color: "var(--text-divider)" }}>
+          <span
+            className="mx-1 text-s"
+            style={{ color: "var(--text-divider)" }}
+          >
             |
           </span>
         )}
         <button
-          className={`font-semibold text-xs px-1`}
+          className="font-semibold text-xs px-1"
           style={{
             color:
-              activeTab === tab ? "var(--text-active-tab)" : "var(--text-primary)",
+              activeTab === tab
+                ? "var(--text-active-tab)"
+                : "var(--text-primary)",
             textDecoration: activeTab === tab ? "underline" : "none",
           }}
           onClick={() => setActiveTab(tab)}
@@ -96,6 +101,7 @@ export default function App() {
     ))}
   </div>
 </nav>
+
 
 
       {/* Sliding Content */}
