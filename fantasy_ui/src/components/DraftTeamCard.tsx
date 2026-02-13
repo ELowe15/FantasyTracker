@@ -14,7 +14,7 @@ export default function DraftTeamCard({ team }: Props) {
 
   return (
     <div
-      className="shadow-lg rounded-md mb-2 border"
+      className="shadow-lg rounded-md mb-2 border overflow-hidden"
       style={{
         backgroundColor: "var(--bg-card)",
         borderColor: "var(--border-primary)",
@@ -49,7 +49,7 @@ export default function DraftTeamCard({ team }: Props) {
               </tr>
             </thead>
             <tbody>
-              {team.picks.map((pick) => {
+              {team.picks.map((pick, index) => {
                 const keeper = pick.round === 1 ? "0" : "2";
                 return (
                   <tr
@@ -57,7 +57,10 @@ export default function DraftTeamCard({ team }: Props) {
                     className="border-t hover:bg-opacity-40"
                     style={{
                       borderColor: "var(--text-divider)",
-                      backgroundColor: "var(--bg-card)",
+                      backgroundColor:
+      index % 2 === 0
+        ? "var(--bg-card)"
+        : "var(--bg-row-alt)",
                     }}
                   >
                     <td className="py-1 px-2" style={{ color: "var(--text-primary)" }}>

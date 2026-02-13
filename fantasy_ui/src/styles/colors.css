@@ -58,7 +58,7 @@
   --shine-top: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
 
   /* ----------------- Specific Utility Colors ----------------- */
-  --bg-bench: rgba(0, 0, 0, 0.4);
+  --bg-bench: rgba(0, 0, 0, 0.3);
   --bg-active: rgba(0, 0, 0, 0.2);
   --bg-missing-slot: rgba(139, 0, 0, 0.25); /* missing lineup rows */
 }

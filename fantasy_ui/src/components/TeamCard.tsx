@@ -14,7 +14,7 @@ export default function TeamCard({ team }: Props) {
 
   return (
     <div
-      className="shadow-lg rounded-md mb-2 border"
+      className="shadow-lg rounded-md mb-2 border overflow-hidden"
       style={{
         backgroundColor: "var(--bg-card)",
         borderColor: "var(--border-primary)",
@@ -50,13 +50,16 @@ export default function TeamCard({ team }: Props) {
               </tr>
             </thead>
             <tbody>
-              {team.players.map((p) => (
+              {team.players.map((p, index) => (
                 <tr
                   key={p.playerKey}
                   className="border-t hover:bg-opacity-40"
                   style={{
                     borderColor: "var(--text-divider)",
-                    backgroundColor: "var(--bg-card)",
+                    backgroundColor:
+      index % 2 === 0
+        ? "var(--bg-card)"
+        : "var(--bg-row-alt)",
                   }}
                 >
                   <td className="px-2" style={{ color: "var(--text-primary)" }}>

@@ -47,9 +47,9 @@ export default function BestBallTeamCard({ team, rank }: Props) {
       {/* Compact Header */}
       <button
         onClick={toggleOpen}
-        className="w-full flex justify-between items-center p-2 text-left focus:outline-none"
+        className="w-full flex justify-between items-center text-left focus:outline-none"
       >
-        <div className="flex items-center gap-2 text-sm">
+        <div className="flex m-2 items-center gap-2 text-sm">
           {rank && (
             <span className={`${getRankColor(rank)}`}>
               {toOrdinal(rank)}
@@ -68,16 +68,16 @@ export default function BestBallTeamCard({ team, rank }: Props) {
           <span className="text-xs font-bold text-[var(--text-secondary)]">
             FTPS 
           </span>
-          <ArrowToggle open={open} />
+          <ArrowToggle open={open} className="m-2"/>
         </div>
       </button>
 
       {/* Expanded Player Table */}
       {open && (
-        <div className="px-2 pb-2 ">
-          <table className="bg-[var(--bg-active)] w-full text-xs text-left border-t border-[var(--border-primary)] mt-1">
+        <div className="">
+          <table className="bg-[var(--bg-active)] w-full text-xs text-left border-t border-[var(--border-primary)]">
             <thead>
-              <tr className="text-[var(--accent-secondary)] text-center text-[10px]">
+              <tr className="text-[var(--accent-secondary)] text-center text-[10px] m-2">
                 <th className="py-1">POS</th>
                 <th>FPTS</th>
                 <th>PLAYER</th>
@@ -158,7 +158,7 @@ export default function BestBallTeamCard({ team, rank }: Props) {
                           : "text-[var(--text-primary)] "
                       }`}
                     >
-                      <td className="py-1 text-[var(--accent-secondary)] font-semibold">
+                      <td className="py-1 px-2 text-[var(--accent-secondary)] font-semibold">
                         {isBench ? "BN" : rawSlot}
                       </td>
                       <td className="text-[var(--accent-primary)]">
