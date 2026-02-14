@@ -1,5 +1,5 @@
 const IMAGE_URL =
-  "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/YahooApiConnector/player_images.json";
+  "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/YahooApiConnector/Data/player_images.json";
 
 let imageMap: Record<string, string> | null = null;
 

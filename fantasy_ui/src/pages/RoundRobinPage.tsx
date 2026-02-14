@@ -12,7 +12,7 @@ import { WeekSelector } from "../components/WeekSelector";
 
 // ---- CONFIG ----
 const BASE_URL =
-  "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/YahooApiConnector";
+  "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/YahooApiConnector/Data";
 
 type ViewMode = "WEEKLY" | "SEASON";
 

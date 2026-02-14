@@ -19,6 +19,8 @@ class Program
             basePath = fallbackBase;
         }
 
+        var dataPath = Path.Combine(basePath, "Data");
+
         Console.WriteLine($"Config base path: {basePath}");
         Console.WriteLine($"CWD: {Directory.GetCurrentDirectory()}");
         Console.WriteLine($"ExeDir: {AppContext.BaseDirectory}");
@@ -61,21 +63,21 @@ class Program
             Console.Error.WriteLine("Failed to obtain access token: " + ex.Message);
             return 4;
         }
-        var ImageOutPath = Path.Combine(basePath, "player_images.json");
+        var ImageOutPath = Path.Combine(dataPath, "player_images.json");
         var fantasyService = new YahooFantasyService(accessToken, ImageOutPath);
         var bestBallService = new BestBallService();
         //await fantasyService.GetFirstTeamAllPlayerStatsForDateAsync(leagueKey, DateTime.UtcNow.Date.AddDays(-1));
 
         try
         {   
-            var RosterOutPath = Path.Combine(basePath, "team_results.json");
+            var RosterOutPath = Path.Combine(dataPath, "team_results.json");
             // 1. Dump rosters
             await fantasyService.DumpAllTeamRostersToJsonAsync(leagueKey, RosterOutPath);
 
-            var SeasonStatsOutPath = Path.Combine(basePath, "season_stats.json");
+            var SeasonStatsOutPath = Path.Combine(dataPath, "season_stats.json");
             // 1. Dump rosters
             await fantasyService.DumpAllTeamSeasonStatsToJsonAsync(leagueKey, SeasonStatsOutPath);
-            //var DraftOutPath = Path.Combine(basePath, "draft_results.json");
+            //var DraftOutPath = Path.Combine(dataPath, "draft_results.json");
             // 1. Dump draft results
             //await fantasyService.DumpDraftResultsToJsonAsync(leagueKey, DraftOutPath);
             Console.WriteLine($"Wrote team rosters to {RosterOutPath}");
@@ -91,7 +93,7 @@ class Program
 
     var snapshot = await fantasyService.GetWeeklyTeamResultsAsync(
         leagueKey,
-        basePath
+        dataPath
     );
 
     // Run Best Ball
@@ -101,7 +103,7 @@ class Program
         $"best_ball_{snapshot.Season}_week_{snapshot.Week}.json";
 
     var bestBallOutPath =
-        Path.Combine(basePath, bestBallFileName);
+        Path.Combine(dataPath, bestBallFileName);
 
     var bestBallJson =
         JsonSerializer.Serialize(
@@ -117,7 +119,7 @@ class Program
 
     await bestBallService.RebuildSeasonBestBallAsync(
         snapshot.Season,
-        basePath
+        dataPath
     );
 
     Console.WriteLine(
@@ -145,7 +147,7 @@ class Program
         $"round_robin_{snapshot.Season}_week_{snapshot.Week}.json";
 
     var weeklyStatsOutPath =
-        Path.Combine(basePath, weeklyStatsFileName);
+        Path.Combine(dataPath, weeklyStatsFileName);
 
     var weeklyStatsJson =
         JsonSerializer.Serialize(
@@ -161,7 +163,7 @@ class Program
 
     await RoundRobinService.RebuildSeasonRoundRobinAsync(
         snapshot.Season,
-        basePath
+        dataPath
     );
 
     Console.WriteLine(
