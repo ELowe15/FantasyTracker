@@ -76,30 +76,51 @@ export default function RoundRobinPage() {
   /* =========================
      Load Season Data
   ========================= */
-  useEffect(() => {
-    if (!season || viewMode !== "SEASON") return;
+ const [seasonStats, setSeasonStats] = useState<TeamWeeklyStats[]>([]);
 
-    async function loadSeasonData() {
-      setLoading(true);
-      setError(null);
+useEffect(() => {
+  if (!season || viewMode !== "SEASON") return;
 
+  async function loadSeasonData() {
+    setLoading(true);
+    setError(null);
+
+    try {
+      // 1️⃣ Load existing Round Robin season results
+      const rrRes = await fetch(`${BASE_URL}/season_round_robin_${season}.json`);
+      const rrData: WeeklyStatsSnapshot = await rrRes.json();
+      setRoundRobinResults(rrData.RoundRobinResults);
+      setTeams(rrData.RoundRobinResults.map(r => r.Team));
+
+      // 2️⃣ Load raw season stats totals
       try {
-        const res = await fetch(
-          `${BASE_URL}/season_round_robin_${season}.json`
-        );
+        const statsRes = await fetch(`${BASE_URL}/season_stats.json`);
+        const statsData: {
+          TeamKey: string;
+          ManagerName: string;
+          StatValues: Record<string, string>;
+        }[] = await statsRes.json();
 
-        const data: WeeklyStatsSnapshot = await res.json();
-        setRoundRobinResults(data.RoundRobinResults);
-        setTeams(data.RoundRobinResults.map(r => r.Team));
+        const mappedSeasonStats: TeamWeeklyStats[] = statsData.map(t => ({
+          TeamKey: t.TeamKey,
+          ManagerName: t.ManagerName,
+          StatValues: t.StatValues,
+        }));
+
+        setSeasonStats(mappedSeasonStats); // store separately
       } catch {
-        setError("Failed to load season stats");
-      } finally {
-        setLoading(false);
+        console.warn("Failed to load season stats totals");
       }
+    } catch {
+      setError("Failed to load season Round Robin data");
+    } finally {
+      setLoading(false);
     }
+  }
 
-    loadSeasonData();
-  }, [season, viewMode]);
+  loadSeasonData();
+}, [season, viewMode]);
+
 
   /* =========================
      Week Navigation State
@@ -137,45 +158,29 @@ export default function RoundRobinPage() {
   if (loading)
     return <div className="text-[var(--text-secondary)]">Loading…</div>;
 
-  return (
-    <div className="min-h-screen bg-[var(--bg-primary)] px-4 pt-3">
-      {/* Header */}
-      <div className="flex flex-col gap-2 mb-3">
-        <h1 className="text-2xl font-bold text-center text-[var(--text-primary)]">
-          Round Robin Standings
-        </h1>
+return (
+  <div className="min-h-screen bg-[var(--bg-primary)] px-4 pt-3">
+    {/* Header */}
+    <div className="flex flex-col gap-2 mb-3">
+      <h1 className="text-2xl font-bold text-center text-[var(--text-primary)]">
+        Round Robin Standings
+      </h1>
 
-        <ViewToggle viewMode={viewMode} onChange={setViewMode} />
+      <ViewToggle viewMode={viewMode} onChange={setViewMode} />
 
-        {viewMode === "WEEKLY" && (
-          <WeekSelector
-            week={week}
-            availableWeeks={availableWeeks}
-            currentWeekIndex={currentWeekIndex}
-            setWeek={setWeek}
-          />
-        )}
-      </div>
+      {viewMode === "WEEKLY" && (
+        <WeekSelector
+          week={week}
+          availableWeeks={availableWeeks}
+          currentWeekIndex={currentWeekIndex}
+          setWeek={setWeek}
+        />
+      )}
+    </div>
 
-      {/* Content */}
-      {viewMode === "WEEKLY" ? (
-        <>
-          <div className="flex flex-col gap-2 mb-6">
-            {sortedResults.map((r, idx) => (
-              <RoundRobinTeamCard
-                key={r.TeamKey}
-                result={r}
-                rank={idx + 1}
-                viewMode={viewMode}
-              />
-            ))}
-          </div>
-
-          {sortedResults.length > 0 && (
-            <SortableStatsTable sortedResults={sortedResults} />
-          )}
-        </>
-      ) : (
+    {/* Content */}
+    {viewMode === "WEEKLY" ? (
+      <>
         <div className="flex flex-col gap-2 mb-6">
           {sortedResults.map((r, idx) => (
             <RoundRobinTeamCard
@@ -186,7 +191,36 @@ export default function RoundRobinPage() {
             />
           ))}
         </div>
-      )}
-    </div>
-  );
+
+        {sortedResults.length > 0 && (
+          <SortableStatsTable sortedResults={sortedResults} />
+        )}
+      </>
+    ) : (
+      <>
+        {/* Season Mode */}
+        <div className="flex flex-col gap-2 mb-6">
+          {sortedResults.map((r, idx) => (
+            <RoundRobinTeamCard
+              key={r.TeamKey}
+              result={r}
+              rank={idx + 1}
+              viewMode={viewMode}
+            />
+          ))}
+        </div>
+
+        {seasonStats.length > 0 && (
+          <SortableStatsTable
+            sortedResults={seasonStats.map((team) => ({
+              TeamKey: team.TeamKey,
+              Team: team,
+              TeamRecord: { MatchupWins: 0, MatchupTies: 0, MatchupLosses: 0 },
+            }))}
+          />
+        )}
+      </>
+    )}
+  </div>
+);
 }

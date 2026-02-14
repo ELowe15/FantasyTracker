@@ -13,7 +13,12 @@ export default function App() {
   const tabs: Tab[] = ["teams", "draft", "bestball", "roundrobin", "rules"];
   const [activeTab, setActiveTab] = useState<Tab>("bestball");
 
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const isHorizontalGesture = useRef<boolean | null>(null);
+
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -31,18 +36,55 @@ export default function App() {
     panelRefs.current[index]?.scrollTo({ top: 0 });
   }, [activeTab]);
 
+  // Attach NON-PASSIVE touchmove listener
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return;
+
+      const touch = e.touches[0];
+      const deltaX = touch.clientX - touchStartX.current;
+      const deltaY = touch.clientY - touchStartY.current;
+
+      // Determine direction
+      if (isHorizontalGesture.current === null) {
+        if (Math.abs(deltaX) > 8 || Math.abs(deltaY) > 8) {
+          isHorizontalGesture.current =
+            Math.abs(deltaX) > Math.abs(deltaY);
+        }
+      }
+
+      if (isHorizontalGesture.current) {
+        e.preventDefault(); // This now ACTUALLY works
+        setDragOffset(deltaX);
+      }
+    };
+
+    el.addEventListener("touchmove", handleTouchMove, {
+      passive: false,
+    });
+
+    return () => {
+      el.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, [isDragging]);
+
   const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].screenX;
+    const touch = e.touches[0];
+    touchStartX.current = touch.clientX;
+    touchStartY.current = touch.clientY;
+    isHorizontalGesture.current = null;
     setIsDragging(true);
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    const currentX = e.touches[0].screenX;
-    setDragOffset(currentX - touchStartX.current);
-  };
-
   const handleTouchEnd = () => {
+    if (!isHorizontalGesture.current) {
+      setIsDragging(false);
+      return;
+    }
+
     const threshold = 80;
 
     if (dragOffset < -threshold && currentIndex < tabs.length - 1) {
@@ -53,14 +95,15 @@ export default function App() {
 
     setDragOffset(0);
     setIsDragging(false);
+    isHorizontalGesture.current = null;
   };
 
   return (
     <div
+      ref={containerRef}
       className="h-screen w-full overflow-hidden"
       style={{ backgroundColor: "var(--bg-app)" }}
       onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       {/* Fixed Top Navigation */}
@@ -110,7 +153,7 @@ export default function App() {
       </nav>
 
       {/* Sliding Content */}
-      <main className="pt-12 h-[calc(100vh-48px)] w-full overflow-hidden">
+      <main className="pt-12 h-[calc(100vh)] w-full overflow-hidden">
         <div className="h-full w-full overflow-hidden">
           <div
             className="flex h-full"

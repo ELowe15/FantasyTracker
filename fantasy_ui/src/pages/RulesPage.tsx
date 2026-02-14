@@ -10,7 +10,7 @@ function CollapsibleSection({ title, children }: CollapsibleSectionProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="mb-6 border border-[var(--border-primary)] rounded-md"
+    <section className="mb-2 border border-[var(--border-primary)] rounded-md"
             style={{
         backgroundColor: "var(--bg-card)",
         borderColor: "var(--border-primary)",

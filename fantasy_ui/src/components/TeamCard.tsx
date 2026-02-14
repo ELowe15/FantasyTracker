@@ -47,7 +47,7 @@ export default function TeamCard({ team }: Props) {
                 <th className="py-2 px-2">Player</th>
                 <th>Pos</th>
                 <th>Team</th>
-                <th>Can Keep</th>
+                                <th className="pr-2">Keep</th>
               </tr>
             </thead>
             <tbody>
@@ -70,12 +70,14 @@ export default function TeamCard({ team }: Props) {
   <img
     src={getPlayerImage(p.playerKey) || process.env.PUBLIC_URL + "/default-player.png"}
     alt={p.fullName}
-    className="w-6 h-6 full object-cover my-1"
+    className="w-6 h-8 full object-cover my-1"
     onError={(e) =>
       (e.currentTarget.src = process.env.PUBLIC_URL +"/default-player.png")
     }
   />
+  <span className="break-words leading-tight">
   {p.fullName}
+  </span>
 </td>
 
                   <td style={{ color: "var(--text-secondary)" }}>{p.position}</td>

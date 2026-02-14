@@ -46,7 +46,7 @@ export default function DraftTeamCard({ team }: Props) {
               <tr style={{ color: "var(--accent-secondary)" }}>
                 <th className="py-2 px-2">Player</th>
                 <th>Round</th>
-                <th>Can Keep</th>
+                <th className="pr-2">Keep</th>
               </tr>
             </thead>
             <tbody>
@@ -76,7 +76,9 @@ export default function DraftTeamCard({ team }: Props) {
       (e.currentTarget.src = process.env.PUBLIC_URL + "/default-player.png")
     }
   />
-  {pick.player_name}
+  <span className="break-words leading-tight">
+    {pick.player_name}
+  </span>
 </td>
 
                     <td style={{ color: "var(--text-secondary)" }}>{pick.round}</td>

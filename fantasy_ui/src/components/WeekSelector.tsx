@@ -23,8 +23,8 @@ export const WeekSelector: React.FC<WeekSelectorProps> = ({
         onClick={() => hasPrevWeek && setWeek(availableWeeks[currentWeekIndex - 1])}
         className={`text-lg px-1 ${
           hasPrevWeek
-            ? "text-[var(--accent-primary)] hover:text-[var(--accent-secondary)]"
-            : "text-[var(--text-secondary)] cursor-not-allowed"
+            ? "text-[var(--accent-primary)]"
+            : "text-[var(--text-disabled)] cursor-not-allowed"
         }`}
       >
         &lt;
@@ -33,7 +33,24 @@ export const WeekSelector: React.FC<WeekSelectorProps> = ({
       <select
         value={week ?? ""}
         onChange={(e) => setWeek(Number(e.target.value))}
-        className="bg-[var(--accent-primary)] text-[var(--text-primary)] text-xs px-2 py-1 rounded border border-[var(--border-primary)] w-18 text-center"
+className="
+  flex items-center justify-center
+  appearance-none
+  bg-[rgba(255,255,255,0.05)]
+  text-[var(--accent-primary)]
+  text-xs
+  font-semibold
+  px-3 py-1
+  rounded-full
+  border border-[var(--accent-primary)]
+  w-20
+  relative
+  transition-all duration-200
+  focus:outline-none
+"
+
+
+
       >
         {availableWeeks.map((w) => (
           <option key={w} value={w}>
@@ -47,8 +64,8 @@ export const WeekSelector: React.FC<WeekSelectorProps> = ({
         onClick={() => hasNextWeek && setWeek(availableWeeks[currentWeekIndex + 1])}
         className={`text-lg px-1 ${
           hasNextWeek
-            ? "text-[var(--accent-primary)] hover:text-[var(--accent-secondary)]"
-            : "text-[var(--text-secondary)] cursor-not-allowed"
+            ? "text-[var(--accent-primary)] "
+            : "text-[var(--text-disabled)] cursor-not-allowed"
         }`}
       >
         &gt;

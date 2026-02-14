@@ -39,8 +39,12 @@
   --border-divider: #7A7A90;
 
   /* ----------------- Accents / Actions ----------------- */
-  --accent-primary: #FF8C42;    /* fantasy points, primary call-to-action */
-  --accent-secondary: #A66FFF;  /* hover effects, selected cards, secondary highlights */
+--accent-primary: #D97706;        /* refined amber */
+--accent-hover: #F59E0B;          /* lighter amber */
+--accent-soft: rgba(217,119,6,0.15);
+--accent-glow: rgba(217,119,6,0.35);
+
+--text-on-accent: #111111;        /* readable on orange */  --accent-secondary: #A66FFF;  /* hover effects, selected cards, secondary highlights */
   --accent-success: #33D9B2;    /* positive points / gains */
   --accent-error: #FF6E6E;      /* negative points / alerts */
   --hover-bg: #341A63;           /* hover for cards, buttons, table rows */
@@ -103,4 +107,12 @@
   border-radius: inherit;
   pointer-events: none;
 }
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23F59E0B' viewBox='0 0 20 20'%3E%3Cpath d='M5.25 7.5L10 12.25 14.75 7.5' stroke='%23D97706' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+    background-position: top 55% right 0.2rem;
+  background-size: 0.8rem;
+}
+
 
