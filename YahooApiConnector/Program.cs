@@ -72,6 +72,9 @@ class Program
             // 1. Dump rosters
             await fantasyService.DumpAllTeamRostersToJsonAsync(leagueKey, RosterOutPath);
 
+            var SeasonStatsOutPath = Path.Combine(basePath, "season_stats.json");
+            // 1. Dump rosters
+            await fantasyService.DumpAllTeamSeasonStatsToJsonAsync(leagueKey, SeasonStatsOutPath);
             //var DraftOutPath = Path.Combine(basePath, "draft_results.json");
             // 1. Dump draft results
             //await fantasyService.DumpDraftResultsToJsonAsync(leagueKey, DraftOutPath);

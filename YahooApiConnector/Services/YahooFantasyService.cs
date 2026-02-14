@@ -673,6 +673,61 @@ var managerName = secondTeam
         Console.WriteLine($"All team rosters saved to {outputPath}");
     }
 
+    public async Task DumpAllTeamSeasonStatsToJsonAsync(string leagueKey, string outputPath)
+{
+    // 1. Get all teams
+    var teamsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/teams";
+    var teamsXml = await _client.GetStringAsync(teamsUrl);
+    var teamsDoc = XDocument.Parse(teamsXml);
+    XNamespace ns = teamsDoc.Root.GetDefaultNamespace();
+
+    var teams = teamsDoc.Descendants(ns + "team")
+        .Select(t => new
+        {
+            TeamKey = t.Element(ns + "team_key")?.Value,
+            ManagerName = t.Descendants(ns + "manager").FirstOrDefault()?.Element(ns + "nickname")?.Value ?? "Unknown"
+        })
+        .ToList();
+
+    var allTeamStats = new List<object>();
+
+    // 2. Fetch season stats for each team
+    foreach (var team in teams)
+    {
+        var statsUrl = $"https://fantasysports.yahooapis.com/fantasy/v2/team/{team.TeamKey}/stats";
+        var statsXml = await _client.GetStringAsync(statsUrl);
+        var statsDoc = XDocument.Parse(statsXml);
+
+        var statElems = statsDoc.Descendants(ns + "stat")
+            .Select(s => new
+            {
+                StatId = s.Element(ns + "stat_id")?.Value,
+                Value = s.Element(ns + "value")?.Value
+            })
+            .Where(s => s.StatId != null)
+            .ToList();
+
+        var statDict = statElems.ToDictionary(
+            s => Helpers.GetStatDisplayName(s.StatId!),
+            s => s.Value ?? "0"
+        );
+
+        allTeamStats.Add(new
+        {
+            TeamKey = Helpers.Hash(team.TeamKey),
+            ManagerName = Helpers.GetDisplayManagerName(team.ManagerName),
+            StatValues = statDict
+        });
+    }
+
+    // 3. Serialize and save
+    var json = JsonSerializer.Serialize(allTeamStats, new JsonSerializerOptions { WriteIndented = true });
+    await File.WriteAllTextAsync(outputPath, json);
+
+    Console.WriteLine($"All team season stats saved to {outputPath}");
+}
+
+
     public async Task DumpDraftResultsToJsonAsync(string leagueKey, string outputPath)
     {
         // 1. Get all teams and build teamKey → teamName map
