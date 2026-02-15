@@ -742,16 +742,16 @@
         "NbaTeam": "HOU"
       },
       {
-        "PlayerKey": "8B44133615ABFF939B1E2F3AC48541356EA854C9FDD0D8385F30AC492ECEDD5E",
-        "FullName": "Jordan Miller",
-        "Position": "SG,SF",
-        "NbaTeam": "LAC"
+        "PlayerKey": "9EB0AAAD51E77B38AA579898CE7658CBBE0BBB0F9598BFD740FC340A8FEADA75",
+        "FullName": "Grayson Allen",
+        "Position": "PG,SG,SF",
+        "NbaTeam": "PHX"
       },
       {
-        "PlayerKey": "3D670AEE70CCE57F8AF81CF70902CE753F7FC257594BC6B0059941560E8ECA2A",
-        "FullName": "Brandin Podziemski",
+        "PlayerKey": "E37E9291B7FF1526101F8EA4C207B05C8FBAB4EFC2710DBA969930E2681347E8",
+        "FullName": "LaMelo Ball",
         "Position": "PG,SG",
-        "NbaTeam": "GSW"
+        "NbaTeam": "CHA"
       },
       {
         "PlayerKey": "C642134189520A443AED6AC70CE442110CDAE6C9B39CFCF9480A6FDA04293C37",
@@ -772,16 +772,16 @@
         "NbaTeam": "OKC"
       },
       {
-        "PlayerKey": "C929C34ADFDD4DAB37038A268EC8E5F0F261819BAC50508F221AED63E7A019C9",
-        "FullName": "Rudy Gobert",
-        "Position": "C",
-        "NbaTeam": "MIN"
-      },
-      {
         "PlayerKey": "B93594C81ADA9F86AD290DD5966AA4A28433D9B9036C7B7219905617CD3B8296",
         "FullName": "Jusuf Nurki\u0107",
         "Position": "C",
         "NbaTeam": "UTA"
+      },
+      {
+        "PlayerKey": "50B6BAE7298A92943741BE14E34BD90BA1A8D8CB6961F20539247BBED6057249",
+        "FullName": "Paul Reed",
+        "Position": "PF,C",
+        "NbaTeam": "DET"
       },
       {
         "PlayerKey": "39B8BDEC4E1A8A9A657A3D9330272A00D7F57F246E4B0B517413B92634556A87",
@@ -796,10 +796,10 @@
         "NbaTeam": "CHI"
       },
       {
-        "PlayerKey": "E37E9291B7FF1526101F8EA4C207B05C8FBAB4EFC2710DBA969930E2681347E8",
-        "FullName": "LaMelo Ball",
-        "Position": "PG,SG",
-        "NbaTeam": "CHA"
+        "PlayerKey": "C929C34ADFDD4DAB37038A268EC8E5F0F261819BAC50508F221AED63E7A019C9",
+        "FullName": "Rudy Gobert",
+        "Position": "C",
+        "NbaTeam": "MIN"
       },
       {
         "PlayerKey": "FC5DBDD2807C36F5444B019D4B3FEB1486DAE6961AAD9D3AC1B05FC904AE209A",
@@ -808,10 +808,16 @@
         "NbaTeam": "TOR"
       },
       {
-        "PlayerKey": "836EB3ECD457AA7475AF69D57ECC4FB81EC82D70FAC0B72FB164FCEFF3A8FE54",
-        "FullName": "Deni Avdija",
-        "Position": "SG,SF,PF",
-        "NbaTeam": "POR"
+        "PlayerKey": "B1CC2094F8AC7D464E04918D606C002B1F5918C4D03F46DAD24A221A148BB9F7",
+        "FullName": "Jakob Poeltl",
+        "Position": "C",
+        "NbaTeam": "TOR"
+      },
+      {
+        "PlayerKey": "D5A81F1745F5B7C80C181D84361344F789EAEBEA3DAF965BE06A3E57E93C9A54",
+        "FullName": "Tristan Vukcevic",
+        "Position": "PF,C",
+        "NbaTeam": "WAS"
       },
       {
         "PlayerKey": "371FFA3790C2F12799E93FA5B2F19B0CF8F00A6554052230A558AD09D23BD183",
@@ -820,22 +826,16 @@
         "NbaTeam": "MIL"
       },
       {
-        "PlayerKey": "B1CC2094F8AC7D464E04918D606C002B1F5918C4D03F46DAD24A221A148BB9F7",
-        "FullName": "Jakob Poeltl",
-        "Position": "C",
-        "NbaTeam": "TOR"
+        "PlayerKey": "836EB3ECD457AA7475AF69D57ECC4FB81EC82D70FAC0B72FB164FCEFF3A8FE54",
+        "FullName": "Deni Avdija",
+        "Position": "SG,SF,PF",
+        "NbaTeam": "POR"
       },
       {
         "PlayerKey": "85E14616B41AEA17C4BE77A5206F95FA190912DE241A141947533DA08AF9ADE9",
         "FullName": "Ja Morant",
         "Position": "PG",
         "NbaTeam": "MEM"
-      },
-      {
-        "PlayerKey": "89F4CDC49EF3C99491C314C47BC71443963FA9A9CF07F8482DFB6FFCF2AA8DEC",
-        "FullName": "De\u0027Anthony Melton",
-        "Position": "PG,SG",
-        "NbaTeam": "GSW"
       }
     ]
   },
