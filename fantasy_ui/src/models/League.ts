@@ -67,6 +67,33 @@ export interface BestBallTeam {
   players: BestBallPlayer[];
 }
 
+export interface SeasonBestBallPlayer {
+  PlayerKey: string;
+  PlayerName: string;
+  WeeksOnRoster: number;
+  WeeksStarted: number;
+  TotalContributedPoints: number;
+  ContributionPercent: number;
+}
+
+export interface SeasonBestBallTeam {
+  TeamKey: string;
+  ManagerName: string;
+  WeeksPlayed: number;
+  SeasonTotalBestBallPoints: number;
+  BestWeekScore: number;
+  WorstWeekScore: number;
+  TotalRankPoints: number;
+  AverageRank: number;
+  Players: SeasonBestBallPlayer[];
+}
+
+export interface BestBallContext {
+  Season: number;
+  CurrentWeek: number;
+  AvailableWeeks: number[];
+}
+
 export interface WeeklyTeamStats {
   TeamKey: string;
   ManagerName: string;

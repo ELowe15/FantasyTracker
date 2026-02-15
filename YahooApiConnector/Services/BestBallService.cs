@@ -146,7 +146,7 @@ public class BestBallService
         return positions.Contains(slot);
     }
 
-    public async Task RebuildSeasonBestBallAsync(
+   public async Task RebuildSeasonBestBallAsync(
     int season,
     string outputDirectory)
 {
@@ -156,6 +156,7 @@ public class BestBallService
     if (!Directory.Exists(outputDirectory))
         return;
 
+    // Load weekly files for the season
     var weeklyFiles = Directory
         .GetFiles(outputDirectory, $"best_ball_{season}_week_*.json")
         .OrderBy(f => f)
@@ -164,94 +165,143 @@ public class BestBallService
     if (weeklyFiles.Count == 0)
         return;
 
-
-    var teamWeekMap = new Dictionary<string, List<(int Week, double Score)>>();
-    var teamNameMap = new Dictionary<string, string>();
+    // Maps for aggregation
+    var teamScoreMap = new Dictionary<string, List<double>>();
+    var teamRankMap = new Dictionary<string, TeamRankTracker>();
+    var teamPlayerMap = new Dictionary<string, Dictionary<string, SeasonBestBallPlayer>>();
+    var managerLookup = new Dictionary<string, string>();
     var weeksIncluded = new HashSet<int>();
 
     foreach (var file in weeklyFiles)
     {
         var json = await File.ReadAllTextAsync(file);
         var snapshot = JsonSerializer.Deserialize<WeeklyLeagueSnapshot>(json);
-
         if (snapshot == null || snapshot.Teams == null)
             continue;
 
         weeksIncluded.Add(snapshot.Week);
 
-        foreach (var team in snapshot.Teams)
+        // Sort teams by best ball points for ranking
+        var rankedTeams = snapshot.Teams
+            .OrderByDescending(t => t.TotalBestBallPoints)
+            .ToList();
+
+        for (int i = 0; i < rankedTeams.Count; i++)
         {
-            if (!teamWeekMap.ContainsKey(team.TeamKey))
-                teamWeekMap[team.TeamKey] = new List<(int Week, double Score)>();
-                
-            teamWeekMap[team.TeamKey].Add(
-                (snapshot.Week, team.TotalBestBallPoints)
-            );
+            var team = rankedTeams[i];
+            var rank = i + 1;
 
+            // Initialize maps
+            if (!teamScoreMap.ContainsKey(team.TeamKey))
+                teamScoreMap[team.TeamKey] = new List<double>();
 
-            if (!teamNameMap.ContainsKey(team.TeamKey))
-                teamNameMap[team.TeamKey] = team.ManagerName;
+            if (!teamRankMap.ContainsKey(team.TeamKey))
+                teamRankMap[team.TeamKey] = new TeamRankTracker();
+
+            if (!managerLookup.ContainsKey(team.TeamKey))
+                managerLookup[team.TeamKey] = team.ManagerName;
+
+            if (!teamPlayerMap.ContainsKey(team.TeamKey))
+                teamPlayerMap[team.TeamKey] = new Dictionary<string, SeasonBestBallPlayer>();
+
+            // Store weekly score
+            teamScoreMap[team.TeamKey].Add(team.TotalBestBallPoints);
+
+            // Ranking
+            teamRankMap[team.TeamKey].TotalRankPoints += rank;
+
+            // Player-level stats
+            foreach (var player in team.Players)
+            {
+                if (!teamPlayerMap[team.TeamKey].ContainsKey(player.PlayerKey))
+                {
+                    teamPlayerMap[team.TeamKey][player.PlayerKey] = new SeasonBestBallPlayer
+                    {
+                        PlayerKey = player.PlayerKey,
+                        PlayerName = player.FullName
+                    };
+                }
+
+                var seasonPlayer = teamPlayerMap[team.TeamKey][player.PlayerKey];
+
+                seasonPlayer.WeeksOnRoster++;
+
+                if (player.BestBallSlot != "Bench")
+                {
+                    seasonPlayer.WeeksStarted++;
+                    seasonPlayer.TotalContributedPoints += player.FantasyPoints;
+                }
+            }
         }
     }
-    var latestWeek = weeksIncluded.Max();
 
+    // Build season snapshot
     var seasonSnapshot = new SeasonBestBallSnapshot
     {
         Season = season,
         LastUpdated = DateTime.UtcNow,
-        WeeksIncluded = weeksIncluded.OrderBy(w => w).ToList()
+        WeeksIncluded = weeksIncluded.OrderBy(w => w).ToList(),
+        Teams = new List<SeasonBestBallTeam>()
     };
 
-    foreach (var kv in teamWeekMap)
-{
-    var allWeeks = kv.Value;
-
-    var completedWeeks = allWeeks
-        .Where(w => w.Week != latestWeek)
-        .Select(w => w.Score)
-        .ToList();
-
-    var allScores = allWeeks.Select(w => w.Score).ToList();
-
-    var team = new SeasonBestBallTeam
+    foreach (var kv in teamScoreMap)
     {
-        TeamKey = kv.Key,
-        ManagerName = teamNameMap[kv.Key],
+        var teamKey = kv.Key;
+        var scores = kv.Value;
 
-        WeeksPlayed = allScores.Count,
-        SeasonTotalBestBallPoints = allScores.Sum(),
-        AverageWeeklyBestBallPoints = allScores.Average(),
+        var team = new SeasonBestBallTeam
+        {
+            TeamKey = teamKey,
+            ManagerName = managerLookup[teamKey],
+            WeeksPlayed = scores.Count,
+            SeasonTotalBestBallPoints = scores.Sum(),
+            BestWeekScore = scores.Max(),
+            WorstWeekScore = scores.Min(),
+            TotalRankPoints = teamRankMap[teamKey].TotalRankPoints,
+            AverageRank = scores.Count == 0
+                ? 0
+                : (double)teamRankMap[teamKey].TotalRankPoints / scores.Count
+        };
 
-        // Only compute these if at least 1 completed week exists
-        BestWeekScore = completedWeeks.Any()
-            ? completedWeeks.Max()
-            : 0,
+        // Attach top 5 players
+        if (teamPlayerMap.ContainsKey(teamKey))
+        {
+            foreach (var player in teamPlayerMap[teamKey].Values)
+            {
+                player.ContributionPercent =
+                    team.SeasonTotalBestBallPoints == 0
+                        ? 0
+                        : player.TotalContributedPoints / team.SeasonTotalBestBallPoints;
+            }
 
-        WorstWeekScore = completedWeeks.Any()
-            ? completedWeeks.Min()
-            : 0
-    };
+            team.Players = teamPlayerMap[teamKey]
+                .Values
+                .OrderByDescending(p => p.TotalContributedPoints)
+                .Take(7) // keep top 5
+                .ToList();
+        }
 
-    seasonSnapshot.Teams.Add(team);
-}
+        seasonSnapshot.Teams.Add(team);
+    }
 
-    // Sort by season total descending
+    // Sort teams by season total points
     seasonSnapshot.Teams = seasonSnapshot.Teams
         .OrderByDescending(t => t.SeasonTotalBestBallPoints)
         .ToList();
 
-    var outputPath = Path.Combine(
-        outputDirectory,
-        $"season_best_ball_{season}.json"
-    );
+    // Save JSON
+    var outputPath = Path.Combine(outputDirectory, $"season_best_ball_{season}.json");
 
-    var options = new JsonSerializerOptions
-    {
-        WriteIndented = true
-    };
-
+    var options = new JsonSerializerOptions { WriteIndented = true };
     var outputJson = JsonSerializer.Serialize(seasonSnapshot, options);
     await File.WriteAllTextAsync(outputPath, outputJson);
 }
 
+
 }
+
+public class TeamRankTracker
+{
+    public int TotalRankPoints { get; set; }
+}
+

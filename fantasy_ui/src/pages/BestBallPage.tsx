@@ -6,28 +6,15 @@ import { ViewToggle } from "../components/ViewToggle";
 import { WeekSelector } from "../components/WeekSelector";
 import { usePersistentState } from "../hooks/usePersistentState";
 import { DelayedLoader } from "../components/DelayedLoader";
+import { SeasonBestBallTeam } from "../models/League";
+import SeasonBestBallCard from "../components/SeasonBestBallCard";
+import { BestBallContext } from "../models/League";
 
 // ---- CONFIG ----
 const BASE_URL =
   "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/YahooApiConnector/Data";
 
 type ViewMode = "WEEKLY" | "SEASON";
-
-type BestBallContext = {
-  Season: number;
-  CurrentWeek: number;
-  AvailableWeeks: number[];
-};
-
-type SeasonBestBallTeam = {
-  TeamKey: string;
-  ManagerName: string;
-  WeeksPlayed: number;
-  SeasonTotalBestBallPoints: number;
-  AverageWeeklyBestBallPoints: number;
-  BestWeekScore: number;
-  WorstWeekScore: number;
-};
 
 export default function BestBallPage() {
   const [teams, setTeams] = useState<BestBallTeam[] | null>(null);
@@ -194,11 +181,11 @@ export default function BestBallPage() {
         </div>
 
         {/* Content */}
-        <DelayedLoader
+<DelayedLoader
   loading={loading}
   dataLoaded={
-    (viewMode === "WEEKLY" && !!teams && week !== null) ||
-    (viewMode === "SEASON" && !!seasonTeams)
+    (viewMode === "WEEKLY" && teams !== null) ||
+    (viewMode === "SEASON" && seasonTeams !== null)
   }
   error={error}
   message={
@@ -208,62 +195,21 @@ export default function BestBallPage() {
   }
 >
   {viewMode === "SEASON" ? (
-    <div className="flex flex-col gap-1">
-      {seasonTeams?.map((team, index) => {
-        const rank = index + 1;
-        const ordinal = toOrdinal(rank);
-        const rankColor = getRankColor(rank);
-        const highlight = getRankHighlight(rank);
-
-        return (
-          <div
-            key={team.TeamKey}
-            className={`flex items-center justify-between rounded-md border px-2 py-1 ${highlight}`}
-          >
-            <div className="flex items-center min-w-0">
-              <span className={`text-[15px] w-8 ${rankColor}`}>{ordinal}</span>
-              <span
-                className="text-[15px] font-medium truncate"
-                style={{ color: "var(--text-primary)" }}
-              >
-                {team.ManagerName}
-              </span>
-            </div>
-            <div
-              className="flex flex-col text-[10px] leading-tight text-right whitespace-nowrap"
-              style={{ color: "var(--text-primary)" }}
-            >
-              <div className="font-bold tracking-tight text-[12px]">
-                Total Points:{" "}
-                <span style={{ color: "var(--accent-primary)" }}>
-                  {team.SeasonTotalBestBallPoints.toFixed(1)}
-                </span>
-              </div>
-              <div
-                className="flex justify-end gap-2 mt-1.5"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                <span>
-                  Best Wk:{" "}
-                  <span style={{ color: "var(--accent-primary)" }}>
-                    {team.BestWeekScore.toFixed(1)}
-                  </span>
-                </span>
-                <span style={{ color: "var(--text-divider)" }}>|</span>
-                <span>
-                  Worst Wk:{" "}
-                  <span style={{ color: "var(--accent-primary)" }}>
-                    {team.WorstWeekScore.toFixed(1)}
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  ) : (
-    // ✅ Safe check here: only map if teams exist
+    seasonTeams && seasonTeams.length > 0 ? (
+      <div className="flex flex-col gap-1">
+        {seasonTeams.map((team, index) => (
+          <SeasonBestBallCard key={team.TeamKey} team={team} rank={index + 1} />
+        ))}
+      </div>
+    ) : (
+      <div
+        className="flex justify-center items-center h-24"
+        style={{ color: "var(--text-secondary)" }}
+      >
+        No season standings yet.
+      </div>
+    )
+  ) : viewMode === "WEEKLY" ? (
     teams && teams.length > 0 ? (
       teams.map((team, index) => (
         <BestBallTeamCard key={`${team.teamKey}-${week}`} team={team} rank={index + 1} />
@@ -276,7 +222,7 @@ export default function BestBallPage() {
         No weekly results yet.
       </div>
     )
-  )}
+  ) : null}
 </DelayedLoader>
 
       </div>
