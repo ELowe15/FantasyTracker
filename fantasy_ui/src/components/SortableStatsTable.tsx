@@ -41,19 +41,19 @@ export default function SortableStatsTable({
   );
 
   return (
-    <div className="relative -mx-3 sm:mx-0 overflow-x-auto shadow-lg">
+    <div className="relative -mx-5 sm:mx-0 overflow-x-auto shadow-lg">
       <table className="min-w-full text-[var(--text-primary)] text-[0.70rem] sm:text-sm md:text-base table-auto">
         <thead className="sticky top-0 z-10 bg-[var(--bg-purple-dark)]">
           <tr className="border-b border-[var(--border-primary)]">
-            <th className="text-center">Team</th>
+            <th className="text-left underline py-1 pl-1">Team</th>
 
             {statKeys.map(stat => (
               <th
                 key={stat}
                 onClick={() => handleSort(stat)}
-                className="text-center cursor-pointer select-none group"
+                className="text-left cursor-pointer select-none group"
               >
-                <span className="inline-flex items-center">
+                <span className="inline-flex underline items-center">
                   {stat}
                   <SortIndicator
                     active={sortKey === stat}
@@ -74,7 +74,7 @@ export default function SortableStatsTable({
                 hover:bg-[var(--bg-hover)]
               `}
             >
-              <td className="font-medium text-[var(--text-primary)]">
+              <td className="font-medium text-[var(--text-primary)] py-1 pl-1">
                 {team.Team.ManagerName}
               </td>
 

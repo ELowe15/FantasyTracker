@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchDraftData } from "../services/DataService";
 import { DraftPick, TeamGroup } from "../models/League";
 import DraftTeamCard from "../components/DraftTeamCard";
+import { DelayedLoader } from "../components/DelayedLoader";
 
 function groupByTeam(picks: DraftPick[]): TeamGroup[] {
   const teams: { [key: string]: TeamGroup } = {};
@@ -29,22 +30,19 @@ function groupByTeam(picks: DraftPick[]): TeamGroup[] {
 
 export default function TeamsPage() {
   const [teams, setTeams] = useState<TeamGroup[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setLoading(true);
     fetchDraftData()
       .then((picks) => setTeams(groupByTeam(picks)))
-      .catch((err) => console.error("Error loading draft data:", err));
+      .catch((err) => {
+        console.error("Error loading draft data:", err);
+        setError("Failed to load draft results");
+      })
+      .finally(() => setLoading(false));
   }, []);
-
-  if (!teams)
-    return (
-      <div
-        className="flex justify-center items-center h-screen"
-        style={{ color: "var(--text-secondary)" }}
-      >
-        Loading draft results...
-      </div>
-    );
 
   return (
     <div style={{ backgroundColor: "var(--bg-app)", minHeight: "100vh" }}>
@@ -55,9 +53,17 @@ export default function TeamsPage() {
         >
           Fantasy Draft Results
         </h1>
-        {teams.map((team) => (
-          <DraftTeamCard key={team.team_key} team={team} />
-        ))}
+
+        <DelayedLoader
+          loading={loading}
+          dataLoaded={!!teams}
+          error={error}
+          message="Loading draft results..."
+        >
+          {teams?.map((team) => (
+            <DraftTeamCard key={team.team_key} team={team} />
+          ))}
+        </DelayedLoader>
       </div>
     </div>
   );

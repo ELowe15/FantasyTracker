@@ -93,7 +93,7 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank, viewMode }) => {
                   {Matchups.map((m: RoundRobinMatchup) => (
                     <div
                       key={m.OpponentTeamKey}
-                      className="flex justify-between"
+                      className="flex justify-between py-[2px] rounded-sm odd:bg-white/5"
                     >
                       <span className="truncate text-[var(--text-primary)]">
                         {m.ManagerName}
@@ -124,7 +124,8 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank, viewMode }) => {
                 </div>
                 <div className="space-y-1 pt-1">
                   {Object.values(result.TeamRecord.CategoryRecords).map((cat) => (
-                    <div key={cat.Category} className="flex justify-between">
+                    <div key={cat.Category} className="flex justify-between py-[2px] rounded-sm odd:bg-white/5"
+>
                         <span className="text-[var(--text-primary)]">{getPercentageCategory(cat.Category)}</span>
                         <span className="text-right font-medium">
                         <span>{cat.Wins}</span>-
@@ -136,7 +137,7 @@ const RoundRobinTeamCard: React.FC<Props> = ({ result, rank, viewMode }) => {
                 </div>
 
                 {/* Total Category Record */}
-                <div className="border-t border-[var(--border-primary)] mt-1 pt-1 flex justify-between font-medium text-[var(--text-secondary)] text-sm">
+                <div className="border-t border-[var(--border-primary)] mt-1 pt-1 flex justify-between font-bold font-medium text-[var(--text-primary)] text-sm">
                   <span>Total</span>
                   {formatCategoryRecord(
                     TeamRecord.CategoryWins,

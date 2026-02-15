@@ -6,13 +6,15 @@ import BestBallPage from "./pages/BestBallPage";
 import RoundRobinPage from "./pages/RoundRobinPage";
 import "./styles/colors.css";
 import { loadPlayerImages } from "./services/playerImageService";
+import { usePersistentState } from "./hooks/usePersistentState";
+
 
 type Tab = "teams" | "draft" | "bestball" | "roundrobin" | "rules";
 
 export default function App() {
   const tabs: Tab[] = ["teams", "draft", "bestball", "roundrobin", "rules"];
-  const [activeTab, setActiveTab] = useState<Tab>("bestball");
-
+const [activeTab, setActiveTab] =
+  usePersistentState<Tab>("app:activeTab", "bestball");
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const touchStartX = useRef(0);

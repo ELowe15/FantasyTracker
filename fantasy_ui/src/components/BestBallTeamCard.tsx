@@ -2,6 +2,7 @@ import { BestBallTeam, BestBallPlayer } from "../models/League";
 import { useState, Fragment } from "react";
 import { getRankColor, getRankHighlight, toOrdinal } from "../util/Helpers";
 import { ArrowToggle } from "./ArrowToggle";
+import { getPlayerImage } from "../services/playerImageService";
 
 interface Props {
   team: BestBallTeam;
@@ -77,7 +78,7 @@ export default function BestBallTeamCard({ team, rank }: Props) {
         <div className="">
           <table className="bg-[var(--bg-active)] w-full text-xs text-left border-t border-[var(--border-primary)]">
             <thead>
-              <tr className="text-[var(--accent-secondary)] text-center text-[10px]">
+              <tr className="text-[var(--accent-secondary)] text-left underline text-[10px]">
                 <th className="py-1 pl-2">POS</th>
                 <th>FPTS</th>
                 <th>PLAYER</th>
@@ -92,7 +93,7 @@ export default function BestBallTeamCard({ team, rank }: Props) {
             <tbody>
               {/* Active Lineup Divider */}
               <tr>
-                <td colSpan={9} className="py-1">
+                <td colSpan={9} className="pb-1">
                   <div className="flex items-center gap-3">
                     <div className="flex-1 border-t border-[var(--border-primary)]" />
                     <span className="text-xs uppercase tracking-wider text-[var(--text-secondary)]">
@@ -165,8 +166,19 @@ export default function BestBallTeamCard({ team, rank }: Props) {
                         {p.fantasyPoints.toFixed(1)}
                       </td>
                       <td className="truncate max-w-[110px]">
-                        {p.fullName}
-                      </td>
+  <div className="flex items-center gap-2">
+    <img
+      src={getPlayerImage(p.playerKey) || process.env.PUBLIC_URL + "/default-player.png"}
+      alt={p.fullName}
+      className="w-4 h-6 object-cover my-[1px]"
+      onError={(e) =>
+        (e.currentTarget.src = process.env.PUBLIC_URL + "/default-player.png")
+      }
+    />
+    <span className="truncate">{p.fullName}</span>
+  </div>
+</td>
+
                       <td>{p.rawStats.points}</td>
                       <td>{p.rawStats.rebounds}</td>
                       <td>{p.rawStats.assists}</td>

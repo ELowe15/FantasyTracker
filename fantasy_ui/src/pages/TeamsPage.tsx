@@ -2,16 +2,21 @@ import { useEffect, useState } from "react";
 import { fetchDraftData } from "../services/DataService";
 import { TeamRoster } from "../models/League";
 import TeamRosterCard from "../components/TeamCard";
+import { DelayedLoader } from "../components/DelayedLoader";
 
 const DATA_URL =
-  "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/YahooApiConnector/team_results.json";
+  "https://raw.githubusercontent.com/ELowe15/FantasyTracker/main/YahooApiConnector/Data/team_results.json";
 
 export default function TeamsPage() {
   const [teams, setTeams] = useState<TeamRoster[] | null>(null);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadData() {
+      setLoading(true);
+      setError(null);
+
       try {
         const draftResults = await fetchDraftData();
 
@@ -58,33 +63,14 @@ export default function TeamsPage() {
       } catch (err) {
         console.error("Error loading team results:", err);
         setError("Failed to load team results. Try again later.");
+        setTeams(null);
+      } finally {
+        setLoading(false);
       }
     }
 
     loadData();
   }, []);
-
-  if (error) {
-    return (
-      <div
-        className="flex justify-center items-center h-screen"
-        style={{ color: "var(--accent-error)" }}
-      >
-        {error}
-      </div>
-    );
-  }
-
-  if (!teams) {
-    return (
-      <div
-        className="flex justify-center items-center h-screen"
-        style={{ color: "var(--text-secondary)" }}
-      >
-        Loading team results...
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "var(--bg-app)" }}>
@@ -95,9 +81,17 @@ export default function TeamsPage() {
         >
           Fantasy Team Rosters
         </h1>
-        {teams.map((team) => (
-          <TeamRosterCard key={team.teamKey} team={team} />
-        ))}
+
+        <DelayedLoader
+          loading={loading}
+          dataLoaded={!!teams}
+          error={error}
+          message="Loading team results..."
+        >
+          {teams?.map((team) => (
+            <TeamRosterCard key={team.teamKey} team={team} />
+          ))}
+        </DelayedLoader>
       </div>
     </div>
   );

@@ -44,9 +44,9 @@ export default function DraftTeamCard({ team }: Props) {
           >
             <thead>
               <tr style={{ color: "var(--accent-secondary)" }}>
-                <th className="py-2 px-2">Player</th>
-                <th>Round</th>
-                <th className="pr-2">Keep</th>
+                <th className="py-2 px-2 underline">Player</th>
+                <th className="underline">Round</th>
+                <th className="pr-2 underline">Keep</th>
               </tr>
             </thead>
             <tbody>
@@ -71,7 +71,7 @@ export default function DraftTeamCard({ team }: Props) {
   <img
     src={getPlayerImage(pick.PlayerKey) || process.env.PUBLIC_URL + "/default-player.png"}
     alt={pick.player_name}
-    className="w-6 h-8 full object-cover"
+    className="w-6 h-8 full object-cover my-[1px]"
     onError={(e) =>
       (e.currentTarget.src = process.env.PUBLIC_URL + "/default-player.png")
     }
