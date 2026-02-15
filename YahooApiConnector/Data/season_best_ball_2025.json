@@ -1,6 +1,6 @@
 {
   "Season": 2025,
-  "LastUpdated": "2026-02-15T09:31:50.4394278Z",
+  "LastUpdated": "2026-02-15T21:46:49.4287284Z",
   "WeeksIncluded": [
     12,
     13,
@@ -15,108 +15,744 @@
       "ManagerName": "jlevesque",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 5380.5,
-      "AverageWeeklyBestBallPoints": 896.75,
+      "TotalRankPoints": 11,
+      "AverageRank": 1.8333333333333333,
       "BestWeekScore": 1037.3,
-      "WorstWeekScore": 863.9000000000001
+      "WorstWeekScore": 539.4,
+      "Players": [
+        {
+          "PlayerKey": "E7223FCDFF6C4F5AC4135EDAE8AFBC7C24F38F04E95C27699F66CA9C104F600E",
+          "PlayerName": "Jalen Johnson",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 692.4000000000001,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 138.48000000000002,
+          "ContributionPercent": 0.12868692500696963
+        },
+        {
+          "PlayerKey": "43A11293F1FA726875AD3755681EB37610F82B279935E40171ADD5FE37FC371B",
+          "PlayerName": "Donovan Clingan",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 658.3,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 131.66,
+          "ContributionPercent": 0.12234922404980948
+        },
+        {
+          "PlayerKey": "9C6399A38D46816BC0F3F85132443DF36D5BCFAE6F8183F9C6DFD4AB6D8477E9",
+          "PlayerName": "Shai Gilgeous-Alexander",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 655.6999999999999,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 163.92499999999998,
+          "ContributionPercent": 0.12186599758386765
+        },
+        {
+          "PlayerKey": "CDDB4F04BFB77392A3713172B9FA5A51F5121CB20B4AF5FE828A3F643A528868",
+          "PlayerName": "Kawhi Leonard",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 603.8,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 150.95,
+          "ContributionPercent": 0.11222005389833657
+        },
+        {
+          "PlayerKey": "4CA99FE6E2051D0E7634853C41AFBDC133697E38779973D7296E4E0E5DB73ABC",
+          "PlayerName": "Kon Knueppel",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 545.8000000000001,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 109.16000000000001,
+          "ContributionPercent": 0.10144038658117277
+        }
+      ]
     },
     {
       "TeamKey": "9017F765F09829BD6570A4EE1208C976D47F61108780FB0E2C2C4A9B2EB60DAF",
       "ManagerName": "Jack",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4926.700000000001,
-      "AverageWeeklyBestBallPoints": 821.1166666666668,
+      "TotalRankPoints": 28,
+      "AverageRank": 4.666666666666667,
       "BestWeekScore": 998.0999999999999,
-      "WorstWeekScore": 750.9
+      "WorstWeekScore": 539.4000000000001,
+      "Players": [
+        {
+          "PlayerKey": "49A33435E85F02E0ECB8C5C18FC6F8DCDAB9204878C6189B032D215CD0863877",
+          "PlayerName": "Karl-Anthony Towns",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 582.5999999999999,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 116.51999999999998,
+          "ContributionPercent": 0.11825359774291104
+        },
+        {
+          "PlayerKey": "9E3427AC131A6D447B0E0DADE71BDABF3665552EEAF44D02715AD3FE045D41BD",
+          "PlayerName": "Jamal Murray",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 529.9,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 132.475,
+          "ContributionPercent": 0.10755678243043008
+        },
+        {
+          "PlayerKey": "859956F02C657E96F54211B849AE38FC39C03C99199F2A7573448A023293FA6E",
+          "PlayerName": "Alex Sarr",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 508.5,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 127.125,
+          "ContributionPercent": 0.10321310410619683
+        },
+        {
+          "PlayerKey": "CD907D4B4CF5EF30A9CEABDC73C9C1FEB553CB4866C42C01E766507161B535A0",
+          "PlayerName": "Dillon Brooks",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 505.7,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 101.14,
+          "ContributionPercent": 0.10264477236283921
+        },
+        {
+          "PlayerKey": "C958A1E64606A2F0885F1701AF1EC6D51B4114134AA7F89150F787404B5B95EB",
+          "PlayerName": "Immanuel Quickley",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 3,
+          "TotalContributedPoints": 440.90000000000003,
+          "StartRate": 0.5,
+          "PointsPerStart": 146.96666666666667,
+          "ContributionPercent": 0.0894919520165628
+        }
+      ]
     },
     {
       "TeamKey": "1F159E5B4A7F937B5B88FED217C64A1F19095ED1976AB90937E2343043517FA0",
       "ManagerName": "EFry",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4899,
-      "AverageWeeklyBestBallPoints": 816.5,
+      "TotalRankPoints": 28,
+      "AverageRank": 4.666666666666667,
       "BestWeekScore": 1005.0999999999999,
-      "WorstWeekScore": 722.5999999999999
+      "WorstWeekScore": 610.1,
+      "Players": [
+        {
+          "PlayerKey": "30EAB2E46525C0034AF12EE78961B10A55925DA6793F9304E66361AFE1E8A4D4",
+          "PlayerName": "Donovan Mitchell",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 736.6999999999999,
+          "StartRate": 1,
+          "PointsPerStart": 122.78333333333332,
+          "ContributionPercent": 0.15037762808736477
+        },
+        {
+          "PlayerKey": "E4F167CEF9D3E03FC84200AAF7B665732637097D36BD625597D50BE0C9BAFA12",
+          "PlayerName": "Bam Adebayo",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 720.3,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 144.06,
+          "ContributionPercent": 0.1470300061236987
+        },
+        {
+          "PlayerKey": "148D48BC3FBCB264AC6BCFA40DA88DE6FC4D8D3C682E626E62464B01BBF895CD",
+          "PlayerName": "Trey Murphy III",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 647.1,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 129.42000000000002,
+          "ContributionPercent": 0.13208818126148195
+        },
+        {
+          "PlayerKey": "4F047F1B01A8DAAC2DCF8F6E6AB29FEA39BFD059D51019F3459EF31F27C21187",
+          "PlayerName": "OG Anunoby",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 461.90000000000003,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 115.47500000000001,
+          "ContributionPercent": 0.09428454786691162
+        },
+        {
+          "PlayerKey": "EDE4CA48386D7B6F5948D2D6A672CF892FF51720C95DAB70B14EDC2224CE3E73",
+          "PlayerName": "CJ McCollum",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 393,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 98.25,
+          "ContributionPercent": 0.08022045315370484
+        }
+      ]
     },
     {
       "TeamKey": "90C53E50CC1C110057BE71C82157588D20D5DCE83BFC6F206F2A5FF9BEE40FB7",
       "ManagerName": "ELowe",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4884.9,
-      "AverageWeeklyBestBallPoints": 814.15,
+      "TotalRankPoints": 30,
+      "AverageRank": 5,
       "BestWeekScore": 966,
-      "WorstWeekScore": 779.9
+      "WorstWeekScore": 534.7,
+      "Players": [
+        {
+          "PlayerKey": "BE6D5B0EE2BAEF857868F44F4D67732D27D9B8DAAA565DC8CBD15BD716B59092",
+          "PlayerName": "Jalen Brunson",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 633.2,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 126.64000000000001,
+          "ContributionPercent": 0.1296239431718152
+        },
+        {
+          "PlayerKey": "36F01B6ABB3D84D1E15FE735EE703C9D3DD0178648425BEFA7317E7CA18DA3AE",
+          "PlayerName": "Chet Holmgren",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 601.6999999999999,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 120.33999999999999,
+          "ContributionPercent": 0.12317550001023563
+        },
+        {
+          "PlayerKey": "445F900B46D7E4306EA3643429A2996E9DBF74FD987C0AEF8938CB1DC0DDC64E",
+          "PlayerName": "Brandon Miller",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 575.4,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 115.08,
+          "ContributionPercent": 0.11779156175151999
+        },
+        {
+          "PlayerKey": "6D18B7ED1CBB2393C934FA8F7441C9ED2BC79DC475A981A85D16CC74003389D4",
+          "PlayerName": "Jabari Smith Jr.",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 568.3,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 113.66,
+          "ContributionPercent": 0.1163381031341481
+        },
+        {
+          "PlayerKey": "1A570DE1654A9302BD52EEF1D0D32EC344D45AD28EEE1CA2384322F8626B1F65",
+          "PlayerName": "Dyson Daniels",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 440.6,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 110.15,
+          "ContributionPercent": 0.09019631926958588
+        }
+      ]
     },
     {
       "TeamKey": "85522C60CD82DE63E67DA64330061040E873E7BDEB151C3889FFA5ADD91CC3C5",
       "ManagerName": "Noah",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4755.8,
-      "AverageWeeklyBestBallPoints": 792.6333333333333,
+      "TotalRankPoints": 38,
+      "AverageRank": 6.333333333333333,
       "BestWeekScore": 974.8,
-      "WorstWeekScore": 718
+      "WorstWeekScore": 519.2,
+      "Players": [
+        {
+          "PlayerKey": "7AA9B7743A5CF89FA72F495FCE041DDFE10E46E768844EDBF5EE135A95C713CC",
+          "PlayerName": "Tyrese Maxey",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 956.2,
+          "StartRate": 1,
+          "PointsPerStart": 159.36666666666667,
+          "ContributionPercent": 0.2010597586105387
+        },
+        {
+          "PlayerKey": "09ABA95B66394B73E008ABA0682ED0FEE5E03E92B70A0B8F506E14D21A66F571",
+          "PlayerName": "Julius Randle",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 762.2,
+          "StartRate": 1,
+          "PointsPerStart": 127.03333333333335,
+          "ContributionPercent": 0.1602674628874217
+        },
+        {
+          "PlayerKey": "014C227FC05614E47E06C08BDD286EE064C3A75272B7AAC86CBCD8A61C7A9288",
+          "PlayerName": "Derrick White",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 607.9,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 121.58,
+          "ContributionPercent": 0.1278228689179528
+        },
+        {
+          "PlayerKey": "758A26E2A154B9B9CCAF0090A7EA890E8D0FDD927D82B802E1A5A8321B7C03B4",
+          "PlayerName": "Ayo Dosunmu",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 503,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 100.6,
+          "ContributionPercent": 0.10576559148828799
+        },
+        {
+          "PlayerKey": "912C2121379133CE79B204BEA0812641B6B7291C525BC17133FD8081835D0693",
+          "PlayerName": "Mark Williams",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 497.1,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 99.42,
+          "ContributionPercent": 0.10452500105134784
+        }
+      ]
     },
     {
       "TeamKey": "C134E6AC402FAFA8739A0159EB75C80C6584A5BEA7D4A79C6837A88E11FF828B",
       "ManagerName": "kelat",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4687.299999999999,
-      "AverageWeeklyBestBallPoints": 781.2166666666666,
+      "TotalRankPoints": 43,
+      "AverageRank": 7.166666666666667,
       "BestWeekScore": 1011.0999999999999,
-      "WorstWeekScore": 710.5
+      "WorstWeekScore": 447.4,
+      "Players": [
+        {
+          "PlayerKey": "7F38E191B88B615DDAB9D4F77F9251645CA4D92723F60D1E4DEB2F5F586DC28D",
+          "PlayerName": "Amen Thompson",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 783.4,
+          "StartRate": 1,
+          "PointsPerStart": 130.56666666666666,
+          "ContributionPercent": 0.1671324643184776
+        },
+        {
+          "PlayerKey": "E37E9291B7FF1526101F8EA4C207B05C8FBAB4EFC2710DBA969930E2681347E8",
+          "PlayerName": "LaMelo Ball",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 686.4,
+          "StartRate": 1,
+          "PointsPerStart": 114.39999999999999,
+          "ContributionPercent": 0.14643824803191605
+        },
+        {
+          "PlayerKey": "C642134189520A443AED6AC70CE442110CDAE6C9B39CFCF9480A6FDA04293C37",
+          "PlayerName": "Anthony Black",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 440.4,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 110.1,
+          "ContributionPercent": 0.09395600878970838
+        },
+        {
+          "PlayerKey": "C929C34ADFDD4DAB37038A268EC8E5F0F261819BAC50508F221AED63E7A019C9",
+          "PlayerName": "Rudy Gobert",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 3,
+          "TotalContributedPoints": 407.5,
+          "StartRate": 0.5,
+          "PointsPerStart": 135.83333333333334,
+          "ContributionPercent": 0.08693704264715296
+        },
+        {
+          "PlayerKey": "371FFA3790C2F12799E93FA5B2F19B0CF8F00A6554052230A558AD09D23BD183",
+          "PlayerName": "Giannis Antetokounmpo",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 3,
+          "TotalContributedPoints": 372.70000000000005,
+          "StartRate": 0.5,
+          "PointsPerStart": 124.23333333333335,
+          "ContributionPercent": 0.07951272587630408
+        }
+      ]
     },
     {
       "TeamKey": "81DA36CAE95E4C0D12D6D9B42F39BD3512D116DB1D97F7A1E590885037BEAD12",
       "ManagerName": "Ryan",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4616.5,
-      "AverageWeeklyBestBallPoints": 769.4166666666666,
+      "TotalRankPoints": 40,
+      "AverageRank": 6.666666666666667,
       "BestWeekScore": 1008.6000000000001,
-      "WorstWeekScore": 508.59999999999997
+      "WorstWeekScore": 487.99999999999994,
+      "Players": [
+        {
+          "PlayerKey": "A4C1D83C2BE2802A186A4461133CEA82DDA5CF3985D9C5F1444DEF6489CCF586",
+          "PlayerName": "Scottie Barnes",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 801,
+          "StartRate": 1,
+          "PointsPerStart": 133.5,
+          "ContributionPercent": 0.17350806888335318
+        },
+        {
+          "PlayerKey": "B83D965098301228717FB918379C6246CC19FAE717A5C195866CD6CA61C444AD",
+          "PlayerName": "Luka Don\u010Di\u0107",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 745.7,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 149.14000000000001,
+          "ContributionPercent": 0.16152929708653743
+        },
+        {
+          "PlayerKey": "ECFF4C2FA9F88D420880704286B368DF457D77A9CC03185E5B12FDCCBD60A793",
+          "PlayerName": "De\u0027Aaron Fox",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 625.5999999999999,
+          "StartRate": 1,
+          "PointsPerStart": 104.26666666666665,
+          "ContributionPercent": 0.13551391746994473
+        },
+        {
+          "PlayerKey": "790A06E3765BD36B03830C3CC781F1DD7EA3F7A73566013D4D2762455BD836EB",
+          "PlayerName": "Keyonte George",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 539.9000000000001,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 134.97500000000002,
+          "ContributionPercent": 0.11695007039965344
+        },
+        {
+          "PlayerKey": "906450407836612924A399D8C0DC2D7FCFD0CF2BAC5AE8C2D9298564F9827A50",
+          "PlayerName": "Kyshawn George",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 443.29999999999995,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 110.82499999999999,
+          "ContributionPercent": 0.09602512726091193
+        }
+      ]
     },
     {
       "TeamKey": "6ABF36C085FCDE755CF852AA7DE61673ADFDB7BE18A5ADA4A6F2823274DAA240",
       "ManagerName": "Michael",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4585.400000000001,
-      "AverageWeeklyBestBallPoints": 764.2333333333335,
+      "TotalRankPoints": 43,
+      "AverageRank": 7.166666666666667,
       "BestWeekScore": 956.6000000000001,
-      "WorstWeekScore": 707.2
+      "WorstWeekScore": 568.0000000000001,
+      "Players": [
+        {
+          "PlayerKey": "A3601634463A18FBC8A3B9D9317A1306A2D4EA4AC7F478F8CCA281BE70E8996F",
+          "PlayerName": "Alperen Sengun",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 745.9000000000001,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 149.18,
+          "ContributionPercent": 0.16266846949012082
+        },
+        {
+          "PlayerKey": "234EFB94F2B1FD85634D5BEEEF949553303D33F7E374CEA5B15D3CE07D3EDBF2",
+          "PlayerName": "Cade Cunningham",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 628.4000000000001,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 125.68000000000002,
+          "ContributionPercent": 0.1370436603131679
+        },
+        {
+          "PlayerKey": "C4A8F02BD409FFDDE29493F4366B77F88CCA376B0F8ADD0B7838A3349DA842C2",
+          "PlayerName": "Matas Buzelis",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 627.1,
+          "StartRate": 1,
+          "PointsPerStart": 104.51666666666667,
+          "ContributionPercent": 0.1367601517861037
+        },
+        {
+          "PlayerKey": "17891B3C05BB9079C5468A8BCEE2F7BD5070A68A4DC132E9858F89CE215E5D34",
+          "PlayerName": "Payton Pritchard",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 444.7,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 111.175,
+          "ContributionPercent": 0.09698172460417846
+        },
+        {
+          "PlayerKey": "5581FEA4F8C56321B9BD503B5BF9190635273A0EA42BDCAA27F960C0B1B8AD81",
+          "PlayerName": "Peyton Watson",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 3,
+          "TotalContributedPoints": 420.70000000000005,
+          "StartRate": 0.5,
+          "PointsPerStart": 140.23333333333335,
+          "ContributionPercent": 0.09174772102760936
+        }
+      ]
     },
     {
       "TeamKey": "58E49E9F7021CA61DAC4CD1E032F99699D61472286D838A09AB2028CD37F9DF6",
       "ManagerName": "Garrett",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4580.400000000001,
-      "AverageWeeklyBestBallPoints": 763.4000000000001,
+      "TotalRankPoints": 45,
+      "AverageRank": 7.5,
       "BestWeekScore": 955.2,
-      "WorstWeekScore": 657.6999999999999
+      "WorstWeekScore": 468.1,
+      "Players": [
+        {
+          "PlayerKey": "53E83B584313ECD7CE639A7F3CE2173E5CB61F514CEDF6B87AC23B34A4C97375",
+          "PlayerName": "Anthony Edwards",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 706.2,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 141.24,
+          "ContributionPercent": 0.154178674351585
+        },
+        {
+          "PlayerKey": "D16EACE3A58BB33FF5E1512985794A76E821AEC8779E02FEE44CDE7D872227D0",
+          "PlayerName": "Nickeil Alexander-Walker",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 629.8,
+          "StartRate": 1,
+          "PointsPerStart": 104.96666666666665,
+          "ContributionPercent": 0.13749890839228013
+        },
+        {
+          "PlayerKey": "D5F88FCAE51E89AEA62E3ABBC79899D40CFA634EC3415860B702399C8C3D8361",
+          "PlayerName": "Naz Reid",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 621.5,
+          "StartRate": 1,
+          "PointsPerStart": 103.58333333333333,
+          "ContributionPercent": 0.13568683957732947
+        },
+        {
+          "PlayerKey": "91D5B49004603140E27B7E2E1A02CFDFC8777A89B6C4E429C92391D24A71A8C1",
+          "PlayerName": "VJ Edgecombe",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 562.5,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 112.5,
+          "ContributionPercent": 0.1228058684831019
+        },
+        {
+          "PlayerKey": "499AF30892E2607D8424B5D6C66C5948DBE2AE9756AC4275D160042BFCB90115",
+          "PlayerName": "Lauri Markkanen",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 414.1,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 103.525,
+          "ContributionPercent": 0.09040695135796
+        }
+      ]
     },
     {
       "TeamKey": "90DD219AA37A91B240FD13421AB197906C48250FDACF16651B7816A64D6A487F",
       "ManagerName": "Joshua",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4377.5,
-      "AverageWeeklyBestBallPoints": 729.5833333333334,
+      "TotalRankPoints": 54,
+      "AverageRank": 9,
       "BestWeekScore": 908.4,
-      "WorstWeekScore": 669.9999999999999
+      "WorstWeekScore": 391.2,
+      "Players": [
+        {
+          "PlayerKey": "025C26A3D4888BE126A38EC021CD4E232FDD9649A67E44F5247691115E5D3D75",
+          "PlayerName": "Victor Wembanyama",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 876.7,
+          "StartRate": 1,
+          "PointsPerStart": 146.11666666666667,
+          "ContributionPercent": 0.20027412906910338
+        },
+        {
+          "PlayerKey": "4AA83BB317B73FF80CB9B54EDB939FBE7E6612A0DEAC826EC3A8BBFADC18A436",
+          "PlayerName": "Nikola Vu\u010Devi\u0107",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 551.1,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 110.22,
+          "ContributionPercent": 0.12589377498572246
+        },
+        {
+          "PlayerKey": "F2F6D25D66B4B47695D93B30061589DCF72B15E2DF6B9A4ABE43C60925BE41B1",
+          "PlayerName": "Jaylen Brown",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 527.7,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 131.925,
+          "ContributionPercent": 0.12054825813820674
+        },
+        {
+          "PlayerKey": "9DCE4BEED474E5B907B222A7B41C6AFD62C778D856854D4ECB0CD09F5C0652FF",
+          "PlayerName": "Michael Porter Jr.",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 505.70000000000005,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 101.14000000000001,
+          "ContributionPercent": 0.11552255853797831
+        },
+        {
+          "PlayerKey": "9EB0AAAD51E77B38AA579898CE7658CBBE0BBB0F9598BFD740FC340A8FEADA75",
+          "PlayerName": "Grayson Allen",
+          "WeeksOnRoster": 5,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 431.8,
+          "StartRate": 0.8,
+          "PointsPerStart": 107.95,
+          "ContributionPercent": 0.09864077669902913
+        }
+      ]
     },
     {
       "TeamKey": "4237816ED6AED7D8F428E6A6FD454170FDF1680D22BF3D80E67CC3F030492556",
       "ManagerName": "JRock",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4357.3,
-      "AverageWeeklyBestBallPoints": 726.2166666666667,
+      "TotalRankPoints": 50,
+      "AverageRank": 8.333333333333334,
       "BestWeekScore": 900.5,
-      "WorstWeekScore": 741.6999999999999
+      "WorstWeekScore": 440.6,
+      "Players": [
+        {
+          "PlayerKey": "005EF9B0CB2EB016B8C41994849D67ABCE6D719ACC511124E185DFEF3013B63F",
+          "PlayerName": "Zion Williamson",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 678.1999999999999,
+          "StartRate": 1,
+          "PointsPerStart": 113.03333333333332,
+          "ContributionPercent": 0.15564684552360405
+        },
+        {
+          "PlayerKey": "0F290CD3DD2C3085C39B2B12F8E0A92D25AEDB85707CF9ED37798718E4E856F8",
+          "PlayerName": "Isaiah Collier",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 676.9000000000001,
+          "StartRate": 1,
+          "PointsPerStart": 112.81666666666668,
+          "ContributionPercent": 0.15534849562802655
+        },
+        {
+          "PlayerKey": "2A6C7F2DBA2DAAA6A5ABDC0BF1FBE26E790518210B6EC12DB39137D6FB884229",
+          "PlayerName": "DeMar DeRozan",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 568.8000000000001,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 113.76000000000002,
+          "ContributionPercent": 0.130539554311156
+        },
+        {
+          "PlayerKey": "54F747200F03E5AFC0C04625551CA63FE514468584EEC3B7816CB3B37B3C787C",
+          "PlayerName": "Brandon Ingram",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 541.8000000000001,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 135.45000000000002,
+          "ContributionPercent": 0.12434305647993024
+        },
+        {
+          "PlayerKey": "2F207927CEAE4C78407C8CD3D96FEB4B54B75B8A68A0D1D19BC402075E34376D",
+          "PlayerName": "Moussa Diabat\u00E9",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 473.2,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 94.64,
+          "ContributionPercent": 0.1085993619902233
+        }
+      ]
     },
     {
       "TeamKey": "3A7B458FA59B6584D13EE3BAB38B34C2BD873636A514830CFE79184BA6561802",
       "ManagerName": "scott",
       "WeeksPlayed": 6,
       "SeasonTotalBestBallPoints": 4126.1,
-      "AverageWeeklyBestBallPoints": 687.6833333333334,
+      "TotalRankPoints": 58,
+      "AverageRank": 9.666666666666666,
       "BestWeekScore": 860.9000000000001,
-      "WorstWeekScore": 579.1999999999999
+      "WorstWeekScore": 416.80000000000007,
+      "Players": [
+        {
+          "PlayerKey": "65D6C4716B0F4E402C2FF6DDCCB0FCC024815969E46EF29CF4D5A3E1EF787F90",
+          "PlayerName": "Kevin Durant",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 823.5999999999999,
+          "StartRate": 1,
+          "PointsPerStart": 137.26666666666665,
+          "ContributionPercent": 0.1996073774266256
+        },
+        {
+          "PlayerKey": "0C31692B52E9508403AFB6FD0BA2A55E156667813ACE62BFF1B14E53F810B0D6",
+          "PlayerName": "LeBron James",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 819,
+          "StartRate": 1,
+          "PointsPerStart": 136.5,
+          "ContributionPercent": 0.19849252320593294
+        },
+        {
+          "PlayerKey": "E0D2D0DEB359C6472963DEC9552902DD9BE1F38121236ED006BD64EEC50AD871",
+          "PlayerName": "Shaedon Sharpe",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 4,
+          "TotalContributedPoints": 493.1,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 123.275,
+          "ContributionPercent": 0.11950752526598966
+        },
+        {
+          "PlayerKey": "BFC0B69A53367F04452A5A66D2CE001245C1AC5B21B14172E26D2BF104CAD2C8",
+          "PlayerName": "John Collins",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 489.50000000000006,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 97.9,
+          "ContributionPercent": 0.11863503065849107
+        },
+        {
+          "PlayerKey": "E05D846F0E0CC686B0DE102F72F2B38C1189C134D358DC722F1EA1F6814448AA",
+          "PlayerName": "Wendell Carter Jr.",
+          "WeeksOnRoster": 6,
+          "WeeksStarted": 5,
+          "TotalContributedPoints": 355.5,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 71.1,
+          "ContributionPercent": 0.08615884249048737
+        }
+      ]
     }
   ]
 }
