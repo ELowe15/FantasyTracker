@@ -277,7 +277,7 @@ public class BestBallService
             team.Players = teamPlayerMap[teamKey]
                 .Values
                 .OrderByDescending(p => p.TotalContributedPoints)
-                .Take(7) // keep top 7
+                .Take(10) // keep top 10
                 .ToList();
         }
 
