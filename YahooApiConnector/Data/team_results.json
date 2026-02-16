@@ -238,12 +238,6 @@
         "NbaTeam": "MEM"
       },
       {
-        "PlayerKey": "4FC6B632F276D29283925B88CABD158474BD741E23D00DC34E48AC5B96D3140E",
-        "FullName": "Naji Marshall",
-        "Position": "SG,SF,PF",
-        "NbaTeam": "DAL"
-      },
-      {
         "PlayerKey": "A7C84A3A69E857243E5CA216C38E832266DD5DE362927189F51B6C5CEBA4A1F0",
         "FullName": "Keldon Johnson",
         "Position": "SF,PF",
@@ -292,6 +286,12 @@
         "NbaTeam": "DET"
       },
       {
+        "PlayerKey": "1A2017D2F1C285D962D461A3748174CDC389563FB10EC2003BC249F0B26B3D4A",
+        "FullName": "Norman Powell",
+        "Position": "SG,SF",
+        "NbaTeam": "MIA"
+      },
+      {
         "PlayerKey": "3340BE08288F1881BBFC64111E60295BBFA146C40624D5AD74850170B48056F6",
         "FullName": "Nic Claxton",
         "Position": "C",
@@ -310,10 +310,10 @@
         "NbaTeam": "DET"
       },
       {
-        "PlayerKey": "1A2017D2F1C285D962D461A3748174CDC389563FB10EC2003BC249F0B26B3D4A",
-        "FullName": "Norman Powell",
-        "Position": "SG,SF",
-        "NbaTeam": "MIA"
+        "PlayerKey": "4FC6B632F276D29283925B88CABD158474BD741E23D00DC34E48AC5B96D3140E",
+        "FullName": "Naji Marshall",
+        "Position": "SG,SF,PF",
+        "NbaTeam": "DAL"
       }
     ]
   },
@@ -574,12 +574,6 @@
         "NbaTeam": "DEN"
       },
       {
-        "PlayerKey": "9675D4A2494FD3337BC0C40A41B5CAE538B662A5C04E846E64C0705AF6EE2B12",
-        "FullName": "Myles Turner",
-        "Position": "C",
-        "NbaTeam": "MIL"
-      },
-      {
         "PlayerKey": "CC1F3F99C3D5BDD68353589E065FD0170D310E2B67FADFDEBC6FC1E1BFAA5D95",
         "FullName": "Derik Queen",
         "Position": "PF,C",
@@ -616,16 +610,22 @@
         "NbaTeam": "BOS"
       },
       {
+        "PlayerKey": "DA933DA9DDE5604AF86C00F9AE26DC536771F45E429773574FFE55D5F33BA192",
+        "FullName": "Tre Johnson",
+        "Position": "PG,SG,SF",
+        "NbaTeam": "WAS"
+      },
+      {
         "PlayerKey": "C65D4C73BE3B7A7D681B734C93AE1F58E076DDC689B4C1C598EC86944F6C1E9A",
         "FullName": "Franz Wagner",
         "Position": "SF,PF",
         "NbaTeam": "ORL"
       },
       {
-        "PlayerKey": "DA933DA9DDE5604AF86C00F9AE26DC536771F45E429773574FFE55D5F33BA192",
-        "FullName": "Tre Johnson",
-        "Position": "PG,SG,SF",
-        "NbaTeam": "WAS"
+        "PlayerKey": "9675D4A2494FD3337BC0C40A41B5CAE538B662A5C04E846E64C0705AF6EE2B12",
+        "FullName": "Myles Turner",
+        "Position": "C",
+        "NbaTeam": "MIL"
       }
     ]
   },
@@ -670,12 +670,6 @@
         "NbaTeam": "SAC"
       },
       {
-        "PlayerKey": "2D7EC6DC6D1D30A30034C3570D380FB9989C52F072AA35EE21040A517414373D",
-        "FullName": "Domantas Sabonis",
-        "Position": "PF,C",
-        "NbaTeam": "SAC"
-      },
-      {
         "PlayerKey": "2F207927CEAE4C78407C8CD3D96FEB4B54B75B8A68A0D1D19BC402075E34376D",
         "FullName": "Moussa Diabat\u00E9",
         "Position": "C",
@@ -688,22 +682,28 @@
         "NbaTeam": "PHI"
       },
       {
-        "PlayerKey": "766EE756F51F0AC73BEA74142F1438168E70869F7824F1585343AD3857ED5404",
-        "FullName": "Andrew Wiggins",
-        "Position": "SG,SF,PF",
-        "NbaTeam": "MIA"
-      },
-      {
         "PlayerKey": "441141E028E19BC442FC8741B462935072580CE11E6582B6985353016C52052B",
         "FullName": "James Harden",
         "Position": "PG,SG",
         "NbaTeam": "CLE"
       },
       {
+        "PlayerKey": "766EE756F51F0AC73BEA74142F1438168E70869F7824F1585343AD3857ED5404",
+        "FullName": "Andrew Wiggins",
+        "Position": "SG,SF,PF",
+        "NbaTeam": "MIA"
+      },
+      {
         "PlayerKey": "0446C9235132661BF8E55AC4041C6A755C98479DD7D135F8CCBBE28D886B676F",
         "FullName": "Cam Thomas",
         "Position": "SG,SF",
         "NbaTeam": "MIL"
+      },
+      {
+        "PlayerKey": "D783D31369DC3A7236246F05477E2DED53E40F6AD86AFB3FE18E730ABCC11739",
+        "FullName": "Onyeka Okongwu",
+        "Position": "PF,C",
+        "NbaTeam": "ATL"
       },
       {
         "PlayerKey": "BD881CAAFFC38A56504D0247CBBE692C6368E205FF4D1D9F297BD7CF974688F2",
@@ -724,10 +724,10 @@
         "NbaTeam": "MEM"
       },
       {
-        "PlayerKey": "D783D31369DC3A7236246F05477E2DED53E40F6AD86AFB3FE18E730ABCC11739",
-        "FullName": "Onyeka Okongwu",
+        "PlayerKey": "2D7EC6DC6D1D30A30034C3570D380FB9989C52F072AA35EE21040A517414373D",
+        "FullName": "Domantas Sabonis",
         "Position": "PF,C",
-        "NbaTeam": "ATL"
+        "NbaTeam": "SAC"
       }
     ]
   },
