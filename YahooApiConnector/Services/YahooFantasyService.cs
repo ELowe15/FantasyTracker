@@ -8,6 +8,7 @@ public class YahooFantasyService
     private readonly HttpClient _client;
     private readonly string _playerImagesPath = "";
     private Dictionary<string, string> _playerImages;
+    private int dayOffset = -1;
 
     public YahooFantasyService(string accessToken, string playerImagesPath)
     {
@@ -205,7 +206,7 @@ private bool TryAddPlayerImage(string hashedKey, string imageUrl)
             .ToList();
 
         // get current week
-        var effectiveDate = DateTime.UtcNow.Date.AddDays(-1);
+        var effectiveDate = DateTime.UtcNow.Date.AddDays(dayOffset);
         var week = await GetWeekForDateAsync(leagueKey, effectiveDate);
 
         // 2. Fetch weekly stats for each team
@@ -250,7 +251,7 @@ public async Task<WeeklyLeagueSnapshot> GetWeeklyTeamResultsAsync(
     // -----------------------
     // 1. Determine week and season
     // -----------------------
-    var effectiveDate = DateTime.UtcNow.Date.AddDays(-1); // yesterday
+    var effectiveDate = DateTime.UtcNow.Date.AddDays(dayOffset); // yesterday
     var season = await GetSeasonAsync(leagueKey);
     var week = await GetWeekForDateAsync(leagueKey, effectiveDate);
     var (weekStart, weekEnd) = await GetWeekDateRangeAsync(leagueKey, week);

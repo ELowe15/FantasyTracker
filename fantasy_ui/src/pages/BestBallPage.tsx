@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { BestBallTeam, BestBallPlayer } from "../models/League";
+import {
+  BestBallTeam,
+  BestBallPlayer,
+  SeasonBestBallTeam,
+  BestBallContext,
+} from "../models/League";
 import BestBallTeamCard from "../components/BestBallTeamCard";
-import { getRankColor, getRankHighlight, toOrdinal } from "../util/Helpers";
+import SeasonBestBallCard from "../components/SeasonBestBallCard";
 import { ViewToggle } from "../components/ViewToggle";
 import { WeekSelector } from "../components/WeekSelector";
 import { usePersistentState } from "../hooks/usePersistentState";
 import { DelayedLoader } from "../components/DelayedLoader";
-import { SeasonBestBallTeam } from "../models/League";
-import SeasonBestBallCard from "../components/SeasonBestBallCard";
-import { BestBallContext } from "../models/League";
 
 // ---- CONFIG ----
 const BASE_URL =
@@ -18,7 +20,9 @@ type ViewMode = "WEEKLY" | "SEASON";
 
 export default function BestBallPage() {
   const [teams, setTeams] = useState<BestBallTeam[] | null>(null);
-  const [seasonTeams, setSeasonTeams] = useState<SeasonBestBallTeam[] | null>(null);
+  const [seasonTeams, setSeasonTeams] = useState<SeasonBestBallTeam[] | null>(
+    null
+  );
   const [season, setSeason] = useState<number | null>(null);
   const [week, setWeek] = useState<number | null>(null);
   const [availableWeeks, setAvailableWeeks] = useState<number[]>([]);
@@ -40,7 +44,12 @@ export default function BestBallPage() {
         if (!res.ok) throw new Error("Failed to load best ball context");
         const context: BestBallContext = await res.json();
 
-        if (!context.Season || !context.CurrentWeek || !Array.isArray(context.AvailableWeeks) || context.AvailableWeeks.length === 0) {
+        if (
+          !context.Season ||
+          !context.CurrentWeek ||
+          !Array.isArray(context.AvailableWeeks) ||
+          context.AvailableWeeks.length === 0
+        ) {
           throw new Error("Invalid best ball context format");
         }
 
@@ -73,14 +82,13 @@ export default function BestBallPage() {
         const data = await res.json();
         if (!Array.isArray(data.Teams)) throw new Error("Invalid season JSON format");
 
-        const mapped = data.Teams.map((t: any) => ({
+        const mapped: SeasonBestBallTeam[] = data.Teams.map((t: any) => ({
           ...t,
           ManagerName: t.ManagerName,
-        } as SeasonBestBallTeam));
+        }));
 
-         mapped.sort(
-          (a: SeasonBestBallTeam, b: SeasonBestBallTeam) =>
-            b.SeasonTotalBestBallPoints - a.SeasonTotalBestBallPoints
+        mapped.sort(
+          (a, b) => b.SeasonTotalBestBallPoints - a.SeasonTotalBestBallPoints
         );
         setSeasonTeams(mapped);
       } catch (err) {
@@ -91,8 +99,6 @@ export default function BestBallPage() {
         setLoading(false);
       }
     }
-
-    
 
     loadSeasonData();
   }, [season, viewMode]);
@@ -181,50 +187,47 @@ export default function BestBallPage() {
         </div>
 
         {/* Content */}
-<DelayedLoader
-  loading={loading}
-  dataLoaded={
-    (viewMode === "WEEKLY" && teams !== null) ||
-    (viewMode === "SEASON" && seasonTeams !== null)
-  }
-  error={error}
-  message={
-    viewMode === "SEASON"
-      ? "Loading season standings..."
-      : "Loading best ball results..."
-  }
->
-  {viewMode === "SEASON" ? (
-    seasonTeams && seasonTeams.length > 0 ? (
-      <div className="flex flex-col gap-1">
-        {seasonTeams.map((team, index) => (
-          <SeasonBestBallCard key={team.TeamKey} team={team} rank={index + 1} />
-        ))}
-      </div>
-    ) : (
-      <div
-        className="flex justify-center items-center h-24"
-        style={{ color: "var(--text-secondary)" }}
-      >
-        No season standings yet.
-      </div>
-    )
-  ) : viewMode === "WEEKLY" ? (
-    teams && teams.length > 0 ? (
-      teams.map((team, index) => (
-        <BestBallTeamCard key={`${team.teamKey}-${week}`} team={team} rank={index + 1} />
-      ))
-    ) : (
-      <div
-        className="flex justify-center items-center h-24"
-        style={{ color: "var(--text-secondary)" }}
-      >
-        No weekly results yet.
-      </div>
-    )
-  ) : null}
-</DelayedLoader>
-
+        <DelayedLoader
+          loading={loading}
+          dataLoaded={
+            (viewMode === "WEEKLY" && teams !== null) ||
+            (viewMode === "SEASON" && seasonTeams !== null)
+          }
+          error={error}
+          message={
+            viewMode === "SEASON"
+              ? "Loading season standings..."
+              : "Loading best ball results..."
+          }
+        >
+          {viewMode === "SEASON" ? (
+            seasonTeams && seasonTeams.length > 0 ? (
+              <div className="flex flex-col gap-1">
+                {seasonTeams.map((team, index) => (
+                  <SeasonBestBallCard key={team.TeamKey} team={team} rank={index + 1} />
+                ))}
+              </div>
+            ) : (
+              <div
+                className="flex justify-center items-center h-24"
+                style={{ color: "var(--text-secondary)" }}
+              >
+              </div>
+            )
+          ) : viewMode === "WEEKLY" ? (
+            teams && teams.length > 0 ? (
+              teams.map((team, index) => (
+                <BestBallTeamCard key={`${team.teamKey}-${week}`} team={team} rank={index + 1} />
+              ))
+            ) : (
+              <div
+                className="flex justify-center items-center h-24"
+                style={{ color: "var(--text-secondary)" }}
+              >
+              </div>
+            )
+          ) : null}
+        </DelayedLoader>
       </div>
     </div>
   );
