@@ -166,6 +166,11 @@ class Program
         dataPath
     );
 
+    await fantasyService.WriteLeagueContextAsync(
+        snapshot.Season,
+        snapshot.Week,
+        dataPath
+    );
     Console.WriteLine(
         $"Season Round Robin snapshot rebuilt for season {snapshot.Season}"
     );

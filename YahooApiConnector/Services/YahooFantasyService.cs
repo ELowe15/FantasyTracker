@@ -56,9 +56,6 @@ private bool TryAddPlayerImage(string hashedKey, string imageUrl)
     return true;
 }
 
-
-
-
     private async Task<int> GetSeasonAsync(string leagueKey)
     {
         var url = $"https://fantasysports.yahooapis.com/fantasy/v2/league/{leagueKey}/settings";
