@@ -95,12 +95,12 @@ export default function SeasonBestBallCard({ team, rank }: Props) {
                 <th className="pl-2 py-1">Player</th>
                 <th>FTPS</th>
                 <th>% of Pts</th>
-                <th className="pr-1 py-1">Wks Started</th>
+                <th className=" py-1">Weeks Started</th>
               </tr>
             </thead>
             <tbody>
               {team.Players.map((p: SeasonBestBallPlayer) => (
-                <tr key={p.PlayerKey} className="border-t border-[var(--border-primary)]">
+                <tr key={p.PlayerKey} className="border-t border-[var(--border-primary)] odd:bg-white/10">
                   <td className="flex items-center">
                     <img
                       src={getPlayerImage(p.PlayerKey) || process.env.PUBLIC_URL + "/default-player.png"}

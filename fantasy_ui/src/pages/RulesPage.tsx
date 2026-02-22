@@ -88,32 +88,48 @@ export default function RulesPage() {
         </ul>
       </CollapsibleSection>
 
-      {/* Best Ball Rules */}
+            {/* Best Ball Rules */}
       <CollapsibleSection title="Best Ball Rules">
         <ul className="list-disc list-inside space-y-2 mb-4 text-[var(--text-primary)]">
           <li>
-            Best Ball scoring is calculated automatically each week based on
-            your roster’s performance.
+            You do <span className="font-semibold text-[var(--accent-primary)]">not</span> set a lineup.
           </li>
           <li>
-            The system counts the best possible combination of games to form
-            your weekly lineup.
+            Every week, the system looks at <span className="font-semibold text-[var(--accent-primary)]">all games played</span> by every player on your roster.
+          </li>
+          <li>
+            It automatically selects the <span className="font-semibold text-[var(--accent-primary)]">best possible combination of players</span> to fill the required starting positions.
+          </li>
+          <li>
+            Only the highest-scoring combination that fits the valid roster positions is counted.
+          </li>
+          <li>
+            If a player has multiple games in a week, <span className="font-semibold text-[var(--accent-primary)]">all of those games count</span> toward their total.
           </li>
           <li>
             All scoring uses{" "}
             <span className="font-semibold text-[var(--accent-primary)]">
               standard Yahoo fantasy basketball scoring
-            </span>
-            .
+            </span>.
           </li>
         </ul>
 
         <h3 className="text-lg font-semibold mb-2 text-[var(--text-primary)]">
+          How It Works
+        </h3>
+        <p className="mb-3 text-sm text-[var(--text-secondary)]">
+          At the end of the week, the system adds up all fantasy points scored by
+          your players across all their games. It then builds the optimal lineup
+          that would have scored the most points within the allowed roster spots.
+        </p>
+        <p className="mb-4 text-sm text-[var(--text-secondary)]">
+          This means you never lose points because you started the “wrong”
+          player — the best lineup is chosen automatically. This includes players who are left on your bench or IL.
+        </p>
+
+        <h3 className="text-lg font-semibold mb-2 text-[var(--text-primary)]">
           Yahoo Fantasy Points (Best Ball)
         </h3>
-        <p className="mb-2 text-sm text-[var(--text-secondary)]">
-          Each player on your roster contributes points automatically. The points are assigned as follows:
-        </p>
         <ul className="list-disc list-inside space-y-1 text-[var(--text-primary)]">
           <li>
             <span className="font-semibold text-[var(--accent-primary)]">Points (PTS):</span> 1 point per point scored

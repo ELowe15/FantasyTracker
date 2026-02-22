@@ -5,6 +5,7 @@ interface WeekSelectorProps {
   availableWeeks: number[];
   currentWeekIndex: number;
   setWeek: (week: number) => void;
+  label?: string; // NEW
 }
 
 export const WeekSelector: React.FC<WeekSelectorProps> = ({
@@ -12,6 +13,7 @@ export const WeekSelector: React.FC<WeekSelectorProps> = ({
   availableWeeks,
   currentWeekIndex,
   setWeek,
+  label = "Week", // default
 }) => {
   const hasPrevWeek = currentWeekIndex > 0;
   const hasNextWeek = currentWeekIndex < availableWeeks.length - 1;
@@ -54,7 +56,7 @@ className="
       >
         {availableWeeks.map((w) => (
           <option key={w} value={w}>
-            Week {w}
+            {label} {w}
           </option>
         ))}
       </select>
