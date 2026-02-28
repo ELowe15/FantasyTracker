@@ -1,6 +1,6 @@
 {
   "Season": 2025,
-  "LastUpdated": "2026-02-27T09:40:47.9385951Z",
+  "LastUpdated": "2026-02-28T09:26:39.8158344Z",
   "WeeksIncluded": [
     1,
     2,
@@ -26,7 +26,7 @@
       "TeamKey": "9F9743686E139D88E98877658DB981877372D01780B0E111F30CB5AC0CF9939C",
       "ManagerName": "jlevesque",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 17707.4,
+      "SeasonTotalBestBallPoints": 17807.300000000003,
       "TotalRankPoints": 36,
       "AverageRank": 2,
       "BestWeekScore": 1291.6,
@@ -40,17 +40,17 @@
           "TotalContributedPoints": 2452.9999999999995,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 175.2142857142857,
-          "ContributionPercent": 0.13852965426883673
+          "ContributionPercent": 0.1377524947633835
         },
         {
           "PlayerKey": "9C6399A38D46816BC0F3F85132443DF36D5BCFAE6F8183F9C6DFD4AB6D8477E9",
           "PlayerName": "Shai Gilgeous-Alexander",
-          "WeeksOnRoster": 17,
+          "WeeksOnRoster": 18,
           "WeeksStarted": 14,
           "TotalContributedPoints": 2351.5,
-          "StartRate": 0.8235294117647058,
+          "StartRate": 0.7777777777777778,
           "PointsPerStart": 167.96428571428572,
-          "ContributionPercent": 0.13279758744931497
+          "ContributionPercent": 0.1320525851757425
         },
         {
           "PlayerKey": "CDDB4F04BFB77392A3713172B9FA5A51F5121CB20B4AF5FE828A3F643A528868",
@@ -60,7 +60,7 @@
           "TotalContributedPoints": 1697.8,
           "StartRate": 0.6111111111111112,
           "PointsPerStart": 154.34545454545454,
-          "ContributionPercent": 0.09588081818900572
+          "ContributionPercent": 0.0953429211615461
         },
         {
           "PlayerKey": "8811CFD79F6F6C86E31B096E314EDEE5E8339402FE8CAA9A245A4C7C768A84F6",
@@ -70,7 +70,17 @@
           "TotalContributedPoints": 1693.6,
           "StartRate": 0.6666666666666666,
           "PointsPerStart": 141.13333333333333,
-          "ContributionPercent": 0.09564362921716343
+          "ContributionPercent": 0.09510706283378163
+        },
+        {
+          "PlayerKey": "58B734F7850CEAF0742332C5E155E91AAB768B5D2E9A833C6D3E300D49C61715",
+          "PlayerName": "Jalen Duren",
+          "WeeksOnRoster": 18,
+          "WeeksStarted": 11,
+          "TotalContributedPoints": 1471.9,
+          "StartRate": 0.6111111111111112,
+          "PointsPerStart": 133.8090909090909,
+          "ContributionPercent": 0.0826571125325007
         },
         {
           "PlayerKey": "1CB8F553C01BBFD37C74F4B3AE53CF566571AD709502144A0EDBEBCEDA54AAC0",
@@ -80,17 +90,7 @@
           "TotalContributedPoints": 1420.5,
           "StartRate": 0.6666666666666666,
           "PointsPerStart": 118.375,
-          "ContributionPercent": 0.08022069869094277
-        },
-        {
-          "PlayerKey": "58B734F7850CEAF0742332C5E155E91AAB768B5D2E9A833C6D3E300D49C61715",
-          "PlayerName": "Jalen Duren",
-          "WeeksOnRoster": 18,
-          "WeeksStarted": 11,
-          "TotalContributedPoints": 1403.2000000000003,
-          "StartRate": 0.6111111111111112,
-          "PointsPerStart": 127.56363636363639,
-          "ContributionPercent": 0.07924370602121147
+          "ContributionPercent": 0.07977065585462141
         },
         {
           "PlayerKey": "43A11293F1FA726875AD3755681EB37610F82B279935E40171ADD5FE37FC371B",
@@ -100,7 +100,7 @@
           "TotalContributedPoints": 1167,
           "StartRate": 0.4444444444444444,
           "PointsPerStart": 145.875,
-          "ContributionPercent": 0.0659046500333194
+          "ContributionPercent": 0.0655349210716953
         },
         {
           "PlayerKey": "1A2017D2F1C285D962D461A3748174CDC389563FB10EC2003BC249F0B26B3D4A",
@@ -110,7 +110,7 @@
           "TotalContributedPoints": 1152.6,
           "StartRate": 0.5,
           "PointsPerStart": 128.06666666666666,
-          "ContributionPercent": 0.06509143070128871
+          "ContributionPercent": 0.06472626394793145
         },
         {
           "PlayerKey": "4CA99FE6E2051D0E7634853C41AFBDC133697E38779973D7296E4E0E5DB73ABC",
@@ -120,7 +120,7 @@
           "TotalContributedPoints": 1132.9,
           "StartRate": 0.5625,
           "PointsPerStart": 125.8777777777778,
-          "ContributionPercent": 0.06397890147621899
+          "ContributionPercent": 0.06361997607722675
         },
         {
           "PlayerKey": "7B9F9B8BD4EF57C813984D19C95B10E45A84C3B2CDC5839AAF92C0DC05611571",
@@ -130,7 +130,7 @@
           "TotalContributedPoints": 1072.1,
           "StartRate": 0.3888888888888889,
           "PointsPerStart": 153.15714285714284,
-          "ContributionPercent": 0.06054530874097834
+          "ContributionPercent": 0.06020564599911271
         }
       ]
     },
@@ -138,21 +138,21 @@
       "TeamKey": "90C53E50CC1C110057BE71C82157588D20D5DCE83BFC6F206F2A5FF9BEE40FB7",
       "ManagerName": "ELowe",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 16113,
-      "TotalRankPoints": 91,
-      "AverageRank": 5.055555555555555,
+      "SeasonTotalBestBallPoints": 16226.4,
+      "TotalRankPoints": 90,
+      "AverageRank": 5,
       "BestWeekScore": 1264.3,
-      "WorstWeekScore": 520.2,
+      "WorstWeekScore": 586.4,
       "Players": [
         {
           "PlayerKey": "2B747421519170894DC51F45F9332245F6438419DA1EC9254AE974322AF435E8",
           "PlayerName": "Nikola Joki\u0107",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 12,
-          "TotalContributedPoints": 2489.8999999999996,
-          "StartRate": 0.6666666666666666,
-          "PointsPerStart": 207.49166666666665,
-          "ContributionPercent": 0.1545274002358344
+          "WeeksStarted": 13,
+          "TotalContributedPoints": 2606.7,
+          "StartRate": 0.7222222222222222,
+          "PointsPerStart": 200.5153846153846,
+          "ContributionPercent": 0.16064561455406004
         },
         {
           "PlayerKey": "BE6D5B0EE2BAEF857868F44F4D67732D27D9B8DAAA565DC8CBD15BD716B59092",
@@ -162,7 +162,7 @@
           "TotalContributedPoints": 1947.8,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 139.12857142857143,
-          "ContributionPercent": 0.12088375845590517
+          "ContributionPercent": 0.12003894887344081
         },
         {
           "PlayerKey": "1A570DE1654A9302BD52EEF1D0D32EC344D45AD28EEE1CA2384322F8626B1F65",
@@ -172,27 +172,27 @@
           "TotalContributedPoints": 1700.9,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 121.49285714285715,
-          "ContributionPercent": 0.10556072736299883
+          "ContributionPercent": 0.10482300448651581
         },
         {
           "PlayerKey": "1ACDE1B1B16AE529534E8EEB9E4FAA171F31FE9D9A5E747AA732A3D6819DE659",
           "PlayerName": "Ryan Rollins",
           "WeeksOnRoster": 17,
           "WeeksStarted": 13,
-          "TotalContributedPoints": 1487.3999999999999,
+          "TotalContributedPoints": 1506.2,
           "StartRate": 0.7647058823529411,
-          "PointsPerStart": 114.41538461538461,
-          "ContributionPercent": 0.09231055669335318
+          "PointsPerStart": 115.86153846153846,
+          "ContributionPercent": 0.09282403983631614
         },
         {
           "PlayerKey": "36F01B6ABB3D84D1E15FE735EE703C9D3DD0178648425BEFA7317E7CA18DA3AE",
           "PlayerName": "Chet Holmgren",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 11,
-          "TotalContributedPoints": 1377.2,
-          "StartRate": 0.6111111111111112,
-          "PointsPerStart": 125.2,
-          "ContributionPercent": 0.0854713585303792
+          "WeeksStarted": 12,
+          "TotalContributedPoints": 1467.7,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 122.30833333333334,
+          "ContributionPercent": 0.09045136321057043
         },
         {
           "PlayerKey": "445F900B46D7E4306EA3643429A2996E9DBF74FD987C0AEF8938CB1DC0DDC64E",
@@ -202,7 +202,7 @@
           "TotalContributedPoints": 1074.4,
           "StartRate": 0.5,
           "PointsPerStart": 119.3777777777778,
-          "ContributionPercent": 0.0666790790045305
+          "ContributionPercent": 0.06621308484938127
         },
         {
           "PlayerKey": "6D18B7ED1CBB2393C934FA8F7441C9ED2BC79DC475A981A85D16CC74003389D4",
@@ -212,7 +212,7 @@
           "TotalContributedPoints": 946.1999999999999,
           "StartRate": 0.4444444444444444,
           "PointsPerStart": 118.27499999999999,
-          "ContributionPercent": 0.0587227704338112
+          "ContributionPercent": 0.0583123798254696
         },
         {
           "PlayerKey": "D3591C2EEC3D3DFA308B4CDEB2902FAFE7FED739D915428B3D4DA89860F49CBA",
@@ -222,7 +222,7 @@
           "TotalContributedPoints": 838.1999999999999,
           "StartRate": 0.5,
           "PointsPerStart": 104.77499999999999,
-          "ContributionPercent": 0.052020107987339415
+          "ContributionPercent": 0.05165655968052063
         },
         {
           "PlayerKey": "D6A72EEBDBC23F0AB00BD1EDF8B9C61A7AB06285F9447A85F96C595989266E68",
@@ -232,7 +232,7 @@
           "TotalContributedPoints": 726.5,
           "StartRate": 0.4166666666666667,
           "PointsPerStart": 145.3,
-          "ContributionPercent": 0.04508781729038665
+          "ContributionPercent": 0.044772716067642854
         },
         {
           "PlayerKey": "8406B40E6064EA7D76AD06FF0F6624EDE068F9BDF76AEE989B68351C6AE7424B",
@@ -242,7 +242,7 @@
           "TotalContributedPoints": 477.1,
           "StartRate": 0.36363636363636365,
           "PointsPerStart": 119.275,
-          "ContributionPercent": 0.02960963197418234
+          "ContributionPercent": 0.029402701769955138
         }
       ]
     },
@@ -250,7 +250,7 @@
       "TeamKey": "81DA36CAE95E4C0D12D6D9B42F39BD3512D116DB1D97F7A1E590885037BEAD12",
       "ManagerName": "Ryan",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 15645.400000000001,
+      "SeasonTotalBestBallPoints": 15741.600000000002,
       "TotalRankPoints": 103,
       "AverageRank": 5.722222222222222,
       "BestWeekScore": 1060.8999999999999,
@@ -264,7 +264,7 @@
           "TotalContributedPoints": 2555.399999999999,
           "StartRate": 0.9444444444444444,
           "PointsPerStart": 150.31764705882347,
-          "ContributionPercent": 0.16333235327955814
+          "ContributionPercent": 0.1623341972861716
         },
         {
           "PlayerKey": "A4C1D83C2BE2802A186A4461133CEA82DDA5CF3985D9C5F1444DEF6489CCF586",
@@ -274,7 +274,7 @@
           "TotalContributedPoints": 2450.5,
           "StartRate": 0.9444444444444444,
           "PointsPerStart": 144.14705882352942,
-          "ContributionPercent": 0.15662750712669538
+          "ContributionPercent": 0.15567032576104078
         },
         {
           "PlayerKey": "ECFF4C2FA9F88D420880704286B368DF457D77A9CC03185E5B12FDCCBD60A793",
@@ -284,7 +284,17 @@
           "TotalContributedPoints": 1648.6,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 117.75714285714285,
-          "ContributionPercent": 0.10537282523936746
+          "ContributionPercent": 0.10472887127102706
+        },
+        {
+          "PlayerKey": "97B2F676E4D5238E276BCFAB4632A0387C20F846FA4CF34676FCEB79FAF96CB2",
+          "PlayerName": "Mikal Bridges",
+          "WeeksOnRoster": 18,
+          "WeeksStarted": 14,
+          "TotalContributedPoints": 1645.7,
+          "StartRate": 0.7777777777777778,
+          "PointsPerStart": 117.55,
+          "ContributionPercent": 0.10454464603344005
         },
         {
           "PlayerKey": "790A06E3765BD36B03830C3CC781F1DD7EA3F7A73566013D4D2762455BD836EB",
@@ -294,27 +304,17 @@
           "TotalContributedPoints": 1619.0000000000002,
           "StartRate": 0.6666666666666666,
           "PointsPerStart": 134.91666666666669,
-          "ContributionPercent": 0.10348089534304013
-        },
-        {
-          "PlayerKey": "97B2F676E4D5238E276BCFAB4632A0387C20F846FA4CF34676FCEB79FAF96CB2",
-          "PlayerName": "Mikal Bridges",
-          "WeeksOnRoster": 18,
-          "WeeksStarted": 14,
-          "TotalContributedPoints": 1614.7,
-          "StartRate": 0.7777777777777778,
-          "PointsPerStart": 115.33571428571429,
-          "ContributionPercent": 0.10320605417566824
+          "ContributionPercent": 0.10284850332875947
         },
         {
           "PlayerKey": "A5B45FD9B7E2004CD85BF5600FEA295D5FDCD0F6EB948AB80BFE23125489FA60",
           "PlayerName": "Jarrett Allen",
           "WeeksOnRoster": 18,
           "WeeksStarted": 11,
-          "TotalContributedPoints": 1292.6000000000004,
+          "TotalContributedPoints": 1336.4000000000003,
           "StartRate": 0.6111111111111112,
-          "PointsPerStart": 117.50909090909094,
-          "ContributionPercent": 0.08261853324299796
+          "PointsPerStart": 121.49090909090911,
+          "ContributionPercent": 0.08489607155562333
         },
         {
           "PlayerKey": "8FF7174DDDD95D5B4B902D7E4D0A857FA189792002C216C614CE54CC154B8045",
@@ -324,7 +324,17 @@
           "TotalContributedPoints": 849.3,
           "StartRate": 0.3888888888888889,
           "PointsPerStart": 121.32857142857142,
-          "ContributionPercent": 0.054284326383473726
+          "ContributionPercent": 0.05395258423540173
+        },
+        {
+          "PlayerKey": "9528B7FE4FAB2DB6864FD4F52E3215B411B7AD38B6ADB3F0B0AE621A265B3131",
+          "PlayerName": "Isaiah Hartenstein",
+          "WeeksOnRoster": 18,
+          "WeeksStarted": 7,
+          "TotalContributedPoints": 795.9000000000001,
+          "StartRate": 0.3888888888888889,
+          "PointsPerStart": 113.70000000000002,
+          "ContributionPercent": 0.05056029882604055
         },
         {
           "PlayerKey": "906450407836612924A399D8C0DC2D7FCFD0CF2BAC5AE8C2D9298564F9827A50",
@@ -334,27 +344,17 @@
           "TotalContributedPoints": 734.1999999999999,
           "StartRate": 0.3333333333333333,
           "PointsPerStart": 122.36666666666666,
-          "ContributionPercent": 0.04692753141498459
-        },
-        {
-          "PlayerKey": "9528B7FE4FAB2DB6864FD4F52E3215B411B7AD38B6ADB3F0B0AE621A265B3131",
-          "PlayerName": "Isaiah Hartenstein",
-          "WeeksOnRoster": 18,
-          "WeeksStarted": 6,
-          "TotalContributedPoints": 729,
-          "StartRate": 0.3333333333333333,
-          "PointsPerStart": 121.5,
-          "ContributionPercent": 0.046595165352116275
+          "ContributionPercent": 0.046640748081516484
         },
         {
           "PlayerKey": "FC2462907488C28E0770F59054F546D9ED5826B524BE8F118320C36EC8DA4FAF",
           "PlayerName": "Jalen Williams",
-          "WeeksOnRoster": 17,
+          "WeeksOnRoster": 18,
           "WeeksStarted": 5,
           "TotalContributedPoints": 602.6999999999999,
-          "StartRate": 0.29411764705882354,
+          "StartRate": 0.2777777777777778,
           "PointsPerStart": 120.53999999999999,
-          "ContributionPercent": 0.03852250501744921
+          "ContributionPercent": 0.03828708644610458
         }
       ]
     },
@@ -362,41 +362,31 @@
       "TeamKey": "9017F765F09829BD6570A4EE1208C976D47F61108780FB0E2C2C4A9B2EB60DAF",
       "ManagerName": "Jack",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 15550.700000000003,
-      "TotalRankPoints": 103,
-      "AverageRank": 5.722222222222222,
+      "SeasonTotalBestBallPoints": 15670.600000000002,
+      "TotalRankPoints": 98,
+      "AverageRank": 5.444444444444445,
       "BestWeekScore": 1111.8000000000002,
-      "WorstWeekScore": 468.49999999999994,
+      "WorstWeekScore": 588.4,
       "Players": [
         {
           "PlayerKey": "9E3427AC131A6D447B0E0DADE71BDABF3665552EEAF44D02715AD3FE045D41BD",
           "PlayerName": "Jamal Murray",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 14,
-          "TotalContributedPoints": 2139.6,
-          "StartRate": 0.7777777777777778,
-          "PointsPerStart": 152.82857142857142,
-          "ContributionPercent": 0.13758866160365768
+          "WeeksStarted": 15,
+          "TotalContributedPoints": 2207.7,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 147.17999999999998,
+          "ContributionPercent": 0.14088165098975147
         },
         {
           "PlayerKey": "49A33435E85F02E0ECB8C5C18FC6F8DCDAB9204878C6189B032D215CD0863877",
           "PlayerName": "Karl-Anthony Towns",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 16,
-          "TotalContributedPoints": 2134.8,
-          "StartRate": 0.8888888888888888,
-          "PointsPerStart": 133.425,
-          "ContributionPercent": 0.13727999382664444
-        },
-        {
-          "PlayerKey": "C958A1E64606A2F0885F1701AF1EC6D51B4114134AA7F89150F787404B5B95EB",
-          "PlayerName": "Immanuel Quickley",
-          "WeeksOnRoster": 18,
-          "WeeksStarted": 13,
-          "TotalContributedPoints": 1556.9,
-          "StartRate": 0.7222222222222222,
-          "PointsPerStart": 119.76153846153846,
-          "ContributionPercent": 0.1001176795899863
+          "WeeksStarted": 17,
+          "TotalContributedPoints": 2197.3000000000006,
+          "StartRate": 0.9444444444444444,
+          "PointsPerStart": 129.2529411764706,
+          "ContributionPercent": 0.14021798782433348
         },
         {
           "PlayerKey": "B8C48A41F7A008ECBC3C7CB800E8815B4E93DBCF5AB6D73CCD7A0BCA34DA2870",
@@ -406,7 +396,17 @@
           "TotalContributedPoints": 1530.2000000000003,
           "StartRate": 0.6666666666666666,
           "PointsPerStart": 127.5166666666667,
-          "ContributionPercent": 0.09840071508035009
+          "ContributionPercent": 0.09764782458872029
+        },
+        {
+          "PlayerKey": "C958A1E64606A2F0885F1701AF1EC6D51B4114134AA7F89150F787404B5B95EB",
+          "PlayerName": "Immanuel Quickley",
+          "WeeksOnRoster": 18,
+          "WeeksStarted": 12,
+          "TotalContributedPoints": 1506.5,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 125.54166666666667,
+          "ContributionPercent": 0.09613543833675799
         },
         {
           "PlayerKey": "8004F9C7C5926F4187E401B9E1C96373F0708AAD638159EBFEAAFE47E15AD270",
@@ -416,7 +416,7 @@
           "TotalContributedPoints": 1321.6,
           "StartRate": 0.5882352941176471,
           "PointsPerStart": 132.16,
-          "ContributionPercent": 0.08498652793764909
+          "ContributionPercent": 0.08433627302081603
         },
         {
           "PlayerKey": "859956F02C657E96F54211B849AE38FC39C03C99199F2A7573448A023293FA6E",
@@ -426,7 +426,17 @@
           "TotalContributedPoints": 1152.3,
           "StartRate": 0.5,
           "PointsPerStart": 128.03333333333333,
-          "ContributionPercent": 0.07409955821924413
+          "ContributionPercent": 0.07353260245300115
+        },
+        {
+          "PlayerKey": "1BF29F5696A39EC6850A394C52EB58AFC01BFFD178ADF9FE705C68830582A69B",
+          "PlayerName": "Kevin Porter Jr.",
+          "WeeksOnRoster": 18,
+          "WeeksStarted": 7,
+          "TotalContributedPoints": 994.5999999999999,
+          "StartRate": 0.3888888888888889,
+          "PointsPerStart": 142.08571428571426,
+          "ContributionPercent": 0.063469171569691
         },
         {
           "PlayerKey": "CD907D4B4CF5EF30A9CEABDC73C9C1FEB553CB4866C42C01E766507161B535A0",
@@ -436,17 +446,7 @@
           "TotalContributedPoints": 958.8999999999999,
           "StartRate": 0.5,
           "PointsPerStart": 106.54444444444442,
-          "ContributionPercent": 0.06166281903708513
-        },
-        {
-          "PlayerKey": "1BF29F5696A39EC6850A394C52EB58AFC01BFFD178ADF9FE705C68830582A69B",
-          "PlayerName": "Kevin Porter Jr.",
-          "WeeksOnRoster": 18,
-          "WeeksStarted": 7,
-          "TotalContributedPoints": 958.3999999999999,
-          "StartRate": 0.3888888888888889,
-          "PointsPerStart": 136.91428571428568,
-          "ContributionPercent": 0.06163066614364625
+          "ContributionPercent": 0.06119102012686175
         },
         {
           "PlayerKey": "975F2888382B615C871DA01B2061B03A907E96AE50F15454AF9A996DE72F1AD7",
@@ -456,7 +456,7 @@
           "TotalContributedPoints": 917.9999999999999,
           "StartRate": 0.4444444444444444,
           "PointsPerStart": 114.74999999999999,
-          "ContributionPercent": 0.0590327123537847
+          "ContributionPercent": 0.05858103710132348
         },
         {
           "PlayerKey": "F45AA4A946DE0ADA92CE72B5CD567CBAF764DE7CED9A7548C1DDAC74883DA50D",
@@ -466,7 +466,7 @@
           "TotalContributedPoints": 837.3000000000001,
           "StartRate": 0.4444444444444444,
           "PointsPerStart": 104.66250000000001,
-          "ContributionPercent": 0.05384323535274939
+          "ContributionPercent": 0.0534312661927431
         }
       ]
     },
@@ -474,7 +474,7 @@
       "TeamKey": "6ABF36C085FCDE755CF852AA7DE61673ADFDB7BE18A5ADA4A6F2823274DAA240",
       "ManagerName": "Michael",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 15412.299999999997,
+      "SeasonTotalBestBallPoints": 15489.799999999997,
       "TotalRankPoints": 113,
       "AverageRank": 6.277777777777778,
       "BestWeekScore": 1054.2,
@@ -485,10 +485,10 @@
           "PlayerName": "Cade Cunningham",
           "WeeksOnRoster": 18,
           "WeeksStarted": 15,
-          "TotalContributedPoints": 2379.5,
+          "TotalContributedPoints": 2429,
           "StartRate": 0.8333333333333334,
-          "PointsPerStart": 158.63333333333333,
-          "ContributionPercent": 0.15438967577843674
+          "PointsPerStart": 161.93333333333334,
+          "ContributionPercent": 0.15681287040504077
         },
         {
           "PlayerKey": "A3601634463A18FBC8A3B9D9317A1306A2D4EA4AC7F478F8CCA281BE70E8996F",
@@ -498,27 +498,27 @@
           "TotalContributedPoints": 2053.8999999999996,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 146.70714285714283,
-          "ContributionPercent": 0.1332636919862707
+          "ContributionPercent": 0.13259693475706594
         },
         {
           "PlayerKey": "17891B3C05BB9079C5468A8BCEE2F7BD5070A68A4DC132E9858F89CE215E5D34",
           "PlayerName": "Payton Pritchard",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 16,
-          "TotalContributedPoints": 1666.8,
-          "StartRate": 0.8888888888888888,
-          "PointsPerStart": 104.175,
-          "ContributionPercent": 0.10814738877390138
+          "WeeksStarted": 17,
+          "TotalContributedPoints": 1738.1,
+          "StartRate": 0.9444444444444444,
+          "PointsPerStart": 102.24117647058823,
+          "ContributionPercent": 0.11220932484602772
         },
         {
           "PlayerKey": "A96D980611F8987CC21625F8C4ACDA2838B39B3DB4F31472589EEBAE93CA4871",
           "PlayerName": "Miles Bridges",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 12,
-          "TotalContributedPoints": 1379.9,
-          "StartRate": 0.6666666666666666,
-          "PointsPerStart": 114.99166666666667,
-          "ContributionPercent": 0.08953238647054627
+          "WeeksStarted": 11,
+          "TotalContributedPoints": 1324.9,
+          "StartRate": 0.6111111111111112,
+          "PointsPerStart": 120.44545454545455,
+          "ContributionPercent": 0.08553370605172438
         },
         {
           "PlayerKey": "C4A8F02BD409FFDDE29493F4366B77F88CCA376B0F8ADD0B7838A3349DA842C2",
@@ -528,7 +528,7 @@
           "TotalContributedPoints": 1301.9,
           "StartRate": 0.6666666666666666,
           "PointsPerStart": 108.49166666666667,
-          "ContributionPercent": 0.08447149354736154
+          "ContributionPercent": 0.08404885795814021
         },
         {
           "PlayerKey": "CC1F3F99C3D5BDD68353589E065FD0170D310E2B67FADFDEBC6FC1E1BFAA5D95",
@@ -538,7 +538,7 @@
           "TotalContributedPoints": 1208.8,
           "StartRate": 0.625,
           "PointsPerStart": 120.88,
-          "ContributionPercent": 0.07843086366084233
+          "ContributionPercent": 0.07803845110976257
         },
         {
           "PlayerKey": "3B75F9520A2F79928983E43EBA61EF1D60C7C5663607B78E3664AB66653B8B7B",
@@ -548,7 +548,7 @@
           "TotalContributedPoints": 921.6,
           "StartRate": 0.3888888888888889,
           "PointsPerStart": 131.65714285714287,
-          "ContributionPercent": 0.059796396384705734
+          "ContributionPercent": 0.05949721752378986
         },
         {
           "PlayerKey": "C65D4C73BE3B7A7D681B734C93AE1F58E076DDC689B4C1C598EC86944F6C1E9A",
@@ -558,27 +558,27 @@
           "TotalContributedPoints": 847.8000000000001,
           "StartRate": 0.3333333333333333,
           "PointsPerStart": 141.3,
-          "ContributionPercent": 0.05500801308046172
+          "ContributionPercent": 0.05473279190176763
+        },
+        {
+          "PlayerKey": "5581FEA4F8C56321B9BD503B5BF9190635273A0EA42BDCAA27F960C0B1B8AD81",
+          "PlayerName": "Peyton Watson",
+          "WeeksOnRoster": 14,
+          "WeeksStarted": 6,
+          "TotalContributedPoints": 785.3,
+          "StartRate": 0.42857142857142855,
+          "PointsPerStart": 130.88333333333333,
+          "ContributionPercent": 0.050697878603984566
         },
         {
           "PlayerKey": "C8776A40E79697120699A5FCCF11682E5CA0A42B70B20E7746AF157168E6C612",
           "PlayerName": "Jrue Holiday",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 8,
-          "TotalContributedPoints": 840.1,
-          "StartRate": 0.4444444444444444,
-          "PointsPerStart": 105.0125,
-          "ContributionPercent": 0.05450841211240374
-        },
-        {
-          "PlayerKey": "5581FEA4F8C56321B9BD503B5BF9190635273A0EA42BDCAA27F960C0B1B8AD81",
-          "PlayerName": "Peyton Watson",
-          "WeeksOnRoster": 13,
-          "WeeksStarted": 6,
-          "TotalContributedPoints": 785.3,
-          "StartRate": 0.46153846153846156,
-          "PointsPerStart": 130.88333333333333,
-          "ContributionPercent": 0.05095281041765344
+          "WeeksStarted": 7,
+          "TotalContributedPoints": 782.4000000000001,
+          "StartRate": 0.3888888888888889,
+          "PointsPerStart": 111.77142857142859,
+          "ContributionPercent": 0.050510658626967436
         }
       ]
     },
@@ -586,11 +586,11 @@
       "TeamKey": "85522C60CD82DE63E67DA64330061040E873E7BDEB151C3889FFA5ADD91CC3C5",
       "ManagerName": "Noah",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 15315.5,
-      "TotalRankPoints": 115,
-      "AverageRank": 6.388888888888889,
+      "SeasonTotalBestBallPoints": 15393.2,
+      "TotalRankPoints": 113,
+      "AverageRank": 6.277777777777778,
       "BestWeekScore": 1062.6,
-      "WorstWeekScore": 479.5,
+      "WorstWeekScore": 557.1999999999999,
       "Players": [
         {
           "PlayerKey": "7AA9B7743A5CF89FA72F495FCE041DDFE10E46E768844EDBF5EE135A95C713CC",
@@ -600,27 +600,27 @@
           "TotalContributedPoints": 2864.2000000000003,
           "StartRate": 0.9444444444444444,
           "PointsPerStart": 168.4823529411765,
-          "ContributionPercent": 0.18701315660605272
+          "ContributionPercent": 0.18606917340124213
         },
         {
           "PlayerKey": "09ABA95B66394B73E008ABA0682ED0FEE5E03E92B70A0B8F506E14D21A66F571",
           "PlayerName": "Julius Randle",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 17,
-          "TotalContributedPoints": 2251.9,
-          "StartRate": 0.9444444444444444,
-          "PointsPerStart": 132.46470588235294,
-          "ContributionPercent": 0.1470340504717443
+          "WeeksStarted": 16,
+          "TotalContributedPoints": 2205.9,
+          "StartRate": 0.8888888888888888,
+          "PointsPerStart": 137.86875,
+          "ContributionPercent": 0.14330353662656237
         },
         {
           "PlayerKey": "014C227FC05614E47E06C08BDD286EE064C3A75272B7AAC86CBCD8A61C7A9288",
           "PlayerName": "Derrick White",
           "WeeksOnRoster": 18,
           "WeeksStarted": 15,
-          "TotalContributedPoints": 1897.3,
+          "TotalContributedPoints": 1931.4,
           "StartRate": 0.8333333333333334,
-          "PointsPerStart": 126.48666666666666,
-          "ContributionPercent": 0.12388103555221834
+          "PointsPerStart": 128.76000000000002,
+          "ContributionPercent": 0.12547098718914845
         },
         {
           "PlayerKey": "09EEE9945F65133B5EC6769C9B83D96C74BFDDA9D4DFAE6A9DE6E02B8B76CC32",
@@ -630,7 +630,7 @@
           "TotalContributedPoints": 1273.3,
           "StartRate": 0.5555555555555556,
           "PointsPerStart": 127.33,
-          "ContributionPercent": 0.08313799745356011
+          "ContributionPercent": 0.0827183431645142
         },
         {
           "PlayerKey": "26BC84B67872F7CCE0270BDA497DE736EDF62350AE806729C7E83D18F977E136",
@@ -640,7 +640,7 @@
           "TotalContributedPoints": 1136.3,
           "StartRate": 0.5882352941176471,
           "PointsPerStart": 113.63,
-          "ContributionPercent": 0.07419281120433548
+          "ContributionPercent": 0.07381830938336408
         },
         {
           "PlayerKey": "912C2121379133CE79B204BEA0812641B6B7291C525BC17133FD8081835D0693",
@@ -650,7 +650,7 @@
           "TotalContributedPoints": 942,
           "StartRate": 0.5,
           "PointsPerStart": 104.66666666666667,
-          "ContributionPercent": 0.0615063171297052
+          "ContributionPercent": 0.061195852714185484
         },
         {
           "PlayerKey": "49B8022F89737BD6F7377DACAF064CA94882923F9D5DF810A1CD1ADD952EC84D",
@@ -660,7 +660,17 @@
           "TotalContributedPoints": 754.1,
           "StartRate": 0.3888888888888889,
           "PointsPerStart": 107.72857142857143,
-          "ContributionPercent": 0.04923770036890732
+          "ContributionPercent": 0.04898916404646207
+        },
+        {
+          "PlayerKey": "EED85C34043C47829455FDC5C7B2F52338D724641FA9F66397AEBDDC5EE09D6C",
+          "PlayerName": "Tobias Harris",
+          "WeeksOnRoster": 18,
+          "WeeksStarted": 7,
+          "TotalContributedPoints": 708.6,
+          "StartRate": 0.3888888888888889,
+          "PointsPerStart": 101.22857142857143,
+          "ContributionPercent": 0.0460333134111166
         },
         {
           "PlayerKey": "935DC050A0B69BEE29A0691AFF4A26913B6FE92313E3CC6DBE4F27291DA22634",
@@ -670,7 +680,7 @@
           "TotalContributedPoints": 681.2,
           "StartRate": 0.3333333333333333,
           "PointsPerStart": 113.53333333333335,
-          "ContributionPercent": 0.04447781659103523
+          "ContributionPercent": 0.044253306654886575
         },
         {
           "PlayerKey": "758A26E2A154B9B9CCAF0090A7EA890E8D0FDD927D82B802E1A5A8321B7C03B4",
@@ -680,17 +690,7 @@
           "TotalContributedPoints": 658.2,
           "StartRate": 0.3333333333333333,
           "PointsPerStart": 109.7,
-          "ContributionPercent": 0.04297606999445007
-        },
-        {
-          "PlayerKey": "EED85C34043C47829455FDC5C7B2F52338D724641FA9F66397AEBDDC5EE09D6C",
-          "PlayerName": "Tobias Harris",
-          "WeeksOnRoster": 18,
-          "WeeksStarted": 6,
-          "TotalContributedPoints": 633.4,
-          "StartRate": 0.3333333333333333,
-          "PointsPerStart": 105.56666666666666,
-          "ContributionPercent": 0.04135679540334954
+          "ContributionPercent": 0.04275914039965699
         }
       ]
     },
@@ -698,21 +698,21 @@
       "TeamKey": "C134E6AC402FAFA8739A0159EB75C80C6584A5BEA7D4A79C6837A88E11FF828B",
       "ManagerName": "kelat",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 15122.4,
-      "TotalRankPoints": 130,
-      "AverageRank": 7.222222222222222,
+      "SeasonTotalBestBallPoints": 15197.300000000001,
+      "TotalRankPoints": 129,
+      "AverageRank": 7.166666666666667,
       "BestWeekScore": 1112.4,
-      "WorstWeekScore": 460.1,
+      "WorstWeekScore": 514.9,
       "Players": [
         {
           "PlayerKey": "7F38E191B88B615DDAB9D4F77F9251645CA4D92723F60D1E4DEB2F5F586DC28D",
           "PlayerName": "Amen Thompson",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 16,
-          "TotalContributedPoints": 2043.2,
-          "StartRate": 0.8888888888888888,
-          "PointsPerStart": 127.7,
-          "ContributionPercent": 0.13511082896894674
+          "WeeksStarted": 15,
+          "TotalContributedPoints": 1984.8,
+          "StartRate": 0.8333333333333334,
+          "PointsPerStart": 132.32,
+          "ContributionPercent": 0.130602146433906
         },
         {
           "PlayerKey": "836EB3ECD457AA7475AF69D57ECC4FB81EC82D70FAC0B72FB164FCEFF3A8FE54",
@@ -722,7 +722,7 @@
           "TotalContributedPoints": 1933.2000000000003,
           "StartRate": 0.7222222222222222,
           "PointsPerStart": 148.70769230769233,
-          "ContributionPercent": 0.12783685129344552
+          "ContributionPercent": 0.1272068064722023
         },
         {
           "PlayerKey": "E37E9291B7FF1526101F8EA4C207B05C8FBAB4EFC2710DBA969930E2681347E8",
@@ -732,7 +732,7 @@
           "TotalContributedPoints": 1740.4000000000003,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 124.31428571428573,
-          "ContributionPercent": 0.11508755224038515
+          "ContributionPercent": 0.11452034242924732
         },
         {
           "PlayerKey": "C929C34ADFDD4DAB37038A268EC8E5F0F261819BAC50508F221AED63E7A019C9",
@@ -742,17 +742,17 @@
           "TotalContributedPoints": 1590.5,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 113.60714285714286,
-          "ContributionPercent": 0.10517510448077025
+          "ContributionPercent": 0.10465674823817388
         },
         {
           "PlayerKey": "371FFA3790C2F12799E93FA5B2F19B0CF8F00A6554052230A558AD09D23BD183",
           "PlayerName": "Giannis Antetokounmpo",
-          "WeeksOnRoster": 17,
+          "WeeksOnRoster": 18,
           "WeeksStarted": 9,
           "TotalContributedPoints": 1384,
-          "StartRate": 0.5294117647058824,
+          "StartRate": 0.5,
           "PointsPerStart": 153.77777777777777,
-          "ContributionPercent": 0.0915198645717611
+          "ContributionPercent": 0.09106880827515414
         },
         {
           "PlayerKey": "C642134189520A443AED6AC70CE442110CDAE6C9B39CFCF9480A6FDA04293C37",
@@ -762,7 +762,7 @@
           "TotalContributedPoints": 1044.2,
           "StartRate": 0.5714285714285714,
           "PointsPerStart": 130.525,
-          "ContributionPercent": 0.06904988626143999
+          "ContributionPercent": 0.06870957341106644
         },
         {
           "PlayerKey": "FC5DBDD2807C36F5444B019D4B3FEB1486DAE6961AAD9D3AC1B05FC904AE209A",
@@ -772,7 +772,7 @@
           "TotalContributedPoints": 814.7,
           "StartRate": 0.4444444444444444,
           "PointsPerStart": 101.8375,
-          "ContributionPercent": 0.0538737237475533
+          "ContributionPercent": 0.05360820672093069
         },
         {
           "PlayerKey": "B93594C81ADA9F86AD290DD5966AA4A28433D9B9036C7B7219905617CD3B8296",
@@ -782,7 +782,7 @@
           "TotalContributedPoints": 684.6,
           "StartRate": 0.4,
           "PointsPerStart": 114.10000000000001,
-          "ContributionPercent": 0.04527059196952865
+          "ContributionPercent": 0.04504747553841801
         },
         {
           "PlayerKey": "3D670AEE70CCE57F8AF81CF70902CE753F7FC257594BC6B0059941560E8ECA2A",
@@ -792,17 +792,17 @@
           "TotalContributedPoints": 651.7,
           "StartRate": 0.35294117647058826,
           "PointsPerStart": 108.61666666666667,
-          "ContributionPercent": 0.043095011373856004
+          "ContributionPercent": 0.04288261730702164
         },
         {
           "PlayerKey": "8406B40E6064EA7D76AD06FF0F6624EDE068F9BDF76AEE989B68351C6AE7424B",
           "PlayerName": "Ausar Thompson",
           "WeeksOnRoster": 7,
           "WeeksStarted": 5,
-          "TotalContributedPoints": 503.80000000000007,
+          "TotalContributedPoints": 546.9000000000001,
           "StartRate": 0.7142857142857143,
-          "PointsPerStart": 100.76000000000002,
-          "ContributionPercent": 0.033314817753795696
+          "PointsPerStart": 109.38000000000002,
+          "ContributionPercent": 0.03598665552433657
         }
       ]
     },
@@ -811,8 +811,8 @@
       "ManagerName": "JRock",
       "WeeksPlayed": 18,
       "SeasonTotalBestBallPoints": 15013,
-      "TotalRankPoints": 127,
-      "AverageRank": 7.055555555555555,
+      "TotalRankPoints": 129,
+      "AverageRank": 7.166666666666667,
       "BestWeekScore": 1031.1000000000001,
       "WorstWeekScore": 537.6,
       "Players": [
@@ -922,11 +922,11 @@
       "TeamKey": "58E49E9F7021CA61DAC4CD1E032F99699D61472286D838A09AB2028CD37F9DF6",
       "ManagerName": "Garrett",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 14940.1,
-      "TotalRankPoints": 127,
-      "AverageRank": 7.055555555555555,
+      "SeasonTotalBestBallPoints": 14964.900000000001,
+      "TotalRankPoints": 129,
+      "AverageRank": 7.166666666666667,
       "BestWeekScore": 1066.2,
-      "WorstWeekScore": 518.1999999999999,
+      "WorstWeekScore": 543,
       "Players": [
         {
           "PlayerKey": "53E83B584313ECD7CE639A7F3CE2173E5CB61F514CEDF6B87AC23B34A4C97375",
@@ -936,7 +936,7 @@
           "TotalContributedPoints": 2191.1000000000004,
           "StartRate": 0.8888888888888888,
           "PointsPerStart": 136.94375000000002,
-          "ContributionPercent": 0.14665899157301493
+          "ContributionPercent": 0.1464159466484908
         },
         {
           "PlayerKey": "D16EACE3A58BB33FF5E1512985794A76E821AEC8779E02FEE44CDE7D872227D0",
@@ -946,17 +946,17 @@
           "TotalContributedPoints": 1701.8000000000002,
           "StartRate": 0.8235294117647058,
           "PointsPerStart": 121.55714285714286,
-          "ContributionPercent": 0.1139082067723777
+          "ContributionPercent": 0.11371943681548156
         },
         {
           "PlayerKey": "32DD716772BEC97FB31D6B87A3AF9DCE1624690E41535BCF5512D73B08C2C829",
           "PlayerName": "Evan Mobley",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 10,
-          "TotalContributedPoints": 1482.8,
-          "StartRate": 0.5555555555555556,
-          "PointsPerStart": 148.28,
-          "ContributionPercent": 0.09924967035026538
+          "WeeksStarted": 11,
+          "TotalContributedPoints": 1556.6,
+          "StartRate": 0.6111111111111112,
+          "PointsPerStart": 141.5090909090909,
+          "ContributionPercent": 0.10401673248735373
         },
         {
           "PlayerKey": "C0430AD5E677FCB7C9B63E83243601D78DB77410589FD95224905BC71BBB287A",
@@ -966,7 +966,7 @@
           "TotalContributedPoints": 1420.1000000000001,
           "StartRate": 0.6111111111111112,
           "PointsPerStart": 129.10000000000002,
-          "ContributionPercent": 0.09505291129242777
+          "ContributionPercent": 0.09489538854252284
         },
         {
           "PlayerKey": "499AF30892E2607D8424B5D6C66C5948DBE2AE9756AC4275D160042BFCB90115",
@@ -976,7 +976,7 @@
           "TotalContributedPoints": 1354.3,
           "StartRate": 0.6111111111111112,
           "PointsPerStart": 123.11818181818181,
-          "ContributionPercent": 0.09064865697016752
+          "ContributionPercent": 0.09049843299988639
         },
         {
           "PlayerKey": "91D5B49004603140E27B7E2E1A02CFDFC8777A89B6C4E429C92391D24A71A8C1",
@@ -986,17 +986,17 @@
           "TotalContributedPoints": 1214.5,
           "StartRate": 0.7857142857142857,
           "PointsPerStart": 110.4090909090909,
-          "ContributionPercent": 0.08129128988427119
+          "ContributionPercent": 0.08115657304759803
         },
         {
           "PlayerKey": "D5F88FCAE51E89AEA62E3ABBC79899D40CFA634EC3415860B702399C8C3D8361",
           "PlayerName": "Naz Reid",
           "WeeksOnRoster": 13,
-          "WeeksStarted": 11,
-          "TotalContributedPoints": 1156.6000000000001,
-          "StartRate": 0.8461538461538461,
-          "PointsPerStart": 105.14545454545456,
-          "ContributionPercent": 0.07741581381650726
+          "WeeksStarted": 10,
+          "TotalContributedPoints": 1107.6000000000001,
+          "StartRate": 0.7692307692307693,
+          "PointsPerStart": 110.76000000000002,
+          "ContributionPercent": 0.07401319086662791
         },
         {
           "PlayerKey": "21A7C31B55F0FF0D6C5A574502067F5699344A380D31421FE7E5FEA02A132DCD",
@@ -1006,7 +1006,7 @@
           "TotalContributedPoints": 966.5999999999999,
           "StartRate": 0.5294117647058824,
           "PointsPerStart": 107.39999999999999,
-          "ContributionPercent": 0.06469836212609018
+          "ContributionPercent": 0.0645911432752641
         },
         {
           "PlayerKey": "DEBF504AFE8098B5BC849AE9BEFE00DFF0415A3F44F54EFC11C219C010E97243",
@@ -1016,7 +1016,7 @@
           "TotalContributedPoints": 871.6,
           "StartRate": 0.5,
           "PointsPerStart": 108.95,
-          "ContributionPercent": 0.05833963628088165
+          "ContributionPercent": 0.05824295518179205
         },
         {
           "PlayerKey": "7DE503C20C0121CE1D96E8916D59BA4D24B03A77D59664D1475B38C2328F62EF",
@@ -1026,7 +1026,7 @@
           "TotalContributedPoints": 867.6,
           "StartRate": 0.4444444444444444,
           "PointsPerStart": 108.45,
-          "ContributionPercent": 0.058071900455820245
+          "ContributionPercent": 0.0579756630515406
         }
       ]
     },
@@ -1034,11 +1034,11 @@
       "TeamKey": "1F159E5B4A7F937B5B88FED217C64A1F19095ED1976AB90937E2343043517FA0",
       "ManagerName": "EFry",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 14803.3,
-      "TotalRankPoints": 136,
-      "AverageRank": 7.555555555555555,
+      "SeasonTotalBestBallPoints": 14832.399999999998,
+      "TotalRankPoints": 139,
+      "AverageRank": 7.722222222222222,
       "BestWeekScore": 1066.2,
-      "WorstWeekScore": 488,
+      "WorstWeekScore": 517.0999999999999,
       "Players": [
         {
           "PlayerKey": "30EAB2E46525C0034AF12EE78961B10A55925DA6793F9304E66361AFE1E8A4D4",
@@ -1048,7 +1048,7 @@
           "TotalContributedPoints": 2400.7,
           "StartRate": 0.8888888888888888,
           "PointsPerStart": 150.04375,
-          "ContributionPercent": 0.1621732991968007
+          "ContributionPercent": 0.1618551279631078
         },
         {
           "PlayerKey": "148D48BC3FBCB264AC6BCFA40DA88DE6FC4D8D3C682E626E62464B01BBF895CD",
@@ -1058,7 +1058,7 @@
           "TotalContributedPoints": 1766.1,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 126.14999999999999,
-          "ContributionPercent": 0.1193044794066188
+          "ContributionPercent": 0.11907041341927134
         },
         {
           "PlayerKey": "E4F167CEF9D3E03FC84200AAF7B665732637097D36BD625597D50BE0C9BAFA12",
@@ -1068,7 +1068,7 @@
           "TotalContributedPoints": 1760.8999999999999,
           "StartRate": 0.7222222222222222,
           "PointsPerStart": 135.45384615384614,
-          "ContributionPercent": 0.11895320637965859
+          "ContributionPercent": 0.11871982956230955
         },
         {
           "PlayerKey": "59EE9DDEFA9288198BB7FE8BF9CCFE55647E3DCCCE36751E61B9D862F1D3F6E1",
@@ -1078,27 +1078,17 @@
           "TotalContributedPoints": 1567.9,
           "StartRate": 0.6666666666666666,
           "PointsPerStart": 130.65833333333333,
-          "ContributionPercent": 0.10591557287902023
+          "ContributionPercent": 0.10570777487122787
         },
         {
           "PlayerKey": "47EC965C0374C646318D405E844746EA3B5D739521F9723178CBCAAB54E0F419",
           "PlayerName": "Jaime Jaquez Jr.",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 12,
-          "TotalContributedPoints": 1303.3000000000002,
-          "StartRate": 0.6666666666666666,
-          "PointsPerStart": 108.60833333333335,
-          "ContributionPercent": 0.08804118000716059
-        },
-        {
-          "PlayerKey": "DC4FD72F1701F0BCE546C7692584234A7E935BC243C162217F6C70B7869948BF",
-          "PlayerName": "Toumani Camara",
-          "WeeksOnRoster": 18,
-          "WeeksStarted": 12,
-          "TotalContributedPoints": 1085.7,
-          "StartRate": 0.6666666666666666,
-          "PointsPerStart": 90.47500000000001,
-          "ContributionPercent": 0.07334175487897969
+          "WeeksStarted": 11,
+          "TotalContributedPoints": 1258.6000000000001,
+          "StartRate": 0.6111111111111112,
+          "PointsPerStart": 114.41818181818184,
+          "ContributionPercent": 0.08485477737925085
         },
         {
           "PlayerKey": "4F047F1B01A8DAAC2DCF8F6E6AB29FEA39BFD059D51019F3459EF31F27C21187",
@@ -1108,7 +1098,7 @@
           "TotalContributedPoints": 1076.1,
           "StartRate": 0.5555555555555556,
           "PointsPerStart": 107.60999999999999,
-          "ContributionPercent": 0.072693250829207
+          "ContributionPercent": 0.07255063239934198
         },
         {
           "PlayerKey": "EDE4CA48386D7B6F5948D2D6A672CF892FF51720C95DAB70B14EDC2224CE3E73",
@@ -1118,7 +1108,17 @@
           "TotalContributedPoints": 1052.4,
           "StartRate": 0.6666666666666666,
           "PointsPerStart": 105.24000000000001,
-          "ContributionPercent": 0.07109225645633069
+          "ContributionPercent": 0.07095277905126617
+        },
+        {
+          "PlayerKey": "DC4FD72F1701F0BCE546C7692584234A7E935BC243C162217F6C70B7869948BF",
+          "PlayerName": "Toumani Camara",
+          "WeeksOnRoster": 18,
+          "WeeksStarted": 11,
+          "TotalContributedPoints": 1032.4,
+          "StartRate": 0.6111111111111112,
+          "PointsPerStart": 93.85454545454546,
+          "ContributionPercent": 0.06960437960141314
         },
         {
           "PlayerKey": "3100D3084DAD5F0817E42FFCF051F1D35D2FD355785BF2AA483CDE17D928B337",
@@ -1128,7 +1128,7 @@
           "TotalContributedPoints": 547.6,
           "StartRate": 0.8333333333333334,
           "PointsPerStart": 109.52000000000001,
-          "ContributionPercent": 0.03699175183911696
+          "ContributionPercent": 0.036919176936975814
         },
         {
           "PlayerKey": "4F63C437426D3022431D3444E3F251E3A4997BF2681C8C176E333B5DFE213C9A",
@@ -1138,7 +1138,7 @@
           "TotalContributedPoints": 376.9,
           "StartRate": 0.2222222222222222,
           "PointsPerStart": 94.225,
-          "ContributionPercent": 0.025460539204096383
+          "ContributionPercent": 0.025410587632480247
         }
       ]
     },
@@ -1146,12 +1146,22 @@
       "TeamKey": "90DD219AA37A91B240FD13421AB197906C48250FDACF16651B7816A64D6A487F",
       "ManagerName": "Joshua",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 14687.2,
+      "SeasonTotalBestBallPoints": 14775.900000000001,
       "TotalRankPoints": 142,
       "AverageRank": 7.888888888888889,
       "BestWeekScore": 994.9,
       "WorstWeekScore": 510.9,
       "Players": [
+        {
+          "PlayerKey": "F2F6D25D66B4B47695D93B30061589DCF72B15E2DF6B9A4ABE43C60925BE41B1",
+          "PlayerName": "Jaylen Brown",
+          "WeeksOnRoster": 18,
+          "WeeksStarted": 16,
+          "TotalContributedPoints": 2309.2000000000003,
+          "StartRate": 0.8888888888888888,
+          "PointsPerStart": 144.32500000000002,
+          "ContributionPercent": 0.15628151246286182
+        },
         {
           "PlayerKey": "025C26A3D4888BE126A38EC021CD4E232FDD9649A67E44F5247691115E5D3D75",
           "PlayerName": "Victor Wembanyama",
@@ -1160,17 +1170,7 @@
           "TotalContributedPoints": 2228.6000000000004,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 159.1857142857143,
-          "ContributionPercent": 0.15173756740563213
-        },
-        {
-          "PlayerKey": "F2F6D25D66B4B47695D93B30061589DCF72B15E2DF6B9A4ABE43C60925BE41B1",
-          "PlayerName": "Jaylen Brown",
-          "WeeksOnRoster": 18,
-          "WeeksStarted": 15,
-          "TotalContributedPoints": 2206.6000000000004,
-          "StartRate": 0.8333333333333334,
-          "PointsPerStart": 147.10666666666668,
-          "ContributionPercent": 0.15023966446974238
+          "ContributionPercent": 0.15082668399217647
         },
         {
           "PlayerKey": "6D7795A2FFA9685D83BB06AD6BE3994E74A79406B417ACBFC66AD2E61BB4E3AD",
@@ -1180,27 +1180,27 @@
           "TotalContributedPoints": 2092.2,
           "StartRate": 0.9444444444444444,
           "PointsPerStart": 123.07058823529411,
-          "ContributionPercent": 0.1424505692031156
+          "ContributionPercent": 0.14159543581101655
         },
         {
           "PlayerKey": "9DCE4BEED474E5B907B222A7B41C6AFD62C778D856854D4ECB0CD09F5C0652FF",
           "PlayerName": "Michael Porter Jr.",
           "WeeksOnRoster": 18,
           "WeeksStarted": 15,
-          "TotalContributedPoints": 1611.5000000000002,
+          "TotalContributedPoints": 1639.9000000000003,
           "StartRate": 0.8333333333333334,
-          "PointsPerStart": 107.43333333333335,
-          "ContributionPercent": 0.10972139005392452
+          "PointsPerStart": 109.32666666666668,
+          "ContributionPercent": 0.1109847792689447
         },
         {
           "PlayerKey": "4AA83BB317B73FF80CB9B54EDB939FBE7E6612A0DEAC826EC3A8BBFADC18A436",
           "PlayerName": "Nikola Vu\u010Devi\u0107",
           "WeeksOnRoster": 18,
-          "WeeksStarted": 11,
-          "TotalContributedPoints": 1412.7,
-          "StartRate": 0.6111111111111112,
-          "PointsPerStart": 128.42727272727274,
-          "ContributionPercent": 0.096185794433248
+          "WeeksStarted": 12,
+          "TotalContributedPoints": 1492.8,
+          "StartRate": 0.6666666666666666,
+          "PointsPerStart": 124.39999999999999,
+          "ContributionPercent": 0.10102937892108094
         },
         {
           "PlayerKey": "48557F5BC117693543DD7102A13AF3A21698B0D9D0CB4B5527FD6E413B2C4FF4",
@@ -1210,7 +1210,7 @@
           "TotalContributedPoints": 859,
           "StartRate": 0.5,
           "PointsPerStart": 95.44444444444444,
-          "ContributionPercent": 0.05848630099678631
+          "ContributionPercent": 0.0581352066540786
         },
         {
           "PlayerKey": "9EB0AAAD51E77B38AA579898CE7658CBBE0BBB0F9598BFD740FC340A8FEADA75",
@@ -1220,7 +1220,7 @@
           "TotalContributedPoints": 841,
           "StartRate": 0.5333333333333333,
           "PointsPerStart": 105.125,
-          "ContributionPercent": 0.05726074404924015
+          "ContributionPercent": 0.05691700674747392
         },
         {
           "PlayerKey": "086700AA91FE331DEB2870C199E57BE49BEA13A2B09B84ADE44AB0DFEBA5E7AA",
@@ -1230,7 +1230,7 @@
           "TotalContributedPoints": 362.3,
           "StartRate": 0.2222222222222222,
           "PointsPerStart": 90.575,
-          "ContributionPercent": 0.024667737894220818
+          "ContributionPercent": 0.024519657009048516
         },
         {
           "PlayerKey": "B718FDF4FCA41C7C7B83F1CB9A6FFB51BB7F82C8A0CA262554A0008EE0A34484",
@@ -1240,7 +1240,7 @@
           "TotalContributedPoints": 349.1,
           "StartRate": 0.375,
           "PointsPerStart": 116.36666666666667,
-          "ContributionPercent": 0.023768996132686966
+          "ContributionPercent": 0.023626310410871758
         },
         {
           "PlayerKey": "969A6C73F8AE3C5E32F6B0BCB38D333CB6A4E13E2EEC411CDF44212C907FBEC2",
@@ -1250,7 +1250,7 @@
           "TotalContributedPoints": 342.1,
           "StartRate": 0.4444444444444444,
           "PointsPerStart": 85.525,
-          "ContributionPercent": 0.02329239065308568
+          "ContributionPercent": 0.023152566002747718
         }
       ]
     },
@@ -1258,9 +1258,9 @@
       "TeamKey": "3A7B458FA59B6584D13EE3BAB38B34C2BD873636A514830CFE79184BA6561802",
       "ManagerName": "scott",
       "WeeksPlayed": 18,
-      "SeasonTotalBestBallPoints": 13241.899999999998,
-      "TotalRankPoints": 181,
-      "AverageRank": 10.055555555555555,
+      "SeasonTotalBestBallPoints": 13287.3,
+      "TotalRankPoints": 183,
+      "AverageRank": 10.166666666666666,
       "BestWeekScore": 919.6999999999999,
       "WorstWeekScore": 475.6,
       "Players": [
@@ -1272,7 +1272,7 @@
           "TotalContributedPoints": 2150.3,
           "StartRate": 0.8333333333333334,
           "PointsPerStart": 143.35333333333335,
-          "ContributionPercent": 0.16238606242306622
+          "ContributionPercent": 0.16183122229497343
         },
         {
           "PlayerKey": "0C31692B52E9508403AFB6FD0BA2A55E156667813ACE62BFF1B14E53F810B0D6",
@@ -1282,7 +1282,7 @@
           "TotalContributedPoints": 1629.0999999999997,
           "StartRate": 0.7777777777777778,
           "PointsPerStart": 116.36428571428569,
-          "ContributionPercent": 0.12302615183621686
+          "ContributionPercent": 0.12260579651245924
         },
         {
           "PlayerKey": "E0D2D0DEB359C6472963DEC9552902DD9BE1F38121236ED006BD64EEC50AD871",
@@ -1292,7 +1292,7 @@
           "TotalContributedPoints": 1310.4,
           "StartRate": 0.6111111111111112,
           "PointsPerStart": 119.12727272727274,
-          "ContributionPercent": 0.09895860865887827
+          "ContributionPercent": 0.09862048723216908
         },
         {
           "PlayerKey": "BB0DDE5F7E9DB5ACA8DCE1D7E56A2D677BADF627C33FAC219520F6ED14F84710",
@@ -1302,7 +1302,7 @@
           "TotalContributedPoints": 1157.9,
           "StartRate": 0.5555555555555556,
           "PointsPerStart": 115.79,
-          "ContributionPercent": 0.08744213443690108
+          "ContributionPercent": 0.08714336245888933
         },
         {
           "PlayerKey": "E05D846F0E0CC686B0DE102F72F2B38C1189C134D358DC722F1EA1F6814448AA",
@@ -1312,7 +1312,7 @@
           "TotalContributedPoints": 1089.6000000000001,
           "StartRate": 0.6666666666666666,
           "PointsPerStart": 90.80000000000001,
-          "ContributionPercent": 0.0822842643427303
+          "ContributionPercent": 0.08200311575715158
         },
         {
           "PlayerKey": "62C05095D75BAC8258C3AAB2B1F4EE1CC6B5A3502B9C54C0DA120A89E11F0537",
@@ -1322,7 +1322,7 @@
           "TotalContributedPoints": 965.9,
           "StartRate": 0.5,
           "PointsPerStart": 107.32222222222222,
-          "ContributionPercent": 0.07294270459677238
+          "ContributionPercent": 0.07269347421974366
         },
         {
           "PlayerKey": "BFC0B69A53367F04452A5A66D2CE001245C1AC5B21B14172E26D2BF104CAD2C8",
@@ -1332,7 +1332,7 @@
           "TotalContributedPoints": 884.3000000000001,
           "StartRate": 0.5,
           "PointsPerStart": 98.25555555555556,
-          "ContributionPercent": 0.0667804469147177
+          "ContributionPercent": 0.06655227171810678
         },
         {
           "PlayerKey": "C24D403DDED8E7D452F8267902D56B113AC8A9D32171D91FA0BC50E4AC2308C0",
@@ -1342,7 +1342,7 @@
           "TotalContributedPoints": 868.9000000000001,
           "StartRate": 0.5555555555555556,
           "PointsPerStart": 86.89000000000001,
-          "ContributionPercent": 0.06561747181295738
+          "ContributionPercent": 0.06539327026559197
         },
         {
           "PlayerKey": "3390A55F0979BA5C5BC3BF3501909DB6F369FE159998424DF9384925907E5C7A",
@@ -1352,7 +1352,7 @@
           "TotalContributedPoints": 702.9000000000001,
           "StartRate": 0.4375,
           "PointsPerStart": 100.41428571428573,
-          "ContributionPercent": 0.05308150643034611
+          "ContributionPercent": 0.05290013772549729
         },
         {
           "PlayerKey": "2AAF834EE96C1146070D0EB0DB5999163F376E27511A98D75C959FDE47D889FE",
@@ -1362,7 +1362,7 @@
           "TotalContributedPoints": 690.7,
           "StartRate": 0.4444444444444444,
           "PointsPerStart": 86.3375,
-          "ContributionPercent": 0.05216018849258793
+          "ContributionPercent": 0.05198196774363491
         }
       ]
     }
