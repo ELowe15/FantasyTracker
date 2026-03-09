@@ -8,31 +8,31 @@
         "TeamKey": "90C53E50CC1C110057BE71C82157588D20D5DCE83BFC6F206F2A5FF9BEE40FB7",
         "ManagerName": "ELowe",
         "StatValues": {
-          "FGM/A": "0.46943",
+          "FGM/A": "0.46920",
           "FG%": ".469",
-          "FTM/A": "0.82836",
-          "FT%": ".828",
-          "3PM": "51",
-          "PTS": "592",
-          "REB": "273",
-          "AST": "184",
-          "STL": "43",
-          "BLK": "29",
-          "TO": "82"
+          "FTM/A": "0.81765",
+          "FT%": ".818",
+          "3PM": "65",
+          "PTS": "722",
+          "REB": "316",
+          "AST": "208",
+          "STL": "47",
+          "BLK": "38",
+          "TO": "103"
         }
       },
       "TeamRecord": {
-        "MatchupWins": 11,
-        "MatchupLosses": 0,
+        "MatchupWins": 9,
+        "MatchupLosses": 2,
         "MatchupTies": 0,
-        "CategoryWins": 71,
-        "CategoryLosses": 28,
-        "CategoryTies": 0,
+        "CategoryWins": 66,
+        "CategoryLosses": 32,
+        "CategoryTies": 1,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
-            "Wins": 9,
-            "Losses": 2,
+            "Wins": 8,
+            "Losses": 3,
             "Ties": 0
           },
           "REB": {
@@ -49,15 +49,15 @@
           },
           "STL": {
             "Category": "STL",
-            "Wins": 9,
-            "Losses": 2,
+            "Wins": 8,
+            "Losses": 3,
             "Ties": 0
           },
           "BLK": {
             "Category": "BLK",
             "Wins": 10,
-            "Losses": 1,
-            "Ties": 0
+            "Losses": 0,
+            "Ties": 1
           },
           "TO": {
             "Category": "TO",
@@ -79,8 +79,8 @@
           },
           "FTM/A": {
             "Category": "FTM/A",
-            "Wins": 10,
-            "Losses": 1,
+            "Wins": 7,
+            "Losses": 4,
             "Ties": 0
           }
         }
@@ -109,11 +109,11 @@
         {
           "OpponentTeamKey": "1F159E5B4A7F937B5B88FED217C64A1F19095ED1976AB90937E2343043517FA0",
           "ManagerName": "EFry",
-          "Wins": 1,
-          "Losses": 0,
+          "Wins": 0,
+          "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 5,
-          "OpponentCategoryWins": 4,
+          "CategoryWins": 4,
+          "OpponentCategoryWins": 5,
           "CategoryTies": 0
         },
         {
@@ -133,8 +133,8 @@
           "Losses": 0,
           "Ties": 0,
           "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
-          "CategoryTies": 0
+          "OpponentCategoryWins": 2,
+          "CategoryTies": 1
         },
         {
           "OpponentTeamKey": "4237816ED6AED7D8F428E6A6FD454170FDF1680D22BF3D80E67CC3F030492556",
@@ -172,8 +172,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 7,
-          "OpponentCategoryWins": 2,
+          "CategoryWins": 6,
+          "OpponentCategoryWins": 3,
           "CategoryTies": 0
         },
         {
@@ -189,11 +189,11 @@
         {
           "OpponentTeamKey": "58E49E9F7021CA61DAC4CD1E032F99699D61472286D838A09AB2028CD37F9DF6",
           "ManagerName": "Garrett",
-          "Wins": 1,
-          "Losses": 0,
+          "Wins": 0,
+          "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
+          "CategoryWins": 3,
+          "OpponentCategoryWins": 6,
           "CategoryTies": 0
         }
       ]
@@ -204,31 +204,31 @@
         "TeamKey": "3A7B458FA59B6584D13EE3BAB38B34C2BD873636A514830CFE79184BA6561802",
         "ManagerName": "scott",
         "StatValues": {
-          "FGM/A": "0.52147",
-          "FG%": ".521",
-          "FTM/A": "0.75439",
-          "FT%": ".754",
-          "3PM": "18",
-          "PTS": "231",
-          "REB": "85",
-          "AST": "48",
-          "STL": "14",
-          "BLK": "15",
-          "TO": "25"
+          "FGM/A": "0.49223",
+          "FG%": ".492",
+          "FTM/A": "0.74603",
+          "FT%": ".746",
+          "3PM": "21",
+          "PTS": "258",
+          "REB": "104",
+          "AST": "59",
+          "STL": "18",
+          "BLK": "16",
+          "TO": "31"
         }
       },
       "TeamRecord": {
-        "MatchupWins": 1,
-        "MatchupLosses": 10,
+        "MatchupWins": 0,
+        "MatchupLosses": 11,
         "MatchupTies": 0,
-        "CategoryWins": 28,
-        "CategoryLosses": 69,
-        "CategoryTies": 2,
+        "CategoryWins": 21,
+        "CategoryLosses": 78,
+        "CategoryTies": 0,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
-            "Wins": 1,
-            "Losses": 10,
+            "Wins": 0,
+            "Losses": 11,
             "Ties": 0
           },
           "REB": {
@@ -251,9 +251,9 @@
           },
           "BLK": {
             "Category": "BLK",
-            "Wins": 2,
-            "Losses": 7,
-            "Ties": 2
+            "Wins": 1,
+            "Losses": 10,
+            "Ties": 0
           },
           "TO": {
             "Category": "TO",
@@ -263,14 +263,14 @@
           },
           "3PM": {
             "Category": "3PM",
-            "Wins": 1,
-            "Losses": 10,
+            "Wins": 0,
+            "Losses": 11,
             "Ties": 0
           },
           "FGM/A": {
             "Category": "FGM/A",
-            "Wins": 11,
-            "Losses": 0,
+            "Wins": 7,
+            "Losses": 4,
             "Ties": 0
           },
           "FTM/A": {
@@ -298,8 +298,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 2,
-          "OpponentCategoryWins": 7,
+          "CategoryWins": 1,
+          "OpponentCategoryWins": 8,
           "CategoryTies": 0
         },
         {
@@ -309,8 +309,8 @@
           "Losses": 1,
           "Ties": 0,
           "CategoryWins": 2,
-          "OpponentCategoryWins": 6,
-          "CategoryTies": 1
+          "OpponentCategoryWins": 7,
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "90DD219AA37A91B240FD13421AB197906C48250FDACF16651B7816A64D6A487F",
@@ -335,11 +335,11 @@
         {
           "OpponentTeamKey": "4237816ED6AED7D8F428E6A6FD454170FDF1680D22BF3D80E67CC3F030492556",
           "ManagerName": "JRock",
-          "Wins": 1,
-          "Losses": 0,
+          "Wins": 0,
+          "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
+          "CategoryWins": 4,
+          "OpponentCategoryWins": 5,
           "CategoryTies": 0
         },
         {
@@ -348,8 +348,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
+          "CategoryWins": 2,
+          "OpponentCategoryWins": 7,
           "CategoryTies": 0
         },
         {
@@ -368,8 +368,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
+          "CategoryWins": 2,
+          "OpponentCategoryWins": 7,
           "CategoryTies": 0
         },
         {
@@ -378,9 +378,9 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 2,
-          "OpponentCategoryWins": 6,
-          "CategoryTies": 1
+          "CategoryWins": 1,
+          "OpponentCategoryWins": 8,
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "58E49E9F7021CA61DAC4CD1E032F99699D61472286D838A09AB2028CD37F9DF6",
@@ -388,8 +388,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 2,
-          "OpponentCategoryWins": 7,
+          "CategoryWins": 1,
+          "OpponentCategoryWins": 8,
           "CategoryTies": 0
         }
       ]
@@ -400,32 +400,32 @@
         "TeamKey": "9F9743686E139D88E98877658DB981877372D01780B0E111F30CB5AC0CF9939C",
         "ManagerName": "jlevesque",
         "StatValues": {
-          "FGM/A": "0.48552",
-          "FG%": ".486",
-          "FTM/A": "0.78889",
-          "FT%": ".789",
-          "3PM": "29",
-          "PTS": "607",
-          "REB": "250",
-          "AST": "140",
-          "STL": "40",
-          "BLK": "25",
-          "TO": "74"
+          "FGM/A": "0.50000",
+          "FG%": ".500",
+          "FTM/A": "0.78539",
+          "FT%": ".785",
+          "3PM": "41",
+          "PTS": "761",
+          "REB": "299",
+          "AST": "166",
+          "STL": "44",
+          "BLK": "29",
+          "TO": "82"
         }
       },
       "TeamRecord": {
-        "MatchupWins": 9,
-        "MatchupLosses": 2,
+        "MatchupWins": 8,
+        "MatchupLosses": 3,
         "MatchupTies": 0,
-        "CategoryWins": 64,
-        "CategoryLosses": 35,
-        "CategoryTies": 0,
+        "CategoryWins": 58,
+        "CategoryLosses": 38,
+        "CategoryTies": 3,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
-            "Wins": 10,
+            "Wins": 9,
             "Losses": 1,
-            "Ties": 0
+            "Ties": 1
           },
           "REB": {
             "Category": "REB",
@@ -435,21 +435,21 @@
           },
           "AST": {
             "Category": "AST",
-            "Wins": 10,
-            "Losses": 1,
-            "Ties": 0
-          },
-          "STL": {
-            "Category": "STL",
             "Wins": 8,
             "Losses": 3,
             "Ties": 0
           },
+          "STL": {
+            "Category": "STL",
+            "Wins": 6,
+            "Losses": 4,
+            "Ties": 1
+          },
           "BLK": {
             "Category": "BLK",
-            "Wins": 9,
+            "Wins": 8,
             "Losses": 2,
-            "Ties": 0
+            "Ties": 1
           },
           "TO": {
             "Category": "TO",
@@ -465,14 +465,14 @@
           },
           "FGM/A": {
             "Category": "FGM/A",
-            "Wins": 7,
-            "Losses": 4,
+            "Wins": 8,
+            "Losses": 3,
             "Ties": 0
           },
           "FTM/A": {
             "Category": "FTM/A",
-            "Wins": 6,
-            "Losses": 5,
+            "Wins": 5,
+            "Losses": 6,
             "Ties": 0
           }
         }
@@ -494,8 +494,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 7,
-          "OpponentCategoryWins": 2,
+          "CategoryWins": 8,
+          "OpponentCategoryWins": 1,
           "CategoryTies": 0
         },
         {
@@ -514,9 +514,9 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 7,
+          "CategoryWins": 6,
           "OpponentCategoryWins": 2,
-          "CategoryTies": 0
+          "CategoryTies": 1
         },
         {
           "OpponentTeamKey": "6ABF36C085FCDE755CF852AA7DE61673ADFDB7BE18A5ADA4A6F2823274DAA240",
@@ -524,8 +524,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 7,
-          "OpponentCategoryWins": 2,
+          "CategoryWins": 6,
+          "OpponentCategoryWins": 3,
           "CategoryTies": 0
         },
         {
@@ -554,9 +554,9 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
+          "CategoryWins": 5,
           "OpponentCategoryWins": 3,
-          "CategoryTies": 0
+          "CategoryTies": 1
         },
         {
           "OpponentTeamKey": "9017F765F09829BD6570A4EE1208C976D47F61108780FB0E2C2C4A9B2EB60DAF",
@@ -574,19 +574,19 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
+          "CategoryWins": 5,
+          "OpponentCategoryWins": 4,
           "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "58E49E9F7021CA61DAC4CD1E032F99699D61472286D838A09AB2028CD37F9DF6",
           "ManagerName": "Garrett",
-          "Wins": 1,
-          "Losses": 0,
+          "Wins": 0,
+          "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 5,
-          "OpponentCategoryWins": 4,
-          "CategoryTies": 0
+          "CategoryWins": 2,
+          "OpponentCategoryWins": 6,
+          "CategoryTies": 1
         }
       ]
     },
@@ -596,26 +596,26 @@
         "TeamKey": "1F159E5B4A7F937B5B88FED217C64A1F19095ED1976AB90937E2343043517FA0",
         "ManagerName": "EFry",
         "StatValues": {
-          "FGM/A": "0.44737",
-          "FG%": ".447",
-          "FTM/A": "0.82707",
-          "FT%": ".827",
-          "3PM": "80",
-          "PTS": "632",
-          "REB": "180",
-          "AST": "124",
-          "STL": "52",
-          "BLK": "15",
-          "TO": "63"
+          "FGM/A": "0.43883",
+          "FG%": ".439",
+          "FTM/A": "0.84270",
+          "FT%": ".843",
+          "3PM": "94",
+          "PTS": "782",
+          "REB": "242",
+          "AST": "164",
+          "STL": "60",
+          "BLK": "19",
+          "TO": "73"
         }
       },
       "TeamRecord": {
-        "MatchupWins": 9,
-        "MatchupLosses": 2,
+        "MatchupWins": 11,
+        "MatchupLosses": 0,
         "MatchupTies": 0,
-        "CategoryWins": 65,
+        "CategoryWins": 67,
         "CategoryLosses": 32,
-        "CategoryTies": 2,
+        "CategoryTies": 0,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
@@ -625,8 +625,8 @@
           },
           "REB": {
             "Category": "REB",
-            "Wins": 7,
-            "Losses": 4,
+            "Wins": 8,
+            "Losses": 3,
             "Ties": 0
           },
           "AST": {
@@ -644,13 +644,13 @@
           "BLK": {
             "Category": "BLK",
             "Wins": 2,
-            "Losses": 7,
-            "Ties": 2
+            "Losses": 9,
+            "Ties": 0
           },
           "TO": {
             "Category": "TO",
-            "Wins": 4,
-            "Losses": 7,
+            "Wins": 5,
+            "Losses": 6,
             "Ties": 0
           },
           "3PM": {
@@ -661,14 +661,14 @@
           },
           "FGM/A": {
             "Category": "FGM/A",
-            "Wins": 3,
-            "Losses": 8,
+            "Wins": 1,
+            "Losses": 10,
             "Ties": 0
           },
           "FTM/A": {
             "Category": "FTM/A",
-            "Wins": 9,
-            "Losses": 2,
+            "Wins": 11,
+            "Losses": 0,
             "Ties": 0
           }
         }
@@ -677,11 +677,11 @@
         {
           "OpponentTeamKey": "90C53E50CC1C110057BE71C82157588D20D5DCE83BFC6F206F2A5FF9BEE40FB7",
           "ManagerName": "ELowe",
-          "Wins": 0,
-          "Losses": 1,
+          "Wins": 1,
+          "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 4,
-          "OpponentCategoryWins": 5,
+          "CategoryWins": 5,
+          "OpponentCategoryWins": 4,
           "CategoryTies": 0
         },
         {
@@ -690,9 +690,9 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
+          "CategoryWins": 7,
           "OpponentCategoryWins": 2,
-          "CategoryTies": 1
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "9F9743686E139D88E98877658DB981877372D01780B0E111F30CB5AC0CF9939C",
@@ -710,8 +710,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
+          "CategoryWins": 5,
+          "OpponentCategoryWins": 4,
           "CategoryTies": 0
         },
         {
@@ -720,8 +720,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 7,
-          "OpponentCategoryWins": 2,
+          "CategoryWins": 6,
+          "OpponentCategoryWins": 3,
           "CategoryTies": 0
         },
         {
@@ -750,8 +750,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
+          "CategoryWins": 7,
+          "OpponentCategoryWins": 2,
           "CategoryTies": 0
         },
         {
@@ -760,8 +760,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 7,
-          "OpponentCategoryWins": 2,
+          "CategoryWins": 6,
+          "OpponentCategoryWins": 3,
           "CategoryTies": 0
         },
         {
@@ -771,17 +771,17 @@
           "Losses": 0,
           "Ties": 0,
           "CategoryWins": 6,
-          "OpponentCategoryWins": 2,
-          "CategoryTies": 1
+          "OpponentCategoryWins": 3,
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "58E49E9F7021CA61DAC4CD1E032F99699D61472286D838A09AB2028CD37F9DF6",
           "ManagerName": "Garrett",
-          "Wins": 0,
-          "Losses": 1,
+          "Wins": 1,
+          "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 4,
-          "OpponentCategoryWins": 5,
+          "CategoryWins": 6,
+          "OpponentCategoryWins": 3,
           "CategoryTies": 0
         }
       ]
@@ -792,31 +792,31 @@
         "TeamKey": "90DD219AA37A91B240FD13421AB197906C48250FDACF16651B7816A64D6A487F",
         "ManagerName": "Joshua",
         "StatValues": {
-          "FGM/A": "0.42735",
-          "FG%": ".427",
-          "FTM/A": "0.77344",
-          "FT%": ".773",
-          "3PM": "63",
-          "PTS": "562",
-          "REB": "216",
-          "AST": "113",
-          "STL": "30",
-          "BLK": "22",
-          "TO": "49"
+          "FGM/A": "0.44080",
+          "FG%": ".441",
+          "FTM/A": "0.76970",
+          "FT%": ".770",
+          "3PM": "75",
+          "PTS": "686",
+          "REB": "251",
+          "AST": "133",
+          "STL": "43",
+          "BLK": "29",
+          "TO": "62"
         }
       },
       "TeamRecord": {
         "MatchupWins": 7,
         "MatchupLosses": 4,
         "MatchupTies": 0,
-        "CategoryWins": 52,
-        "CategoryLosses": 47,
-        "CategoryTies": 0,
+        "CategoryWins": 54,
+        "CategoryLosses": 44,
+        "CategoryTies": 1,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
-            "Wins": 6,
-            "Losses": 5,
+            "Wins": 7,
+            "Losses": 4,
             "Ties": 0
           },
           "REB": {
@@ -833,15 +833,15 @@
           },
           "STL": {
             "Category": "STL",
-            "Wins": 3,
-            "Losses": 8,
+            "Wins": 5,
+            "Losses": 6,
             "Ties": 0
           },
           "BLK": {
             "Category": "BLK",
             "Wins": 8,
-            "Losses": 3,
-            "Ties": 0
+            "Losses": 2,
+            "Ties": 1
           },
           "TO": {
             "Category": "TO",
@@ -851,14 +851,14 @@
           },
           "3PM": {
             "Category": "3PM",
-            "Wins": 9,
-            "Losses": 2,
+            "Wins": 7,
+            "Losses": 4,
             "Ties": 0
           },
           "FGM/A": {
             "Category": "FGM/A",
-            "Wins": 1,
-            "Losses": 10,
+            "Wins": 2,
+            "Losses": 9,
             "Ties": 0
           },
           "FTM/A": {
@@ -897,8 +897,8 @@
           "Losses": 1,
           "Ties": 0,
           "CategoryWins": 2,
-          "OpponentCategoryWins": 7,
-          "CategoryTies": 0
+          "OpponentCategoryWins": 6,
+          "CategoryTies": 1
         },
         {
           "OpponentTeamKey": "1F159E5B4A7F937B5B88FED217C64A1F19095ED1976AB90937E2343043517FA0",
@@ -906,8 +906,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
+          "CategoryWins": 4,
+          "OpponentCategoryWins": 5,
           "CategoryTies": 0
         },
         {
@@ -946,8 +946,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 5,
-          "OpponentCategoryWins": 4,
+          "CategoryWins": 6,
+          "OpponentCategoryWins": 3,
           "CategoryTies": 0
         },
         {
@@ -988,37 +988,37 @@
         "TeamKey": "6ABF36C085FCDE755CF852AA7DE61673ADFDB7BE18A5ADA4A6F2823274DAA240",
         "ManagerName": "Michael",
         "StatValues": {
-          "FGM/A": "0.43780",
-          "FG%": ".438",
-          "FTM/A": "0.76136",
-          "FT%": ".761",
-          "3PM": "62",
-          "PTS": "495",
-          "REB": "161",
-          "AST": "137",
-          "STL": "32",
-          "BLK": "32",
-          "TO": "76"
+          "FGM/A": "0.45865",
+          "FG%": ".459",
+          "FTM/A": "0.76190",
+          "FT%": ".762",
+          "3PM": "82",
+          "PTS": "650",
+          "REB": "199",
+          "AST": "167",
+          "STL": "36",
+          "BLK": "38",
+          "TO": "97"
         }
       },
       "TeamRecord": {
         "MatchupWins": 4,
-        "MatchupLosses": 6,
-        "MatchupTies": 1,
-        "CategoryWins": 47,
-        "CategoryLosses": 51,
+        "MatchupLosses": 7,
+        "MatchupTies": 0,
+        "CategoryWins": 48,
+        "CategoryLosses": 50,
         "CategoryTies": 1,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
-            "Wins": 4,
-            "Losses": 7,
+            "Wins": 5,
+            "Losses": 6,
             "Ties": 0
           },
           "REB": {
             "Category": "REB",
-            "Wins": 5,
-            "Losses": 6,
+            "Wins": 4,
+            "Losses": 7,
             "Ties": 0
           },
           "AST": {
@@ -1029,15 +1029,15 @@
           },
           "STL": {
             "Category": "STL",
-            "Wins": 4,
-            "Losses": 6,
-            "Ties": 1
+            "Wins": 3,
+            "Losses": 8,
+            "Ties": 0
           },
           "BLK": {
             "Category": "BLK",
-            "Wins": 11,
+            "Wins": 10,
             "Losses": 0,
-            "Ties": 0
+            "Ties": 1
           },
           "TO": {
             "Category": "TO",
@@ -1047,14 +1047,14 @@
           },
           "3PM": {
             "Category": "3PM",
-            "Wins": 8,
-            "Losses": 3,
+            "Wins": 9,
+            "Losses": 2,
             "Ties": 0
           },
           "FGM/A": {
             "Category": "FGM/A",
-            "Wins": 2,
-            "Losses": 9,
+            "Wins": 4,
+            "Losses": 7,
             "Ties": 0
           },
           "FTM/A": {
@@ -1072,9 +1072,9 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 3,
+          "CategoryWins": 2,
           "OpponentCategoryWins": 6,
-          "CategoryTies": 0
+          "CategoryTies": 1
         },
         {
           "OpponentTeamKey": "3A7B458FA59B6584D13EE3BAB38B34C2BD873636A514830CFE79184BA6561802",
@@ -1092,8 +1092,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 2,
-          "OpponentCategoryWins": 7,
+          "CategoryWins": 3,
+          "OpponentCategoryWins": 6,
           "CategoryTies": 0
         },
         {
@@ -1102,8 +1102,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 2,
-          "OpponentCategoryWins": 7,
+          "CategoryWins": 3,
+          "OpponentCategoryWins": 6,
           "CategoryTies": 0
         },
         {
@@ -1142,19 +1142,19 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
+          "CategoryWins": 4,
+          "OpponentCategoryWins": 5,
           "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "9017F765F09829BD6570A4EE1208C976D47F61108780FB0E2C2C4A9B2EB60DAF",
           "ManagerName": "Jack",
           "Wins": 0,
-          "Losses": 0,
-          "Ties": 1,
+          "Losses": 1,
+          "Ties": 0,
           "CategoryWins": 4,
-          "OpponentCategoryWins": 4,
-          "CategoryTies": 1
+          "OpponentCategoryWins": 5,
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "81DA36CAE95E4C0D12D6D9B42F39BD3512D116DB1D97F7A1E590885037BEAD12",
@@ -1172,8 +1172,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 2,
-          "OpponentCategoryWins": 7,
+          "CategoryWins": 1,
+          "OpponentCategoryWins": 8,
           "CategoryTies": 0
         }
       ]
@@ -1184,31 +1184,31 @@
         "TeamKey": "4237816ED6AED7D8F428E6A6FD454170FDF1680D22BF3D80E67CC3F030492556",
         "ManagerName": "JRock",
         "StatValues": {
-          "FGM/A": "0.40828",
-          "FG%": ".408",
-          "FTM/A": "0.75000",
-          "FT%": ".750",
-          "3PM": "14",
-          "PTS": "200",
-          "REB": "74",
-          "AST": "51",
-          "STL": "18",
-          "BLK": "8",
-          "TO": "23"
+          "FGM/A": "0.40870",
+          "FG%": ".409",
+          "FTM/A": "0.73810",
+          "FT%": ".738",
+          "3PM": "22",
+          "PTS": "272",
+          "REB": "100",
+          "AST": "87",
+          "STL": "21",
+          "BLK": "12",
+          "TO": "30"
         }
       },
       "TeamRecord": {
-        "MatchupWins": 0,
-        "MatchupLosses": 11,
+        "MatchupWins": 1,
+        "MatchupLosses": 10,
         "MatchupTies": 0,
-        "CategoryWins": 14,
-        "CategoryLosses": 85,
+        "CategoryWins": 16,
+        "CategoryLosses": 83,
         "CategoryTies": 0,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
-            "Wins": 0,
-            "Losses": 11,
+            "Wins": 1,
+            "Losses": 10,
             "Ties": 0
           },
           "REB": {
@@ -1243,8 +1243,8 @@
           },
           "3PM": {
             "Category": "3PM",
-            "Wins": 0,
-            "Losses": 11,
+            "Wins": 1,
+            "Losses": 10,
             "Ties": 0
           },
           "FGM/A": {
@@ -1275,11 +1275,11 @@
         {
           "OpponentTeamKey": "3A7B458FA59B6584D13EE3BAB38B34C2BD873636A514830CFE79184BA6561802",
           "ManagerName": "scott",
-          "Wins": 0,
-          "Losses": 1,
+          "Wins": 1,
+          "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
+          "CategoryWins": 5,
+          "OpponentCategoryWins": 4,
           "CategoryTies": 0
         },
         {
@@ -1380,26 +1380,26 @@
         "TeamKey": "C134E6AC402FAFA8739A0159EB75C80C6584A5BEA7D4A79C6837A88E11FF828B",
         "ManagerName": "kelat",
         "StatValues": {
-          "FGM/A": "0.51361",
-          "FG%": ".514",
-          "FTM/A": "0.69737",
-          "FT%": ".697",
-          "3PM": "44",
-          "PTS": "399",
-          "REB": "151",
-          "AST": "107",
-          "STL": "47",
-          "BLK": "18",
-          "TO": "36"
+          "FGM/A": "0.52304",
+          "FG%": ".523",
+          "FTM/A": "0.70652",
+          "FT%": ".707",
+          "3PM": "53",
+          "PTS": "504",
+          "REB": "188",
+          "AST": "129",
+          "STL": "52",
+          "BLK": "22",
+          "TO": "41"
         }
       },
       "TeamRecord": {
-        "MatchupWins": 4,
-        "MatchupLosses": 7,
+        "MatchupWins": 3,
+        "MatchupLosses": 8,
         "MatchupTies": 0,
-        "CategoryWins": 48,
-        "CategoryLosses": 51,
-        "CategoryTies": 0,
+        "CategoryWins": 46,
+        "CategoryLosses": 52,
+        "CategoryTies": 1,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
@@ -1409,14 +1409,14 @@
           },
           "REB": {
             "Category": "REB",
-            "Wins": 4,
-            "Losses": 7,
+            "Wins": 3,
+            "Losses": 8,
             "Ties": 0
           },
           "AST": {
             "Category": "AST",
-            "Wins": 4,
-            "Losses": 7,
+            "Wins": 3,
+            "Losses": 8,
             "Ties": 0
           },
           "STL": {
@@ -1427,9 +1427,9 @@
           },
           "BLK": {
             "Category": "BLK",
-            "Wins": 6,
+            "Wins": 5,
             "Losses": 5,
-            "Ties": 0
+            "Ties": 1
           },
           "TO": {
             "Category": "TO",
@@ -1445,8 +1445,8 @@
           },
           "FGM/A": {
             "Category": "FGM/A",
-            "Wins": 10,
-            "Losses": 1,
+            "Wins": 11,
+            "Losses": 0,
             "Ties": 0
           },
           "FTM/A": {
@@ -1474,8 +1474,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
+          "CategoryWins": 7,
+          "OpponentCategoryWins": 2,
           "CategoryTies": 0
         },
         {
@@ -1534,18 +1534,18 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 4,
-          "OpponentCategoryWins": 5,
+          "CategoryWins": 3,
+          "OpponentCategoryWins": 6,
           "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "9017F765F09829BD6570A4EE1208C976D47F61108780FB0E2C2C4A9B2EB60DAF",
           "ManagerName": "Jack",
-          "Wins": 1,
-          "Losses": 0,
+          "Wins": 0,
+          "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 5,
-          "OpponentCategoryWins": 4,
+          "CategoryWins": 4,
+          "OpponentCategoryWins": 5,
           "CategoryTies": 0
         },
         {
@@ -1564,9 +1564,9 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 4,
+          "CategoryWins": 3,
           "OpponentCategoryWins": 5,
-          "CategoryTies": 0
+          "CategoryTies": 1
         }
       ]
     },
@@ -1576,31 +1576,31 @@
         "TeamKey": "85522C60CD82DE63E67DA64330061040E873E7BDEB151C3889FFA5ADD91CC3C5",
         "ManagerName": "Noah",
         "StatValues": {
-          "FGM/A": "0.46239",
-          "FG%": ".462",
+          "FGM/A": "0.44886",
+          "FG%": ".449",
           "FTM/A": "0.83333",
           "FT%": ".833",
-          "3PM": "60",
-          "PTS": "583",
-          "REB": "172",
-          "AST": "104",
-          "STL": "38",
-          "BLK": "21",
-          "TO": "70"
+          "3PM": "71",
+          "PTS": "665",
+          "REB": "217",
+          "AST": "132",
+          "STL": "44",
+          "BLK": "25",
+          "TO": "81"
         }
       },
       "TeamRecord": {
         "MatchupWins": 6,
         "MatchupLosses": 5,
         "MatchupTies": 0,
-        "CategoryWins": 55,
-        "CategoryLosses": 43,
+        "CategoryWins": 51,
+        "CategoryLosses": 47,
         "CategoryTies": 1,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
-            "Wins": 8,
-            "Losses": 3,
+            "Wins": 6,
+            "Losses": 5,
             "Ties": 0
           },
           "REB": {
@@ -1611,15 +1611,15 @@
           },
           "AST": {
             "Category": "AST",
-            "Wins": 3,
-            "Losses": 8,
+            "Wins": 4,
+            "Losses": 7,
             "Ties": 0
           },
           "STL": {
             "Category": "STL",
-            "Wins": 7,
+            "Wins": 6,
             "Losses": 4,
-            "Ties": 0
+            "Ties": 1
           },
           "BLK": {
             "Category": "BLK",
@@ -1636,19 +1636,19 @@
           "3PM": {
             "Category": "3PM",
             "Wins": 6,
-            "Losses": 4,
-            "Ties": 1
+            "Losses": 5,
+            "Ties": 0
           },
           "FGM/A": {
             "Category": "FGM/A",
-            "Wins": 4,
-            "Losses": 7,
+            "Wins": 3,
+            "Losses": 8,
             "Ties": 0
           },
           "FTM/A": {
             "Category": "FTM/A",
-            "Wins": 11,
-            "Losses": 0,
+            "Wins": 10,
+            "Losses": 1,
             "Ties": 0
           }
         }
@@ -1681,8 +1681,8 @@
           "Losses": 1,
           "Ties": 0,
           "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
-          "CategoryTies": 0
+          "OpponentCategoryWins": 5,
+          "CategoryTies": 1
         },
         {
           "OpponentTeamKey": "1F159E5B4A7F937B5B88FED217C64A1F19095ED1976AB90937E2343043517FA0",
@@ -1690,8 +1690,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
+          "CategoryWins": 2,
+          "OpponentCategoryWins": 7,
           "CategoryTies": 0
         },
         {
@@ -1700,8 +1700,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 4,
-          "OpponentCategoryWins": 5,
+          "CategoryWins": 3,
+          "OpponentCategoryWins": 6,
           "CategoryTies": 0
         },
         {
@@ -1710,8 +1710,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
+          "CategoryWins": 5,
+          "OpponentCategoryWins": 4,
           "CategoryTies": 0
         },
         {
@@ -1730,8 +1730,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 5,
-          "OpponentCategoryWins": 4,
+          "CategoryWins": 6,
+          "OpponentCategoryWins": 3,
           "CategoryTies": 0
         },
         {
@@ -1741,8 +1741,8 @@
           "Losses": 0,
           "Ties": 0,
           "CategoryWins": 5,
-          "OpponentCategoryWins": 3,
-          "CategoryTies": 1
+          "OpponentCategoryWins": 4,
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "81DA36CAE95E4C0D12D6D9B42F39BD3512D116DB1D97F7A1E590885037BEAD12",
@@ -1760,8 +1760,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 4,
-          "OpponentCategoryWins": 5,
+          "CategoryWins": 2,
+          "OpponentCategoryWins": 7,
           "CategoryTies": 0
         }
       ]
@@ -1772,37 +1772,37 @@
         "TeamKey": "9017F765F09829BD6570A4EE1208C976D47F61108780FB0E2C2C4A9B2EB60DAF",
         "ManagerName": "Jack",
         "StatValues": {
-          "FGM/A": "0.46438",
-          "FG%": ".464",
-          "FTM/A": "0.82353",
-          "FT%": ".824",
-          "3PM": "60",
-          "PTS": "496",
-          "REB": "147",
-          "AST": "123",
-          "STL": "32",
-          "BLK": "13",
-          "TO": "57"
+          "FGM/A": "0.46247",
+          "FG%": ".462",
+          "FTM/A": "0.82540",
+          "FT%": ".825",
+          "3PM": "79",
+          "PTS": "639",
+          "REB": "202",
+          "AST": "153",
+          "STL": "40",
+          "BLK": "21",
+          "TO": "71"
         }
       },
       "TeamRecord": {
-        "MatchupWins": 3,
-        "MatchupLosses": 7,
-        "MatchupTies": 1,
-        "CategoryWins": 44,
-        "CategoryLosses": 53,
-        "CategoryTies": 2,
+        "MatchupWins": 5,
+        "MatchupLosses": 6,
+        "MatchupTies": 0,
+        "CategoryWins": 51,
+        "CategoryLosses": 48,
+        "CategoryTies": 0,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
-            "Wins": 5,
-            "Losses": 6,
+            "Wins": 4,
+            "Losses": 7,
             "Ties": 0
           },
           "REB": {
             "Category": "REB",
-            "Wins": 3,
-            "Losses": 8,
+            "Wins": 5,
+            "Losses": 6,
             "Ties": 0
           },
           "AST": {
@@ -1814,13 +1814,13 @@
           "STL": {
             "Category": "STL",
             "Wins": 4,
-            "Losses": 6,
-            "Ties": 1
+            "Losses": 7,
+            "Ties": 0
           },
           "BLK": {
             "Category": "BLK",
-            "Wins": 1,
-            "Losses": 10,
+            "Wins": 4,
+            "Losses": 7,
             "Ties": 0
           },
           "TO": {
@@ -1831,9 +1831,9 @@
           },
           "3PM": {
             "Category": "3PM",
-            "Wins": 6,
-            "Losses": 4,
-            "Ties": 1
+            "Wins": 8,
+            "Losses": 3,
+            "Ties": 0
           },
           "FGM/A": {
             "Category": "FGM/A",
@@ -1843,8 +1843,8 @@
           },
           "FTM/A": {
             "Category": "FTM/A",
-            "Wins": 8,
-            "Losses": 3,
+            "Wins": 9,
+            "Losses": 2,
             "Ties": 0
           }
         }
@@ -1856,8 +1856,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 2,
-          "OpponentCategoryWins": 7,
+          "CategoryWins": 3,
+          "OpponentCategoryWins": 6,
           "CategoryTies": 0
         },
         {
@@ -1866,8 +1866,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
+          "CategoryWins": 7,
+          "OpponentCategoryWins": 2,
           "CategoryTies": 0
         },
         {
@@ -1886,8 +1886,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 2,
-          "OpponentCategoryWins": 7,
+          "CategoryWins": 3,
+          "OpponentCategoryWins": 6,
           "CategoryTies": 0
         },
         {
@@ -1903,12 +1903,12 @@
         {
           "OpponentTeamKey": "6ABF36C085FCDE755CF852AA7DE61673ADFDB7BE18A5ADA4A6F2823274DAA240",
           "ManagerName": "Michael",
-          "Wins": 0,
+          "Wins": 1,
           "Losses": 0,
-          "Ties": 1,
-          "CategoryWins": 4,
+          "Ties": 0,
+          "CategoryWins": 5,
           "OpponentCategoryWins": 4,
-          "CategoryTies": 1
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "4237816ED6AED7D8F428E6A6FD454170FDF1680D22BF3D80E67CC3F030492556",
@@ -1923,11 +1923,11 @@
         {
           "OpponentTeamKey": "C134E6AC402FAFA8739A0159EB75C80C6584A5BEA7D4A79C6837A88E11FF828B",
           "ManagerName": "kelat",
-          "Wins": 0,
-          "Losses": 1,
+          "Wins": 1,
+          "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 4,
-          "OpponentCategoryWins": 5,
+          "CategoryWins": 5,
+          "OpponentCategoryWins": 4,
           "CategoryTies": 0
         },
         {
@@ -1936,9 +1936,9 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 3,
+          "CategoryWins": 4,
           "OpponentCategoryWins": 5,
-          "CategoryTies": 1
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "81DA36CAE95E4C0D12D6D9B42F39BD3512D116DB1D97F7A1E590885037BEAD12",
@@ -1946,8 +1946,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 3,
+          "CategoryWins": 7,
+          "OpponentCategoryWins": 2,
           "CategoryTies": 0
         },
         {
@@ -1968,26 +1968,26 @@
         "TeamKey": "81DA36CAE95E4C0D12D6D9B42F39BD3512D116DB1D97F7A1E590885037BEAD12",
         "ManagerName": "Ryan",
         "StatValues": {
-          "FGM/A": "0.50853",
-          "FG%": ".509",
-          "FTM/A": "0.78481",
-          "FT%": ".785",
-          "3PM": "47",
-          "PTS": "407",
-          "REB": "107",
-          "AST": "78",
-          "STL": "27",
-          "BLK": "15",
-          "TO": "39"
+          "FGM/A": "0.50643",
+          "FG%": ".506",
+          "FTM/A": "0.79208",
+          "FT%": ".792",
+          "3PM": "59",
+          "PTS": "533",
+          "REB": "139",
+          "AST": "105",
+          "STL": "32",
+          "BLK": "20",
+          "TO": "51"
         }
       },
       "TeamRecord": {
         "MatchupWins": 2,
         "MatchupLosses": 9,
         "MatchupTies": 0,
-        "CategoryWins": 37,
-        "CategoryLosses": 60,
-        "CategoryTies": 2,
+        "CategoryWins": 40,
+        "CategoryLosses": 59,
+        "CategoryTies": 0,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
@@ -2015,9 +2015,9 @@
           },
           "BLK": {
             "Category": "BLK",
-            "Wins": 2,
-            "Losses": 7,
-            "Ties": 2
+            "Wins": 3,
+            "Losses": 8,
+            "Ties": 0
           },
           "TO": {
             "Category": "TO",
@@ -2033,14 +2033,14 @@
           },
           "FGM/A": {
             "Category": "FGM/A",
-            "Wins": 9,
-            "Losses": 2,
+            "Wins": 10,
+            "Losses": 1,
             "Ties": 0
           },
           "FTM/A": {
             "Category": "FTM/A",
-            "Wins": 5,
-            "Losses": 6,
+            "Wins": 6,
+            "Losses": 5,
             "Ties": 0
           }
         }
@@ -2062,9 +2062,9 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 6,
-          "OpponentCategoryWins": 2,
-          "CategoryTies": 1
+          "CategoryWins": 8,
+          "OpponentCategoryWins": 1,
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "9F9743686E139D88E98877658DB981877372D01780B0E111F30CB5AC0CF9939C",
@@ -2072,8 +2072,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
+          "CategoryWins": 4,
+          "OpponentCategoryWins": 5,
           "CategoryTies": 0
         },
         {
@@ -2082,9 +2082,9 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 2,
+          "CategoryWins": 3,
           "OpponentCategoryWins": 6,
-          "CategoryTies": 1
+          "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "90DD219AA37A91B240FD13421AB197906C48250FDACF16651B7816A64D6A487F",
@@ -2142,8 +2142,8 @@
           "Wins": 0,
           "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
+          "CategoryWins": 2,
+          "OpponentCategoryWins": 7,
           "CategoryTies": 0
         },
         {
@@ -2164,61 +2164,61 @@
         "TeamKey": "58E49E9F7021CA61DAC4CD1E032F99699D61472286D838A09AB2028CD37F9DF6",
         "ManagerName": "Garrett",
         "StatValues": {
-          "FGM/A": "0.50739",
-          "FG%": ".507",
-          "FTM/A": "0.82051",
-          "FT%": ".821",
-          "3PM": "66",
-          "PTS": "574",
-          "REB": "187",
-          "AST": "131",
-          "STL": "37",
-          "BLK": "16",
-          "TO": "61"
+          "FGM/A": "0.50464",
+          "FG%": ".505",
+          "FTM/A": "0.82209",
+          "FT%": ".822",
+          "3PM": "83",
+          "PTS": "761",
+          "REB": "240",
+          "AST": "173",
+          "STL": "49",
+          "BLK": "22",
+          "TO": "76"
         }
       },
       "TeamRecord": {
-        "MatchupWins": 9,
-        "MatchupLosses": 2,
+        "MatchupWins": 10,
+        "MatchupLosses": 1,
         "MatchupTies": 0,
-        "CategoryWins": 64,
-        "CategoryLosses": 35,
-        "CategoryTies": 0,
+        "CategoryWins": 71,
+        "CategoryLosses": 26,
+        "CategoryTies": 2,
         "CategoryRecords": {
           "PTS": {
             "Category": "PTS",
+            "Wins": 9,
+            "Losses": 1,
+            "Ties": 1
+          },
+          "REB": {
+            "Category": "REB",
             "Wins": 7,
             "Losses": 4,
             "Ties": 0
           },
-          "REB": {
-            "Category": "REB",
-            "Wins": 8,
-            "Losses": 3,
-            "Ties": 0
-          },
           "AST": {
             "Category": "AST",
-            "Wins": 8,
-            "Losses": 3,
+            "Wins": 10,
+            "Losses": 1,
             "Ties": 0
           },
           "STL": {
             "Category": "STL",
-            "Wins": 6,
-            "Losses": 5,
+            "Wins": 9,
+            "Losses": 2,
             "Ties": 0
           },
           "BLK": {
             "Category": "BLK",
             "Wins": 5,
-            "Losses": 6,
-            "Ties": 0
+            "Losses": 5,
+            "Ties": 1
           },
           "TO": {
             "Category": "TO",
-            "Wins": 5,
-            "Losses": 6,
+            "Wins": 4,
+            "Losses": 7,
             "Ties": 0
           },
           "3PM": {
@@ -2229,14 +2229,14 @@
           },
           "FGM/A": {
             "Category": "FGM/A",
-            "Wins": 8,
-            "Losses": 3,
+            "Wins": 9,
+            "Losses": 2,
             "Ties": 0
           },
           "FTM/A": {
             "Category": "FTM/A",
-            "Wins": 7,
-            "Losses": 4,
+            "Wins": 8,
+            "Losses": 3,
             "Ties": 0
           }
         }
@@ -2245,11 +2245,11 @@
         {
           "OpponentTeamKey": "90C53E50CC1C110057BE71C82157588D20D5DCE83BFC6F206F2A5FF9BEE40FB7",
           "ManagerName": "ELowe",
-          "Wins": 0,
-          "Losses": 1,
+          "Wins": 1,
+          "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 3,
-          "OpponentCategoryWins": 6,
+          "CategoryWins": 6,
+          "OpponentCategoryWins": 3,
           "CategoryTies": 0
         },
         {
@@ -2258,28 +2258,28 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 7,
-          "OpponentCategoryWins": 2,
+          "CategoryWins": 8,
+          "OpponentCategoryWins": 1,
           "CategoryTies": 0
         },
         {
           "OpponentTeamKey": "9F9743686E139D88E98877658DB981877372D01780B0E111F30CB5AC0CF9939C",
           "ManagerName": "jlevesque",
-          "Wins": 0,
-          "Losses": 1,
+          "Wins": 1,
+          "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 4,
-          "OpponentCategoryWins": 5,
-          "CategoryTies": 0
+          "CategoryWins": 6,
+          "OpponentCategoryWins": 2,
+          "CategoryTies": 1
         },
         {
           "OpponentTeamKey": "1F159E5B4A7F937B5B88FED217C64A1F19095ED1976AB90937E2343043517FA0",
           "ManagerName": "EFry",
-          "Wins": 1,
-          "Losses": 0,
+          "Wins": 0,
+          "Losses": 1,
           "Ties": 0,
-          "CategoryWins": 5,
-          "OpponentCategoryWins": 4,
+          "CategoryWins": 3,
+          "OpponentCategoryWins": 6,
           "CategoryTies": 0
         },
         {
@@ -2298,8 +2298,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 7,
-          "OpponentCategoryWins": 2,
+          "CategoryWins": 8,
+          "OpponentCategoryWins": 1,
           "CategoryTies": 0
         },
         {
@@ -2319,8 +2319,8 @@
           "Losses": 0,
           "Ties": 0,
           "CategoryWins": 5,
-          "OpponentCategoryWins": 4,
-          "CategoryTies": 0
+          "OpponentCategoryWins": 3,
+          "CategoryTies": 1
         },
         {
           "OpponentTeamKey": "85522C60CD82DE63E67DA64330061040E873E7BDEB151C3889FFA5ADD91CC3C5",
@@ -2328,8 +2328,8 @@
           "Wins": 1,
           "Losses": 0,
           "Ties": 0,
-          "CategoryWins": 5,
-          "OpponentCategoryWins": 4,
+          "CategoryWins": 7,
+          "OpponentCategoryWins": 2,
           "CategoryTies": 0
         },
         {
