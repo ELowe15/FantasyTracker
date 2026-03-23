@@ -28,10 +28,10 @@
         "NbaTeam": "CHA"
       },
       {
-        "PlayerKey": "25523746C710EAA78E000D9B7BFE7E9149E17010172E06B15B40E60AD2F4B4E7",
-        "FullName": "Gui Santos",
+        "PlayerKey": "D4C644F2B4199BB85F9567329566BE776FE8151D4AEE03580E97DA84FBF210FE",
+        "FullName": "Will Riley",
         "Position": "SF,PF",
-        "NbaTeam": "GSW"
+        "NbaTeam": "WAS"
       },
       {
         "PlayerKey": "342418524D8A5B38013137FF9B07F2A0050582D5B7BEAE9985C95265B2D4221C",
@@ -40,16 +40,16 @@
         "NbaTeam": "BKN"
       },
       {
-        "PlayerKey": "C9C254DCF25837DC75F74EDA465623418114DBB422178EE0836C2B7288B7A832",
-        "FullName": "Kyle Filipowski",
-        "Position": "PF,C",
-        "NbaTeam": "UTA"
-      },
-      {
         "PlayerKey": "2B747421519170894DC51F45F9332245F6438419DA1EC9254AE974322AF435E8",
         "FullName": "Nikola Joki\u0107",
         "Position": "C",
         "NbaTeam": "DEN"
+      },
+      {
+        "PlayerKey": "6D18B7ED1CBB2393C934FA8F7441C9ED2BC79DC475A981A85D16CC74003389D4",
+        "FullName": "Jabari Smith Jr.",
+        "Position": "SF,PF,C",
+        "NbaTeam": "HOU"
       },
       {
         "PlayerKey": "36F01B6ABB3D84D1E15FE735EE703C9D3DD0178648425BEFA7317E7CA18DA3AE",
@@ -64,6 +64,12 @@
         "NbaTeam": "PHX"
       },
       {
+        "PlayerKey": "25523746C710EAA78E000D9B7BFE7E9149E17010172E06B15B40E60AD2F4B4E7",
+        "FullName": "Gui Santos",
+        "Position": "SF,PF",
+        "NbaTeam": "GSW"
+      },
+      {
         "PlayerKey": "1ACDE1B1B16AE529534E8EEB9E4FAA171F31FE9D9A5E747AA732A3D6819DE659",
         "FullName": "Ryan Rollins",
         "Position": "PG,SG",
@@ -74,18 +80,6 @@
         "FullName": "Dyson Daniels",
         "Position": "PG,SG,SF",
         "NbaTeam": "ATL"
-      },
-      {
-        "PlayerKey": "6D18B7ED1CBB2393C934FA8F7441C9ED2BC79DC475A981A85D16CC74003389D4",
-        "FullName": "Jabari Smith Jr.",
-        "Position": "SF,PF,C",
-        "NbaTeam": "HOU"
-      },
-      {
-        "PlayerKey": "D4C644F2B4199BB85F9567329566BE776FE8151D4AEE03580E97DA84FBF210FE",
-        "FullName": "Will Riley",
-        "Position": "SF,PF",
-        "NbaTeam": "WAS"
       }
     ]
   },
@@ -1156,16 +1150,16 @@
         "NbaTeam": "SAC"
       },
       {
-        "PlayerKey": "09CCC089EF43DC167A0E2A439FE638A1BF1C44FE58836E7213622945DE061ED2",
-        "FullName": "Jay Huff",
-        "Position": "C",
-        "NbaTeam": "IND"
-      },
-      {
         "PlayerKey": "891537BAC8A8090D8B90734BFEFEEB38DD3744A42FAE556B6CA6118805A0C119",
         "FullName": "Dejounte Murray",
         "Position": "PG,SG",
         "NbaTeam": "NOP"
+      },
+      {
+        "PlayerKey": "D5F88FCAE51E89AEA62E3ABBC79899D40CFA634EC3415860B702399C8C3D8361",
+        "FullName": "Naz Reid",
+        "Position": "PF,C",
+        "NbaTeam": "MIN"
       },
       {
         "PlayerKey": "D16EACE3A58BB33FF5E1512985794A76E821AEC8779E02FEE44CDE7D872227D0",
@@ -1195,12 +1189,6 @@
         "PlayerKey": "53E83B584313ECD7CE639A7F3CE2173E5CB61F514CEDF6B87AC23B34A4C97375",
         "FullName": "Anthony Edwards",
         "Position": "PG,SG",
-        "NbaTeam": "MIN"
-      },
-      {
-        "PlayerKey": "D5F88FCAE51E89AEA62E3ABBC79899D40CFA634EC3415860B702399C8C3D8361",
-        "FullName": "Naz Reid",
-        "Position": "PF,C",
         "NbaTeam": "MIN"
       }
     ]
