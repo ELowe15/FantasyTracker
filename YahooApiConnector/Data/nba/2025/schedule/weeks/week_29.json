@@ -1,0 +1,131 @@
+{
+  "Week": {
+    "WeekNumber": 29,
+    "StartDate": "2026-04-13T00:00:00-03:00",
+    "EndDate": "2026-04-19T00:00:00-03:00",
+    "Season": 2025
+  },
+  "Games": [
+    {
+      "GameId": "401866755",
+      "HomeTeam": "CHA",
+      "AwayTeam": "MIA",
+      "GameTime": "2026-04-14T20:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401866754",
+      "HomeTeam": "PHX",
+      "AwayTeam": "POR",
+      "GameTime": "2026-04-14T23:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401866757",
+      "HomeTeam": "PHI",
+      "AwayTeam": "ORL",
+      "GameTime": "2026-04-15T20:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401866756",
+      "HomeTeam": "LAC",
+      "AwayTeam": "GS",
+      "GameTime": "2026-04-15T23:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401866758",
+      "HomeTeam": "ORL",
+      "AwayTeam": "CHA",
+      "GameTime": "2026-04-17T20:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401866759",
+      "HomeTeam": "PHX",
+      "AwayTeam": "GS",
+      "GameTime": "2026-04-17T23:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869187",
+      "HomeTeam": "CLE",
+      "AwayTeam": "TOR",
+      "GameTime": "2026-04-18T14:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869188",
+      "HomeTeam": "DEN",
+      "AwayTeam": "MIN",
+      "GameTime": "2026-04-18T16:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869189",
+      "HomeTeam": "NY",
+      "AwayTeam": "ATL",
+      "GameTime": "2026-04-18T19:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869190",
+      "HomeTeam": "LAL",
+      "AwayTeam": "HOU",
+      "GameTime": "2026-04-18T21:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869191",
+      "HomeTeam": "BOS",
+      "AwayTeam": "PHI",
+      "GameTime": "2026-04-19T14:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869192",
+      "HomeTeam": "OKC",
+      "AwayTeam": "PHX",
+      "GameTime": "2026-04-19T16:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869193",
+      "HomeTeam": "DET",
+      "AwayTeam": "ORL",
+      "GameTime": "2026-04-19T19:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869194",
+      "HomeTeam": "SA",
+      "AwayTeam": "POR",
+      "GameTime": "2026-04-19T22:00:00-03:00",
+      "Season": 2025
+    }
+  ],
+  "GameCount": 14,
+  "TeamsPlaying": [
+    "ATL",
+    "BOS",
+    "CHA",
+    "CLE",
+    "DEN",
+    "DET",
+    "GS",
+    "HOU",
+    "LAC",
+    "LAL",
+    "MIA",
+    "MIN",
+    "NY",
+    "OKC",
+    "ORL",
+    "PHI",
+    "PHX",
+    "POR",
+    "SA",
+    "TOR"
+  ]
+}

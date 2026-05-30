@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using System.Text.Json;
+using NbaSchedule.Services;
 
 class Program
 {
@@ -30,6 +31,12 @@ class Program
             .AddJsonFile("appsettings.json", optional: true)
             .AddEnvironmentVariables()
             .Build();
+
+        if (args.Length > 0 && args[0].StartsWith("--"))
+        {
+            var router = new CommandRouter(configuration, dataPath);
+            return await router.RouteAsync(args);
+        }
 
         var authService = new YahooAuthService(configuration);
 
@@ -186,5 +193,4 @@ catch (Exception ex)
 
         Console.WriteLine("Done.");
         return 0;
-    }
-}
+    }}

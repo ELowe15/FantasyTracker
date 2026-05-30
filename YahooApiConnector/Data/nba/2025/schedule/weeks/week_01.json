@@ -1,0 +1,91 @@
+{
+  "Week": {
+    "WeekNumber": 1,
+    "StartDate": "2025-09-29T00:00:00-03:00",
+    "EndDate": "2025-10-05T00:00:00-03:00",
+    "Season": 2025
+  },
+  "Games": [
+    {
+      "GameId": "401812480",
+      "HomeTeam": "NY",
+      "AwayTeam": "PHI",
+      "GameTime": "2025-10-02T13:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401812481",
+      "HomeTeam": "NO",
+      "AwayTeam": "MEL",
+      "GameTime": "2025-10-03T06:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401812482",
+      "HomeTeam": "LAL",
+      "AwayTeam": "PHX",
+      "GameTime": "2025-10-03T23:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401812483",
+      "HomeTeam": "PHI",
+      "AwayTeam": "NY",
+      "GameTime": "2025-10-04T12:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401812484",
+      "HomeTeam": "BKN",
+      "AwayTeam": "HAPOEL",
+      "GameTime": "2025-10-04T21:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401812485",
+      "HomeTeam": "MIA",
+      "AwayTeam": "ORL",
+      "GameTime": "2025-10-04T21:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401812486",
+      "HomeTeam": "DEN",
+      "AwayTeam": "MIN",
+      "GameTime": "2025-10-04T22:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401812676",
+      "HomeTeam": "CHA",
+      "AwayTeam": "OKC",
+      "GameTime": "2025-10-05T18:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401812677",
+      "HomeTeam": "GS",
+      "AwayTeam": "LAL",
+      "GameTime": "2025-10-05T21:30:00-03:00",
+      "Season": 2025
+    }
+  ],
+  "GameCount": 9,
+  "TeamsPlaying": [
+    "BKN",
+    "CHA",
+    "DEN",
+    "GS",
+    "HAPOEL",
+    "LAL",
+    "MEL",
+    "MIA",
+    "MIN",
+    "NO",
+    "NY",
+    "OKC",
+    "ORL",
+    "PHI",
+    "PHX"
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "Week": {
+    "WeekNumber": 30,
+    "StartDate": "2026-04-20T00:00:00-03:00",
+    "EndDate": "2026-04-26T00:00:00-03:00",
+    "Season": 2025
+  },
+  "Games": [
+    {
+      "GameId": "401869369",
+      "HomeTeam": "CLE",
+      "AwayTeam": "TOR",
+      "GameTime": "2026-04-20T20:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869387",
+      "HomeTeam": "NY",
+      "AwayTeam": "ATL",
+      "GameTime": "2026-04-20T21:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869395",
+      "HomeTeam": "DEN",
+      "AwayTeam": "MIN",
+      "GameTime": "2026-04-20T23:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869396",
+      "HomeTeam": "BOS",
+      "AwayTeam": "PHI",
+      "GameTime": "2026-04-21T20:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869378",
+      "HomeTeam": "SA",
+      "AwayTeam": "POR",
+      "GameTime": "2026-04-21T21:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869397",
+      "HomeTeam": "LAL",
+      "AwayTeam": "HOU",
+      "GameTime": "2026-04-21T23:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869411",
+      "HomeTeam": "DET",
+      "AwayTeam": "ORL",
+      "GameTime": "2026-04-22T20:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869368",
+      "HomeTeam": "OKC",
+      "AwayTeam": "PHX",
+      "GameTime": "2026-04-22T22:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869389",
+      "HomeTeam": "ATL",
+      "AwayTeam": "NY",
+      "GameTime": "2026-04-23T20:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869375",
+      "HomeTeam": "TOR",
+      "AwayTeam": "CLE",
+      "GameTime": "2026-04-23T21:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869398",
+      "HomeTeam": "MIN",
+      "AwayTeam": "DEN",
+      "GameTime": "2026-04-23T22:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869404",
+      "HomeTeam": "PHI",
+      "AwayTeam": "BOS",
+      "GameTime": "2026-04-24T20:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869400",
+      "HomeTeam": "HOU",
+      "AwayTeam": "LAL",
+      "GameTime": "2026-04-24T21:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869382",
+      "HomeTeam": "POR",
+      "AwayTeam": "SA",
+      "GameTime": "2026-04-24T23:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869414",
+      "HomeTeam": "ORL",
+      "AwayTeam": "DET",
+      "GameTime": "2026-04-25T14:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869370",
+      "HomeTeam": "PHX",
+      "AwayTeam": "OKC",
+      "GameTime": "2026-04-25T16:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869391",
+      "HomeTeam": "ATL",
+      "AwayTeam": "NY",
+      "GameTime": "2026-04-25T19:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869399",
+      "HomeTeam": "MIN",
+      "AwayTeam": "DEN",
+      "GameTime": "2026-04-25T21:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869377",
+      "HomeTeam": "TOR",
+      "AwayTeam": "CLE",
+      "GameTime": "2026-04-26T14:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869385",
+      "HomeTeam": "POR",
+      "AwayTeam": "SA",
+      "GameTime": "2026-04-26T16:30:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869406",
+      "HomeTeam": "PHI",
+      "AwayTeam": "BOS",
+      "GameTime": "2026-04-26T20:00:00-03:00",
+      "Season": 2025
+    },
+    {
+      "GameId": "401869405",
+      "HomeTeam": "HOU",
+      "AwayTeam": "LAL",
+      "GameTime": "2026-04-26T22:30:00-03:00",
+      "Season": 2025
+    }
+  ],
+  "GameCount": 22,
+  "TeamsPlaying": [
+    "ATL",
+    "BOS",
+    "CLE",
+    "DEN",
+    "DET",
+    "HOU",
+    "LAL",
+    "MIN",
+    "NY",
+    "OKC",
+    "ORL",
+    "PHI",
+    "PHX",
+    "POR",
+    "SA",
+    "TOR"
+  ]
+}
