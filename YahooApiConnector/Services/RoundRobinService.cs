@@ -1,6 +1,5 @@
 using System.Text.Json;
 
-
 public static class RoundRobinService
 {
     private static readonly Dictionary<string, CategoryRule> CategoryRules =
@@ -25,7 +24,7 @@ public static class RoundRobinService
 
     // Initialize results per team
     var results = teams.ToDictionary(
-        t => t.TeamKey,
+        t => t.TeamKey ?? string.Empty,
         t =>
         {
             var record = new TeamRoundRobinRecord();
@@ -40,7 +39,7 @@ public static class RoundRobinService
 
             return new RoundRobinResult
             {
-                TeamKey = t.TeamKey,
+                TeamKey = t.TeamKey ?? string.Empty,
                 Team = t,
                 TeamRecord = record,
                 Matchups = new List<MatchupResult>()
@@ -51,18 +50,23 @@ public static class RoundRobinService
     // Each team evaluates itself vs every other team
     foreach (var team in teams)
     {
-        var result = results[team.TeamKey];
+        var teamKey = team.TeamKey ?? string.Empty;
+        var result = results[teamKey];
 
         foreach (var opponent in teams)
         {
-            if (team.TeamKey == opponent.TeamKey)
+            var opponentKey = opponent.TeamKey ?? string.Empty;
+            if (teamKey == opponentKey)
                 continue;
 
             var matchup = new MatchupResult
             {
-                OpponentTeamKey = opponent.TeamKey,
-                ManagerName = opponent.ManagerName
+                OpponentTeamKey = opponentKey,
+                ManagerName = opponent.ManagerName ?? string.Empty
             };
+
+            // Ensure StatValues dictionary exists to avoid null assignments
+            team.StatValues ??= new Dictionary<string, string>();
 
             foreach (var (statKey, rule) in CategoryRules)
             {
@@ -78,7 +82,11 @@ public static class RoundRobinService
                     team.StatValues[statKey] = teamVal.ToString("F0");
                 }
                 
-                var categoryRecord = result.TeamRecord.CategoryRecords[statKey];
+                if (!result.TeamRecord.CategoryRecords.TryGetValue(statKey, out var categoryRecord) || categoryRecord == null)
+                {
+                    categoryRecord = new CategoryRecord { Category = statKey };
+                    result.TeamRecord.CategoryRecords[statKey] = categoryRecord;
+                }
 
                 // Determine W/L/T
                 if (teamVal == oppVal)
@@ -171,10 +179,21 @@ public static class RoundRobinService
             if (!Directory.Exists(outputDirectory))
                 return;
 
-            var weeklyFiles = Directory
-                .GetFiles(outputDirectory, $"round_robin_{season}_week_*.json")
-                .OrderBy(f => f)
-                .ToList();
+            var weeklyFiles = new List<string>();
+
+            // Look in base output directory, per-season folder, and per-season BestBall subfolder
+            if (Directory.Exists(outputDirectory))
+                weeklyFiles.AddRange(Directory.GetFiles(outputDirectory, $"round_robin_{season}_week_*.json"));
+
+            var seasonFolder = Path.Combine(outputDirectory, season.ToString());
+            if (Directory.Exists(seasonFolder))
+                weeklyFiles.AddRange(Directory.GetFiles(seasonFolder, $"round_robin_{season}_week_*.json"));
+
+            var bestBallFolder = Path.Combine(seasonFolder, "BestBall");
+            if (Directory.Exists(bestBallFolder))
+                weeklyFiles.AddRange(Directory.GetFiles(bestBallFolder, $"round_robin_{season}_week_*.json"));
+
+            weeklyFiles = weeklyFiles.Distinct().OrderBy(f => f).ToList();
 
             if (weeklyFiles.Count == 0)
                 return;
