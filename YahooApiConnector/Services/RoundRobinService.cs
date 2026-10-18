@@ -181,13 +181,11 @@ public static class RoundRobinService
 
             var weeklyFiles = new List<string>();
 
-            var seasonFolder = Path.Combine(outputDirectory, season.ToString());
-            var roundRobinFolder = Path.Combine(seasonFolder, "RoundRobin");
-            if (Directory.Exists(roundRobinFolder))
-                weeklyFiles.AddRange(Directory.GetFiles(roundRobinFolder, $"round_robin_{season}_week_*.json"));
+            // Look in base output directory, per-season folder, and per-season BestBall subfolder
+            if (Directory.Exists(outputDirectory))
+                weeklyFiles.AddRange(Directory.GetFiles(outputDirectory, $"round_robin_{season}_week_*.json"));
 
-            // Keep reading files from earlier layouts while writing to the categorized folder.
-            weeklyFiles.AddRange(Directory.GetFiles(outputDirectory, $"round_robin_{season}_week_*.json"));
+            var seasonFolder = Path.Combine(outputDirectory, season.ToString());
             if (Directory.Exists(seasonFolder))
                 weeklyFiles.AddRange(Directory.GetFiles(seasonFolder, $"round_robin_{season}_week_*.json"));
 
@@ -195,12 +193,7 @@ public static class RoundRobinService
             if (Directory.Exists(bestBallFolder))
                 weeklyFiles.AddRange(Directory.GetFiles(bestBallFolder, $"round_robin_{season}_week_*.json"));
 
-            weeklyFiles = weeklyFiles
-                .Distinct()
-                .GroupBy(file => Path.GetFileName(file) ?? string.Empty, StringComparer.OrdinalIgnoreCase)
-                .Select(files => files.First())
-                .OrderBy(f => f)
-                .ToList();
+            weeklyFiles = weeklyFiles.Distinct().OrderBy(f => f).ToList();
 
             if (weeklyFiles.Count == 0)
                 return;
@@ -305,9 +298,8 @@ public static class RoundRobinService
                     .ToList()
             };
 
-            Directory.CreateDirectory(roundRobinFolder);
             var outputPath = Path.Combine(
-                roundRobinFolder,
+                outputDirectory,
                 $"season_round_robin_{season}.json"
             );
 

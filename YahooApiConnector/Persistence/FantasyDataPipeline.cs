@@ -25,6 +25,7 @@ public sealed class FantasyDataPipeline
             Directory.CreateDirectory(seasonFolder);
 
         await ExportLeagueSnapshotsAsync(seasonFolder);
+        await ExportDraftResultsAsync(seasonFolder);
 
         var bestBallFolder = Path.Combine(seasonFolder, "BestBall");
         await PersistBestBallSnapshotAsync(snapshot, bestBallFolder);
@@ -66,6 +67,12 @@ public sealed class FantasyDataPipeline
         await _fantasyService.DumpAllTeamSeasonStatsToJsonAsync(_leagueKey, seasonStatsOutPath);
 
         Console.WriteLine($"Wrote team rosters to {rosterOutPath}");
+    }
+
+    private async Task ExportDraftResultsAsync(string seasonFolder)
+    {
+        var draftResultsOutPath = Path.Combine(seasonFolder, "draft_results.json");
+        await _fantasyService.DumpDraftResultsToJsonAsync(_leagueKey, draftResultsOutPath);
     }
 
     private async Task PersistBestBallSnapshotAsync(WeeklyLeagueSnapshot snapshot, string bestBallFolder)
