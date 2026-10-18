@@ -18,17 +18,16 @@ public sealed class FantasyDataPipeline
 
     public async Task<int> RunAsync()
     {
-        await ExportLeagueSnapshotsAsync();
-
         var snapshot = await _fantasyService.GetWeeklyTeamResultsAsync(_leagueKey, _dataPath);
 
-        // Ensure season folder exists
         var seasonFolder = Path.Combine(_dataPath, snapshot.Season.ToString());
         if (!Directory.Exists(seasonFolder))
             Directory.CreateDirectory(seasonFolder);
 
-        // Persist the raw weekly snapshot into the per-season folder (keeps existing structure)
-        await PersistBestBallSnapshotAsync(snapshot, seasonFolder);
+        await ExportLeagueSnapshotsAsync(seasonFolder);
+
+        var bestBallFolder = Path.Combine(seasonFolder, "BestBall");
+        await PersistBestBallSnapshotAsync(snapshot, bestBallFolder);
 
         // Delegate best-ball orchestration to the orchestrator (handles caching and rebuilds)
         await _bestBallOrchestrator.ProcessWeeklyAllModesAsync(snapshot, _dataPath);
@@ -43,7 +42,9 @@ public sealed class FantasyDataPipeline
             RoundRobinResults = roundRobinResults
         };
 
-        var weeklyStatsOutPath = Path.Combine(_dataPath, $"round_robin_{snapshot.Season}_week_{snapshot.Week}.json");
+        var roundRobinFolder = Path.Combine(seasonFolder, "RoundRobin");
+        Directory.CreateDirectory(roundRobinFolder);
+        var weeklyStatsOutPath = Path.Combine(roundRobinFolder, $"round_robin_{snapshot.Season}_week_{snapshot.Week}.json");
         await File.WriteAllTextAsync(weeklyStatsOutPath, JsonSerializer.Serialize(weeklySnapshot, new JsonSerializerOptions { WriteIndented = true }));
 
         Console.WriteLine($"Weekly stats snapshot saved to {weeklyStatsOutPath}");
@@ -56,21 +57,22 @@ public sealed class FantasyDataPipeline
         return 0;
     }
 
-    private async Task ExportLeagueSnapshotsAsync()
+    private async Task ExportLeagueSnapshotsAsync(string seasonFolder)
     {
-        var rosterOutPath = Path.Combine(_dataPath, "team_results.json");
+        var rosterOutPath = Path.Combine(seasonFolder, "team_results.json");
         await _fantasyService.DumpAllTeamRostersToJsonAsync(_leagueKey, rosterOutPath);
 
-        var seasonStatsOutPath = Path.Combine(_dataPath, "season_stats.json");
+        var seasonStatsOutPath = Path.Combine(seasonFolder, "season_stats.json");
         await _fantasyService.DumpAllTeamSeasonStatsToJsonAsync(_leagueKey, seasonStatsOutPath);
 
         Console.WriteLine($"Wrote team rosters to {rosterOutPath}");
     }
 
-    private async Task PersistBestBallSnapshotAsync(WeeklyLeagueSnapshot snapshot, string seasonFolder)
+    private async Task PersistBestBallSnapshotAsync(WeeklyLeagueSnapshot snapshot, string bestBallFolder)
     {
+        Directory.CreateDirectory(bestBallFolder);
         var bestBallFileName = $"best_ball_{snapshot.Season}_week_{snapshot.Week}.json";
-        var bestBallOutPath = Path.Combine(seasonFolder, bestBallFileName);
+        var bestBallOutPath = Path.Combine(bestBallFolder, bestBallFileName);
 
         var bestBallJson = JsonSerializer.Serialize(snapshot, new JsonSerializerOptions { WriteIndented = true });
         await File.WriteAllTextAsync(bestBallOutPath, bestBallJson);

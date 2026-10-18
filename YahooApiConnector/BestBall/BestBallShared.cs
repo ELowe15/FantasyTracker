@@ -13,12 +13,23 @@ public static class BestBallAggregator
         File.WriteAllText(outPath, outJson);
     }
 
-    public static async Task RebuildSeasonAsync(int season, string seasonFolder, string weeklyPattern, string seasonOutputFileName)
+    public static async Task RebuildSeasonAsync(int season, string seasonFolder, string weeklyPattern, string seasonOutputFileName, string? legacyWeeklyFolder = null)
     {
-        if (!Directory.Exists(seasonFolder))
+        if (!Directory.Exists(seasonFolder) && (legacyWeeklyFolder == null || !Directory.Exists(legacyWeeklyFolder)))
             return;
 
-        var weeklyFiles = Directory.GetFiles(seasonFolder, weeklyPattern).OrderBy(f => f).ToList();
+        var weeklyFiles = new List<string>();
+        if (Directory.Exists(seasonFolder))
+            weeklyFiles.AddRange(Directory.GetFiles(seasonFolder, weeklyPattern));
+        if (legacyWeeklyFolder != null && Directory.Exists(legacyWeeklyFolder))
+            weeklyFiles.AddRange(Directory.GetFiles(legacyWeeklyFolder, weeklyPattern));
+
+        weeklyFiles = weeklyFiles
+            .GroupBy(file => Path.GetFileName(file) ?? string.Empty, StringComparer.OrdinalIgnoreCase)
+            .Select(files => files.First())
+            .OrderBy(file => file)
+            .ToList();
+
         if (weeklyFiles.Count == 0)
             return;
 
@@ -121,6 +132,7 @@ public static class BestBallAggregator
 
         seasonSnapshot.Teams = seasonSnapshot.Teams.OrderByDescending(t => t.SeasonTotalBestBallPoints).ToList();
 
+        Directory.CreateDirectory(seasonFolder);
         var outPath = Path.Combine(seasonFolder, seasonOutputFileName);
         var options = new JsonSerializerOptions { WriteIndented = true };
         var outputJson = JsonSerializer.Serialize(seasonSnapshot, options);

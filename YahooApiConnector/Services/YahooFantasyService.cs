@@ -28,14 +28,12 @@ public class YahooFantasyService
         string leagueKey,
         int week)
     {
-        Console.WriteLine($"[YahooFantasyService] GetWeekDateRangeAsync league={leagueKey} week={week}");
         var doc = await _apiClient.GetDocumentAsync(YahooFantasyUrlBuilder.LeagueScoreboard(leagueKey, week));
         return YahooFantasyXmlParser.GetWeekDateRange(doc);
     }
 
     public async Task WriteLeagueContextAsync(int season, int currentWeek, string outputDirectory)
     {
-        Console.WriteLine($"[YahooFantasyService] WriteLeagueContextAsync season={season} currentWeek={currentWeek} outDir={outputDirectory}");
         outputDirectory = YahooFantasyPersistence.EnsureDirectoryExists(outputDirectory);
 
         var seasonFolder = Path.Combine(outputDirectory, season.ToString());
@@ -58,13 +56,14 @@ public class YahooFantasyService
 
         var outputPath = Path.Combine(seasonFolder, "league_context.json");
         await YahooFantasyPersistence.WriteJsonFileAsync(outputPath, context);
+        await YahooFantasyPersistence.WriteJsonFileAsync(
+            Path.Combine(outputDirectory, "league_context.json"),
+            context);
     }
 
     public async Task<int> GetWeekForDateAsync(string leagueKey, DateTime date)
     {
-        Console.WriteLine($"[YahooFantasyService] GetWeekForDateAsync league={leagueKey} date={date:yyyy-MM-dd}");
         int currentWeek = await GetCurrentWeekAsync(leagueKey);
-        Console.WriteLine($"[YahooFantasyService] CurrentWeek resolved to {currentWeek}");
 
         // Check current and previous week only (cheap & safe)
         for (int w = currentWeek; w >= Math.Max(1, currentWeek - 1); w--)
@@ -81,20 +80,15 @@ public class YahooFantasyService
 
     public async Task<int> GetCurrentWeekAsync(string leagueKey)
     {
-        Console.WriteLine($"[YahooFantasyService] GetCurrentWeekAsync league={leagueKey}");
         var doc = await _apiClient.GetDocumentAsync(YahooFantasyUrlBuilder.League(leagueKey));
         return YahooFantasyXmlParser.GetCurrentWeek(doc, 1);
     }
 
     public async Task<List<TeamWeeklyStats>> GetWeeklyTeamStatsAsync(string leagueKey)
     {
-        Console.WriteLine($"[YahooFantasyService] GetWeeklyTeamStatsAsync league={leagueKey}");
         var teams = await _apiClient.GetLeagueTeamsAsync(leagueKey);
-        Console.WriteLine($"[YahooFantasyService] Found {teams.Count} teams");
         var effectiveDate = DateTime.UtcNow.Date.AddDays(dayOffset);
-        Console.WriteLine($"[YahooFantasyService] EffectiveDate={effectiveDate:yyyy-MM-dd} (dayOffset={dayOffset})");
         var week = await GetWeekForDateAsync(leagueKey, effectiveDate);
-        Console.WriteLine($"[YahooFantasyService] Resolved week={week}");
 
         var results = new List<TeamWeeklyStats>();
         foreach (var team in teams)
@@ -110,32 +104,27 @@ public class YahooFantasyService
         string outputDirectory,
         bool DEBUG_STOP_AFTER_FIRST_TEAM = false)
     {
-        Console.WriteLine($"[YahooFantasyService] GetWeeklyTeamResultsAsync league={leagueKey} outDir={outputDirectory}");
         var effectiveDate = DateTime.UtcNow.Date.AddDays(dayOffset); // yesterday
-        Console.WriteLine($"[YahooFantasyService] EffectiveDate={effectiveDate:yyyy-MM-dd}");
         var season = await GetSeasonAsync(leagueKey);
-        Console.WriteLine($"[YahooFantasyService] Season={season}");
         var week = await GetWeekForDateAsync(leagueKey, effectiveDate);
-        Console.WriteLine($"[YahooFantasyService] Week={week}");
         var (weekStart, weekEnd) = await GetWeekDateRangeAsync(leagueKey, week);
-        Console.WriteLine($"[YahooFantasyService] WeekRange={weekStart:yyyy-MM-dd}..{weekEnd:yyyy-MM-dd}");
 
         var bestBallFileName = $"best_ball_{season}_week_{week}.json";
 
-        // Prefer season folder locations: <outputDirectory>/2025/BestBall or <outputDirectory>/2025
+        // Prefer the categorized season folder, while retaining support for earlier layouts.
         var seasonFolder = Path.Combine(outputDirectory, season.ToString());
         YahooFantasyPersistence.EnsureDirectoryExists(seasonFolder);
+        var bestBallFolder = Path.Combine(seasonFolder, "BestBall");
+        YahooFantasyPersistence.EnsureDirectoryExists(bestBallFolder);
 
         var candidatePaths = new[] {
+            Path.Combine(bestBallFolder, bestBallFileName),
             Path.Combine(outputDirectory, bestBallFileName),
-            Path.Combine(seasonFolder, bestBallFileName),
-            Path.Combine(seasonFolder, "BestBall", bestBallFileName)
+            Path.Combine(seasonFolder, bestBallFileName)
         };
 
         WeeklyLeagueSnapshot snapshot = null!;
         var existingPath = candidatePaths.FirstOrDefault(File.Exists);
-        Console.WriteLine($"[YahooFantasyService] Candidate paths: {string.Join(";", candidatePaths)}");
-        Console.WriteLine($"[YahooFantasyService] Existing path: {existingPath ?? "(none)"}");
         if (!string.IsNullOrWhiteSpace(existingPath))
         {
             var json = await File.ReadAllTextAsync(existingPath);
@@ -154,7 +143,6 @@ public class YahooFantasyService
             return snapshot;
         }
 
-        Console.WriteLine("[YahooFantasyService] Fetching daily results from stats service...");
         Dictionary<string, List<WeeklyPlayerStats>> dailyResults;
         try
         {
@@ -166,13 +154,11 @@ public class YahooFantasyService
             throw;
         }
 
-        Console.WriteLine($"[YahooFantasyService] Merging daily results into weekly snapshot (teams: {dailyResults?.Count ?? 0})");
         _snapshotService.MergeDailyIntoWeekly(snapshot, dailyResults);
 
         snapshot.ProcessedDates.Add(effectiveDate);
 
-        // Persist weekly snapshot into the season folder (keeps best-ball files per-season)
-        var writePath = Path.Combine(seasonFolder, bestBallFileName);
+        var writePath = Path.Combine(bestBallFolder, bestBallFileName);
         await _snapshotService.WriteWeeklySnapshotAsync(writePath, snapshot);
 
         return snapshot;
@@ -194,7 +180,6 @@ public class YahooFantasyService
 
     public async Task DumpAllTeamSeasonStatsToJsonAsync(string leagueKey, string outputPath)
     {
-        Console.WriteLine($"[YahooFantasyService] DumpAllTeamSeasonStatsToJsonAsync league={leagueKey} out={outputPath}");
         var teamsDoc = await _apiClient.GetDocumentAsync(YahooFantasyUrlBuilder.LeagueTeams(leagueKey));
         var ns = YahooFantasyXmlParser.GetNamespace(teamsDoc);
 
@@ -210,7 +195,6 @@ public class YahooFantasyService
         var allTeamStats = new List<object>();
         foreach (var team in teams)
         {
-            Console.WriteLine($"[YahooFantasyService] Processing team {team.TeamKey}");
             var statsDoc = await _apiClient.GetDocumentAsync(YahooFantasyUrlBuilder.TeamSeasonStats(team.TeamKey!));
             var statElems = statsDoc.Descendants(ns + "stat")
                 .Select(s => new
@@ -239,7 +223,6 @@ public class YahooFantasyService
 
     public async Task DumpDraftResultsToJsonAsync(string leagueKey, string outputPath)
     {
-        Console.WriteLine($"[YahooFantasyService] DumpDraftResultsToJsonAsync league={leagueKey} out={outputPath}");
         var teamsDoc = await _apiClient.GetDocumentAsync(YahooFantasyUrlBuilder.LeagueTeams(leagueKey));
         var ns = YahooFantasyXmlParser.GetNamespace(teamsDoc);
 

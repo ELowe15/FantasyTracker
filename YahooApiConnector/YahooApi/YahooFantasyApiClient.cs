@@ -11,22 +11,9 @@ public sealed class YahooFantasyApiClient
 
     public async Task<XDocument> GetDocumentAsync(string url)
     {
-        Console.WriteLine($"[YahooFantasyApiClient] GET {url}");
-
-    Console.WriteLine(
-        $"[YahooFantasyApiClient] Authorization scheme: " +
-        $"{_client.DefaultRequestHeaders.Authorization?.Scheme}");
-
-    Console.WriteLine(
-        $"[YahooFantasyApiClient] Authorization token present: " +
-        $"{!string.IsNullOrEmpty(_client.DefaultRequestHeaders.Authorization?.Parameter)}");
-
     using var req = new HttpRequestMessage(HttpMethod.Get, url);
 
     var resp = await _client.SendAsync(req);
-
-    Console.WriteLine(
-        $"[YahooFantasyApiClient] Response: {(int)resp.StatusCode} {resp.ReasonPhrase}");
 
     var content = await resp.Content.ReadAsStringAsync();
 

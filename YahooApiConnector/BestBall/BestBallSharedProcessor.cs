@@ -1,6 +1,6 @@
 public static class BestBallSharedProcessor
 {
-    public static void ProcessWeekly(WeeklyLeagueSnapshot snapshot, string dataPath, BestBallEngine engine, Func<WeeklyTeamResult, List<WeeklyPlayerStats>> getPlayersForTeam, string weeklyFileNameFormat)
+    public static void ProcessWeekly(WeeklyLeagueSnapshot snapshot, string dataPath, string categoryFolder, BestBallEngine engine, Func<WeeklyTeamResult, List<WeeklyPlayerStats>> getPlayersForTeam, string weeklyFileNameFormat)
     {
         if (snapshot == null || snapshot.Teams == null)
             return;
@@ -32,9 +32,9 @@ public static class BestBallSharedProcessor
             outSnapshot.Teams.Add(teamOut);
         }
 
-        var seasonFolder = Path.Combine(dataPath, snapshot.Season.ToString());
+        var outputFolder = Path.Combine(dataPath, snapshot.Season.ToString(), categoryFolder);
         var fileName = weeklyFileNameFormat.Replace("{season}", snapshot.Season.ToString()).Replace("{week}", snapshot.Week.ToString());
-        BestBallAggregator.WriteWeeklySnapshot(outSnapshot, seasonFolder, fileName);
-        Console.WriteLine($"Best ball weekly results saved to {Path.Combine(seasonFolder, fileName)}");
+        BestBallAggregator.WriteWeeklySnapshot(outSnapshot, outputFolder, fileName);
+        Console.WriteLine($"Best ball weekly results saved to {Path.Combine(outputFolder, fileName)}");
     }
 }

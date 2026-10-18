@@ -17,7 +17,7 @@ public class BestBallOrchestrator
             return;
 
         // Cache draft results once for the run (if present)
-        var draftMap = LoadDraftedMapIfExists(dataPath);
+        var draftMap = LoadDraftedMapIfExists(dataPath, snapshot.Season);
 
         // Ensure season folder exists
         var seasonFolder = Path.Combine(dataPath, snapshot.Season.ToString());
@@ -37,10 +37,12 @@ public class BestBallOrchestrator
         await Task.WhenAll(rebuildDrafted, rebuildPeak);
     }
 
-    private Dictionary<string, List<string>>? LoadDraftedMapIfExists(string dataPath)
+    private Dictionary<string, List<string>>? LoadDraftedMapIfExists(string dataPath, int season)
     {
-        // Allow draft_results.json to live in the data root or in a per-season subfolder.
-        var candidate = Directory.GetFiles(dataPath, "draft_results.json", SearchOption.AllDirectories).FirstOrDefault();
+        var seasonDraftResults = Path.Combine(dataPath, season.ToString(), "draft_results.json");
+        var candidate = File.Exists(seasonDraftResults)
+            ? seasonDraftResults
+            : Directory.GetFiles(dataPath, "draft_results.json", SearchOption.AllDirectories).FirstOrDefault();
         if (string.IsNullOrWhiteSpace(candidate) || !File.Exists(candidate))
             return null;
 

@@ -18,7 +18,6 @@ public class YahooAuthService
         var clientId = _config["YahooApi:ClientId"];
         var redirectUri = _config["YahooApi:RedirectUri"];
         var authURL = $"https://api.login.yahoo.com/oauth2/request_auth?client_id={clientId}&redirect_uri={HttpUtility.UrlEncode(redirectUri)}&response_type=code&language=en-us";
-        Console.WriteLine($"[YahooAuthService] Authorization URL: {authURL}");
         return authURL;
     }
 

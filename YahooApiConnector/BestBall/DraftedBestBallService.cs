@@ -12,8 +12,10 @@ public class DraftedBestBallService
         if (draftedMap == null)
         {
             draftedMap = new Dictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
-            // Allow draft_results.json to live in the data root or in a per-season subfolder.
-            var candidate = Directory.GetFiles(dataPath, "draft_results.json", SearchOption.AllDirectories).FirstOrDefault();
+            var seasonDraftResults = Path.Combine(dataPath, snapshot.Season.ToString(), "draft_results.json");
+            var candidate = File.Exists(seasonDraftResults)
+                ? seasonDraftResults
+                : Directory.GetFiles(dataPath, "draft_results.json", SearchOption.AllDirectories).FirstOrDefault();
             if (!string.IsNullOrWhiteSpace(candidate) && File.Exists(candidate))
             {
                 try
@@ -50,7 +52,7 @@ public class DraftedBestBallService
             .ToDictionary(p => p.PlayerKey!, p => p);
 
         // Use shared processor: supply a function that returns drafted players for a team
-        BestBallSharedProcessor.ProcessWeekly(snapshot, dataPath, _engine, team =>
+        BestBallSharedProcessor.ProcessWeekly(snapshot, dataPath, "BestBall", _engine, team =>
         {
             var tk = team.TeamKey ?? string.Empty;
             var teamPlayers = new List<WeeklyPlayerStats>();
@@ -72,8 +74,9 @@ public class DraftedBestBallService
 
     public async Task RebuildSeasonAsync(int season, string dataPath)
     {
-        var seasonFolder = Path.Combine(dataPath, season.ToString());
-        await BestBallAggregator.RebuildSeasonAsync(season, seasonFolder, $"best_ball_{season}_week_*.json", $"season_best_ball_{season}.json");
-        Console.WriteLine($"Drafted season best ball saved to {Path.Combine(seasonFolder, $"season_best_ball_{season}.json")}");
+        var bestBallFolder = Path.Combine(dataPath, season.ToString(), "BestBall");
+        var legacySeasonFolder = Path.Combine(dataPath, season.ToString());
+        await BestBallAggregator.RebuildSeasonAsync(season, bestBallFolder, $"best_ball_{season}_week_*.json", $"season_best_ball_{season}.json", legacySeasonFolder);
+        Console.WriteLine($"Drafted season best ball saved to {Path.Combine(bestBallFolder, $"season_best_ball_{season}.json")}");
     }
 }

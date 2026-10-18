@@ -16,13 +16,14 @@ public class PeakLineupService
             Teams = new List<WeeklyTeamResult>()
         };
 
-        BestBallSharedProcessor.ProcessWeekly(snapshot, dataPath, _engine, team => team.Players ?? new List<WeeklyPlayerStats>(), "peak_best_ball_{season}_week_{week}.json");
+        BestBallSharedProcessor.ProcessWeekly(snapshot, dataPath, "PeakBall", _engine, team => team.Players ?? new List<WeeklyPlayerStats>(), "peak_best_ball_{season}_week_{week}.json");
     }
 
     public async Task RebuildSeasonAsync(int season, string dataPath)
     {
-        var seasonFolder = Path.Combine(dataPath, season.ToString());
-        await BestBallAggregator.RebuildSeasonAsync(season, seasonFolder, $"peak_best_ball_{season}_week_*.json", $"season_peak_best_ball_{season}.json");
-        Console.WriteLine($"Peak season best ball saved to {Path.Combine(seasonFolder, $"season_peak_best_ball_{season}.json")}");
+        var peakBallFolder = Path.Combine(dataPath, season.ToString(), "PeakBall");
+        var legacySeasonFolder = Path.Combine(dataPath, season.ToString());
+        await BestBallAggregator.RebuildSeasonAsync(season, peakBallFolder, $"peak_best_ball_{season}_week_*.json", $"season_peak_best_ball_{season}.json", legacySeasonFolder);
+        Console.WriteLine($"Peak season best ball saved to {Path.Combine(peakBallFolder, $"season_peak_best_ball_{season}.json")}");
     }
 }
