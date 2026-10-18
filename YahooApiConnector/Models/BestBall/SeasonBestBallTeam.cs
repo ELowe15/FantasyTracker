@@ -1,7 +1,7 @@
 public class SeasonBestBallTeam
 {
-    public string TeamKey { get; set; }
-    public string ManagerName { get; set; }
+    public string? TeamKey { get; set; }
+    public string? ManagerName { get; set; }
 
     public int WeeksPlayed { get; set; }
 

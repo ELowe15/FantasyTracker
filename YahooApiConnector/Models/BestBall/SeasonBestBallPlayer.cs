@@ -1,7 +1,7 @@
 public class SeasonBestBallPlayer
 {
-    public string PlayerKey { get; set; }
-    public string PlayerName { get; set; }
+    public string? PlayerKey { get; set; }
+    public string? PlayerName { get; set; }
 
     public int WeeksOnRoster { get; set; }
     public int WeeksStarted { get; set; }
